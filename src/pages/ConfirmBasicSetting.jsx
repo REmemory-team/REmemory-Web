@@ -1,19 +1,23 @@
-// 캡슐 기본 설정 확인 페이지
+// 캡슐 기본 설정 확인
 
 import "../styles/ConfirmBasicSetting.css";
 
-import React from "react";
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
+import Preview from "../components/Preview";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import capsulePreviewImg from "../assets/기본 캡슐이미지.png";
 
 export default function ConfirmBasicSetting() {
   const location = useLocation();
+  const navigate = useNavigate();
   const userData = location.state; // 캡슐 기본 설정 페이지로부터 전달받은 데이터
+  const [showCapsulePreview, setShowCapsulePreview] = useState(false);
 
   // '확인했어요!' 버튼을 누르면 실행되는 함수
   // 서버에 토큰(혹은 쿠키), 캡슐 이름, 캡슐 오픈 시기, 용도, 테마를 전송
   const confirmBtnHandler = (event) => {
-    // event.preventDefault();
     const token = sessionStorage.getItem("token"); // 비회원인 경우 쿠키 이용
     axios
       .post("http://localhost:8000/user/info", {
@@ -28,14 +32,15 @@ export default function ConfirmBasicSetting() {
       .then(function (response) {
         console.log(response);
         if (response.status === 200) {
-          alert("성공적으로 제출되었습니다!");
           // 용도에 따라 다른 화면으로 이동
           if (userData.purpose === "toMe") {
-            // navigate("/");
+            navigate("/writingformat", {
+              state: { recipient: "ME", theme: userData.theme },
+            });
           } else if (userData.purpose === "toSomeone") {
-            // navigate("/");
+            navigate("/recipientinput", { state: { theme: userData.theme } });
           } else if (userData.purpose === "rollingPaper") {
-            // navigate("/");
+            navigate("/recipientinput", { state: { theme: userData.theme } });
           }
         } else {
           alert("제출에 실패했습니다!");
@@ -50,9 +55,14 @@ export default function ConfirmBasicSetting() {
   return (
     <div className="confirm-setting-page">
       <p className="confirm-message">타임캡슐 설정을 확인하세요!</p>
+      <div className="blur-container"></div>
       <div className="setting-info-container">
-        <div className="blur-background"></div>
-        <p className="preview">타임캡슐 미리보기</p>
+        <p
+          className="capsule-preview"
+          onClick={() => setShowCapsulePreview(true)}
+        >
+          타임캡슐 미리보기
+        </p>
         <p className="capsuleName">{userData.capsuleName}</p>
         <div className="info-box">
           <span className="info-icon">
@@ -149,9 +159,15 @@ export default function ConfirmBasicSetting() {
           </span>
         </div>
       </div>
-      <button className="confirm-btn" onClick={confirmBtnHandler}>
+      <button className="setting-confirm-btn" onClick={confirmBtnHandler}>
         확인했어요!
       </button>
+      {showCapsulePreview && (
+        <Preview
+          content={capsulePreviewImg}
+          setShowPreview={setShowCapsulePreview}
+        />
+      )}
     </div>
   );
 }
