@@ -1,0 +1,139 @@
+.OpenCapsule{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.OpenCapsule .image_menu{
+    position: absolute;
+    cursor: pointer;
+    width: 20px;
+    height: 16px;
+    /* top: 74px; */
+    top: 34px;
+    left: 345px;
+    /* padding: 0px, 0px, 0px, 0px; */
+    /* border: 2.5px; */
+}
+.OpenCapsule .menu{
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    background-color: #5E4E80;
+    z-index: 1;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.OpenCapsule .img_isOpened_true{
+    position: absolute;
+    width: 338px;
+    height: 218px;
+    top: 245px;
+    left: 22px;
+}
+.OpenCapsule .img_isOpened_false{
+    position: absolute;
+    /* width: 268.16px;
+    height: 235.14px; */
+    top: 225px;
+    left: 64px;
+}
+.OpenCapsule img.clock{
+    position: absolute;
+    width: 29px;
+    height: 33px;
+    top: 574px;
+    left: 182px;
+    border: 2px;
+}
+.OpenCapsule .maintext{
+    position: absolute;
+    cursor: default;
+    color: #FFFFFF;
+    font-family: "Pretendard";
+    font-size: 40px;
+    font-weight: 700;
+    /* line-height: 13px; */
+    line-height: 2;
+    letter-spacing: 0.06599999964237213px;
+    text-align: center;
+    width: 350px;
+    height: 96px;
+    top: 607px;
+    left: 22px;
+    text-align: center;
+}
+.OpenCapsule .button_wrapper{
+    position: absolute;
+    text-align: center; 
+    width: 350px;
+    height: 96px;
+    top: 662px;
+    left: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.OpenCapsule .button_wrapper button{
+    font-family: "Pretendard";
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.06599999964237213px;
+    line-height: 13px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #ffffff;
+}
+.OpenCapsule .btn_isOpened_true{
+    cursor: pointer;
+    text-decoration: underline;    
+}
+.OpenCapsule .ellipses_true .circle{
+    display: none;
+}
+.OpenCapsule .ellipses_false .circle{
+    position: absolute;
+    width: 297px;
+    height: 297px;
+    top: 204px;
+    left: 48px;
+    border: 1px;
+}
+.OpenCapsule .ellipse{
+    position: absolute;
+    width: 37px;
+    height: 37px;
+}
+.OpenCapsule .ellipse.type1{
+    top: 281px;
+    left: 97px;
+}
+.OpenCapsule .ellipse.type2{
+    top: 215px;
+    left: 209px;
+}
+.OpenCapsule .ellipse.type3{
+    width: 58px;
+    height: 58px;
+    top: 223px;
+    left: 221px;
+}
+.OpenCapsule .ellipses_false .ellipse{
+    width: 41px;
+    height: 41px;
+}
+.OpenCapsule .ellipses_false .ellipse.type1{
+    top: 426px;
+    left: 62px;
+}
+.OpenCapsule .ellipses_false .ellipse.type2{
+    top: 239px;
+    left: 291px;
+}
+.OpenCapsule .ellipses_false .ellipse.type3{
+    width: 58px;
+    height: 58px;
+    top: 210px;
+    left: 262px;
+}
