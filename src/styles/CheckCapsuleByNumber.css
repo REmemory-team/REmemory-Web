@@ -1,0 +1,106 @@
+.check-capsule-page {
+  width: 393px;
+  height: 852px;
+  background: linear-gradient(180deg, rgba(96, 87, 115, 0) 1.41%, #aa9acc 59.9%),
+    #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+.check-capsule-message {
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 13px; /* 65% */
+  letter-spacing: 0.066px;
+  flex-shrink: 0;
+  margin-top: 175px;
+  margin-bottom: 75px;
+}
+.number-input-field {
+  width: 300px;
+  height: 83px;
+  text-align: center;
+  flex-shrink: 0;
+  background-color: rgba(238, 242, 255, 0.7);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 95px;
+  border: none;
+  padding: 20px 50px;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 13px; /* 72.222% */
+  letter-spacing: 0.066px;
+  caret-color: #606060;
+  margin-bottom: 10px;
+}
+.number-input-field::placeholder {
+  color: #9a9a9a;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 13px; /* 72.222% */
+  letter-spacing: 0.066px;
+}
+.number-input-field:focus {
+  outline: none;
+}
+.password-input-field {
+  width: 300px;
+  height: 83px;
+  text-align: center;
+  flex-shrink: 0;
+  background-color: rgba(238, 242, 255, 0.7);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 95px;
+  border: none;
+  padding: 20px 50px;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 13px; /* 72.222% */
+  letter-spacing: 0.066px;
+  caret-color: #606060;
+  margin-bottom: 40px;
+}
+.password-input-field:focus {
+  outline: none;
+}
+.password-input-field::placeholder {
+  color: #9a9a9a;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 13px; /* 72.222% */
+  letter-spacing: 0.066px;
+}
+.capsule-check-btn {
+  width: 300px;
+  height: 50px;
+  flex-shrink: 0;
+  background-color: rgba(193, 221, 255, 0.9);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 95px;
+  border: none;
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 13px; /* 72.222% */
+  letter-spacing: 0.066px;
+}

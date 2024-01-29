@@ -1,0 +1,9 @@
+.preview-modal {
+  background-color: pink;
+  width: 393px;
+  height: 852px;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

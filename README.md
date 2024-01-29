@@ -1,111 +1,70 @@
-### 1. 작업 폴더 생성
-<br/>
+# Getting Started with Create React App
 
-![작업폴더생성](https://github.com/kim-hee-eun/portfolio/assets/72575430/55090b01-3c12-407b-94bd-2347407c95e0)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-폴더 우클릭 -> VS Code로 열기
+## Available Scripts
 
-<br/>
+In the project directory, you can run:
 
-### 2. REmemory-Web Repository 클론
-<br/>
+### `npm start`
 
-터미널에서 아래 명령어 입력
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-<br/>
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
- ```
-    git clone https://github.com/REmemory-team/REmemory-Web.git
- ```
+### `npm test`
 
-![깃클론](https://github.com/kim-hee-eun/portfolio/assets/72575430/1076d4e3-b800-4158-884b-446194964432)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-<br/>
+### `npm run build`
 
-#### 새로운 폴더 생성된 것 확인
-<br/>
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-![새로운폴더생성](https://github.com/kim-hee-eun/portfolio/assets/72575430/02eb0df8-3734-4d85-9c53-e38cbd57ef7b) 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-![새로운폴더생성2](https://github.com/kim-hee-eun/portfolio/assets/72575430/71b5747c-d181-4fe8-97c8-2b16c287e547)
+### `npm run eject`
 
-<br/>
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### 3. Branch 생성
-<br/>
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-REmemory-Web 폴더로 이동한 뒤 Branch 생성
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
- ```
-    git branch 닉네임
- ```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-ex) git branch Lena
+## Learn More
 
-![브랜치생성](https://github.com/kim-hee-eun/portfolio/assets/72575430/34f775e7-b0c6-4240-8dfa-f63c132058ed)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-<br/>
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### 4. Branch 전환
-<br/>
+### Code Splitting
 
- ```
-    git switch 닉네임
- ```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-ex) git switch Lena
+### Analyzing the Bundle Size
 
-![브랜치전환](https://github.com/kim-hee-eun/portfolio/assets/72575430/ff59f15f-b570-4368-baac-91b5f8f35bee)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-<br/>
+### Making a Progressive Web App
 
-### 5. 코드 올리기
-<br/>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-REmemory-Web 폴더에 각자 짠 코드 추가
+### Advanced Configuration
 
-![내가짠코드추가](https://github.com/kim-hee-eun/portfolio/assets/72575430/092b1735-d28b-4acf-b335-1c34767fc067)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
+### Deployment
 
-![내가짠코드추가2](https://github.com/kim-hee-eun/portfolio/assets/72575430/8b874829-c4d9-4fa8-ba3d-c7d3fe4c698b)
-<br/>
-<br/>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-#### Repository에 올리기
+### `npm run build` fails to minify
 
-<br/>
-
-```
-    git add .
-    git commit -m "커밋메시지"
-    git push origin 닉네임
- ```
-
-![파일올리기](https://github.com/kim-hee-eun/portfolio/assets/72575430/345f0e67-a51c-4ae7-949c-0905a2ca579b)
-
-<br />
-
-### 잘 올라갔는지 확인!!
-
-<br />
-
-## commit convention
-
-
-commit 메시지 작성할 때 아래 링크 참고해서 작성해주시면 좋을 것 같습니다!!
-
-
-[commit convention 참고](https://doublesprogramming.tistory.com/256)
-
-
-
-
-
-
-
-
-
-
-
-
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

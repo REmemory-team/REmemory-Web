@@ -1,0 +1,43 @@
+.rollingpaper-open-page {
+  width: 393px;
+  min-height: 852px;
+  height: auto;
+  background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(170, 154, 204, 0) 46.53%
+    );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 25px;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+.back-btn {
+  width: 35px;
+  height: 35px;
+}
+.home-btn {
+  width: 25.833px;
+  height: 23.25px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0);
+}
+.rolling-capsule-name {
+  color: #fff;
+  text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
+  font-family: Pretendard;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 13px; /* 37.143% */
+  letter-spacing: 0.066px;
+  margin-bottom: 57px;
+}
