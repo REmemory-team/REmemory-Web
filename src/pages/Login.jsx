@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import axios from "axios";
 import "../styles/Login.css";
 
-import twinkle from "../assets/twinkle.png";
-import circle from "../assets/circle.png";
+import React, { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
 import arrow from "../assets/arrow.png";
+import axios from "axios";
+import circle from "../assets/circle.png";
 import kakaoicon from "../assets/kakaoicon.png";
+import twinkle from "../assets/twinkle.png";
 
 const Login = () => {
   const { Kakao } = window;
@@ -72,7 +73,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="login-page">
       <div className="re-memory">RE:memory</div>
       <div className="twinkle">
         <img src={twinkle} alt="반짝이" />
