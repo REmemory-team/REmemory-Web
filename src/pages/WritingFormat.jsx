@@ -23,9 +23,13 @@ export default function WritingFormat() {
     if (!format) {
       alert("작성 형식을 선택해주세요!");
     } else if (format === "text") {
-      navigate("/text", { state: { recipient: recipient, theme: theme } }); // 글 & 편지 작성 화면으로 넘어가기
+      navigate("/capsule/write/text", {
+        state: { recipient: recipient, theme: theme },
+      }); // 글 & 편지 작성 화면으로 넘어가기
     } else if (format === "voice") {
-      navigate("/voice", { state: { recipient: recipient, theme: theme } }); // 음성 편지 작성 화면으로 넘어가기
+      navigate("/capsule/write/voice", {
+        state: { recipient: recipient, theme: theme },
+      }); // 음성 편지 작성 화면으로 넘어가기
     }
   };
 

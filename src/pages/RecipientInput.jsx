@@ -9,6 +9,7 @@ export default function RecipientInput() {
   const navigate = useNavigate();
   const location = useLocation();
   const theme = location.state.theme; // 이전 페이지에서 가져온 테마 정보
+  const purpose = location.state.purpose; // 이전 페이지에서 가져온 용도 정보
   const [recipient, setRecipient] = useState(""); // 받는 사람 정보를 저장할 상태 변수
 
   const handleRecipientChange = (event) => {
@@ -18,15 +19,18 @@ export default function RecipientInput() {
   const doneBtnHandler = () => {
     if (!recipient) {
       alert("타임캡슐을 받을 사람을 적어주세요!");
-    } else {
-      // 작성 형식 선택 화면으로 이동
+    } else if (purpose === "toSomeone") {
+      // 용도2인 경우, 작성 형식 선택 화면으로 이동
       // 받는 사람, 테마 정보 전달
-      navigate("/writingformat", {
+      navigate("/capsule/letter-format", {
         state: {
           recipient: recipient,
           theme: theme,
         },
       });
+    } else if (purpose === "rollingPaper") {
+      // 용도3인 경우, 캡슐번호 & URL 부여 화면으로 이동
+      navigate("/capsule/assign-number-url");
     }
   };
 

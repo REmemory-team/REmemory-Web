@@ -4,9 +4,11 @@ import "../styles/CheckCapsuleByNumber.css";
 
 import React from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function CheckCapsuleByNumber() {
+  const navigate = useNavigate();
   const [capsuleNum, setCapsuleNum] = useState(""); // 캡슐 번호 저장할 상태 변수
   const [password, setPassword] = useState(""); // 비밀번호 저장할 상태 변수
 
@@ -21,15 +23,17 @@ export default function CheckCapsuleByNumber() {
   const confirmBtnHandler = () => {
     // 서버에 캡슐 번호와 비밀번호 전송
     axios
-      .post("http://localhost:8000/capsule", {
+      .post("", {
         capsuleNum: capsuleNum,
         password: password,
       })
       .then(function (response) {
         console.log(response);
         if (response.status === 200) {
-          // 캡슐 오픈 시기가 다 된 경우 -> 오픈된 캡슐 화면으로 이동
-          // 캡슐 오픈 시기가 되지 않은 경우 -> 오픈되지 않은 캡슐 화면으로 이동
+          navigate("/capsule/verify");
+          // 캡슐 오픈 시기가 다 된 경우, 다 되지 않은 경우 다른 화면 보여지도록
+          // 오픈 시기가 다 된 경우 - 서버로부터 테마 정보 가져오기?
+          // 오픈 시기가 다 되지 않은 경우 - 서버로부터 테마 정보, 캡슐 오픈 시기 정보 가져오기?
           // 비밀번호가 올바르지 않은 경우, 없는 캡슐 번호일 경우 처리
         }
       })

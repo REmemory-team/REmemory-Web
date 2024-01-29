@@ -1,0 +1,59 @@
+.received-voice-page {
+  width: 393px;
+  height: 852px;
+  background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(170, 154, 204, 0) 46.53%
+    );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+.voice-contents-box {
+  width: 300px;
+  height: 450px;
+  flex-shrink: 0;
+  background-color: rgba(223, 230, 255, 0.7);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+}
+.voice-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 95px;
+}
+.record-image {
+  margin-bottom: 20px;
+}
+.record-bar {
+  display: flex;
+}
+.play-btn {
+  margin-right: 12px;
+}
+.bar {
+  position: relative;
+  padding: 2px 0px;
+}
+.base-bar {
+  width: 168px;
+  height: 25px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #d4c0ff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.main-bar {
+  width: 99px;
+  height: 25px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #beace6;
+  position: absolute;
+  top: 2px;
+}

@@ -124,7 +124,7 @@ export default function CapsuleBasicSetting() {
       return;
     }
     // 모든 항목이 올바르게 채워진 경우, 다음 페이지로 이동
-    navigate("/confirm", {
+    navigate("/capsule/settings/confirm", {
       state: {
         capsuleName: capsuleName,
         year: year,

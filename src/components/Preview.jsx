@@ -1,3 +1,5 @@
+// 미리보기
+
 import "../styles/Preview.css";
 
 import React from "react";

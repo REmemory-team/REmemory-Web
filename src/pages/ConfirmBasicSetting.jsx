@@ -20,7 +20,7 @@ export default function ConfirmBasicSetting() {
   const confirmBtnHandler = (event) => {
     const token = sessionStorage.getItem("token"); // 비회원인 경우 쿠키 이용
     axios
-      .post("http://localhost:8000/user/info", {
+      .post("", {
         capsuleName: userData.capsuleName,
         year: userData.year,
         month: userData.month,
@@ -34,13 +34,17 @@ export default function ConfirmBasicSetting() {
         if (response.status === 200) {
           // 용도에 따라 다른 화면으로 이동
           if (userData.purpose === "toMe") {
-            navigate("/writingformat", {
+            navigate("/capsule/letter-format", {
               state: { recipient: "ME", theme: userData.theme },
             });
           } else if (userData.purpose === "toSomeone") {
-            navigate("/recipientinput", { state: { theme: userData.theme } });
+            navigate("/capsule/input-recipients", {
+              state: { theme: userData.them, purpose: userData.purpose },
+            });
           } else if (userData.purpose === "rollingPaper") {
-            navigate("/recipientinput", { state: { theme: userData.theme } });
+            navigate("/capsule/input-recipients", {
+              state: { theme: userData.theme, purpose: userData.purpose },
+            });
           }
         } else {
           alert("제출에 실패했습니다!");
