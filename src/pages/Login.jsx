@@ -55,6 +55,15 @@ const Login = () => {
       const accessToken = response.data.access_token;
       console.log("accessToken:", accessToken);
 
+      // Kakao API를 사용하여 사용자 정보 가져오기
+      const kakaoUserInfo = await Kakao.API.request({
+        url: "/v2/user/me",
+        data: { propertyKeys: ["kakao_account.profile.nickname"] },
+      });
+
+      // 닉네임을 상태로 업데이트 또는 다른 로직 수행
+      const nickname = kakaoUserInfo.kakao_account.profile.nickname;
+
       navigate("/");
     } catch (error) {
       console.error("Failed to get accessToken:", error);

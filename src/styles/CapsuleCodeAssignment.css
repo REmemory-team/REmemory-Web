@@ -1,0 +1,155 @@
+/* CapsuleCodeAssignment.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 852px;
+  width: 393px;
+  background: rgba(170, 154, 204, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.text {
+  position: absolute;
+  width: 369px;
+  height: 106px;
+  top: 84px;
+  left: 12px;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 106px;
+  letter-spacing: 0.06599999964237213px;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  vertical-align: middle;
+}
+
+.box1 {
+  position: absolute;
+  width: 300px;
+  height: 110px;
+  top: 169px;
+  left: 43px;
+  background: rgba(238, 242, 255, 0.7);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 60px;
+}
+
+.copy {
+  position: absolute;
+  top: 162px;
+  left: 40px;
+  font-family: "Pretendard", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0.066px;
+  text-align: center;
+}
+
+.Copy {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 244px;
+  left: 165px;
+  padding: 0 1.61px 0 1.61px;
+}
+
+.CopyText {
+  position: absolute;
+  width: 70px;
+  height: 32px;
+  top: 246px;
+  left: 163px;
+  font-family: Pretendard;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0.066px;
+  text-align: center;
+  color: rgba(0, 0, 0, 1);
+  text-decoration: underline;
+}
+
+.box2 {
+  position: absolute;
+  width: 300px;
+  height: 110px;
+  top: 316px;
+  left: 43px;
+  background: rgba(238, 242, 255, 0.7);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 60px;
+}
+
+.password-input {
+  width: 307px;
+  height: 106px;
+  top: 316px;
+  left: 39px;
+}
+
+.reading-box {
+  position: absolute;
+  width: 343px;
+  height: 225px;
+  top: 465px;
+  left: 25px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.reading-text1 {
+  position: absolute;
+  width: 178px;
+  height: 32px;
+  top: 487px;
+  left: 47px;
+  font-family: Pretendard;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 13px;
+  letter-spacing: 0.06599999964237213px;
+  text-align: left;
+  color: rgba(94, 78, 128, 1);
+  padding: 8px;
+}
+
+.reading-text2 {
+  position: absolute;
+  width: 307px;
+  height: 103px;
+  top: 535px;
+  left: 39px;
+  font-family: Pretendard;
+  font-size: 12px;
+  line-height: 13px;
+  letter-spacing: 0.06599999964237213px;
+  text-align: left;
+  color: rgba(94, 78, 128, 1);
+}
+
+ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+
+.checked {
+  position: absolute;
+  width: 300px;
+  height: 50px;
+  top: 717px;
+  left: 47px;
+  background: rgba(193, 221, 255, 0.7);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 60px;
+}
