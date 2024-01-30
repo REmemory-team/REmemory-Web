@@ -72,6 +72,7 @@ export default function Home() {
   // };
 
   return (
+    <div className="home">
     <div className="container">
         <div className="image_box">
             <div className="capsule_image"></div>
@@ -116,6 +117,7 @@ export default function Home() {
                 </div>
             </div>
         </div>)}
+    </div>
     </div>
   )
 }
