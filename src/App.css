@@ -4,7 +4,14 @@
   box-sizing: border-box;
 }
 .App {
-  width: 24.5625rem;
+  width: 393px;
   min-height: 100vh;
   box-shadow: rgba(100, 100, 100, 0.2) 0px 7px 29px 0px;
+  /* overflow: hidden; */
+}
+
+@media screen and (max-width: 431px) {
+  .App{
+    width: 100vw;
+  }
 }
