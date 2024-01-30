@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useNavigate } from "react-router-dom";
 import "../styles/CapsuleCodeAssignment.css";
-import Copy from "../assets/Copy.png";
+import Copyimg from "../assets/Copy.png";
 
 const CapsuleCodeAssignment = ({ initialNickname }) => {
   const [capsuleNumber, setCapsuleNumber] = useState("");
@@ -56,7 +56,7 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
       </div>
 
       <div className="Copy">
-        <img src={Copy} alt="복사하기" />
+        <img src={Copyimg} alt="복사하기" />
       </div>
       <div className="CopyText" onClick={() => handleCopyClick()}>
         복사
