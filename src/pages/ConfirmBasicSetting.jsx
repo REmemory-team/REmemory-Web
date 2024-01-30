@@ -18,6 +18,19 @@ export default function ConfirmBasicSetting() {
   // '확인했어요!' 버튼을 누르면 실행되는 함수
   // 서버에 토큰(혹은 쿠키), 캡슐 이름, 캡슐 오픈 시기, 용도, 테마를 전송
   const confirmBtnHandler = (event) => {
+    if (userData.purpose === "toMe") {
+      navigate("/capsule/letter-format", {
+        state: { recipient: "ME", theme: userData.theme },
+      });
+    } else if (userData.purpose === "toSomeone") {
+      navigate("/capsule/input-recipients", {
+        state: { theme: userData.them, purpose: userData.purpose },
+      });
+    } else if (userData.purpose === "rollingPaper") {
+      navigate("/capsule/input-recipients", {
+        state: { theme: userData.theme, purpose: userData.purpose },
+      });
+    }
     const token = sessionStorage.getItem("token"); // 비회원인 경우 쿠키 이용
     axios
       .post("", {

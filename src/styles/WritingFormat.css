@@ -1,30 +1,30 @@
 .format-select-page {
-  width: 393px;
-  height: 852px;
+  width: 24.5625rem;
+  height: 53.25rem;
   background: linear-gradient(180deg, #aa9acc 0%, #aa9acc 100%);
   flex-shrink: 0;
   position: relative;
 }
-.division-line1 {
+.format-select-page .division-line1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 90px;
+  padding: 90px;
   margin-bottom: 70px;
 }
-.line1,
-.line2 {
+.format-select-page .line1,
+.format-select-page .line2 {
   width: 132px;
   height: 2px;
   background: rgba(255, 255, 255, 0.8);
   flex-shrink: 0;
 }
-.pencil-icon {
+.format-select-page .pencil-icon {
   width: 35px;
   height: 35px;
   flex-shrink: 0;
 }
-.person-to-send {
+.format-select-page .person-to-send {
   color: #fff;
   text-align: center;
   font-family: Pretendard;
@@ -35,7 +35,7 @@
   letter-spacing: 0.066px;
   flex-shrink: 0;
 }
-.select-message {
+.format-select-page .select-message {
   color: #fff;
   text-align: center;
   font-family: Pretendard;
@@ -47,25 +47,25 @@
   flex-shrink: 0;
   margin-bottom: 60px;
 }
-.select-format {
+.format-select-page .select-format {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.text-container,
-.voice-container {
+.format-select-page .text-container,
+.format-select-page .voice-container {
   display: flex;
   align-items: center;
   flex-shrink: 0;
 }
-.text-container {
+.format-select-page .text-container {
   margin-bottom: 30px;
 }
-.voice-container {
+.format-select-page .voice-container {
   margin-bottom: 90px;
 }
-.text,
-.voice {
+.format-select-page .text,
+.format-select-page .voice {
   width: 197px;
   height: 60px;
   display: flex;
@@ -86,8 +86,8 @@
   transition: transform 0.2s ease;
   cursor: pointer;
 }
-.text-preview,
-.voice-preview {
+.format-select-page .text-preview,
+.format-select-page .voice-preview {
   color: #fff;
   text-align: center;
   font-family: Pretendard;
@@ -100,19 +100,19 @@
   flex-shrink: 0;
   cursor: pointer;
 }
-.division-line2 {
+.format-select-page .division-line2 {
   width: 342px;
   height: 2px;
   background: rgba(255, 255, 255, 0.8);
   margin-bottom: 150px;
   flex-shrink: 0;
 }
-.decision-btn-container {
+.format-select-page .decision-btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.format-decision-btn {
+.format-select-page .format-decision-btn {
   width: 200px;
   height: 50px;
   flex-shrink: 0;
@@ -129,7 +129,7 @@
   border-radius: 95px;
   border: none;
 }
-.selected-format {
+.format-select-page .selected-format {
   transform: scale(1.05);
   border: 1px solid #4d4d4d;
   flex-shrink: 0;

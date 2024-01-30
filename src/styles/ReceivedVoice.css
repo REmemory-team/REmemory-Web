@@ -1,6 +1,6 @@
 .received-voice-page {
-  width: 393px;
-  height: 852px;
+  width: 24.5625rem;
+  height: 86.875rem;
   background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
     linear-gradient(
       180deg,
@@ -12,7 +12,25 @@
   align-items: center;
   flex-shrink: 0;
 }
-.voice-contents-box {
+.received-voice-page .top-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 25px;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+.received-voice-page .back-btn {
+  width: 35px;
+  height: 35px;
+}
+.received-voice-page .home-btn {
+  width: 25.833px;
+  height: 23.25px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0);
+}
+.received-voice-page .voice-contents-box {
   width: 300px;
   height: 450px;
   flex-shrink: 0;
@@ -20,27 +38,27 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
 }
-.voice-contents {
+.received-voice-page .voice-contents {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 60px;
   margin-bottom: 95px;
 }
-.record-image {
+.received-voice-page .record-image {
   margin-bottom: 20px;
 }
-.record-bar {
+.received-voice-page .record-bar {
   display: flex;
 }
-.play-btn {
+.received-voice-page .play-btn {
   margin-right: 12px;
 }
-.bar {
+.received-voice-page .bar {
   position: relative;
   padding: 2px 0px;
 }
-.base-bar {
+.received-voice-page .base-bar {
   width: 168px;
   height: 25px;
   flex-shrink: 0;
@@ -48,7 +66,7 @@
   background: #d4c0ff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.main-bar {
+.received-voice-page .main-bar {
   width: 99px;
   height: 25px;
   flex-shrink: 0;

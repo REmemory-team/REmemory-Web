@@ -7,10 +7,10 @@
   padding: 5px 25px;
   margin-bottom: 29px;
 }
-.rollingpaper-contents:last-child {
+.rollingpaper-contents .rollingpaper-contents:last-child {
   margin-bottom: 70px;
 }
-.rolling-sender {
+.rollingpaper-contents .rolling-sender {
   color: #000;
   font-family: Pretendard;
   font-size: 16px;
@@ -19,7 +19,7 @@
   line-height: 13px; /* 81.25% */
   letter-spacing: 0.066px;
 }
-.rolling-format {
+.rollingpaper-contents .rolling-format {
   color: #000;
   text-align: center;
   font-family: Pretendard;

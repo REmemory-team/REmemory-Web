@@ -1,6 +1,6 @@
 .confirm-setting-page {
-  width: 393px;
-  height: 852px;
+  width: 24.5625rem;
+  height: 53.25rem;
   background: #aa9acc;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
   flex-shrink: 0;
   position: relative;
 }
-.confirm-message {
+.confirm-setting-page .confirm-message {
   color: #fff;
   text-align: center;
   font-family: Pretendard;
@@ -21,7 +21,7 @@
   margin-bottom: 50px;
   flex-shrink: 0;
 }
-.blur-container {
+.confirm-setting-page .blur-container {
   width: 327px;
   height: 421px;
   border-radius: 155px;
@@ -36,7 +36,7 @@
   top: 170px;
   flex-shrink: 0;
 }
-.setting-info-container {
+.confirm-setting-page .setting-info-container {
   width: 327px;
   height: 421px;
   flex-shrink: 0;
@@ -47,7 +47,7 @@
   align-items: center;
   position: relative;
 }
-.capsule-preview {
+.confirm-setting-page .capsule-preview {
   color: #1c1c1c;
   font-family: Pretendard;
   font-size: 14px;
@@ -60,7 +60,7 @@
   margin-top: 70px;
   flex-shrink: 0;
 }
-.capsuleName {
+.confirm-setting-page .capsuleName {
   color: #1c1c1c;
   font-family: Pretendard;
   font-size: 20px;
@@ -71,33 +71,33 @@
   margin-bottom: 50px;
   flex-shrink: 0;
 }
-.info-box {
+.confirm-setting-page .info-box {
   display: flex;
   align-items: center;
   margin-bottom: 35px;
   flex-shrink: 0;
 }
-.info-icon {
+.confirm-setting-page .info-icon {
   margin-right: 18px;
   flex-shrink: 0;
 }
-.time-icon {
+.confirm-setting-page .time-icon {
   width: 20px;
   height: 22.759px;
   flex-shrink: 0;
 }
-.purpose-icon {
+.confirm-setting-page .purpose-icon {
   width: 22px;
   height: 16px;
   flex-shrink: 0;
 }
-.theme-icon {
+.confirm-setting-page .theme-icon {
   width: 20.073px;
   height: 19.276px;
   flex-shrink: 0;
   fill: #1c1c1c;
 }
-.info-content {
+.confirm-setting-page .info-content {
   color: #1c1c1c;
   text-align: center;
   font-family: Pretendard;
@@ -108,7 +108,7 @@
   letter-spacing: 0.066px;
   flex-shrink: 0;
 }
-.setting-confirm-btn {
+.confirm-setting-page .setting-confirm-btn {
   width: 198px;
   height: 40px;
   flex-shrink: 0;
