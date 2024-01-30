@@ -60,8 +60,8 @@ function App() {
 
         <Route path="/enterURL" element={<EnterURL />}></Route>
       
-        <Route path = "/" element={<OpenCapsule/>}/>
-        <Route path = "/write" element={<Write/>}/>
+        <Route path = "/capsule/verify" element={<OpenCapsule/>}/>
+        <Route path = "/capsule/write/text" element={<Write/>}/>
 
         <Route path="/home" element={<Home />} />
         <Route path="/nickname" element={<Nickname />} />
