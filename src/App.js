@@ -29,6 +29,7 @@ function App() {
     <div className="App">
       {/* <Router> */}
       <Routes>
+        <Route path="/" element={<Login />}></Route>
         <Route
           path="/capsule/input-number"
           element={<CheckCapsuleByNumber />}
