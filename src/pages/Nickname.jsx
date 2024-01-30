@@ -42,7 +42,7 @@ export default function Nickname() {
       .catch(error => {
         console.log(error);
       });*/
-    navigate('/home',{state: {userNickname}});
+    navigate('/login/kakao/home',{state: {userNickname}});
   };
 
   return (
