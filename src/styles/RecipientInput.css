@@ -1,13 +1,13 @@
 .recipient-input-page {
-  width: 393px;
-  height: 852px;
+  width: 24.5625rem;
+  height: 53.25rem;
   background: linear-gradient(0deg, #aa9acc 0%, #aa9acc 100%), #fff;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.recipient-input-message {
+.recipient-input-page .recipient-input-message {
   color: #000;
   text-align: center;
   font-family: Pretendard;
@@ -20,7 +20,7 @@
   margin-top: 160px;
   margin-bottom: 75px;
 }
-.recipient-input-field {
+.recipient-input-page .recipient-input-field {
   width: 300px;
   height: 60px;
   flex-shrink: 0;
@@ -32,7 +32,7 @@
   align-items: center;
   margin-bottom: 60px;
 }
-.prefix-to {
+.recipient-input-page .prefix-to {
   color: #000;
   text-align: center;
   font-family: Pretendard;
@@ -44,7 +44,7 @@
   flex-shrink: 0;
   margin-right: 10px;
 }
-.recipient {
+.recipient-input-page .recipient {
   color: #000;
   text-align: center;
   font-family: Pretendard;
@@ -59,10 +59,10 @@
   border-bottom: solid #000 2px;
   background: none;
 }
-.recipient:focus {
+.recipient-input-page .recipient:focus {
   outline: none;
 }
-.recipient-page-done-btn {
+.recipient-input-page .recipient-page-done-btn {
   width: 300px;
   height: 50px;
   flex-shrink: 0;

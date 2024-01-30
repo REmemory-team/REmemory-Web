@@ -1,6 +1,6 @@
 .rollingpaper-open-page {
-  width: 393px;
-  min-height: 852px;
+  width: 24.5625rem;
+  height: 86.875rem;
   height: auto;
   background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
     linear-gradient(
@@ -12,7 +12,7 @@
   flex-direction: column;
   align-items: center;
 }
-.top-menu {
+.rollingpaper-open-page .top-menu {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -20,17 +20,17 @@
   margin-top: 70px;
   margin-bottom: 20px;
 }
-.back-btn {
+.rollingpaper-open-page .back-btn {
   width: 35px;
   height: 35px;
 }
-.home-btn {
+.rollingpaper-open-page .home-btn {
   width: 25.833px;
   height: 23.25px;
   stroke-width: 1px;
   stroke: rgba(0, 0, 0, 0);
 }
-.rolling-capsule-name {
+.rollingpaper-open-page .rolling-capsule-name {
   color: #fff;
   text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
   font-family: Pretendard;

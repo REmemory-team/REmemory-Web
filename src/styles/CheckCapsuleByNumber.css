@@ -1,6 +1,6 @@
 .check-capsule-page {
-  width: 393px;
-  height: 852px;
+  min-height: 100vh;
+  height: 100%;
   background: linear-gradient(180deg, rgba(96, 87, 115, 0) 1.41%, #aa9acc 59.9%),
     #fff;
   display: flex;
@@ -8,20 +8,20 @@
   align-items: center;
   flex-shrink: 0;
 }
-.check-capsule-message {
+.check-capsule-page .check-capsule-message {
   color: #000;
   text-align: center;
   font-family: Pretendard;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 13px; /* 65% */
-  letter-spacing: 0.066px;
+  line-height: 0.8125rem; /* 65% */
+  letter-spacing: 0.00413rem;
   flex-shrink: 0;
   margin-top: 175px;
   margin-bottom: 75px;
 }
-.number-input-field {
+.check-capsule-page .number-input-field {
   width: 300px;
   height: 83px;
   text-align: center;
@@ -41,7 +41,7 @@
   caret-color: #606060;
   margin-bottom: 10px;
 }
-.number-input-field::placeholder {
+.check-capsule-page .number-input-field::placeholder {
   color: #9a9a9a;
   text-align: center;
   font-family: Pretendard;
@@ -51,10 +51,10 @@
   line-height: 13px; /* 72.222% */
   letter-spacing: 0.066px;
 }
-.number-input-field:focus {
+.check-capsule-page .number-input-field:focus {
   outline: none;
 }
-.password-input-field {
+.check-capsule-page .password-input-field {
   width: 300px;
   height: 83px;
   text-align: center;
@@ -74,10 +74,10 @@
   caret-color: #606060;
   margin-bottom: 40px;
 }
-.password-input-field:focus {
+.check-capsule-page .password-input-field:focus {
   outline: none;
 }
-.password-input-field::placeholder {
+.check-capsule-page .password-input-field::placeholder {
   color: #9a9a9a;
   text-align: center;
   font-family: Pretendard;
@@ -87,7 +87,7 @@
   line-height: 13px; /* 72.222% */
   letter-spacing: 0.066px;
 }
-.capsule-check-btn {
+.check-capsule-page .capsule-check-btn {
   width: 300px;
   height: 50px;
   flex-shrink: 0;
