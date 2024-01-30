@@ -4,6 +4,6 @@
   box-sizing: border-box;
 }
 .App {
-  display: flex;
-  justify-content: center;
+  width: 24.5625rem;
+  height: 100vh;
 }
