@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 90px;
+  padding-top: 90px;
   margin-bottom: 70px;
 }
 .format-select-page .line1,

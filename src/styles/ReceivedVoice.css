@@ -1,6 +1,6 @@
 .received-voice-page {
   width: 24.5625rem;
-  height: 86.875rem;
+  height: 53.25rem;
   background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
     linear-gradient(
       180deg,
@@ -74,4 +74,20 @@
   background: #beace6;
   position: absolute;
   top: 2px;
+}
+.received-voice-page .received-recipient,
+.received-voice-page .received-sender {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 13px; /* 72.222% */
+  letter-spacing: 0.066px;
+  padding: 3px 20px;
+  flex-shrink: 0;
+}
+.received-voice-page .received-sender {
+  display: flex;
+  justify-content: end;
 }
