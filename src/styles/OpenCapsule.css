@@ -3,17 +3,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    background: linear-gradient(180deg, rgba(96, 87, 115, 0.00) 0%, #AA9ACC 60.42%), #FFF;
+    min-height: 100vh;
 }
+/*menu*/
 .OpenCapsule .image_menu{
     position: absolute;
     cursor: pointer;
-    width: 20px;
-    height: 16px;
-    /* top: 74px; */
-    top: 34px;
-    left: 345px;
-    /* padding: 0px, 0px, 0px, 0px; */
-    /* border: 2.5px; */
+    top: 2rem;
+    right: 2rem;
+    width: 1.25rem;
+    height: 1rem;
+    flex-shrink: 0;
 }
 .OpenCapsule .menu{
     position: absolute;
@@ -24,66 +26,84 @@
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
-.OpenCapsule .img_isOpened_true{
+/*image - capsule*/
+.OpenCapsule .image_section{
     position: absolute;
+    width: 100%;
+    height: 40%;
+    top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.OpenCapsule .img_isOpened_true{
+    /* position: absolute;
     width: 338px;
     height: 218px;
     top: 245px;
-    left: 22px;
+    left: 22px; */
+    width: 21.125rem;
+    height: 13.625rem;
+    flex-shrink: 0;
 }
 .OpenCapsule .img_isOpened_false{
+    width: 15rem;
+    height: 16.05rem;
+    flex-shrink: 0;
     position: absolute;
-    /* width: 268.16px;
-    height: 235.14px; */
-    top: 225px;
-    left: 64px;
 }
-.OpenCapsule img.clock{
+/*texts*/
+.OpenCapsule .text_section{
     position: absolute;
-    width: 29px;
-    height: 33px;
-    top: 574px;
-    left: 182px;
-    border: 2px;
+    width: 100%;
+    height: 40%;
+    top: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+}
+.OpenCapsule img.clock{ 
+    width: 1.8125rem;
+    height: 2.0625rem;
+    flex-shrink: 0;
 }
 .OpenCapsule .maintext{
-    position: absolute;
     cursor: default;
-    color: #FFFFFF;
-    font-family: "Pretendard";
-    font-size: 40px;
-    font-weight: 700;
-    /* line-height: 13px; */
-    line-height: 2;
-    letter-spacing: 0.06599999964237213px;
-    text-align: center;
-    width: 350px;
-    height: 96px;
-    top: 607px;
-    left: 22px;
-    text-align: center;
-}
-.OpenCapsule .button_wrapper{
-    position: absolute;
-    text-align: center; 
-    width: 350px;
-    height: 96px;
-    top: 662px;
-    left: 21px;
     display: flex;
+    width: 21.875rem;
+    height: 6rem;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
+    font-family: 'Pretendard';
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0.8125rem; /* 32.5% */
+    letter-spacing: 0.00413rem;
 }
-.OpenCapsule .button_wrapper button{
-    font-family: "Pretendard";
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: 0.06599999964237213px;
-    line-height: 13px;
+.OpenCapsule .text_section button{
     background-color: transparent;
     outline: none;
     border: none;
-    color: #ffffff;
+    display: flex;
+    /* width: 21.875rem; */
+    /* height: 6rem; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Pretendard';
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 0.8125rem; /* 81.25% */
+    letter-spacing: 0.00413rem;
 }
 .OpenCapsule .btn_isOpened_true{
     cursor: pointer;
@@ -93,47 +113,48 @@
     display: none;
 }
 .OpenCapsule .ellipses_false .circle{
-    position: absolute;
-    width: 297px;
-    height: 297px;
-    top: 204px;
-    left: 48px;
-    border: 1px;
+    width: 18.5625rem;
+    height: 18.5625rem;
+    flex-shrink: 0;
 }
 .OpenCapsule .ellipse{
     position: absolute;
-    width: 37px;
-    height: 37px;
+    width: 2.3125rem;
+    height: 2.3125rem;
+    flex-shrink: 0;
 }
 .OpenCapsule .ellipse.type1{
-    top: 281px;
-    left: 97px;
+    top: 5.75rem;
+    left: 6.5rem;
 }
 .OpenCapsule .ellipse.type2{
-    top: 215px;
-    left: 209px;
+    top: 1.5rem;
+    left: 13.3rem;    
 }
 .OpenCapsule .ellipse.type3{
-    width: 58px;
-    height: 58px;
-    top: 223px;
-    left: 221px;
+    top: 2rem;
+    left: 14rem;
+    
+    width: 3.625rem;
+    height: 3.625rem;
 }
-.OpenCapsule .ellipses_false .ellipse{
-    width: 41px;
-    height: 41px;
+.OpenCapsule .ellipses_false .ellipse{    
+    width: 2.5625rem;
+    height: 2.5625rem;
+    flex-shrink: 0;
 }
 .OpenCapsule .ellipses_false .ellipse.type1{
-    top: 426px;
-    left: 62px;
+    top: 14.5rem;
+    left: 3.7rem;
 }
 .OpenCapsule .ellipses_false .ellipse.type2{
-    top: 239px;
-    left: 291px;
+    top: 3rem;
+    left: 18.2rem;
 }
 .OpenCapsule .ellipses_false .ellipse.type3{
-    width: 58px;
-    height: 58px;
-    top: 210px;
-    left: 262px;
+    top: 1.2rem;
+    left: 16.5rem;
+
+    width: 3.625rem;
+    height: 3.625rem;
 }
