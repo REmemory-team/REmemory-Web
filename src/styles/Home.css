@@ -1,13 +1,14 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-*{
+.home{
     font-family: Pretendard;
-    font-size: 18px;
+    /* font-size: 18px; */
+    font-size: 1.125rem;
     color: #000;
 }
-.container{
-    width:393px;
-    height:852px;
+.home .container{
+    width: 24.5625rem;
+    height: 53.25rem;
     margin:0 auto;
     display: flex;
     flex-direction: column;
@@ -16,61 +17,67 @@
     position: relative;
     overflow: hidden;
 }
-.image_box{
-    width: 352px;
-    height: 356px;
-    margin-top: 69px;
+.home .image_box{
+    width: 22rem;
+    height: 32rem;
+    /* margin-top: 0rem; */
+    /* background-color: pink; */
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
-.capsule_image{
-    width: 268.165px;
-    height: 235.145px;
+.home .capsule_image{
+    width: 15rem;
+    height: 15rem;
+    /* width: 268.165px;
+    height: 235.145px; */
     background: url('../assets/main_capsule.png') center no-repeat;
 }
 
-.image_box span{
-    width: 90px;
-    height: 104px;
+
+.home .image_box span{
+    width: 5.625rem;
+    height: 6.5rem;
+    flex-shrink: 0;
     position: absolute;
-    top: 134px;
-    left: 137px;
+    top: 13rem;
+    left: 8.56rem;
     color: #FFF;
     display: flex;
     align-items: center;
     justify-content: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 80px;
+    font-size: 5rem;
     font-weight: 700;
-    line-height: 13px; /* 16.25% */
-    letter-spacing: 0.066px;
+    line-height: 0.8125rem; /* 16.25% */
+    letter-spacing: 0.00413rem;
 }
-.Home button{
-    width: 303px;
-    height: 77px;
-    margin: 11px 0px;
+.home button{
+    width: 18.9375rem;
+    height: 5.1875rem;
+    /* margin: 0rem 0rem; */
     border: none;
     background-color: #A091BF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     color: #FFF;
     text-align: center;
-    font-size: 23px;
+    font-size: 1.4375rem;
     font-weight: 700;
-    line-height: 13px; /* 56.522% */
-    letter-spacing: 0.066px;
+    line-height: 0.8125rem; /* 56.522% */
+    letter-spacing: 0.00413rem;
     border-radius: 50px;
 }
-.button_making{
-    margin-top: 47.39px;
+.home .button_making{
+    
+    /* margin-top: 0rem; */
 }
-.button_checking{
-    margin-top: 24px;
+.home .button_checking{
+    margin-top: 2.19rem;
 }
-.capsule_popup{
-    width:100%;
-    height:487px;
+.home .capsule_popup{
+    width: 24.5625rem;
+    height: 29.4375rem;
     padding-top: 10px;
     display: flex;
     flex-direction: column;
@@ -78,51 +85,51 @@
     border-radius: 28px;
     background: linear-gradient(180deg, #DBE3FD 0%, #C3B8D9 100%);
     position:absolute;
-    top:393px;
+    top:24.56rem;
     left:0px;
 }
-.popup_header{
+.home .popup_header{
     width:100%;
-    height: 50px;
+    height: 2.7rem;
     display: flex;
     align-items: center;
     font-weight: 600;
     position: relative;
 }
-.popup_header img:first-child{
+.home .popup_header img:first-child{
     position:absolute;
-    left:26px;
+    left:1.13rem;
 }
-.popup_header span{
+.home .popup_header span{
     position: absolute;
-    left:51px;
+    left:3.19rem;
 }
-.popup_header img:nth-child(3){
+.home .popup_header img:nth-child(3){
     position:absolute;
-    right:28px;
+    right:2.5rem;
 }
-.content_box{
+.home .content_box{
     width: 100%;
-    height: 400px;
+    height: 25rem;
     overflow-y: auto;
     font-weight: 500;
 }
-.capsule_list{
-    width:300px;
-    height:60px;
-    margin-top: 23.6px;
+.home .capsule_list{
+    width:20rem;
+    height:3rem;
+    margin-top: 1.5rem;
     display: flex;
     align-items: center;
 }
-.capsule_list img{
-    margin-left: 40px;
+.home .capsule_list img{
+    margin-left: 2.5rem;
 }
-.capsule_list span{
-    margin-left: 35px;
+.home .capsule_list span{
+    margin-left: 2rem;
 }
-.list_image{
-    width:70.5px;
-    height:76.5px;
+.home .list_image{
+    width:3rem;
+    height:3rem;
     display: flex;
     align-items: center;
     justify-content: center;
