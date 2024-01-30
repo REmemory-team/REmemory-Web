@@ -15,6 +15,10 @@ import WritingFormat from "./pages/WritingFormat";
 import OpenCapsule from "./pages/OpenCapsule";
 import Write from "./pages/Write";
 
+import Home from "./pages/Home";
+import Nickname from "./pages/Nickname";
+import Recording from "./pages/Recording";
+
 function App() {
   return (
     // 웹 처음 입장 시
@@ -58,6 +62,11 @@ function App() {
       
         <Route path = "/" element={<OpenCapsule/>}/>
         <Route path = "/write" element={<Write/>}/>
+
+        <Route path="/home" element={<Home />} />
+        <Route path="/nickname" element={<Nickname />} />
+        <Route path="/capsule/recording" element={<Recording />} />
+
       </Routes>
     </div>
   );
