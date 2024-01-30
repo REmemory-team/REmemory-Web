@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+margin: 0px;
+width: 100%;
+background-color: #f6f6f6;
+display: flex;
+justify-content: center;
+
+}
+body {
+font-family: 'Pretendard';
+height: 100%;
+}
+#root {
+  margin: 0 auto;
+  max-width: 393px;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background-color: white;
+  box-shadow: rgba(100, 100, 100, 0.2) 0px 7px 29px 0px;
+  background: linear-gradient(180deg, rgba(96, 87, 115, 0) 0%, #AA9ACC 60.42%),
+  linear-gradient(0deg, #FFFFFF, #FFFFFF);
+}

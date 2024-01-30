@@ -34,7 +34,7 @@
     font-size: 18px;
 }
 
-.write_center{
+.Write .write_center{
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -45,7 +45,7 @@
     box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.2);
     flex: 1;
 }
-.write_center .to{
+.Write .write_center .to{
     display: flex;
     align-items: baseline;
     font-size: 18px;
@@ -53,10 +53,10 @@
     font-family: 'Pretendard';
     font-weight: bold;
 }
-.write_center .to p{
+.Write .write_center .to p{
     margin: 0;
 }
-.write_center .to input{
+.Write .write_center .to input{
     margin: 0 0.5rem;
     max-width: 80%;
     height: 1rem;
@@ -68,7 +68,7 @@
     font-weight: bold; /*600*/
     font-size: 16px;
 }
-.write_center .text{
+.Write .write_center .text{
     display: flex;
     flex-direction: column;
     min-height: 20rem;
@@ -76,13 +76,13 @@
     align-items: center;
     flex: 1;
 }
-.write_center .selected_image{
+.Write .write_center .selected_image{
     cursor: pointer;
     margin-bottom: 1.5rem;
     max-width: 100%;
     max-height: 100%;
 }
-.write_center textarea{
+.Write .write_center textarea{
     outline: none;
     border: none;
     width: 100%;
@@ -96,14 +96,14 @@
     min-height: 5rem;
     overflow-y: hidden;
 }
-.write_center textarea.center{
+.Write .write_center textarea.center{
     text-align: center;
 }
-.write_center textarea.right{
+.Write .write_center textarea.right{
     text-align: end;
 }
 
-.write_center .buttons img{
+.Write .write_center .buttons img{
     cursor: pointer;
     width: 24px;
     margin-right: 0.5rem;
@@ -116,7 +116,7 @@
     margin: 1rem 3rem;
 }
 
-.write_bottom button{
+.Write .write_bottom button{
     cursor: pointer;
     outline: none;
     border: none;
@@ -130,7 +130,7 @@
     margin-bottom: 5rem;
     box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.2);
 }
-.write_bottom button:first-child{
+.Write .write_bottom button:first-child{
     background-color: transparent;
     font-family: 'Pretendard';
     text-decoration: underline;
