@@ -12,7 +12,7 @@
   overflow: hidden;
 }
 
-.text-1 {
+.CapsuleCodeAssignment .text-1 {
   position: absolute;
   width: 369px;
   height: 106px;
@@ -28,7 +28,7 @@
   vertical-align: middle;
 }
 
-.box1-1 {
+.CapsuleCodeAssignment .box1-1 {
   position: absolute;
   width: 300px;
   height: 110px;
@@ -41,7 +41,7 @@
   text-align: center;
 }
 
-.copy {
+.CapsuleCodeAssignment .copy {
   /* position: absolute;
   top: 162px;
   left: 40px;
@@ -59,7 +59,7 @@
   flex-shrink: 0;
 }
 
-.CapsuleNumbertext1 {
+.CapsuleCodeAssignment .CapsuleNumbertext1 {
   color: #000;
   text-align: center;
   font-family: Pretendard;
@@ -70,7 +70,7 @@
   letter-spacing: 0.066px;
 }
 
-.CapsuleNumbertext2 {
+.CapsuleCodeAssignment .CapsuleNumbertext2 {
   color: #000;
   font-family: Pretendard;
   font-size: 22px;
@@ -81,7 +81,7 @@
   cursor: pointer;
 }
 
-.Copy {
+.CapsuleCodeAssignment .Copy {
   position: absolute;
   width: 15px;
   height: 15px;
@@ -90,7 +90,7 @@
   padding: 0 1.61px 0 1.61px;
 }
 
-.CopyText {
+.CapsuleCodeAssignment .CopyText {
   position: absolute;
   width: 70px;
   height: 32px;
@@ -106,7 +106,7 @@
   text-decoration: underline;
 }
 
-.box1-2 {
+.CapsuleCodeAssignment .box1-2 {
   position: absolute;
   width: 300px;
   height: 110px;
@@ -117,7 +117,7 @@
   border-radius: 60px;
 }
 
-.password-input {
+.CapsuleCodeAssignment .password-input {
   position: absolute;
   width: 307px;
   height: 106px;
@@ -129,7 +129,7 @@
   display: flex;
 }
 
-input {
+.CapsuleCodeAssignment input {
   display: flex;
   background: none;
   border: none;
@@ -146,11 +146,11 @@ input {
   align-items: center;
 }
 
-.password-input:focus {
+.CapsuleCodeAssignment .password-input:focus {
   outline: none;
 }
 
-.passwordtext1 {
+.CapsuleCodeAssignment .passwordtext1 {
   display: flex;
   height: 106px;
   flex-direction: column;
@@ -167,7 +167,7 @@ input {
   letter-spacing: 0.066px;
 }
 
-.reading-box-1 {
+.CapsuleCodeAssignment .reading-box-1 {
   position: absolute;
   width: 343px;
   height: 225px;
@@ -177,7 +177,7 @@ input {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.reading-text1 {
+.CapsuleCodeAssignment .reading-text1 {
   position: absolute;
   width: 178px;
   height: 32px;
@@ -193,7 +193,7 @@ input {
   padding: 8px;
 }
 
-.reading-text2 {
+.CapsuleCodeAssignment .reading-text2 {
   position: absolute;
   width: 307px;
   height: 103px;
@@ -207,7 +207,7 @@ input {
   color: rgba(94, 78, 128, 1);
 }
 
-ul {
+.CapsuleCodeAssignment ul {
   position: absolute;
   top: 0;
   left: 0;
@@ -216,7 +216,7 @@ ul {
   list-style-position: inside;
 }
 
-.checked-1 {
+.CapsuleCodeAssignment .checked-1 {
   position: absolute;
   width: 300px;
   height: 50px;

@@ -15,7 +15,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Baloo+Bhaijaan+2:wght@600&family=Merienda:wght@500&family=Nanum+Pen+Script&display=swap");
 
-.re-memory {
+.login-page .re-memory {
   position: absolute;
   top: 282px;
   left: 51px;
@@ -35,7 +35,7 @@
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.twinkle {
+.login-page .twinkle {
   position: absolute;
   width: 270px;
   height: 257px;
@@ -43,7 +43,7 @@
   left: 62px;
 }
 
-.circle {
+.login-page .circle {
   position: absolute;
   width: 297px;
   height: 297px;
@@ -51,7 +51,7 @@
   left: 48px;
 }
 
-.arrow {
+.login-page .arrow {
   position: absolute;
   width: 26.95px;
   height: 14.81px;
@@ -59,7 +59,7 @@
   left: 243.59px;
 }
 
-.button {
+.login-page .button {
   position: absolute;
   width: 256px;
   height: 63px;
@@ -74,7 +74,7 @@
   justify-content: center;
 }
 
-.buttonText {
+.login-page .buttonText {
   width: 213px;
   height: 27px;
   font-family: "Pretendard";
@@ -89,7 +89,7 @@
   justify-content: center;
 }
 
-.kakaoLoginButton {
+.login-page .kakaoLoginButton {
   position: absolute;
   width: 256px;
   height: 63px;
@@ -103,7 +103,7 @@
   justify-content: center;
 }
 
-.kakaoicon {
+.login-page .kakaoicon {
   position: absolute;
   width: 30px;
   height: 30.88px;
@@ -111,7 +111,7 @@
   left: 99px;
 }
 
-.non-member {
+.login-page .non-member {
   position: absolute;
   width: 213px;
   height: 27px;

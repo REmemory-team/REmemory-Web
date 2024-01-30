@@ -9,7 +9,7 @@
   justify-content: center;
 }
 
-.text-2 {
+.URLnCodeAssignment .text-2 {
   position: absolute;
   width: 369px;
   height: 106px;
@@ -23,7 +23,7 @@
   text-align: center;
 }
 
-.box2-1 {
+.URLnCodeAssignment .box2-1 {
   position: absolute;
   width: 300px;
   height: 100px;
@@ -38,7 +38,7 @@
   text-align: center;
 }
 
-.copy2 {
+.URLnCodeAssignment .copy2 {
   display: flex;
   width: 307px;
   height: 93px;
@@ -47,7 +47,7 @@
   align-items: center;
 }
 
-.CapsuleNumbertext2-1 {
+.URLnCodeAssignment .CapsuleNumbertext2-1 {
   color: #000;
   text-align: center;
   font-family: Pretendard;
@@ -58,7 +58,7 @@
   letter-spacing: 0.066px;
 }
 
-.CapsuleNumbertext2-2 {
+.URLnCodeAssignment .CapsuleNumbertext2-2 {
   color: #000;
   font-family: Pretendard;
   font-size: 22px;
@@ -69,7 +69,7 @@
   cursor: pointer;
 }
 
-.Copy2 {
+.URLnCodeAssignment .Copy2 {
   position: absolute;
   width: 15px;
   height: 15px;
@@ -77,7 +77,7 @@
   left: 272px;
 }
 
-.CopyText2 {
+.URLnCodeAssignment .CopyText2 {
   position: absolute;
   width: 70px;
   height: 32px;
@@ -93,7 +93,7 @@
   text-decoration: underline;
 }
 
-.box2-2 {
+.URLnCodeAssignment .box2-2 {
   position: absolute;
   width: 300px;
   height: 110px;
@@ -104,7 +104,7 @@
   border-radius: 60px;
 }
 
-.password-input2 {
+.URLnCodeAssignment .password-input2 {
   display: flex;
   width: 207px;
   height: 106px;
@@ -116,7 +116,7 @@
   display: flex;
 }
 
-.input input {
+.URLnCodeAssignment .input input {
   display: flex;
   background: none;
   border: none;
@@ -131,15 +131,15 @@
   justify-content: center;
   align-items: center;
 }
-.input::placeholder {
+.URLnCodeAssignment .input::placeholder {
   font-size: 5px;
 }
 
-.password-input:focus {
+.URLnCodeAssignment .password-input:focus {
   outline: none;
 }
 
-.passwordtext2 {
+.URLnCodeAssignment .passwordtext2 {
   display: flex;
   height: 106px;
   justify-content: center;
@@ -155,7 +155,7 @@
   letter-spacing: 0.066px;
 }
 
-.box2-3 {
+.URLnCodeAssignment .box2-3 {
   display: flex;
   position: absolute;
   width: 300px;
@@ -169,7 +169,7 @@
   border-radius: 60px;
 }
 
-.URLtext {
+.URLnCodeAssignment .URLtext {
   display: flex;
   width: 307px;
   height: 106px;
@@ -185,7 +185,7 @@
   letter-spacing: 0.066px;
 }
 
-.URLtext2 {
+.URLnCodeAssignment .URLtext2 {
   position: absolute;
   cursor: pointer;
   width: 166px;
@@ -199,7 +199,7 @@
   text-align: center;
 }
 
-.reading-box-2 {
+.URLnCodeAssignment .reading-box-2 {
   position: absolute;
   width: 340px;
   height: 335px;
@@ -209,7 +209,7 @@
   background: rgba(255, 255, 255, 0.8);
 }
 
-.reading-text2-1 {
+.URLnCodeAssignment .reading-text2-1 {
   position: absolute;
   width: 239px;
   height: 32px;
@@ -224,7 +224,7 @@
   color: rgba(94, 78, 128, 1);
 }
 
-.reading-text2-2 {
+.URLnCodeAssignment .reading-text2-2 {
   position: absolute;
   width: 307px;
   height: 103px;
@@ -239,7 +239,7 @@
   color: rgba(94, 78, 128, 1);
 }
 
-.reading-text2-3 {
+.URLnCodeAssignment .reading-text2-3 {
   position: absolute;
   width: 130px;
   height: 32px;
@@ -253,7 +253,7 @@
   text-align: left;
   color: rgba(94, 78, 128, 1);
 }
-.reading-text2-4 {
+.URLnCodeAssignment .reading-text2-4 {
   position: absolute;
   width: 307px;
   height: 103px;
@@ -268,7 +268,7 @@
   color: rgba(94, 78, 128, 1);
 }
 
-.checked-2 {
+.URLnCodeAssignment .checked-2 {
   position: absolute;
   width: 300px;
   height: 50px;
