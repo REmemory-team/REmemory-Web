@@ -12,6 +12,9 @@ import RecipientInput from "./pages/RecipientInput";
 import RollingpaperOpen from "./pages/RollingpaperOpen";
 import WritingFormat from "./pages/WritingFormat";
 
+import OpenCapsule from "./pages/OpenCapsule";
+import Write from "./pages/Write";
+
 function App() {
   return (
     // 웹 처음 입장 시
@@ -52,6 +55,9 @@ function App() {
         <Route path="/capsule/open/voice" element={<ReceivedVoice />}></Route>
 
         <Route path="/enterURL" element={<EnterURL />}></Route>
+      
+        <Route path = "/" element={<OpenCapsule/>}/>
+        <Route path = "/write" element={<Write/>}/>
       </Routes>
     </div>
   );
