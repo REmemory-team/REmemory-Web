@@ -1,6 +1,10 @@
 import "./App.css";
 
-import { Route, Routes } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login.jsx";
+import CapsuleCodeAssignment from "./pages/CapsuleCodeAssignment.jsx";
+import URLnCodeAssignment from "./pages/URLnCodeAssignment.jsx";
 
 import CapsuleBasicSetting from "./pages/CapsuleBasicSetting";
 import CheckCapsuleByNumber from "./pages/CheckCapsuleByNumber";
@@ -30,6 +34,7 @@ function App() {
     // 캡슐 번호 부여 (용도1, 2)
     // 캡슐 번호 & URL 부여 (용도3)
     <div className="App">
+      {/* <Router> */}
       <Routes>
         <Route
           path="/capsule/input-number"
@@ -59,15 +64,19 @@ function App() {
         <Route path="/capsule/open/voice" element={<ReceivedVoice />}></Route>
 
         <Route path="/enterURL" element={<EnterURL />}></Route>
-      
-        <Route path = "/" element={<OpenCapsule/>}/>
-        <Route path = "/write" element={<Write/>}/>
+
+        <Route path="/" element={<OpenCapsule />} />
+        <Route path="/write" element={<Write />} />
 
         <Route path="/home" element={<Home />} />
         <Route path="/nickname" element={<Nickname />} />
         <Route path="/capsule/recording" element={<Recording />} />
 
+        <Route path="/" element={<Login />} />
+        <Route path="/CapsuleCode" element={<CapsuleCodeAssignment />} />
+        <Route path="/URLnCode" element={<URLnCodeAssignment />} />
       </Routes>
+      {/* </Router> */}
     </div>
   );
 }

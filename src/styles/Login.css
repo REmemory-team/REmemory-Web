@@ -1,0 +1,131 @@
+/* Login.css */
+
+.login-page {
+  margin: 0;
+  padding: 0;
+  height: 852px;
+  width: 393px;
+  background: linear-gradient(180deg, rgba(96, 87, 115, 0) 1.41%, #aa9acc 59.9%),
+    linear-gradient(0deg, #ffffff, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Baloo+Bhaijaan+2:wght@600&family=Merienda:wght@500&family=Nanum+Pen+Script&display=swap");
+
+.login-page .re-memory {
+  position: absolute;
+  top: 282px;
+  left: 51px;
+  width: 288px;
+  height: 116px;
+
+  font-family: "Baloo 2", sans-serif;
+
+  font-size: 48px;
+  line-height: 13;
+  letter-spacing: 0.08px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-page .twinkle {
+  position: absolute;
+  width: 270px;
+  height: 257px;
+  top: 203px;
+  left: 62px;
+}
+
+.login-page .circle {
+  position: absolute;
+  width: 297px;
+  height: 297px;
+  top: 197px;
+  left: 48px;
+}
+
+.login-page .arrow {
+  position: absolute;
+  width: 26.95px;
+  height: 14.81px;
+  top: 199.09px;
+  left: 243.59px;
+}
+
+.login-page .button {
+  position: absolute;
+  width: 256px;
+  height: 63px;
+  left: 69px;
+  top: 584px;
+  background: rgba(128, 116, 153, 1);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 60px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-page .buttonText {
+  width: 213px;
+  height: 27px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 13px;
+  letter-spacing: 0.066px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-page .kakaoLoginButton {
+  position: absolute;
+  width: 256px;
+  height: 63px;
+  left: 69px;
+  top: 672px;
+  background: url("../assets/kakaoButton.png") center center no-repeat;
+  border-radius: 60px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-page .kakaoicon {
+  position: absolute;
+  width: 30px;
+  height: 30.88px;
+  top: 690px;
+  left: 99px;
+}
+
+.login-page .non-member {
+  position: absolute;
+  width: 213px;
+  height: 27px;
+  left: 90px;
+  top: 751px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  align-items: center;
+  letter-spacing: 0.066px;
+  text-decoration-line: underline;
+
+  color: #ffffff;
+}

@@ -41,3 +41,24 @@
     -->
   </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>React App</title>
+    <script
+      src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.js"
+      integrity="sha384-9Fs/wd1UNwjbBTnEsUvebAW7kzBWEOjRAXJvbaV+w+5kG1WXNXOui+4QV1KcRixH"
+      crossorigin="anonymous"
+    >
+        Kakao.init('d84c4da88c90a67bb6654cc5b61c9bda');
+
+      // SDK 초기화 여부를 판단합니다.
+      console.log(Kakao.isInitialized());
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
