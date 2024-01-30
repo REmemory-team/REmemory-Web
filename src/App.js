@@ -56,6 +56,9 @@ function App() {
         <Route path="/capsule/verify" element={<OpenCapsule />} />
         <Route path="/capsule/write/text" element={<Write />} />
 
+        <Route path="/capsule/verify" element={<OpenCapsule />} />
+        <Route path="/capsule/write/text" element={<Write />} />
+
         <Route path="/login/kakao/home" element={<Home />} />
         <Route path="/login/kakao/nickname" element={<Nickname />} />
         <Route path="/capsule/write/voice" element={<Recording />} />
