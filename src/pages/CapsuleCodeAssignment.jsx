@@ -18,7 +18,7 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
   const generateCapsuleNumber = () => {
     const randomNum = Math.floor(Math.random() * 1000);
     const paddedRandomNum = randomNum.toString().padStart(4, "0");
-    const newCapsuleNumber = `${paddedRandomNum}|${nickname}`;
+    const newCapsuleNumber = `${paddedRandomNum} ${nickname}`;
     setCapsuleNumber(newCapsuleNumber);
     setCopied(false);
   };
@@ -43,28 +43,37 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
   return (
     <div className="CapsuleCodeAssignment">
       <div className="text-1">캡슐번호를 기억하세요!</div>
-      <div className="box1-1"></div>
-      <div className="copy">
-        캡슐번호 |
-        <CopyToClipboard text={capsuleNumber} onCopy={handleCopyClick}>
-          <span style={{ cursor: "pointer" }}>{capsuleNumber}</span>
-        </CopyToClipboard>
+      <div className="box1-1">
+        <div className="copy">
+          <span className="CapsuleNumbertext1">캡슐번호</span>
+          <CopyToClipboard text={capsuleNumber} onCopy={handleCopyClick}>
+            <span className="CapsuleNumbertext2">
+              {" "}
+              &nbsp;&nbsp;| &nbsp;{capsuleNumber}
+            </span>
+          </CopyToClipboard>
+        </div>
       </div>
+
       <div className="Copy">
         <img src={Copy} alt="복사하기" />
       </div>
       <div className="CopyText" onClick={() => handleCopyClick()}>
         복사
       </div>
-      <div className="box1-2"></div>
-      <div className="password-input">
-        <input
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-          placeholder="비밀번호 (숫자 6자)"
-        />
+      <div className="box1-2">
+        <div className="password-input">
+          {" "}
+          <span className="passwordtext1">비밀번호 &nbsp;</span>
+          <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+            placeholder="비밀번호 (숫자 6자)"
+          />
+        </div>
       </div>
+
       <div className="reading-box-1"></div>
       <div className="reading-text1">꼭 읽어보세요!</div>
       <div className="reading-text2">
