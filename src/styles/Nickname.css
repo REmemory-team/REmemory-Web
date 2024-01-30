@@ -1,42 +1,45 @@
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-*{
+.nickname_container {
     font-family: Pretendard;
-    font-size: 18px;
+    font-size: 1.25rem;
     color:#000;
 }
-.container{
-    width:393px;
-    height:852px;
+.nickname_container .container{
+    width: 24.5625rem;
+    height: 53.25rem;
     margin:0 auto;
     display:flex;
     flex-direction: column;
     align-items: center;
     background: linear-gradient(180deg, rgba(96, 87, 115, 0.00) 1.41%, #AA9ACC 59.9%), #FFF;
 }
-.label_box{
-    width: 369px;
-    height: 106px;
-    margin-top: 86px;
+.nickname_container .label_box{
+    width: 23.0625rem;
+    height: 6.625rem;
+    margin-top: 5.37rem;
     display:flex;
     align-items: center;
     justify-content: center;
 }
-.label_box label{
-    font-size: 20px;
+.nickname_container .label_box label{
+    text-align: center;
+    font-size: 1.25rem;
+    font-style: normal;
     font-weight: 500;
-    line-height: 13px;
-    letter-spacing: 0.066px;
+    line-height: 0.8125rem; /* 65% */
+    letter-spacing: 0.00413rem;
 }
-.nickname_box{
-    width:307px;
-    height:106px;
+.nickname_container .nickname_box{
     position: relative;
+    width: 19.1875rem;
+    height: 6.625rem;
 }
-#nickname_input{
-    width: 300px;
-    height: 83px;
-    margin-top: 12px;
+.nickname_container #nickname_input{
+    width: 18.75rem;
+    height: 5.1875rem;
+    flex-shrink: 0;
+    margin-top: 0.75rem;
     border: none; 
     border-radius: 50px;
     background-color: rgba(238, 242, 255, 0.70);
@@ -44,35 +47,39 @@
     outline: none; 
     text-align: center; 
 }
-#nickname_input::placeholder{
+.nickname_container #nickname_input::placeholder{
     /* text-align: center; */
     color: #9A9A9A;
     font-weight: 500;
-    line-height: 13px; /* 72.222% */
-    letter-spacing: 0.066px;
+    line-height: 0.8125rem; /* 72.222% */
+    letter-spacing: 0.00413rem;
 }
-.nickname_box span{
+.nickname_container .nickname_box span{
     color: #606060;
     text-align: center;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 500;
-    line-height: 13px; /* 108.333% */
-    letter-spacing: 0.066px;
+    line-height: 0.8125rem; /* 108.333% */
+    letter-spacing: 0.00413rem;
     position: absolute;
-    top:47px;
-    left:258px;
+    top:2.94rem;
+    left:16.12rem;
 }
-#nickname_submit{
-    width: 300px;
-    height: 50px;
-    margin-top: 63px;
+.nickname_container #nickname_submit{
+    width: 18.75rem;
+    height: 3.125rem;
+    flex-shrink: 0;
+    margin-top: 22.43rem;
     border:none;
     border-radius: 50px;
     background-color: rgba(193, 221, 255, 0.90);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-weight: 400;
-    line-height: 13px;
-    letter-spacing: 0.066px;
-    font-size:18px;
     color: #000;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.8125rem; /* 72.222% */
+    letter-spacing: 0.00413rem;
 }
