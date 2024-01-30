@@ -42,10 +42,11 @@ export default function Nickname() {
       .catch(error => {
         console.log(error);
       });*/
-    navigate('/home',{state: {userNickname}});
+    navigate('/login/kakao/home',{state: {userNickname}});
   };
 
   return (
+    <div className="nickname_container">
     <div className="container">
       <div className="label_box">
           <label htmlFor="nickname_input">사용할 닉네임을 입력해주세요!</label>
@@ -64,6 +65,7 @@ export default function Nickname() {
       </div>
 
       <button type="submit" id="nickname_submit" onClick={handleSubmit}>이걸로 할게요!</button>
+    </div>
     </div>
   )
 }

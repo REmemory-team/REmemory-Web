@@ -1,14 +1,14 @@
 .url-page {
-  width: 393px;
-  height: 852px;
+  width: 24.5625rem;
+  height: 86.875rem;
   background: #aa9acc;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
 }
-.url-recipient-message,
-.url-sender-message {
+.url-page .url-recipient-message,
+.url-page .url-sender-message {
   color: #000;
   text-align: center;
   font-family: Pretendard;
@@ -19,10 +19,10 @@
   letter-spacing: 0.066px;
   flex-shrink: 0;
 }
-.url-recipient-message {
+.url-page .url-recipient-message {
   margin-top: 105px;
 }
-.url-recipient {
+.url-page .url-recipient {
   width: 300px;
   height: 60px;
   flex-shrink: 0;
@@ -42,7 +42,7 @@
   align-items: center;
   margin-bottom: 35px;
 }
-.sender-input-field {
+.url-page .sender-input-field {
   width: 300px;
   height: 60px;
   flex-shrink: 0;
@@ -54,7 +54,7 @@
   align-items: center;
   margin-bottom: 60px;
 }
-.sender {
+.url-page .sender {
   width: 150px;
   border: none;
   text-align: center;
@@ -68,7 +68,7 @@
   margin-right: 20px;
   flex-shrink: 0;
 }
-.sender::placeholder {
+.url-page .sender::placeholder {
   color: #9a9a9a;
   text-align: center;
   font-family: Pretendard;
@@ -78,10 +78,10 @@
   line-height: 13px; /* 72.222% */
   letter-spacing: 0.066px;
 }
-.sender:focus {
+.url-page .sender:focus {
   outline: none;
 }
-.count-char-num {
+.url-page .count-char-num {
   color: #606060;
   text-align: center;
   font-family: Pretendard;
@@ -92,7 +92,7 @@
   letter-spacing: 0.066px;
   flex-shrink: 0;
 }
-.how-to-write {
+.url-page .how-to-write {
   width: 352px;
   height: 220px;
   flex-shrink: 0;
@@ -101,7 +101,7 @@
   padding: 15px 20px 15px 30px;
   margin-bottom: 100px;
 }
-.how-to-write-title {
+.url-page .how-to-write-title {
   color: #5e4e80;
   font-family: Pretendard;
   font-size: 20px;
@@ -112,7 +112,7 @@
   flex-shrink: 0;
   margin-bottom: 30px;
 }
-.how-to-write-content {
+.url-page .how-to-write-content {
   color: #5e4e80;
   font-family: Pretendard;
   font-size: 12px;
@@ -122,7 +122,7 @@
   letter-spacing: 0.066px;
   flex-shrink: 0;
 }
-.url-page-decision-btn {
+.url-page .url-page-decision-btn {
   width: 200px;
   height: 50px;
   flex-shrink: 0;

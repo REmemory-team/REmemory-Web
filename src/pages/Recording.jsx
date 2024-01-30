@@ -144,6 +144,7 @@ export default function Record() {
   };
 
   return (
+    <div className="recording">
     <div className="recording_page">
         
       {isLoggedIn && (
@@ -166,6 +167,7 @@ export default function Record() {
         <div className="capsule_pre_button">타임캡슐 미리보기</div>
         
         <div className="record_submit_button">다했어요!</div>
+    </div>
     </div>
   )
 }

@@ -1,7 +1,6 @@
 .received-text-page {
-  width: 393px;
-  min-height: 852px;
-  height: auto;
+  width: 24.5625rem;
+  height: 53.25rem;
   background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
     linear-gradient(
       180deg,
@@ -13,7 +12,25 @@
   align-items: center;
   flex-shrink: 0;
 }
-.text-contents-box {
+.received-text-page .top-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 25px;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+.received-text-page .back-btn {
+  width: 35px;
+  height: 35px;
+}
+.received-text-page .home-btn {
+  width: 25.833px;
+  height: 23.25px;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0);
+}
+.received-text-page .text-contents-box {
   width: 300px;
   height: auto;
   flex-shrink: 0;
@@ -22,7 +39,7 @@
   border-radius: 12px;
   margin-bottom: 50px;
 }
-.text-contents {
+.received-text-page .text-contents {
   width: 300px;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -36,8 +53,8 @@
   letter-spacing: 0.066px;
   flex-shrink: 0;
 }
-.received-recipient,
-.received-sender {
+.received-text-page .received-recipient,
+.received-text-page .received-sender {
   color: #000;
   font-family: Pretendard;
   font-size: 18px;
@@ -48,7 +65,7 @@
   padding: 3px 20px;
   flex-shrink: 0;
 }
-.received-sender {
+.received-text-page .received-sender {
   display: flex;
   justify-content: end;
 }
