@@ -47,7 +47,7 @@ export default function Home() {
   //만들기 버튼 누를시
   const handleSetting = () => {
     //타임캡슐 만들기로 라우팅
-    navigate('/capsuleSetting');
+    navigate('/capsule/settings');
   };
 
   //확인하기 버튼 누를시(팝업창) 
