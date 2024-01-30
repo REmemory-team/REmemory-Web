@@ -1,15 +1,8 @@
 import "../styles/Login.css";
 
-<<<<<<< HEAD
-import URLnCodeAssignment from "./URLnCodeAssignment";
-
-import twinkle from "../assets/twinkle.png";
-import circle from "../assets/circle.png";
-=======
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
->>>>>>> 960ea3c092bd1a9c71dc62f57755bd91a613ecdb
 import arrow from "../assets/arrow.png";
 import axios from "axios";
 import circle from "../assets/circle.png";

@@ -1,6 +1,6 @@
 /* CapsuleCodeAssignment.css */
 
-body {
+.CapsuleCodeAssignment {
   margin: 0;
   padding: 0;
   height: 852px;
@@ -12,7 +12,7 @@ body {
   overflow: hidden;
 }
 
-.text {
+.text-1 {
   position: absolute;
   width: 369px;
   height: 106px;
@@ -28,7 +28,7 @@ body {
   vertical-align: middle;
 }
 
-.box1 {
+.box1-1 {
   position: absolute;
   width: 300px;
   height: 110px;
@@ -76,7 +76,7 @@ body {
   text-decoration: underline;
 }
 
-.box2 {
+.box1-2 {
   position: absolute;
   width: 300px;
   height: 110px;
@@ -94,7 +94,7 @@ body {
   left: 39px;
 }
 
-.reading-box {
+.reading-box-1 {
   position: absolute;
   width: 343px;
   height: 225px;
@@ -143,7 +143,7 @@ ul {
   list-style-position: inside;
 }
 
-.checked {
+.checked-1 {
   position: absolute;
   width: 300px;
   height: 50px;

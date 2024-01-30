@@ -66,17 +66,17 @@ const URLnCodeAssignment = () => {
   };
 
   return (
-    <div>
-      <div className="text">캡슐번호와 URL을 기억하세요!</div>
-      <div className="box1">
+    <div className="URLnCodeAssignment">
+      <div className="text-2">캡슐번호와 URL을 기억하세요!</div>
+      <div className="box2-1">
         캡슐번호 |
         <CopyToClipboard text={capsuleNumber} onCopy={handleCopyCapsuleClick}>
           <span style={{ cursor: "pointer" }}>{capsuleNumber}</span>
         </CopyToClipboard>
       </div>
-      <div className="box2"></div>
+      <div className="box2-2"></div>
 
-      <div className="password-input">
+      <div className="password-input2">
         <input
           type="password"
           value={password}
@@ -84,15 +84,18 @@ const URLnCodeAssignment = () => {
           placeholder="비밀번호 (숫자 6자)"
         />
       </div>
-      <div className="box3">
+      <div className="box2-3">
         URL |
         <CopyToClipboard text={url} onCopy={handleCopyUrlClick}>
           <span style={{ cursor: "pointer" }}>{url}</span>
         </CopyToClipboard>
       </div>
-      <div className="reading-box"></div>
+      <div className="reading-box-2"></div>
       <div className="reading-text1"></div>
       <div className="reading-text2"></div>
+      <button className="checked-2" onClick={handleSavePassword}>
+        확인했어요!
+      </button>
     </div>
   );
 };

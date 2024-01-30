@@ -1,4 +1,4 @@
-body {
+.URLnCodeAssignment {
   margin: 0;
   padding: 0;
   height: 1039px;
@@ -9,7 +9,7 @@ body {
   justify-content: center;
 }
 
-.text {
+.text-2 {
   position: absolute;
   width: 369px;
   height: 106px;
@@ -26,7 +26,7 @@ body {
   color: rgba(0, 0, 0, 1);
 }
 
-.box1 {
+.box2-1 {
   position: absolute;
   width: 300px;
   height: 100px;
@@ -38,7 +38,7 @@ body {
   border-radius: 60px;
 }
 
-.box2 {
+.box2-2 {
   position: absolute;
   width: 300px;
   height: 110px;
@@ -50,7 +50,7 @@ body {
   border-radius: 60px;
 }
 
-.password-input {
+.password-input2 {
   position: absolute;
   width: 307px;
   height: 106px;
@@ -62,9 +62,15 @@ body {
   line-height: 13px;
   letter-spacing: 0.06599999964237213px;
   text-align: center;
+  border: none;
+}
+.password-input2 input {
+  border: none;
+  outline: none;
+  background-color: rgba(238, 242, 255, 0.8);
 }
 
-.box3 {
+.box2-3 {
   position: absolute;
   width: 300px;
   height: 100px;
@@ -76,11 +82,24 @@ body {
   border-radius: 60px;
 }
 
-.reading-box {
+.reading-box-2 {
+  position: absolute;
   width: 340px;
   height: 335px;
   top: 541px;
   left: 26px;
   border-radius: 25px;
   background: rgba(255, 255, 255, 0.8);
+}
+
+.checked-2 {
+  position: absolute;
+  width: 300px;
+  height: 50px;
+  top: 906px;
+  left: 46px;
+  background: rgba(193, 221, 255, 0.9);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 60px;
+  border: none;
 }
