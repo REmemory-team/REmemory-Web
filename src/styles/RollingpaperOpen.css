@@ -16,18 +16,17 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0px 25px;
-  margin-top: 70px;
-  margin-bottom: 20px;
+  padding: 0rem 1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
 }
 .rollingpaper-open-page .back-btn {
-  width: 35px;
-  height: 35px;
+  width: 1.64063rem;
+  height: 1.09375rem;
 }
 .rollingpaper-open-page .home-btn {
-  width: 25.833px;
-  height: 23.25px;
-  stroke-width: 1px;
+  width: 1.61456rem;
+  height: 1.45313rem;
   stroke: rgba(0, 0, 0, 0);
 }
 .rollingpaper-open-page .rolling-capsule-name {

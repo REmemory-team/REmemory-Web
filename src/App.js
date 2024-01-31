@@ -1,35 +1,40 @@
 import "./App.css";
 
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login.jsx";
-import CapsuleCodeAssignment from "./pages/CapsuleCodeAssignment.jsx";
-import URLnCodeAssignment from "./pages/URLnCodeAssignment.jsx";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import CapsuleBasicSetting from "./pages/CapsuleBasicSetting";
+import CapsuleCodeAssignment from "./pages/CapsuleCodeAssignment.jsx";
 import CheckCapsuleByNumber from "./pages/CheckCapsuleByNumber";
 import ConfirmBasicSetting from "./pages/ConfirmBasicSetting";
 import EnterURL from "./pages/EnterURL";
 import Home from "./pages/Home";
+import Login from "./pages/Login.jsx";
 import Nickname from "./pages/Nickname";
 import OpenCapsule from "./pages/OpenCapsule";
+import React from "react";
 import ReceivedText from "./pages/ReceivedText";
 import ReceivedVoice from "./pages/ReceivedVoice";
 import RecipientInput from "./pages/RecipientInput";
 import Recording from "./pages/Recording";
 import RollingpaperOpen from "./pages/RollingpaperOpen";
+import URLnCodeAssignment from "./pages/URLnCodeAssignment.jsx";
 import Write from "./pages/Write";
 import WritingFormat from "./pages/WritingFormat";
 
 function App() {
   return (
-    // 웹 처음 입장 시
-    // 캡슐 번호 부여 (용도1, 2)
-    // 캡슐 번호 & URL 부여 (용도3)
     <div className="App">
       {/* <Router> */}
       <Routes>
         <Route path="/" element={<Login />}></Route>
+        <Route
+          path="/capsule/assign-number"
+          element={<CapsuleCodeAssignment />}
+        ></Route>
+        <Route
+          path=" /capsule/assign-number-url"
+          element={<URLnCodeAssignment />}
+        ></Route>
         <Route
           path="/capsule/input-number"
           element={<CheckCapsuleByNumber />}
@@ -62,8 +67,9 @@ function App() {
         <Route path="/capsule/verify" element={<OpenCapsule />} />
         <Route path="/capsule/write/text" element={<Write />} />
 
-        <Route path="/capsule/verify" element={<OpenCapsule />} />
-        <Route path="/capsule/write/text" element={<Write />} />
+        <Route path="/capsule/write/voice" element={<Recording />} />
+        <Route path="/login/kakao/nickname" element={<Nickname />} />
+        <Route path="/login/kakao/home" element={<Home />}></Route>
       </Routes>
       {/* </Router> */}
     </div>

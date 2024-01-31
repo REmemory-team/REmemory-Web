@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import { useNavigate } from "react-router-dom";
+// 캡슐번호 부여 (용도1&2)
+
 import "../styles/CapsuleCodeAssignment.css";
+
+import React, { useEffect, useState } from "react";
+
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import Copyimg from "../assets/Copy.png";
+import { useNavigate } from "react-router-dom";
 
 const CapsuleCodeAssignment = ({ initialNickname }) => {
   const [capsuleNumber, setCapsuleNumber] = useState("");

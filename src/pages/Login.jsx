@@ -1,3 +1,5 @@
+// 웹 처음 입장 시
+
 import "../styles/Login.css";
 
 import React, { useEffect } from "react";
@@ -77,35 +79,49 @@ const Login = () => {
     }
   }, [location.search, navigate]);
 
-  const nonMember = () => {
-    navigate("/"); //다음 페이지 주소 넣기
+  const capsuleCheck = () => {
+    navigate("/capsule/input-number");
   };
 
   return (
     <div className="login-page">
-      <div className="re-memory">RE:memory</div>
-      <div className="twinkle">
-        <img src={twinkle} alt="반짝이" />
+      <div className="logo-img">
+        <img src={circle} alt="동그라미" className="circle" />
+        <img src={arrow} alt="화살표" className="arrow" />
+        <img src={twinkle} alt="반짝이" className="twinkle" />
+        <div className="re-memory">RE:memory</div>
       </div>
-      <div className="circle">
-        <img src={circle} alt="동그라미" />
+      <div className="capsule-check-btn" onClick={capsuleCheck}>
+        캡슐번호로 타임캡슐 확인
       </div>
-      <div className="arrow">
-        <img src={arrow} alt="화살표" />
-      </div>
-
-      <button className="button">
-        <span className="buttonText">캡슐번호로 타임캡슐 확인</span>
-      </button>
-
-      <button className="kakaoLoginButton" onClick={kakaoLogin}></button>
-      <div className="kakaoicon">
-        <img src={kakaoicon} alt="kakaoicon" />
-      </div>
-      <div className="non-member" onClick={nonMember}>
-        비회원으로 시작하기
+      <div className="kakao-login-btn" onClick={kakaoLogin}>
+        <img src={kakaoicon} alt="kakaoicon" className="kakao-icon" />
+        <span className="kakao-login">카카오 로그인</span>
       </div>
     </div>
+    // <div className="login-page">
+    //   <div className="re-memory">RE:memory</div>
+    //   <div className="twinkle">
+    //     <img src={twinkle} alt="반짝이" />
+    //   </div>
+    //   <div className="circle">
+    //     <img src={circle} alt="동그라미" />
+    //   </div>
+    //   <div className="arrow">
+    //     <img src={arrow} alt="화살표" />
+    //   </div>
+
+    //   <button className="button">
+    //     <span className="buttonText" onClick={capsuleCheck}>
+    //       캡슐번호로 타임캡슐 확인
+    //     </span>
+    //   </button>
+
+    //   <button className="kakaoLoginButton" onClick={kakaoLogin}></button>
+    //   <div className="kakaoicon">
+    //     <img src={kakaoicon} alt="kakaoicon" />
+    //   </div>
+    // </div>
   );
 };
 

@@ -1,4 +1,4 @@
-//홈 화면
+// 카카오 로그인 - 홈 화면
 
 import "../styles/Home.css";
 

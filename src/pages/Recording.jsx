@@ -1,8 +1,15 @@
+// 음성 편지 확인
+
 import "../styles/Recording.css";
-import React, { useState, useEffect } from 'react';
+
+import React, { useEffect, useState } from "react";
+
+import mikeIcon1 from "../assets/Recording_icon1.png";
+import playIcon1 from "../assets/play_btn1.png";
+
 //import { useLocation } from 'react-router-dom';
-import mikeIcon1 from '../assets/Recording_icon1.png';
-import playIcon1 from '../assets/play_btn1.png';
+
+
 
 export default function Record() {
   const [isLoggedIn, setIsLoggedIn] = useState("");
@@ -13,7 +20,7 @@ export default function Record() {
   const [analyser, setAnalyser] = useState("");
   const [audioUrl, setAudioUrl] = useState("");
   const [disabled, setDisabled] = useState(true);
-  const dear_name="ME";
+  const dear_name = "ME";
   //const location = useLocation();
   //const dearInfo = location.state;
 
@@ -42,15 +49,14 @@ export default function Record() {
     }
   };*/
 
-  const tempRecording = () =>{
+  const tempRecording = () => {
     alert("임시저장 완료");
-  }
+  };
 
   //사용자가 음성 녹음을 시작할 때
   const onRecAudio = () => {
-
     setDisabled(true); //녹음 중 버튼 비활성화
-    
+
     //녹음 정보를 담은 노드를 생성하거나 음원을 실행 또는 디코딩
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -67,40 +73,41 @@ export default function Record() {
     }
 
     //마이크 사용 권한 획득
-    navigator.mediaDevices.getUserMedia({ audio: true })
-    .then((stream) => {
-      const mediaRecorder = new MediaRecorder(stream);
-      mediaRecorder.start(); //녹음 시작
-      setStream(stream);
-      setMedia(mediaRecorder);
-      makeSound(stream);
+    navigator.mediaDevices
+      .getUserMedia({ audio: true })
+      .then((stream) => {
+        const mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.start(); //녹음 시작
+        setStream(stream);
+        setMedia(mediaRecorder);
+        makeSound(stream);
 
-      analyser.onaudioprocess = function (e) {
-        //180초 지나면 자동으로 음성 저장 및 녹음 중지
-        if (e.playbackTime > 180) {
-          //모든 트랙에서 stop()을 호출해 오디오 스트림을 정지
-          stream.getAudioTracks().forEach(function (track) {
-            track.stop();
-          });
-          mediaRecorder.stop(); //녹음 중지
+        analyser.onaudioprocess = function (e) {
+          //180초 지나면 자동으로 음성 저장 및 녹음 중지
+          if (e.playbackTime > 180) {
+            //모든 트랙에서 stop()을 호출해 오디오 스트림을 정지
+            stream.getAudioTracks().forEach(function (track) {
+              track.stop();
+            });
+            mediaRecorder.stop(); //녹음 중지
 
-          //메서드가 호출 된 노드 연결 해제
-          analyser.disconnect();
-          audioCtx.createMediaStreamSource(stream).disconnect();
+            //메서드가 호출 된 노드 연결 해제
+            analyser.disconnect();
+            audioCtx.createMediaStreamSource(stream).disconnect();
 
-          //dataavailable 이벤트로 Blob 데이터에 대한 응답을 받을 수 있음
-          mediaRecorder.ondataavailable = function (e) {
-            setAudioUrl(e.data); //e.data는 Blob 형태의 데이터
-            setOnRec(true);
-          };
-        } else {
-          setOnRec(false);
-        }
-      };
-    })
-    .catch((error) => {
-      alert("녹음 권한을 허용해주세요!");
-    });
+            //dataavailable 이벤트로 Blob 데이터에 대한 응답을 받을 수 있음
+            mediaRecorder.ondataavailable = function (e) {
+              setAudioUrl(e.data); //e.data는 Blob 형태의 데이터
+              setOnRec(true);
+            };
+          } else {
+            setOnRec(false);
+          }
+        };
+      })
+      .catch((error) => {
+        alert("녹음 권한을 허용해주세요!");
+      });
   };
 
   //사용자가 음성 녹음을 중지할 때
@@ -118,25 +125,24 @@ export default function Record() {
 
     analyser.disconnect();
     source.disconnect();
-    
+
     if (audioUrl) {
       URL.createObjectURL(audioUrl);
       console.log(audioUrl); //출력된 링크에서 녹음된 오디오 확인 가능
     }
-    
+
     //파일 생성자를 사용해 파일로 변환
     const sound = new File([audioUrl], "soundBlob", {
       lastModified: new Date().getTime(),
       type: "audio",
     });
-  
+
     setDisabled(false); //녹음 버튼 다시 활성화
     console.log(sound); //파일 정보 출력
   };
 
-
   //사용자가 재생 버튼 누를 시
-  const play = () => { 
+  const play = () => {
     const audio = new Audio(URL.createObjectURL(audioUrl));
     audio.loop = false;
     audio.volume = 1;
@@ -145,29 +151,37 @@ export default function Record() {
 
   return (
     <div className="recording">
-    <div className="recording_page">
-        
-      {isLoggedIn && (
-        <div className="temp_save_button" onClick={tempRecording}>임시저장</div>
-      )}
+      <div className="recording_page">
+        {isLoggedIn && (
+          <div className="temp_save_button" onClick={tempRecording}>
+            임시저장
+          </div>
+        )}
 
         <div className="recording_box">
-            <div className="icon_container">
+          <div className="icon_container">
             <div className="dear_capsule">To. {dear_name} </div>
-            <div className="mike" onClick={onRec ? onRecAudio : offRecAudio}><img src={mikeIcon1} alt="마이크 아이콘"/></div>
-            <img src={playIcon1} alt="재생 아이콘" id="play_button" onClick={play} disabled={disabled} />
+            <div className="mike" onClick={onRec ? onRecAudio : offRecAudio}>
+              <img src={mikeIcon1} alt="마이크 아이콘" />
+            </div>
+            <img
+              src={playIcon1}
+              alt="재생 아이콘"
+              id="play_button"
+              onClick={play}
+              disabled={disabled}
+            />
             <div className="play_bar">
-                <div className="light"></div>
-                <div className="bold"></div>
+              <div className="light"></div>
+              <div className="bold"></div>
             </div>
-            </div>
-
+          </div>
         </div>
 
         <div className="capsule_pre_button">타임캡슐 미리보기</div>
-        
+
         <div className="record_submit_button">다했어요!</div>
+      </div>
     </div>
-    </div>
-  )
+  );
 }

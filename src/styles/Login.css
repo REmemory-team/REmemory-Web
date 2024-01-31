@@ -1,10 +1,10 @@
-/* Login.css */
+/* Login.css
 
 .login-page {
   margin: 0;
   padding: 0;
-  height: 852px;
-  width: 393px;
+  min-height: 100vh;
+  height: 100%;
   background: linear-gradient(180deg, rgba(96, 87, 115, 0) 1.41%, #aa9acc 59.9%),
     linear-gradient(0deg, #ffffff, #ffffff);
   display: flex;
@@ -128,4 +128,96 @@
   text-decoration-line: underline;
 
   color: #ffffff;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Baloo+Bhaijaan+2:wght@600&family=Merienda:wght@500&family=Nanum+Pen+Script&display=swap");
+
+.login-page {
+  min-height: 100vh;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(96, 87, 115, 0) 1.41%, #aa9acc 59.9%),
+    linear-gradient(0deg, #ffffff, #ffffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-page .logo-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10.8rem;
+  margin-bottom: 5rem;
+  position: relative;
+  padding-top: 0.5rem;
+}
+.login-page .circle {
+  width: 18.9rem;
+  height: 18.9rem;
+}
+.login-page .arrow {
+  position: absolute;
+  left: 12rem;
+  top: 0.5rem;
+}
+.login-page .twinkle {
+  position: absolute;
+  top: 0.75rem;
+}
+.login-page .re-memory {
+  color: #fff;
+  text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+  font-family: "Baloo 2", sans-serif;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 27.083% */
+  letter-spacing: 0.00413rem;
+  position: absolute;
+  top: 9rem;
+}
+.login-page .capsule-check-btn {
+  width: 16rem;
+  height: 3.9375rem;
+  flex-shrink: 0;
+  background-color: #807499;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  color: #fff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+  border-radius: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.7rem;
+}
+.login-page .kakao-login-btn {
+  width: 16rem;
+  height: 3.9375rem;
+  flex-shrink: 0;
+  background-color: #fee500;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-page .kakao-icon {
+  width: 1.875rem;
+  height: 1.93019rem;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+.login-page .kakao-login {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
 }

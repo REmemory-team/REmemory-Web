@@ -1,31 +1,28 @@
 .rollingpaper-contents {
-  width: 300px;
-  height: 100px;
+  width: 18.75rem;
+  height: 6.25rem;
   background-color: rgba(223, 230, 255, 0.9);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  padding: 5px 25px;
-  margin-bottom: 29px;
-}
-.rollingpaper-contents .rollingpaper-contents:last-child {
-  margin-bottom: 70px;
+  padding: 0.4rem 1.7rem;
+  margin-bottom: 1.6rem;
 }
 .rollingpaper-contents .rolling-sender {
   color: #000;
   font-family: Pretendard;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 13px; /* 81.25% */
-  letter-spacing: 0.066px;
+  line-height: 0.8125rem; /* 81.25% */
+  letter-spacing: 0.00413rem;
 }
 .rollingpaper-contents .rolling-format {
   color: #000;
   text-align: center;
   font-family: Pretendard;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 13px; /* 81.25% */
-  letter-spacing: 0.066px;
+  line-height: 0.8125rem; /* 81.25% */
+  letter-spacing: 0.00413rem;
 }
