@@ -279,3 +279,271 @@
   border-radius: 60px;
   border: none;
 }
+
+/*-----------------수정------------------*/
+.url-code-assignment {
+  height: 65.7rem;
+  background: #aa9acc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.url-code-assignment .message {
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+  margin-top: 6.5rem;
+  margin-bottom: 2.5rem;
+}
+.url-code-assignment .code-box {
+  width: 19.1875rem;
+  height: 6.625rem;
+  flex-shrink: 0;
+  background-color: rgba(238, 242, 255, 0.7);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+  margin-bottom: 1.2rem;
+}
+.url-code-assignment .code {
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.8125rem; /* 59.091% */
+  letter-spacing: 0.00413rem;
+}
+.url-code-assignment .assigned-code {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem;
+  letter-spacing: 0.00413rem;
+}
+.url-code-assignment .copy-container {
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+.url-code-assignment .copy-img {
+  width: 0.9375rem;
+  height: 0.9375rem;
+  flex-shrink: 0;
+  margin-right: 0.4rem;
+}
+.url-code-assignment .copy {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 86.667% */
+  letter-spacing: 0.00413rem;
+  text-decoration-line: underline;
+}
+.url-code-assignment .password-box {
+  width: 19.1875rem;
+  height: 6.625rem;
+  flex-shrink: 0;
+  background-color: rgba(238, 242, 255, 0.7);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.url-code-assignment .password {
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.8125rem; /* 59.091% */
+  letter-spacing: 0.00413rem;
+}
+.url-code-assignment .divide {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem;
+  letter-spacing: 0.00413rem;
+}
+.url-code-assignment .password-input {
+  width: 4.7rem;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem;
+  letter-spacing: 0.00413rem;
+  border: none;
+  background: none;
+  text-align: center;
+}
+.url-code-assignment .password-input:focus {
+  outline: none;
+}
+.url-code-assignment .password-input::placeholder {
+  color: #9a9a9a;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+}
+.url-code-assignment .url-box {
+  width: 19.1875rem;
+  height: 6.625rem;
+  flex-shrink: 0;
+  background-color: rgba(238, 242, 255, 0.7);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.5rem;
+  margin-bottom: 2.8rem;
+}
+.url-code-assignment .url {
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 0.8125rem; /* 59.091% */
+  letter-spacing: 0.00413rem;
+}
+.url-code-assignment .url-copy-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.8rem;
+}
+.url-code-assignment .assigned-url {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 100% */
+  letter-spacing: 0.00413rem;
+  margin-right: 0.7rem;
+}
+.url-code-assignment .guide-box {
+  width: 21.25rem;
+  height: 20.9375rem;
+  flex-shrink: 0;
+  flex-shrink: 0;
+  border-radius: 1.125rem;
+  background: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.1rem;
+  padding: 0.6rem 1.2rem 0.1rem 1.25rem;
+}
+.url-code-assignment .guide-title {
+  color: #5e4e80;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+}
+.url-code-assignment .guide-content {
+  color: #5e4e80;
+  font-family: Pretendard;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 108.333% */
+  letter-spacing: 0.00413rem;
+}
+.url-code-assignment .guide-content:nth-child(4) {
+  margin-bottom: 1.7rem;
+}
+.url-code-assignment .bold {
+  font-weight: 700;
+}
+.url-code-assignment .btn {
+  width: 18.75rem;
+  height: 3.125rem;
+  flex-shrink: 0;
+  background-color: rgba(193, 221, 255, 0.7);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 95px;
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+}
+.url-code-assignment .copied-message {
+  width: 7.75rem;
+  height: 2.125rem;
+  flex-shrink: 0;
+  background-color: black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  position: absolute;
+  top: 16rem;
+  padding: 1.1rem 0.8rem;
+}
+.url-code-assignment .copied-message2 {
+  width: 7.75rem;
+  height: 2.125rem;
+  flex-shrink: 0;
+  background-color: black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  position: absolute;
+  top: 31rem;
+  padding: 1.1rem 0.8rem;
+}

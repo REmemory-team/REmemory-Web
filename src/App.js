@@ -32,7 +32,7 @@ function App() {
           element={<CapsuleCodeAssignment />}
         ></Route>
         <Route
-          path=" /capsule/assign-number-url"
+          path="/capsule/assign-number-url"
           element={<URLnCodeAssignment />}
         ></Route>
         <Route
