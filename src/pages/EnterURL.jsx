@@ -39,7 +39,7 @@ export default function EnterURL() {
     } else {
       // 작성 형식 선택 화면으로 이동
       // 받는 사람, 테마, 보내는 사람 정보 전달
-      navigate("/writingformat", {
+      navigate("/capsule/letter-format", {
         state: { recipient: recipient, theme: theme, sender: sender },
       });
     }
@@ -54,7 +54,7 @@ export default function EnterURL() {
         <input
           className="sender"
           onChange={handleSenderChange}
-          maxLength="9"
+          maxLength="10"
           placeholder="입력해주세요"
         ></input>
         <span className="count-char-num">{charNum}/10</span>

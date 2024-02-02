@@ -1,6 +1,6 @@
 .recipient-input-page {
-  width: 24.5625rem;
-  height: 86.875rem;
+  min-height: 100vh;
+  height: 100%;
   background: linear-gradient(0deg, #aa9acc 0%, #aa9acc 100%), #fff;
   flex-shrink: 0;
   display: flex;
@@ -11,18 +11,18 @@
   color: #000;
   text-align: center;
   font-family: Pretendard;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 13px; /* 72.222% */
-  letter-spacing: 0.066px;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
   flex-shrink: 0;
-  margin-top: 160px;
-  margin-bottom: 75px;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
 }
 .recipient-input-page .recipient-input-field {
-  width: 300px;
-  height: 60px;
+  width: 18.75rem;
+  height: 3.75rem;
   flex-shrink: 0;
   background-color: #f5f5f5;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -30,41 +30,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 3.8rem;
 }
 .recipient-input-page .prefix-to {
   color: #000;
   text-align: center;
   font-family: Pretendard;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 13px; /* 72.222% */
-  letter-spacing: 0.066px;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
   flex-shrink: 0;
-  margin-right: 10px;
+  margin-right: 0.5rem;
 }
 .recipient-input-page .recipient {
   color: #000;
   text-align: center;
   font-family: Pretendard;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 13px; /* 72.222% */
-  letter-spacing: 0.066px;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
   flex-shrink: 0;
-  width: 80px;
+  width: 5.5rem;
   border: none;
-  border-bottom: solid #000 2px;
+  border-bottom: solid #000 0.099999999rem;
   background: none;
 }
 .recipient-input-page .recipient:focus {
   outline: none;
 }
 .recipient-input-page .recipient-page-done-btn {
-  width: 300px;
-  height: 50px;
+  width: 18.75rem;
+  height: 3.125rem;
   flex-shrink: 0;
   background-color: rgba(193, 221, 255, 0.9);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -73,10 +73,10 @@
   color: #000;
   text-align: center;
   font-family: Pretendard;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 13px; /* 72.222% */
-  letter-spacing: 0.066px;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
   flex-shrink: 0;
 }

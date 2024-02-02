@@ -1,6 +1,6 @@
 .format-select-page {
-  width: 24.5625rem;
-  height: 53.25rem;
+  min-height: 100vh;
+  height: 100%;
   background: linear-gradient(180deg, #aa9acc 0%, #aa9acc 100%);
   flex-shrink: 0;
   position: relative;
@@ -9,43 +9,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 90px;
-  margin-bottom: 70px;
+  padding-top: 6rem;
+  margin-bottom: 4.2rem;
 }
 .format-select-page .line1,
 .format-select-page .line2 {
-  width: 132px;
-  height: 2px;
+  width: 8.25rem;
+  height: 0.125rem;
   background: rgba(255, 255, 255, 0.8);
   flex-shrink: 0;
 }
 .format-select-page .pencil-icon {
-  width: 35px;
-  height: 35px;
+  width: 2.1875rem;
+  height: 2.1875rem;
   flex-shrink: 0;
 }
 .format-select-page .person-to-send {
   color: #fff;
   text-align: center;
   font-family: Pretendard;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 13px; /* 54.167% */
-  letter-spacing: 0.066px;
+  line-height: 0.8125rem; /* 54.167% */
+  letter-spacing: 0.00413rem;
   flex-shrink: 0;
 }
 .format-select-page .select-message {
   color: #fff;
   text-align: center;
   font-family: Pretendard;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 13px; /* 65% */
-  letter-spacing: 0.066px;
+  line-height: 0.8125rem; /* 65% */
+  letter-spacing: 0.00413rem;
   flex-shrink: 0;
-  margin-bottom: 60px;
+  margin-bottom: 4rem;
 }
 .format-select-page .select-format {
   display: flex;
@@ -59,15 +59,15 @@
   flex-shrink: 0;
 }
 .format-select-page .text-container {
-  margin-bottom: 30px;
+  margin-bottom: 1.5rem;
 }
 .format-select-page .voice-container {
-  margin-bottom: 90px;
+  margin-bottom: 6rem;
 }
 .format-select-page .text,
 .format-select-page .voice {
-  width: 197px;
-  height: 60px;
+  width: 12rem;
+  height: 3.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,13 +76,13 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #605773;
   font-family: Pretendard;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 13px; /* 65% */
-  letter-spacing: 0.066px;
+  line-height: 0.8125rem; /* 65% */
+  letter-spacing: 0.00413rem;
   border-radius: 20px;
-  margin-right: 42px;
+  margin-right: 2.5rem;
   transition: transform 0.2s ease;
   cursor: pointer;
 }
@@ -91,20 +91,20 @@
   color: #fff;
   text-align: center;
   font-family: Pretendard;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 300;
-  line-height: 13px; /* 92.857% */
-  letter-spacing: 0.066px;
+  line-height: 0.8125rem; /* 92.857% */
+  letter-spacing: 0.00413rem;
   text-decoration-line: underline;
   flex-shrink: 0;
   cursor: pointer;
 }
 .format-select-page .division-line2 {
-  width: 342px;
-  height: 2px;
+  width: 21.375rem;
+  height: 0.125rem;
   background: rgba(255, 255, 255, 0.8);
-  margin-bottom: 150px;
+  margin-bottom: 9.5rem;
   flex-shrink: 0;
 }
 .format-select-page .decision-btn-container {
@@ -113,24 +113,24 @@
   align-items: center;
 }
 .format-select-page .format-decision-btn {
-  width: 200px;
-  height: 50px;
+  width: 12.5rem;
+  height: 3.125rem;
   flex-shrink: 0;
   background-color: rgba(193, 221, 255, 0.9);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #000;
   text-align: center;
   font-family: Pretendard;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 13px; /* 72.222% */
-  letter-spacing: 0.066px;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
   border-radius: 95px;
   border: none;
 }
 .format-select-page .selected-format {
   transform: scale(1.05);
-  border: 1px solid #4d4d4d;
+  border: 0.09999999999rem solid #4d4d4d;
   flex-shrink: 0;
 }

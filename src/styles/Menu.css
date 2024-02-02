@@ -1,63 +1,63 @@
-.Menu{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    color: #FFFFFF;
-    width: 227px;
+.Menu {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  color: #ffffff;
+  width: 227px;
 }
-.Menu img.btn_close{
-    position: absolute;
-    top: 26px;
-    /* left: 359px; */
-    right: 26px;
-    /* border: 3px; */
-    /* width: 13px;
+.Menu img.btn_close {
+  position: absolute;
+  top: 26px;
+  /* left: 359px; */
+  right: 26px;
+  /* border: 3px; */
+  /* width: 13px;
     height: 13px; */
-    width: 17px;
-    height: 17px;
-    margin: 0;
+  width: 17px;
+  height: 17px;
+  margin: 0;
 }
-.Menu .buttons{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    margin-left: 31px;
-    margin-top: 78px;
+.Menu .buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 31px;
+  margin-top: 78px;
 }
-.Menu .button_section{
-    display: flex;
-    align-items: center;
-    margin-bottom: 17px;
+.Menu .button_section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 17px;
 }
-.Menu .button_section img{
-    cursor: pointer;
-    width: 26px;
-    height: 26px;
-    margin-right: 16px;
+.Menu .button_section img {
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  margin-right: 16px;
 }
-.Menu .button_section img.profile{
-    margin-top: -30px;
+.Menu .button_section img.profile {
+  margin-top: -30px;
 }
-.Menu img.line{    
-    width: 176px;
-    border: 1px; 
-    margin-right: 16px; 
-    margin-top: 9px;  
-    margin-bottom: 27px;
+.Menu img.line {
+  width: 176px;
+  border: 1px;
+  margin-right: 16px;
+  margin-top: 9px;
+  margin-bottom: 27px;
 }
-.Menu button{
-    padding: 0;
-    cursor: pointer;
-    color: #FFFFFF;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    font-family: "Pretendard";
-    font-weight: 400;
-    font-size: 14px;
+.Menu button {
+  padding: 0;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-size: 14px;
 }
-.Menu p{
-    font-family: "Pretendard";
-    font-weight: 400;
-    font-size: 11px;
+.Menu p {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-size: 11px;
 }
