@@ -9,8 +9,6 @@ import playIcon1 from "../assets/play_btn1.png";
 
 //import { useLocation } from 'react-router-dom';
 
-
-
 export default function Record() {
   const [isLoggedIn, setIsLoggedIn] = useState("");
   const [stream, setStream] = useState("");
@@ -150,38 +148,36 @@ export default function Record() {
   };
 
   return (
-    <div className="recording">
-      <div className="recording_page">
-        {isLoggedIn && (
-          <div className="temp_save_button" onClick={tempRecording}>
-            임시저장
-          </div>
-        )}
+    <div className="recording_page">
+      {isLoggedIn && (
+        <div className="temp_save_button" onClick={tempRecording}>
+          임시저장
+        </div>
+      )}
 
-        <div className="recording_box">
-          <div className="icon_container">
-            <div className="dear_capsule">To. {dear_name} </div>
-            <div className="mike" onClick={onRec ? onRecAudio : offRecAudio}>
-              <img src={mikeIcon1} alt="마이크 아이콘" />
-            </div>
-            <img
-              src={playIcon1}
-              alt="재생 아이콘"
-              id="play_button"
-              onClick={play}
-              disabled={disabled}
-            />
-            <div className="play_bar">
-              <div className="light"></div>
-              <div className="bold"></div>
-            </div>
+      <div className="recording_box">
+        <div className="icon_container">
+          <div className="dear_capsule">To. {dear_name} </div>
+          <div className="mike" onClick={onRec ? onRecAudio : offRecAudio}>
+            <img src={mikeIcon1} alt="마이크 아이콘" />
+          </div>
+          <img
+            src={playIcon1}
+            alt="재생 아이콘"
+            id="play_button"
+            onClick={play}
+            disabled={disabled}
+          />
+          <div className="play_bar">
+            <div className="light"></div>
+            <div className="bold"></div>
           </div>
         </div>
-
-        <div className="capsule_pre_button">타임캡슐 미리보기</div>
-
-        <div className="record_submit_button">다했어요!</div>
       </div>
+
+      <div className="capsule_pre_button">타임캡슐 미리보기</div>
+
+      <div className="record_submit_button">다했어요!</div>
     </div>
   );
 }

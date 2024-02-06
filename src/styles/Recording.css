@@ -1,23 +1,20 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-.recording{
+.recording_page{
     font-family: Pretendard;
     font-size: 1.125rem;
+    font-style: normal;
     color:#000;
-}
-
-.recording .recording_page{
-    width: 24.5625rem;
-    height: 53.25rem;
-    margin:0 auto;
+    min-height: 100vh;
+    height: 100%;
     display: flex;
-    position: relative;
     flex-direction: column;
     align-items: center;
+    position: relative;
     background: linear-gradient(0deg, #AA9ACC 0%, #AA9ACC 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #AA9ACC 45.83%);
 }
 
-.recording .temp_save_button{
+.recording_page .temp_save_button{
     width: 5.125rem;
     height: 2rem;
     display: flex;
@@ -26,27 +23,27 @@
     color: rgba(0, 0, 0, 0.50);
     flex-shrink: 0;
     text-align: center;
+    font-size: 1.125rem;
     font-weight: 400;
     line-height: 0.8125rem; /* 72.222% */
     letter-spacing: 0.00413rem;
     position: absolute;
     left: 18.38rem;
     top: 4.18rem;
+    cursor: pointer;
 }
 
-.recording .recording_box{
+.recording_page .recording_box{
     width: 18.75rem;
     height: 28.125rem;
     flex-shrink: 0;
-    border-radius: 0.5rem;
+    border-radius: 0.7rem;
     box-shadow : 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: rgba(223, 230, 255, 0.54);
-    position: absolute;
-    top: 8.49rem;
-
+    margin-top: 8.5rem;
 }
 
-.recording .capsule_pre_button{
+.recording_page .capsule_pre_button{
     width: 16.4375rem;
     height: 2rem;
     display: flex;
@@ -54,15 +51,16 @@
     justify-content: center;
     flex-shrink: 0;
     text-align: center;
+    font-size: 1.125rem;
     font-weight: 400;
     line-height: 0.8125rem; /* 72.222% */
     letter-spacing: 0.00413rem;
     text-decoration-line: underline;
-    position: absolute;
-    top: 38.62rem;
+    margin-top: 2rem;
+    cursor: pointer;
 }
 
-.recording .record_submit_button{
+.recording_page .record_submit_button{
     width: 18.75rem;
     height: 3.125rem;
     flex-shrink: 0;
@@ -71,18 +69,20 @@
     justify-content: center;
     background-color: rgba(193, 221, 255, 0.90);
     box-shadow : 0px 4px 4px rgba(0, 0, 0, 0.25);
-    position: absolute;
-    bottom: 5.19rem;
+    margin-top: 4.31rem;
+    font-family: Pretendard;
+    font-size: 1.125rem;
     text-align: center;
     font-weight: 400;
     line-height: 0.8125rem; /* 72.222% */
     letter-spacing: 0.00413rem; 
-    border-radius: 50px;
+    border-radius: 2rem;
+    cursor: pointer;
 }
-.recording .icon_container{
+.recording_page .icon_container{
     position: relative;
 }
-.recording .dear_capsule{
+.recording_page .dear_capsule{
     width: 14.625rem;
     height: 2rem;
     display: flex;
@@ -90,47 +90,48 @@
     justify-content: center;
     flex-shrink: 0;
     color: #000;
-    /* text-align: center; */
+    font-size: 1.125rem;
     font-weight: 600;
     line-height: 0.8125rem; /* 72.222% */
     letter-spacing: 0.00413rem;
     position: absolute;
     top: 0.56rem;
     left: 1.44rem;
-    /* right: 121px; */
 }
 
-.recording .mike{
+.recording_page .mike{
+    cursor: pointer;
     position: absolute;
-    top: 5.12rem;
-    left: 4.88rem;
+    top: 5.13rem;
+    left: 4.87rem;
 }
 
-.recording #play_button{
+.recording_page #play_button{
+    cursor: pointer;
     position: absolute;
-    top: 15.62rem;
+    top: 15.63rem;
     left: 2.44rem;
 }
 
-.recording .light{
+.recording_page .bold{
     width: 6.1875rem;
     height: 1.5625rem;
     flex-shrink: 0;
     border-radius: 1rem;
-    background: #D4C0FF;
+    background: #BEACE6;
     position: absolute;
     top: 15.81rem;
     left: 5.31rem;
     z-index: 1;
 }
 
-.recording .bold{
+.recording_page .light{
     width: 10.5rem;
     height: 1.5625rem;
     flex-shrink: 0;
     position: absolute;
     border-radius: 1rem;
-    background: #BEACE6;
+    background: #D4C0FF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     top: 15.81rem;
     left: 5.31rem;

@@ -2,14 +2,10 @@
 
 .home{
     font-family: Pretendard;
-    /* font-size: 18px; */
-    font-size: 1.125rem;
+    font-style: normal;
     color: #000;
-}
-.home .container{
-    width: 24.5625rem;
-    height: 53.25rem;
-    margin:0 auto;
+    min-height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,30 +14,26 @@
     overflow: hidden;
 }
 .home .image_box{
-    width: 22rem;
-    height: 32rem;
-    /* margin-top: 0rem; */
-    /* background-color: pink; */
+    width: 22.04rem;
+    height: 22.28rem;
+    margin-top: 4.31rem;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
 .home .capsule_image{
-    width: 15rem;
-    height: 15rem;
-    /* width: 268.165px;
-    height: 235.145px; */
+    width: 17rem;
+    height: 17rem;
     background: url('../assets/main_capsule.png') center no-repeat;
+    background-size: cover;
 }
-
-
 .home .image_box span{
     width: 5.625rem;
     height: 6.5rem;
     flex-shrink: 0;
     position: absolute;
-    top: 13rem;
+    top: 8.37rem;
     left: 8.56rem;
     color: #FFF;
     display: flex;
@@ -55,81 +47,113 @@
 }
 .home button{
     width: 18.9375rem;
-    height: 5.1875rem;
-    /* margin: 0rem 0rem; */
+    height: 4.75rem;
+    flex-shrink: 0;
     border: none;
     background-color: #A091BF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     color: #FFF;
     text-align: center;
+    font-family: Pretendard;
     font-size: 1.4375rem;
     font-weight: 700;
     line-height: 0.8125rem; /* 56.522% */
     letter-spacing: 0.00413rem;
     border-radius: 50px;
+    cursor: pointer;
 }
 .home .button_making{
-    
-    /* margin-top: 0rem; */
+    display: flex;
+    width: 18.9375rem;
+    height: 6.1875rem;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2.96rem;
 }
 .home .button_checking{
-    margin-top: 2.19rem;
+    display: flex;
+    width: 18.9375rem;
+    height: 6.1875rem;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1.5rem;
 }
+
 .home .capsule_popup{
-    width: 24.5625rem;
-    height: 29.4375rem;
-    padding-top: 10px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 28px;
+    border-radius: 1.75rem 1.75rem 0 0;
     background: linear-gradient(180deg, #DBE3FD 0%, #C3B8D9 100%);
-    position:absolute;
-    top:24.56rem;
-    left:0px;
+    position: absolute;
+    top: 24.6rem;
+    bottom: 0;
+    animation: slide-in-bottom 0.5s ease-out forwards;
 }
+
+@keyframes slide-in-bottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+} 
 .home .popup_header{
-    width:100%;
-    height: 2.7rem;
+    width: 100%;
+    height: 2.5rem;
+    margin-top: 1.94rem;
     display: flex;
-    align-items: center;
+    align-items: start;
+    justify-content: center;
     font-weight: 600;
     position: relative;
 }
-.home .popup_header img:first-child{
-    position:absolute;
-    left:1.13rem;
+.home #star{
+    position: absolute;
+    left: 1.63rem;
 }
 .home .popup_header span{
+    font-size: 1.125rem;
+    font-weight: 600;
     position: absolute;
-    left:3.19rem;
+    top: -0.1rem;
+    left: 3.19rem;
+    width: 18rem;
 }
-.home .popup_header img:nth-child(3){
-    position:absolute;
-    right:2.5rem;
+.home #x{
+    cursor: pointer;
+    position: absolute;
+    right: 1.75rem;
 }
 .home .content_box{
     width: 100%;
-    height: 25rem;
+    height: 100%;
+    margin-top: 1.5rem;
     overflow-y: auto;
-    font-weight: 500;
 }
 .home .capsule_list{
-    width:20rem;
-    height:3rem;
-    margin-top: 1.5rem;
+    /* width: 20rem; */
+    width: 100%;
+    height: 3.25rem;
+    margin-bottom: 1.87rem;
     display: flex;
     align-items: center;
 }
-.home .capsule_list img{
-    margin-left: 2.5rem;
-}
 .home .capsule_list span{
-    margin-left: 2rem;
+    margin-left: 1.3rem;
+    font-size: 1.125rem;
+    font-weight: 500;
 }
 .home .list_image{
-    width:3rem;
-    height:3rem;
+    width: 3.5rem;
+    height:100%;
+    margin-left: 1.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
