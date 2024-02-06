@@ -408,7 +408,7 @@
   line-height: 0.8125rem; /* 72.222% */
   letter-spacing: 0.00413rem;
 }
-.capsule-code-assignmen .copied-message {
+.capsule-code-assignment .copied-message {
   width: 7.75rem;
   height: 2.125rem;
   flex-shrink: 0;
