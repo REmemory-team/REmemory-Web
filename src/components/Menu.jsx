@@ -9,6 +9,8 @@ import icon_close from "../assets/icon_close.png";
 import icon_instagram from "../assets/icon_instagram.png";
 import icon_profile from "../assets/icon_profile.png";
 import icon_setting from "../assets/icon_setting.png";
+import image_logo from "../assets/image_logo.png";
+import text_logo from "../assets/text_logo.png";
 import { useState } from "react";
 
 const Menu = ({ menuHandler }) => {
@@ -65,6 +67,11 @@ const Menu = ({ menuHandler }) => {
           <img alt="" src={icon_instagram} />
           <button>인스타그램</button>
         </div>
+      </div>
+      <div className="logo">
+          <img className="image" alt="logo_rememory" src={image_logo}/>
+          <img className="text" alt="logo_rememory" src={text_logo}/>
+          {/* <p>RE:memory</p> */}
       </div>
     </div>
   );
