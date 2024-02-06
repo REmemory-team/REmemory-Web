@@ -6,7 +6,6 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import Preview from "../components/Preview";
-import axios from "axios";
 import capsulePreviewImg from "../assets/기본 캡슐이미지.png";
 
 export default function ConfirmBasicSetting() {
@@ -15,58 +14,42 @@ export default function ConfirmBasicSetting() {
   const userData = location.state; // 캡슐 기본 설정 페이지로부터 전달받은 데이터
   const [showCapsulePreview, setShowCapsulePreview] = useState(false);
 
+  console.log(userData.capsuleName);
+  console.log(`${userData.year}-${userData.month}-${userData.day}`);
+  console.log(userData.theme);
+
   // '확인했어요!' 버튼을 누르면 실행되는 함수
-  // 서버에 토큰(혹은 쿠키), 캡슐 이름, 캡슐 오픈 시기, 용도, 테마를 전송
+  // 용도에 따라 다른 화면으로 이동
+  // 캡슐 이름, 오픈 날짜, 받는 사람, 테마 정보 등을 전달
   const confirmBtnHandler = (event) => {
     if (userData.purpose === "toMe") {
       navigate("/capsule/letter-format", {
-        state: { recipient: "ME", theme: userData.theme },
+        state: {
+          pcapsule_name: userData.capsuleName,
+          open_date: `${userData.year}-${userData.month}-${userData.day}`,
+          dear_name: "ME",
+          theme: userData.theme,
+        },
       });
     } else if (userData.purpose === "toSomeone") {
       navigate("/capsule/input-recipients", {
-        state: { theme: userData.them, purpose: userData.purpose },
+        state: {
+          pcapsule_name: userData.capsuleName,
+          open_date: `${userData.year}-${userData.month}-${userData.day}`,
+          theme: userData.theme,
+          purpose: userData.purpose,
+        },
       });
     } else if (userData.purpose === "rollingPaper") {
       navigate("/capsule/input-recipients", {
-        state: { theme: userData.theme, purpose: userData.purpose },
+        state: {
+          pcapsule_name: userData.capsuleName,
+          open_date: `${userData.year}-${userData.month}-${userData.day}`,
+          theme: userData.theme,
+          purpose: userData.purpose,
+        },
       });
     }
-    const token = sessionStorage.getItem("token"); // 비회원인 경우 쿠키 이용
-    axios
-      .post("", {
-        capsuleName: userData.capsuleName,
-        year: userData.year,
-        month: userData.month,
-        day: userData.day,
-        purpose: userData.purpose,
-        theme: userData.theme,
-        headers: { authorization: token },
-      })
-      .then(function (response) {
-        console.log(response);
-        if (response.status === 200) {
-          // 용도에 따라 다른 화면으로 이동
-          if (userData.purpose === "toMe") {
-            navigate("/capsule/letter-format", {
-              state: { recipient: "ME", theme: userData.theme },
-            });
-          } else if (userData.purpose === "toSomeone") {
-            navigate("/capsule/input-recipients", {
-              state: { theme: userData.them, purpose: userData.purpose },
-            });
-          } else if (userData.purpose === "rollingPaper") {
-            navigate("/capsule/input-recipients", {
-              state: { theme: userData.theme, purpose: userData.purpose },
-            });
-          }
-        } else {
-          alert("제출에 실패했습니다!");
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-        alert("오류가 발생했습니다.");
-      });
   };
 
   return (

@@ -12,23 +12,38 @@ import voicePreviewImg from "../assets/기본 캡슐이미지.png"; // 음성 �
 export default function WritingFormat() {
   const location = useLocation();
   const navigate = useNavigate();
-  const recipient = location.state.recipient; // 이전 페이지에서 가져온 받는 사람 정보
-  const theme = location.state.theme; // 이전 페이지에서 가져온 테마 정보
-  const [format, setFormat] = useState(""); // 사용자가 선택한 작성 형식을 저장할 상태 변수
+  const [format, setFormat] = useState(0); // 사용자가 선택한 작성 형식을 저장할 상태 변수
   const [showTextPreview, setShowTextPreview] = useState(false); // 글 & 사진 미리보기 상태를 저장
   const [showVoicePreview, setShowVoicePreview] = useState(false); // 음성 미리보기 상태를 저장
+
+  console.log(location.state.pcapsule_name);
+  console.log(location.state.open_date);
+  console.log(location.state.dear_name);
+  console.log(location.state.theme);
 
   // 정했어요! 버튼 누르면 실행되는 함수
   const decisionBtnHandler = () => {
     if (!format) {
       alert("작성 형식을 선택해주세요!");
-    } else if (format === "text") {
+    } else if (format === 1) {
       navigate("/capsule/write/text", {
-        state: { recipient: recipient, theme: theme },
+        state: {
+          pcapsule_name: location.state.pcapsule_name,
+          open_date: location.state.open_date,
+          dear_name: location.state.dear_name,
+          theme: location.state.theme,
+          content_type: format,
+        },
       }); // 글 & 편지 작성 화면으로 넘어가기
-    } else if (format === "voice") {
+    } else if (format === 2) {
       navigate("/capsule/write/voice", {
-        state: { recipient: recipient, theme: theme },
+        state: {
+          pcapsule_name: location.state.pcapsule_name,
+          open_date: location.state.open_date,
+          dear_name: location.state.dear_name,
+          theme: location.state.theme,
+          content_type: format,
+        },
       }); // 음성 편지 작성 화면으로 넘어가기
     }
   };
@@ -59,13 +74,13 @@ export default function WritingFormat() {
         </svg>
         <hr className="line2" />
       </div>
-      <p className="person-to-send">To. {recipient}</p>
+      <p className="person-to-send">To. {location.state.dear_name}</p>
       <p className="select-message">작성할 형식을 선택하세요!</p>
       <div className="select-format">
         <div className="text-container">
           <div
-            className={`text ${format === "text" ? "selected-format" : ""}`}
-            onClick={() => setFormat("text")}
+            className={`text ${format === 1 ? "selected-format" : ""}`}
+            onClick={() => setFormat(1)}
           >
             글 & 사진
           </div>
@@ -78,8 +93,8 @@ export default function WritingFormat() {
         </div>
         <div className="voice-container">
           <div
-            className={`voice ${format === "voice" ? "selected-format" : ""}`}
-            onClick={() => setFormat("voice")}
+            className={`voice ${format === 2 ? "selected-format" : ""}`}
+            onClick={() => setFormat(2)}
           >
             음성
           </div>

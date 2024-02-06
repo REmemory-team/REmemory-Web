@@ -13,7 +13,7 @@ export default function CapsuleBasicSetting() {
   const [month, setMonth] = useState(""); // 캡슐 오픈 시기(월)를 저장할 상태 변수 설정
   const [day, setDay] = useState(""); // 캡슐 오픈 시기(일)를 저장할 상태 변수 설정
   const [purpose, setPurpose] = useState(""); // 캡슐 용도를 저장할 상태 변수 설정
-  const [theme, setTheme] = useState(""); //캡슐 테마를 저장할 상태 변수 설정
+  const [theme, setTheme] = useState(0); //캡슐 테마를 저장할 상태 변수 설정
   // 현재 날짜를 저장할 상태 변수
   const [currentYear, setCurrentYear] = useState("");
   const [currentMonth, setCurrentMonth] = useState("");
@@ -204,44 +204,36 @@ export default function CapsuleBasicSetting() {
       </div>
       <p className="basic-setting-input-message">테마를 선택해주세요!</p>
       <div
-        className={`theme-option ${
-          theme === "reMemory" ? "selected-theme" : ""
-        }`}
-        onClick={() => handleThemeSelection("reMemory")}
+        className={`theme-option ${theme === 1 ? "selected-theme" : ""}`}
+        onClick={() => handleThemeSelection(1)}
         style={{ backgroundColor: "#D5C1FF" }}
       >
         RE:memory 테마
       </div>
       <div
-        className={`theme-option ${
-          theme === "birthday" ? "selected-theme" : ""
-        }`}
-        onClick={() => handleThemeSelection("birthday")}
+        className={`theme-option ${theme === 2 ? "selected-theme" : ""}`}
+        onClick={() => handleThemeSelection(2)}
         style={{ backgroundColor: "#FFF9C1" }}
       >
         생일 테마
       </div>
       <div
-        className={`theme-option ${
-          theme === "graduate" ? "selected-theme" : ""
-        }`}
-        onClick={() => handleThemeSelection("graduate")}
+        className={`theme-option ${theme === 3 ? "selected-theme" : ""}`}
+        onClick={() => handleThemeSelection(3)}
         style={{ backgroundColor: "#B0C5ED" }}
       >
         졸업 테마
       </div>
       <div
-        className={`theme-option ${theme === "love" ? "selected-theme" : ""}`}
-        onClick={() => handleThemeSelection("love")}
+        className={`theme-option ${theme === 4 ? "selected-theme" : ""}`}
+        onClick={() => handleThemeSelection(4)}
         style={{ backgroundColor: "#F9D8F0" }}
       >
         사랑 테마
       </div>
       <div
-        className={`theme-option ${
-          theme === "christmas" ? "selected-theme" : ""
-        }`}
-        onClick={() => handleThemeSelection("christmas")}
+        className={`theme-option ${theme === 5 ? "selected-theme" : ""}`}
+        onClick={() => handleThemeSelection(5)}
         style={{ backgroundColor: "#C3DBBF" }}
       >
         크리스마스 테마

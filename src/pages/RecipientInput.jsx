@@ -5,10 +5,11 @@ import "../styles/RecipientInput.css";
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import axios from "axios";
+
 export default function RecipientInput() {
   const navigate = useNavigate();
   const location = useLocation();
-  const theme = location.state.theme; // 이전 페이지에서 가져온 테마 정보
   const purpose = location.state.purpose; // 이전 페이지에서 가져온 용도 정보
   const [recipient, setRecipient] = useState(""); // 받는 사람 정보를 저장할 상태 변수
 
@@ -21,16 +22,40 @@ export default function RecipientInput() {
       alert("타임캡슐을 받을 사람을 적어주세요!");
     } else if (purpose === "toSomeone") {
       // 용도2인 경우, 작성 형식 선택 화면으로 이동
-      // 받는 사람, 테마 정보 전달
+      // 캡슐이름, 오픈 날짜, 받는 사람, 테마 정보 전달
       navigate("/capsule/letter-format", {
         state: {
-          recipient: recipient,
-          theme: theme,
+          pcapsule_name: location.state.pcapsule_name,
+          open_date: location.state.open_date,
+          dear_name: recipient,
+          theme: location.state.theme,
         },
       });
     } else if (purpose === "rollingPaper") {
-      // 용도3인 경우, 캡슐번호 & URL 부여 화면으로 이동
-      navigate("/capsule/assign-number-url");
+      // 용도3인 경우
+      // 서버에 캡슐 이름, 오픈 날짜, 받는 사람, 테마 정보 전송
+      // 서버로부터 캡슐 번호, URL 받음
+      // 캡슐번호 & URL 부여 화면으로 이동 (캡슐 번호, URL 전달)
+      axios
+        .post("", {
+          pcapsule_name: location.state.pcapsule_name,
+          open_date: location.state.open_date,
+          dear_name: recipient,
+          theme: location.state.theme,
+        })
+        .then((response) => {
+          // 요청 성공
+          navigate("/capsule/assign-number-url", {
+            state: {
+              capsule_number: response.data.capsule_number,
+              capsule_url: response.data.capsule_url,
+            },
+          });
+        })
+        .catch((error) => {
+          // 요청 실패
+          console.error("Failed to send capsule data to server", error);
+        });
     }
   };
 

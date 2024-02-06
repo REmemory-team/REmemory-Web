@@ -13,9 +13,6 @@ import { useNavigate } from "react-router";
 
 //import axios
 
-
-
-
 const Write = () => {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
