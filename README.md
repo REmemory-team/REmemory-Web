@@ -1,3 +1,9 @@
+카카오톡 API 관련한 코드는 제외하였습니다.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
