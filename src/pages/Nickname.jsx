@@ -48,30 +48,28 @@ export default function Nickname() {
   };
 
   return (
-    <div className="nickname_container">
-      <div className="container">
-        <div className="label_box">
-          <label htmlFor="nickname_input">사용할 닉네임을 입력해주세요!</label>
-        </div>
-
-        <div className="nickname_box">
-          <input
-            type="text"
-            id="nickname_input"
-            placeholder="입력해주세요"
-            value={userNickname}
-            onChange={handleInputChange}
-            maxLength={maxLength}
-          />
-          <span>
-            {userNickname.length}/{maxLength}
-          </span>
-        </div>
-
-        <button type="submit" id="nickname_submit" onClick={handleSubmit}>
-          이걸로 할게요!
-        </button>
+    <div className="nickname_page">
+      <div className="label_box">
+        <label htmlFor="nickname_input">사용할 닉네임을 입력해주세요!</label>
       </div>
+
+      <div className="nickname_box">
+        <input
+          type="text"
+          id="nickname_input"
+          placeholder="입력해주세요"
+          value={userNickname}
+          onChange={handleInputChange}
+          maxLength={maxLength}
+        />
+        <span>
+          {userNickname.length}/{maxLength}
+        </span>
+      </div>
+
+      <button type="submit" id="nickname_submit" onClick={handleSubmit}>
+        이걸로 할게요!
+      </button>
     </div>
   );
 }
