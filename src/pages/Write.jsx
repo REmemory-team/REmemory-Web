@@ -12,7 +12,6 @@ import icon_camera from "../assets/icon_camera.png";
 import { useNavigate } from "react-router";
 
 //import axios
-
 const Write = () => {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
@@ -118,8 +117,8 @@ const Write = () => {
       </div>
       <div className="write_center">
         <div className="to">
-          <p>To.</p>
-          <input></input>
+          <p>To. ME</p>
+          {/* <input></input> */}
         </div>
         <div className="text">
           {data.image && (
@@ -178,7 +177,7 @@ const Write = () => {
         </div>
       </div>
       <div className="write_bottom">
-        <button className="btn_overview">타임캡슐 미리보기</button>
+        {/* <button className="btn_overview">타임캡슐 미리보기</button> */}
         <button className="btn_submit">다했어요!</button>
       </div>
     </div>

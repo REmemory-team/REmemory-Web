@@ -26,52 +26,52 @@ export default function Nickname() {
     nickname: userNickname,
   }*/
 
-  //닉네임 글자수 확인 함수
+  //사용자가 입력한 닉네임 저장 함수
   const handleInputChange = (event) => {
-    const inputNickname = event.target.value;
-    if (inputNickname.length <= maxLength) {
-      setUserNickname(inputNickname);
-    }
+    setUserNickname(event.target.value);
   };
 
   //이걸로 할게요! 버튼 누를시
   const handleSubmit = () => {
-    //백엔드로 데이터 넘기기
-    /*axios.post(backend, userData)
-      .then(response => {
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });*/
-    navigate("/login/kakao/home", { state: { userNickname } });
+    if(userNickname.length <= maxLength && userNickname.length > 0){
+      navigate("/login/kakao/home", { state: { userNickname } });
+      //백엔드로 데이터 넘기기
+      /*axios.post(backend, userData)
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });*/
+    }
+    else{
+      alert("닉네임은 10자 이내로 설정해 주세요");
+    }
   };
 
   return (
-    <div className="nickname_container">
-      <div className="container">
-        <div className="label_box">
-          <label htmlFor="nickname_input">사용할 닉네임을 입력해주세요!</label>
-        </div>
-
-        <div className="nickname_box">
-          <input
-            type="text"
-            id="nickname_input"
-            placeholder="입력해주세요"
-            value={userNickname}
-            onChange={handleInputChange}
-            maxLength={maxLength}
-          />
-          <span>
-            {userNickname.length}/{maxLength}
-          </span>
-        </div>
-
-        <button type="submit" id="nickname_submit" onClick={handleSubmit}>
-          이걸로 할게요!
-        </button>
+    <div className="nickname_page">
+      <div className="label_box">
+        <label htmlFor="nickname_input">사용할 닉네임을 입력해주세요!</label>
       </div>
+
+      <div className="nickname_box">
+        <input
+          type="text"
+          id="nickname_input"
+          placeholder="입력해주세요"
+          value={userNickname}
+          onChange={handleInputChange}
+          maxLength={maxLength}
+        />
+        <span>
+          {userNickname.length}/{maxLength}
+        </span>
+      </div>
+
+      <button type="submit" id="nickname_submit" onClick={handleSubmit}>
+        이걸로 할게요!
+      </button>
     </div>
   );
 }
