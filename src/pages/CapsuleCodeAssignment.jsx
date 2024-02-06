@@ -82,20 +82,12 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
       <div className="guide-box">
         <p className="guide-title">&nbsp;&nbsp;꼭 읽어보세요!</p>
         <p className="guide-content">
-          • 비회원이실 경우
-          <span className="bold"> 캡슐번호 분실 시 찾으실 수 없습니다.</span>
+          •캡슐 번호는 홈 화면에서 "타임캡슐 확인하기"를 통해 다시 확인하실 수
+          있습니다.
         </p>
         <p className="guide-content">
-          • 카카오톡으로 로그인 하셨을 경우 RE:memory 카카오톡 <br />
-          &nbsp;&nbsp;&nbsp;플러스친구를 통해 캡슐번호를 전송해 드립니다!
-        </p>
-        <p className="guide-content">
-          • 카카오톡으로 로그인 하셨을 경우 로그인 후 <br />
-          &nbsp;&nbsp;&nbsp;만든 타임캡슐 확인이 가능합니다!
-        </p>
-        <p className="guide-content">
-          • 비밀번호 추가 사용 설명멘트 (찾을 떄 사용된다 이런식으로 <br />
-          &nbsp;&nbsp;&nbsp;어떻게 쓰이는지)
+          •비밀번호는 설정 후 변경할 수 없으며, 캡슐을 오픈할 때 캡슐 번호와
+          함께 쓰이기 때문에 꼭 기억해 주세요.
         </p>
       </div>
       <button className="btn" onClick={handleSavePassword}>
