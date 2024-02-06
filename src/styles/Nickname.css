@@ -1,20 +1,18 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-.nickname_container {
+.nickname_page {
     color:#000;
     font-family: Pretendard;
     font-style: normal;
     margin: 0 auto;
-}
-.nickname_container .container{
-    width: 24.5625rem;
-    height: 53.25rem;
+    min-height: 100vh;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(96, 87, 115, 0.00) 1.41%, #AA9ACC 59.9%), #FFF;
     display:flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(180deg, rgba(96, 87, 115, 0.00) 1.41%, #AA9ACC 59.9%), #FFF;
 }
-.nickname_container .label_box{
+.nickname_page .label_box{
     width: 23.0625rem;
     height: 6.625rem;
     margin-top: 5.5rem;
@@ -23,24 +21,25 @@
     justify-content: center;
     flex-shrink: 0;
 }
-.nickname_container .label_box label{
+.nickname_page .label_box label{
     text-align: center;
     font-size: 1.25rem;
     font-weight: 500;
     line-height: 0.8125rem; /* 65% */
     letter-spacing: 0.00413rem;
 }
-.nickname_container .nickname_box{
+.nickname_page .nickname_box{
     position: relative;
     width: 19.1875rem;
     height: 6.625rem;
     flex-shrink: 0;
 }
-.nickname_container #nickname_input{
+.nickname_page #nickname_input{
     width: 18.75rem;
     height: 5.1875rem;
     flex-shrink: 0;
     margin-top: 0.75rem;
+    margin-left: 0.31rem;
     border: none; 
     border-radius: 3rem;
     background-color: rgba(238, 242, 255, 0.70);
@@ -53,10 +52,10 @@
     letter-spacing: 0.00413rem;
     text-align: center;
 }
-.nickname_container #nickname_input::placeholder{
+.nickname_page #nickname_input::placeholder{
     color: #9A9A9A;
 } 
-.nickname_container .nickname_box span{
+.nickname_page .nickname_box span{
     color: #606060;
     text-align: center;
     font-size: 0.75rem;
@@ -67,7 +66,7 @@
     top: 2.94rem;
     left: 16.12rem;
 }
-.nickname_container #nickname_submit{
+.nickname_page #nickname_submit{
     width: 18.75rem;
     height: 3.125rem;
     flex-shrink: 0;
