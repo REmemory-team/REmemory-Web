@@ -120,33 +120,24 @@ const URLnCodeAssignment = () => {
         </div>
       </div>
       <div className="guide-box">
-        <p className="guide-title">&nbsp;&nbsp;롤링페이퍼 작성 방법 설명</p>
-        <p className="guide-content">
-          • 해당 링크로 접속 시 접속자 개별적으로 이름과
-          <br />
-          &nbsp;&nbsp;&nbsp;간단한 비밀번호를 설정하게 됩니다.
-        </p>
-        <p className="guide-content">
-          • 이름과 비밀번호를 설정하였다면 개별적으로 롤링페이퍼를 <br />
-          &nbsp;&nbsp;&nbsp;받으시는 분께 편지 혹은 음성녹음을 첨부하실 수 있게
-          됩니다.
-        </p>
-        <p className="guide-content">
-          • 첨부하면 롤링페이퍼를 받으시는 분의 <br />
-          &nbsp;&nbsp;&nbsp;타임캡슐에 자동적으로 등록됩니다!
-        </p>
         <p className="guide-title">&nbsp;&nbsp;꼭 읽어보세요!</p>
         <p className="guide-content">
-          • 비회원이실 경우
-          <span className="bold"> 캡슐번호 분실 시 찾으실 수 없습니다.</span>
+          &nbsp;&nbsp;&nbsp;•캡슐 번호는 홈 화면에서 "타임캡슐 확인하기"를 통해
+          다시 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;확인하실 수 있습니다.
         </p>
         <p className="guide-content">
-          • 카카오톡으로 로그인 하셨을 경우 RE:memory 카카오톡 <br />
-          &nbsp;&nbsp;&nbsp;플러스친구를 통해 캡슐번호를 전송해 드립니다!
+          &nbsp;&nbsp;&nbsp;•비밀번호는 설정 후 변경할 수 없으며, 캡슐을 오픈할
+          때 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;캡슐 번호와 함께 쓰이기 때문에 꼭
+          기억해 주세요.
+        </p>
+        <p className="guide-title">&nbsp;&nbsp;롤링페이퍼 작성 방법 설명</p>
+        <p className="guide-content">
+          &nbsp;&nbsp;&nbsp;•해당 링크로 접속 시 접속자 개별적으로 내용을 작성할
+          수 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;있습니다.
         </p>
         <p className="guide-content">
-          • 카카오톡으로 로그인 하셨을 경우 로그인 후 <br />
-          &nbsp;&nbsp;&nbsp;만든 타임캡슐 확인이 가능합니다!
+          &nbsp;&nbsp;&nbsp;•작성 완료 시 롤링페이퍼를 받으시는 분의 타임캡슐에
+          자 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;동적으로 등록됩니다!
         </p>
       </div>
       <button className="btn" onClick={handleSavePassword}>
