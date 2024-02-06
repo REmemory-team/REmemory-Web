@@ -1,0 +1,126 @@
+.confirm-setting-page {
+  min-height: 100vh;
+  height: 100%;
+  background: #aa9acc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.confirm-setting-page .confirm-message {
+  color: #fff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 0.8125rem; /* 65% */
+  letter-spacing: 0.00413rem;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  flex-shrink: 0;
+}
+.confirm-setting-page .blur-container {
+  width: 20.4375rem;
+  height: 26.3125rem;
+  border-radius: 155px;
+  background: radial-gradient(
+    53.7% 53.72% at 49.85% 45.01%,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  filter: blur(1.5px);
+  position: absolute;
+  z-index: 0;
+  top: 10.4rem;
+  flex-shrink: 0;
+}
+.confirm-setting-page .setting-info-container {
+  width: 20.4375rem;
+  height: 26.3125rem;
+  flex-shrink: 0;
+  border-radius: 155px;
+  margin-bottom: 3.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.confirm-setting-page .capsule-preview {
+  color: #1c1c1c;
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 92.857% */
+  letter-spacing: 0.00413rem;
+  text-decoration-line: underline;
+  margin-bottom: 1.6rem;
+  margin-top: 4.55rem;
+  flex-shrink: 0;
+}
+.confirm-setting-page .capsuleName {
+  color: #1c1c1c;
+  font-family: Pretendard;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 65% */
+  letter-spacing: 0.00413rem;
+  margin-bottom: 2.7rem;
+  flex-shrink: 0;
+}
+.confirm-setting-page .info-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.2rem;
+  flex-shrink: 0;
+}
+.confirm-setting-page .info-icon {
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+.confirm-setting-page .time-icon {
+  width: 1.25rem;
+  height: 1.42244rem;
+  flex-shrink: 0;
+}
+.confirm-setting-page .purpose-icon {
+  width: 1.375rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+.confirm-setting-page .theme-icon {
+  width: 1.25456rem;
+  height: 1.20475rem;
+  flex-shrink: 0;
+  fill: #1c1c1c;
+}
+.confirm-setting-page .info-content {
+  color: #1c1c1c;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 81.25% */
+  letter-spacing: 0.00413rem;
+  flex-shrink: 0;
+}
+.confirm-setting-page .setting-confirm-btn {
+  width: 12.375rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #000;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+  border-radius: 95px;
+  border: none;
+}

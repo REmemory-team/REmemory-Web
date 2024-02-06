@@ -1,0 +1,155 @@
+.OpenCapsule{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(180deg, rgba(96, 87, 115, 0.00) 0%, #AA9ACC 60.42%), #FFF;
+    min-height: 100vh;
+}
+/*menu*/
+.OpenCapsule .image_menu{
+    position: absolute;
+    cursor: pointer;
+    top: 2rem;
+    right: 2rem;
+    width: 1.25rem;
+    height: 1rem;
+    flex-shrink: 0;
+}
+.OpenCapsule .menu{
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    background-color: #5E4E80;
+    z-index: 1;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.OpenCapsule .container{
+    position: absolute;
+    top: 12.75rem;
+}
+/*image - capsule*/
+.OpenCapsule .image_section{
+    width: 100%;
+    height: 18.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.OpenCapsule .img_isOpened_true{
+    width: 21.125rem;
+    height: 13.625rem;
+    flex-shrink: 0;
+}
+.OpenCapsule .img_isOpened_false{
+    width: 15rem;
+    height: 16.05rem;
+    flex-shrink: 0;
+    position: absolute;
+}
+/*texts*/
+.OpenCapsule .text_section{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4.56rem 0 1rem 0;
+}
+.OpenCapsule img.clock{ 
+    width: 1.8125rem;
+    height: 2.0625rem;
+    flex-shrink: 0;
+}
+.OpenCapsule .maintext{
+    cursor: default;
+    display: flex;
+    width: 21.875rem;
+    height: 6rem;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
+    font-family: 'Pretendard';
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0.8125rem; /* 32.5% */
+    letter-spacing: 0.00413rem;
+}
+.OpenCapsule .text_section button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    /* width: 21.875rem; */
+    /* height: 6rem; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Pretendard';
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 0.8125rem; /* 81.25% */
+    letter-spacing: 0.00413rem;
+}
+.OpenCapsule .btn_isOpened_true{
+    cursor: pointer;
+    text-decoration: underline;    
+}
+.OpenCapsule .ellipses_true .circle{
+    display: none;
+}
+.OpenCapsule .ellipses_false .circle{
+    width: 18.5625rem;
+    height: 18.5625rem;
+    flex-shrink: 0;
+}
+.OpenCapsule .ellipse{
+    position: absolute;
+    width: 2.3125rem;
+    height: 2.3125rem;
+    flex-shrink: 0;
+}
+.OpenCapsule .ellipse.type1{
+    top: 4.75rem;
+    left: 5rem;
+}
+.OpenCapsule .ellipse.type2{
+    top: 0.5rem;
+    left: 11.8rem;    
+}
+.OpenCapsule .ellipse.type3{
+    top: 1rem;
+    left: 12.5rem;
+    
+    width: 3.625rem;
+    height: 3.625rem;
+}
+.OpenCapsule .ellipses_false .ellipse{    
+    width: 2.5625rem;
+    height: 2.5625rem;
+    flex-shrink: 0;
+}
+.OpenCapsule .ellipses_false .ellipse.type1{
+    top: 14.5rem;
+    left: 3.15rem;
+}
+.OpenCapsule .ellipses_false .ellipse.type2{
+    top: 3rem;
+    left: 17.45rem;
+}
+.OpenCapsule .ellipses_false .ellipse.type3{
+    top: 1.2rem;
+    left: 15.95rem;
+
+    width: 3.625rem;
+    height: 3.625rem;
+}

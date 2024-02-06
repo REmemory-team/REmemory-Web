@@ -1,0 +1,92 @@
+.received-voice-page {
+  min-height: 100vh;
+  height: 100%;
+  background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(170, 154, 204, 0) 46.53%
+    );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+.received-voice-page .top-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+.received-voice-page .back-btn {
+  width: 1.64063rem;
+  height: 1.09375rem;
+}
+.received-voice-page .home-btn {
+  width: 1.61456rem;
+  height: 1.45313rem;
+  stroke: rgba(0, 0, 0, 0);
+}
+.received-voice-page .voice-contents-box {
+  width: 19.8rem;
+  height: 28rem;
+  flex-shrink: 0;
+  background-color: rgba(223, 230, 255, 0.7);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+}
+.received-voice-page .voice-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4.3rem;
+  margin-bottom: 5.5rem;
+}
+.received-voice-page .record-image {
+  margin-bottom: 1.4rem;
+}
+.received-voice-page .record-bar {
+  display: flex;
+}
+.received-voice-page .play-btn {
+  margin-right: 0.9rem;
+}
+.received-voice-page .bar {
+  position: relative;
+  padding: 0.12rem 0rem;
+}
+.received-voice-page .base-bar {
+  width: 10.5rem;
+  height: 1.5625rem;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #d4c0ff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.received-voice-page .main-bar {
+  width: 6.1875rem;
+  height: 1.5625rem;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #beace6;
+  position: absolute;
+  top: 0.129rem;
+}
+.received-voice-page .received-recipient,
+.received-voice-page .received-sender {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+  padding: 0.1rem 1.3rem;
+  flex-shrink: 0;
+}
+.received-voice-page .received-sender {
+  display: flex;
+  justify-content: end;
+}

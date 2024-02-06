@@ -1,0 +1,150 @@
+.Write{
+    background-color: #AA9ACC;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.Write.birthday{
+    background-color: #FBF3C1;
+}
+.Write.graduate{
+    background-color: #6A88C2;
+}
+.Write.love{
+    background-color: #FEE1F7;
+}
+.Write.christmas{
+    background-color: #F3A0A0;
+}
+
+.Write .write_top{
+    display: flex;
+    justify-content: end;
+    margin: 2rem 1rem 1rem 0;
+}
+.Write .write_top .btn_save{
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.50);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    width: 5.125rem;
+    height: 2rem;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.8125rem; /* 72.222% */
+    letter-spacing: 0.00413rem;
+}
+
+.Write .write_center{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color: rgba(223, 230, 255, 0.70);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin: 1rem 2.9rem 8rem 2.9rem;
+    flex: 1;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.Write .write_center .to{
+    display: flex;
+    align-items: baseline;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    font-family: 'Pretendard';
+    font-weight: bold;
+}
+.Write .write_center .to p{
+    margin: 0;
+}
+.Write .write_center .to input{
+    margin: 0 0.5rem;
+    max-width: 80%;
+    height: 1rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    font-family: 'Pretendard';
+    font-weight: bold; /*600*/
+    font-size: 16px;
+}
+.Write .write_center .text{
+    display: flex;
+    flex-direction: column;
+    min-height: 20rem;
+    max-width: 100%;
+    align-items: center;
+    flex: 1;
+}
+.Write .write_center .selected_image{
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    max-height: 100%;
+}
+.Write .write_center textarea{
+    outline: none;
+    border: none;
+    width: 100%;
+    resize: none;
+    background-color: transparent;
+    font-family: 'Pretendard';
+    font-size: 14px;
+    margin-bottom: 1rem;
+    text-align: start;
+    /* flex: 1; */
+    min-height: 5rem;
+    overflow-y: hidden;
+}
+.Write .write_center textarea.center{
+    text-align: center;
+}
+.Write .write_center textarea.right{
+    text-align: end;
+}
+
+.Write .write_center .buttons img{
+    cursor: pointer;
+    width: 24px;
+    margin-right: 0.5rem;
+}
+.Write .write_bottom{
+    /* margin: 1rem; */
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    margin: 1rem 3rem;
+}
+
+.Write .write_bottom button{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-family: 'Pretendard';
+    font-weight: bold;  /*400*/
+    font-size: 18px;
+    background-color: #C1DDFF;
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 3rem;
+    margin-bottom: 5rem;
+    box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+/* .Write .write_bottom button:first-child{
+    background-color: transparent;
+    font-family: 'Pretendard';
+    text-decoration: underline;
+    width: auto;
+    box-shadow: none;
+} */

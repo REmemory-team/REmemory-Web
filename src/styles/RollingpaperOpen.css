@@ -1,0 +1,42 @@
+.rollingpaper-open-page {
+  width: 24.5625rem;
+  height: 86.875rem;
+  height: auto;
+  background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(170, 154, 204, 0) 46.53%
+    );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rollingpaper-open-page .top-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+.rollingpaper-open-page .back-btn {
+  width: 1.64063rem;
+  height: 1.09375rem;
+}
+.rollingpaper-open-page .home-btn {
+  width: 1.61456rem;
+  height: 1.45313rem;
+  stroke: rgba(0, 0, 0, 0);
+}
+.rollingpaper-open-page .rolling-capsule-name {
+  color: #fff;
+  text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
+  font-family: Pretendard;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 13px; /* 37.143% */
+  letter-spacing: 0.066px;
+  margin-bottom: 57px;
+}
