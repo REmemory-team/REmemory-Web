@@ -63,8 +63,14 @@ const Write = () => {
 
   //이미지 첨부/삭제
   const addItem = () => {
-    fileInputRef.current.click();
+    const imageCount = items.filter(item => item.type === 'image').length;
+    if(imageCount < 3){
+      fileInputRef.current.click();
+    } else{
+      alert("이미지는 최대 3장까지 추가할 수 있습니다.");
+    }
   };
+
   const handleFileChange = (e) => {
     //선택한 파일에 대한 작업 수행
     const selectedFile = e.target.files[0];
@@ -80,7 +86,19 @@ const Write = () => {
   const handleContentChange = (index, content) => {
     const newItems = [...items];
     newItems[index].content = content;
-    setItems(newItems);
+
+    const allText = newItems.reduce((acc, item) => {
+      if(item.type === 'text'){
+        acc += item.content;
+      }
+      return acc;
+    }, '');
+
+    if(allText.length <= 1000){
+      setItems(newItems);
+    } else{
+      alert("텍스트 내용은 1000자를 초과할 수 없습니다.");
+    }
   };
   const deleteImage = async(index) => {
     if (window.confirm("이미지를 삭제할까요?")) {  
