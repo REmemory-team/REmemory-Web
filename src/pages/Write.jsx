@@ -16,14 +16,15 @@ const Write = () => {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
   const [data, setData] = useState({
-    recipient: "",
-    image: "",
-    text: "",
+    // recipient: "",
+    // image: "",
+    // text: "",
     alignType: "left",
     theme: "default",
   });
+  const [items, setItems] = useState([{ type: 'text', content: '' }]);
 
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
 
   //임시저장
   const handleSave = () => {
@@ -42,37 +43,26 @@ const Write = () => {
       // }catch(err){
       //     window.alert(err);
       // }
-      navigate(`/`);
+      // navigate(`/`);
     }
   };
 
   //textarea 길이 조정
   const autoResizeTextarea = (e) => {
-    setData({
-      ...data,
-      text: e.target.value,
-    });
-
-    let textarea = document.querySelector(`.${data.alignType}`);
+    let textarea;
+    {typeof e === 'number' ?
+      textarea = document.querySelector(`.index${e-1}`)
+    : textarea = document.querySelector(`.index${e.target.id}`)
+    }
     if (textarea) {
-      textarea.style.height = "auto";
+      textarea.style.height = "0";
       let height = textarea.scrollHeight;
-      console.log(height);
-      textarea.style.height = `${height + 8}px`;
-    }
-  };
-  //이미지 삭제
-  const deleteImage = () => {
-    if (window.confirm("이미지를 삭제할까요?")) {
-      setData({
-        ...data,
-        image: null,
-      });
+      textarea.style.height = `${height}px`;
     }
   };
 
-  //이미지 파일 찾기
-  const findPhoto = () => {
+  //이미지 첨부/삭제
+  const addItem = () => {
     fileInputRef.current.click();
   };
   const handleFileChange = (e) => {
@@ -82,14 +72,26 @@ const Write = () => {
       //선택한 파일 읽기
       const reader = new FileReader();
       reader.onload = (event) => {
-        setData({
-          ...data,
-          image: event.target.result,
-        });
+        setItems([...items, { type: 'image', content: event.target.result }, { type: 'text', content: '' }]);
       };
       reader.readAsDataURL(selectedFile);
     }
   };
+  const handleContentChange = (index, content) => {
+    const newItems = [...items];
+    newItems[index].content = content;
+    setItems(newItems);
+  };
+  const deleteImage = async(index) => {
+    if (window.confirm("이미지를 삭제할까요?")) {  
+      const newItems = [...items];
+      newItems[index - 1].content += '\n' + newItems[index + 1].content;
+      newItems.splice(index, 2);
+      await setItems(newItems);
+      await autoResizeTextarea(index);
+    }
+  };
+
   //텍스트 좌, 우, 가운데 정렬
   const changeAlignType = () => {
     if (data.alignType === "left") {
@@ -113,33 +115,42 @@ const Write = () => {
   return (
     <div className={["Write", data.theme].join(" ")}>
       <div className="write_top">
-        <button className="btn_save">임시저장</button>
+        <button className="btn_save" onClick={handleSave}>임시저장</button>
       </div>
       <div className="write_center">
         <div className="to">
           <p>To. ME</p>
           {/* <input></input> */}
         </div>
+
         <div className="text">
-          {data.image && (
-            <img
-              className="selected_image"
-              onClick={deleteImage}
-              alt=""
-              src={data.image}
-            />
-          )}
-          <textarea
-            className={data.alignType}
-            placeholder="여기에 작성하세요."
-            onKeyDown={autoResizeTextarea}
-            onKeyUp={autoResizeTextarea}
-          />
+          {items.map((item, index) => (
+          <div key={index}>
+            {item.type === 'text' ? (
+              <textarea
+                value={item.content}
+                onChange={(e) => handleContentChange(index, e.target.value)}
+                className={`${data.alignType} index${index}`}
+                placeholder="여기에 작성하세요."
+                onKeyDown={autoResizeTextarea}
+                onKeyUp={autoResizeTextarea}
+                id={`${index}`}
+              />
+            ) : (
+              <img
+                className="selected_image"
+                onClick={()=>deleteImage(index)}
+                alt=""
+                src={item.content}
+              />
+            )}
+          </div>
+          ))}
         </div>
         <div className="buttons">
           <img
             className="btn_photo"
-            onClick={findPhoto}
+            onClick={addItem}
             alt=""
             src={icon_camera}
           />
@@ -178,7 +189,7 @@ const Write = () => {
       </div>
       <div className="write_bottom">
         {/* <button className="btn_overview">타임캡슐 미리보기</button> */}
-        <button className="btn_submit">다했어요!</button>
+        <button className="btn_submit" onClick={handleSubmit}>다했어요!</button>
       </div>
     </div>
   );
