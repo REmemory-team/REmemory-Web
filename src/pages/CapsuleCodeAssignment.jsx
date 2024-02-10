@@ -3,10 +3,11 @@
 import "../styles/CapsuleCodeAssignment.css";
 
 import React, { useEffect, useState } from "react";
+
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Copyimg from "../assets/Copy.png";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CapsuleCodeAssignment = ({ initialNickname }) => {
   const [capsuleNumber, setCapsuleNumber] = useState("");
@@ -94,12 +95,14 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
       <div className="guide-box">
         <p className="guide-title">&nbsp;&nbsp;꼭 읽어보세요!</p>
         <p className="guide-content">
-          •캡슐 번호는 홈 화면에서 "타임캡슐 확인하기"를 통해 다시 확인하실 수
-          있습니다.
+          • 캡슐번호는 홈화면에서 “타임캡슐 확인하기"를 통해 다시 확
+          <br />
+          &nbsp;&nbsp;&nbsp;인하실 수 있습니다.
         </p>
         <p className="guide-content">
-          •비밀번호는 설정 후 변경할 수 없으며, 캡슐을 오픈할 때 캡슐 번호와
-          함께 쓰이기 때문에 꼭 기억해 주세요.
+          • 비밀번호는 설정 후 변경할 수 없으며, 캡슐을 오픈할 때 캡슐
+          <br />
+          &nbsp;&nbsp;&nbsp;번호와 함께 쓰이기 때문에 꼭 기억해주세요.
         </p>
       </div>
       <button className="btn" onClick={handleSavePassword}>

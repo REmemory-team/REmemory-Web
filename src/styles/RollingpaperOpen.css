@@ -1,6 +1,5 @@
 .rollingpaper-open-page {
-  width: 24.5625rem;
-  height: 86.875rem;
+  min-height: 100vh;
   height: auto;
   background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
     linear-gradient(
@@ -33,10 +32,10 @@
   color: #fff;
   text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
   font-family: Pretendard;
-  font-size: 35px;
+  font-size: 2.1875rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 13px; /* 37.143% */
-  letter-spacing: 0.066px;
-  margin-bottom: 57px;
+  line-height: 0.8125rem; /* 37.143% */
+  letter-spacing: 0.00413rem;
+  margin-bottom: 3.2rem;
 }

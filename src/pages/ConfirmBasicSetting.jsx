@@ -2,17 +2,12 @@
 
 import "../styles/ConfirmBasicSetting.css";
 
-import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
-import Preview from "../components/Preview";
-import capsulePreviewImg from "../assets/기본 캡슐이미지.png";
 
 export default function ConfirmBasicSetting() {
   const location = useLocation();
   const navigate = useNavigate();
   const userData = location.state; // 캡슐 기본 설정 페이지로부터 전달받은 데이터
-  const [showCapsulePreview, setShowCapsulePreview] = useState(false);
 
   console.log(userData.capsuleName);
   console.log(`${userData.year}-${userData.month}-${userData.day}`);
@@ -57,12 +52,6 @@ export default function ConfirmBasicSetting() {
       <p className="confirm-message">타임캡슐 설정을 확인하세요!</p>
       <div className="blur-container"></div>
       <div className="setting-info-container">
-        <p
-          className="capsule-preview"
-          onClick={() => setShowCapsulePreview(true)}
-        >
-          타임캡슐 미리보기
-        </p>
         <p className="capsuleName">{userData.capsuleName}</p>
         <div className="info-box">
           <span className="info-icon">
@@ -151,23 +140,17 @@ export default function ConfirmBasicSetting() {
             </svg>
           </span>
           <span className="info-content">
-            {userData.theme === "reMemory" && "RE:memory 테마"}
-            {userData.theme === "birthday" && "생일 테마"}
-            {userData.theme === "graduate" && "졸업 테마"}
-            {userData.theme === "love" && "사랑 테마"}
-            {userData.theme === "christmas" && "크리스마스 테마"}
+            {userData.theme === 1 && "RE:memory 테마"}
+            {userData.theme === 2 && "생일 테마"}
+            {userData.theme === 3 && "졸업 테마"}
+            {userData.theme === 4 && "사랑 테마"}
+            {userData.theme === 5 && "크리스마스 테마"}
           </span>
         </div>
       </div>
       <button className="setting-confirm-btn" onClick={confirmBtnHandler}>
         확인했어요!
       </button>
-      {showCapsulePreview && (
-        <Preview
-          content={capsulePreviewImg}
-          setShowPreview={setShowCapsulePreview}
-        />
-      )}
     </div>
   );
 }

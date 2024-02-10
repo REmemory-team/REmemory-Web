@@ -23,7 +23,7 @@ export default function CapsuleBasicSetting() {
 
   // 캡슐 이름 유효성 검사를 위한 정규 표현식
   const validateCapsuleName = (name) => {
-    const regex = /^[ㄱ-ㅎ가-힣a-zA-Z0-9]+$/;
+    const regex = /^[ㄱ-ㅎ가-힣a-zA-Z0-9\s]+$/;
     return regex.test(name);
   };
   // 사용자가 입력한 값을 상태 변수 capsuleName에 실시간으로 반영하여 저장하기 위한 함수
@@ -103,13 +103,18 @@ export default function CapsuleBasicSetting() {
   // next버튼을 누를 경우 작동하는 함수
   // 페이지를 넘길 때 캡슐이름, 캡슐 오픈 시기, 용도, 테마 정보를 넘겨줌
   const nextBtnHandler = () => {
+    const trimmedCapsuleName = capsuleName.trim();
+
+    const formattedMonth = month.padStart(2, "0");
+    const formattedDay = day.padStart(2, "0");
+
     // 모든 필드가 채워졌는지 확인
     if (!isFormValid()) {
       alert("모든 항목에 답해주세요!");
       return;
     }
     // 캡슐 이름 유효성 검사
-    if (!validateCapsuleName(capsuleName)) {
+    if (!validateCapsuleName(trimmedCapsuleName)) {
       alert("캡슐 이름을 한글, 영어, 숫자로만 작성해주세요!");
       return;
     }
@@ -126,10 +131,10 @@ export default function CapsuleBasicSetting() {
     // 모든 항목이 올바르게 채워진 경우, 다음 페이지로 이동
     navigate("/capsule/settings/confirm", {
       state: {
-        capsuleName: capsuleName,
+        capsuleName: trimmedCapsuleName,
         year: year,
-        month: month,
-        day: day,
+        month: formattedMonth,
+        day: formattedDay,
         purpose: purpose,
         theme: theme,
       },
@@ -152,6 +157,7 @@ export default function CapsuleBasicSetting() {
       <div className="opening-time-input-field">
         <input
           type="text"
+          value={year}
           onChange={handleYearChange}
           placeholder={currentYear}
           className="opening-time-input opening-time-input-year"
@@ -160,6 +166,7 @@ export default function CapsuleBasicSetting() {
         <span className="date">년</span>
         <input
           type="text"
+          value={month}
           onChange={handleMonthChange}
           placeholder={currentMonth}
           className="opening-time-input"
@@ -168,6 +175,7 @@ export default function CapsuleBasicSetting() {
         <span className="date">월</span>
         <input
           type="text"
+          value={day}
           onChange={handleDayChange}
           placeholder={currentDay}
           className="opening-time-input"

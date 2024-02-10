@@ -367,8 +367,8 @@
   flex-shrink: 0;
   border-radius: 1.125rem;
   background: rgba(255, 255, 255, 0.8);
-  margin-bottom: 2.1rem;
-  padding: 0.1rem 1.5rem 0.1rem 1.7rem;
+  margin-bottom: 5rem;
+  padding: 0.4rem 1.5rem 0.1rem 1.7rem;
 }
 .capsule-code-assignment .guide-title {
   color: #5e4e80;

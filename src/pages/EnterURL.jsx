@@ -52,6 +52,8 @@ export default function EnterURL() {
       <p className="url-sender-message">자신을 알려주세요!</p>
       <div className="sender-input-field">
         <input
+          type="text"
+          value={sender}
           className="sender"
           onChange={handleSenderChange}
           maxLength="10"
@@ -64,17 +66,14 @@ export default function EnterURL() {
           &nbsp;&nbsp;롤링페이퍼 작성 방법 설명
         </p>
         <p className="how-to-write-content">
-          • 해당 링크로 접속 시 접속자 개별적으로 이름과 <br />
-          &nbsp;&nbsp;&nbsp;간단한 비밀번호를 설정하게 됩니다.
+          • 해당 링크에서는 접속자 개별적으로 내용을 작성할 수 있습니
+          <br />
+          &nbsp;&nbsp;&nbsp;다.
         </p>
         <p className="how-to-write-content">
-          • 이름과 비밀번호를 설정하였다면 개별적으로 롤링페이퍼를 <br />
-          &nbsp;&nbsp;&nbsp;받으시는 분께 편지 혹은 음성녹음을 첨부하실 수 있게
-          됩니다.
-        </p>
-        <p className="how-to-write-content">
-          • 첨부하면 롤링페이퍼를 받으시는 분의 <br />
-          &nbsp;&nbsp;&nbsp;타임캡슐에 자동적으로 등록됩니다!
+          • 이 화면에서 설정한 닉네임으로 작성 완료 시, 롤링페이퍼를
+          <br />
+          &nbsp;&nbsp;&nbsp;받으시는 분의 타임캡슐에 자동적으로 등록됩니다!
         </p>
       </div>
       <button className="url-page-decision-btn" onClick={decisionBtnHandler}>

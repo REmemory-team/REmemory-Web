@@ -7,7 +7,7 @@ const rollingContentsTest = [
     format: "글/사진",
     theme: "생일",
     recipient: "찹도",
-    contents: "생일축하해요~~~~",
+    contents: "생일축하해요~~",
   },
   {
     id: 2,

@@ -5,16 +5,10 @@ import "../styles/WritingFormat.css";
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import Preview from "../components/Preview";
-import textPreviewImg from "../assets/기본 캡슐이미지.png"; // 글 & 사진 미리보기 이미지
-import voicePreviewImg from "../assets/기본 캡슐이미지.png"; // 음성 미리보기 이미지
-
 export default function WritingFormat() {
   const location = useLocation();
   const navigate = useNavigate();
   const [format, setFormat] = useState(0); // 사용자가 선택한 작성 형식을 저장할 상태 변수
-  const [showTextPreview, setShowTextPreview] = useState(false); // 글 & 사진 미리보기 상태를 저장
-  const [showVoicePreview, setShowVoicePreview] = useState(false); // 음성 미리보기 상태를 저장
 
   console.log(location.state.pcapsule_name);
   console.log(location.state.open_date);
@@ -84,12 +78,6 @@ export default function WritingFormat() {
           >
             글 & 사진
           </div>
-          <span
-            className="text-preview"
-            onClick={() => setShowTextPreview(true)}
-          >
-            미리보기
-          </span>
         </div>
         <div className="voice-container">
           <div
@@ -98,12 +86,6 @@ export default function WritingFormat() {
           >
             음성
           </div>
-          <span
-            className="voice-preview"
-            onClick={() => setShowVoicePreview(true)}
-          >
-            미리보기
-          </span>
         </div>
       </div>
       <hr className="division-line2" />
@@ -112,15 +94,6 @@ export default function WritingFormat() {
           정했어요!
         </button>
       </div>
-      {showTextPreview && (
-        <Preview content={textPreviewImg} setShowPreview={setShowTextPreview} />
-      )}
-      {showVoicePreview && (
-        <Preview
-          content={voicePreviewImg}
-          setShowPreview={setShowVoicePreview}
-        />
-      )}
     </div>
   );
 }

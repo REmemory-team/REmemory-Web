@@ -17,6 +17,7 @@ import ReceivedVoice from "./pages/ReceivedVoice";
 import RecipientInput from "./pages/RecipientInput";
 import Recording from "./pages/Recording";
 import RollingpaperOpen from "./pages/RollingpaperOpen";
+import Settings from "./pages/Settings.jsx";
 import URLnCodeAssignment from "./pages/URLnCodeAssignment.jsx";
 import Write from "./pages/Write";
 import WritingFormat from "./pages/WritingFormat";
@@ -70,6 +71,7 @@ function App() {
         <Route path="/capsule/write/voice" element={<Recording />} />
         <Route path="/login/kakao/nickname" element={<Nickname />} />
         <Route path="/login/kakao/home" element={<Home />}></Route>
+        <Route path="/login/kakao/settings" element={<Settings />}></Route>
       </Routes>
       {/* </Router> */}
     </div>

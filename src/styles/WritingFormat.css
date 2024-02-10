@@ -66,7 +66,7 @@
 }
 .format-select-page .text,
 .format-select-page .voice {
-  width: 12rem;
+  width: 14.625rem;
   height: 3.75rem;
   display: flex;
   justify-content: center;
@@ -82,22 +82,7 @@
   line-height: 0.8125rem; /* 65% */
   letter-spacing: 0.00413rem;
   border-radius: 20px;
-  margin-right: 2.5rem;
   transition: transform 0.2s ease;
-  cursor: pointer;
-}
-.format-select-page .text-preview,
-.format-select-page .voice-preview {
-  color: #fff;
-  text-align: center;
-  font-family: Pretendard;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 0.8125rem; /* 92.857% */
-  letter-spacing: 0.00413rem;
-  text-decoration-line: underline;
-  flex-shrink: 0;
   cursor: pointer;
 }
 .format-select-page .division-line2 {

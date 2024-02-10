@@ -67,6 +67,8 @@ export default function RecipientInput() {
       <div className="recipient-input-field">
         <span className="prefix-to">To. </span>
         <input
+          type="text"
+          value={recipient}
           className="recipient"
           onChange={handleRecipientChange}
           maxLength="10"

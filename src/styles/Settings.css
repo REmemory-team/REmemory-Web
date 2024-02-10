@@ -1,0 +1,229 @@
+.setting-page {
+  min-height: 100vh;
+  height: 100%;
+  background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(170, 154, 204, 0) 46.53%
+    );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+.setting-page .top-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 0.5rem;
+}
+.setting-page .back-btn {
+  width: 1.64063rem;
+  height: 1.09375rem;
+}
+.setting-page .home-btn {
+  width: 1.61456rem;
+  height: 1.45313rem;
+  stroke: rgba(0, 0, 0, 0);
+}
+.setting-page .settings {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+}
+.setting-page .section1 {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.setting-page .user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 5rem;
+}
+.setting-page .user-name {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 0.8125rem; /* 59.091% */
+  letter-spacing: 0.00413rem;
+}
+.setting-page .kakao {
+  display: flex;
+  align-items: center;
+}
+.setting-page .kakao-logo {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  border-radius: 0.3125rem;
+  background-image: url("../assets/kakao_logo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 0.5rem;
+}
+.setting-page .kakao-login {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem;
+  letter-spacing: 0.00413rem;
+}
+.setting-page .kakao-login span {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.8125rem;
+  letter-spacing: 0.00413rem;
+}
+.setting-page .rememory-logo {
+  width: 4.25rem;
+  height: 4.1875rem;
+  border-radius: 1.25rem;
+  border: 1px solid #878787;
+  background: url("../assets/rememory_logo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.setting-page hr {
+  width: 18.75rem;
+  height: 0.0625rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  margin-bottom: 1.2rem;
+}
+.setting-page .section2 {
+  margin-bottom: 1.5rem;
+}
+.setting-page .nickname {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+  padding-left: 0.8rem;
+}
+.setting-page .nickname-input {
+  width: 12.375rem;
+  height: 2.9375rem;
+  background-color: rgba(238, 242, 255, 0.7);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 95px;
+  margin-right: 1.3rem;
+  text-align: center;
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+}
+.setting-page .nickname-input::placeholder {
+  color: #9a9a9a;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+}
+.setting-page .nickname-input:focus {
+  outline: none;
+}
+.setting-page .change-btn {
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.8125rem; /* 86.667% */
+  letter-spacing: 0.00413rem;
+  text-decoration-line: underline;
+}
+.setting-page .section3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.setting-page .logout {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.setting-page .logout-icon {
+  width: 0.9375rem;
+  height: 1rem;
+  flex-shrink: 0;
+  background: url("../assets/logout.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 0.6rem;
+}
+.setting-page .logout-title {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+}
+.setting-page .withdrawal {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: Pretendard;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 86.667% */
+  letter-spacing: 0.00413rem;
+  text-decoration-line: underline;
+}
+.setting-page .footer {
+  margin-top: 0.5rem;
+}
+.setting-page .footer a {
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 86.667% */
+  letter-spacing: 0.00413rem;
+  text-decoration: none;
+}
+.setting-page .footer span {
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 86.667% */
+  letter-spacing: 0.00413rem;
+  text-decoration: none;
+}

@@ -313,7 +313,7 @@
   align-items: center;
   justify-content: center;
   padding-top: 1rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 .url-code-assignment .code {
   color: #000;
@@ -365,7 +365,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 .url-code-assignment .password {
   color: #000;
@@ -459,7 +459,7 @@
   flex-shrink: 0;
   border-radius: 1.125rem;
   background: rgba(255, 255, 255, 0.8);
-  margin-bottom: 2.1rem;
+  margin-bottom: 4.5rem;
   padding: 0.6rem 1.2rem 0.1rem 1.25rem;
 }
 .url-code-assignment .guide-title {
