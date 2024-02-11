@@ -28,12 +28,22 @@ export default function Nickname() {
 
   //사용자가 입력한 닉네임 저장 함수
   const handleInputChange = (event) => {
-    setUserNickname(event.target.value);
+    const inputNickname = event.target.value;
+    if(inputNickname.length > maxLength){
+      alert("닉네임은 10자 이내로 설정해 주세요");
+    }
+    else setUserNickname(inputNickname);
+  };
+
+  //닉네임 유효성 검사
+  const validNickname = (nickname) =>{
+    const regex = /^(?!\s)([ㄱ-ㅎ가-힣a-zA-Z0-9?!@#$%^&*()-_+=~`\s]){1,10}$/;
+    return regex.test(nickname);
   };
 
   //이걸로 할게요! 버튼 누를시
   const handleSubmit = () => {
-    if(userNickname.length <= maxLength && userNickname.length > 0){
+    if(validNickname(userNickname)){
       navigate("/login/kakao/home", { state: { userNickname } });
       //백엔드로 데이터 넘기기
       /*axios.post(backend, userData)
@@ -45,7 +55,7 @@ export default function Nickname() {
         });*/
     }
     else{
-      alert("닉네임은 10자 이내로 설정해 주세요");
+      alert("한글, 영어, 숫자, 특수문자로 구성된 닉네임을 입력해 주세요");
     }
   };
 
