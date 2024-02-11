@@ -9,9 +9,19 @@ import image_circle from "../assets/image_circle.png";
 import image_ellipse from "../assets/image_ellipse.png";
 import image_openedCapsule from "../assets/image_openedCapsule.png";
 import image_unopenedCapsule from "../assets/image_unopenedCapsule.png";
+import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
 const OpenCapsule = () => {
+  const location = useLocation();
+
+  console.log(location.state.capsule_number);
+  console.log(location.state.password);
+  console.log(location.state.pcapsule_name);
+  console.log(location.state.open_date);
+  console.log(location.state.dear_name);
+  console.log(location.state.theme);
+
   const [isOpened, setIsOpened] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const menuHandler = () => {

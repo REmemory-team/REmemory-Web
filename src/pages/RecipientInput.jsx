@@ -37,24 +37,28 @@ export default function RecipientInput() {
       // 서버로부터 캡슐 번호, URL 받음
       // 캡슐번호 & URL 부여 화면으로 이동 (캡슐 번호, URL 전달)
       axios
-        .post("", {
-          pcapsule_name: location.state.pcapsule_name,
+        .post("https://dev.mattie3e.store/rcapsule/create", {
+          rcapsule_name: location.state.pcapsule_name,
           open_date: location.state.open_date,
           dear_name: recipient,
-          theme: location.state.theme,
+          // theme: location.state.theme,
         })
         .then((response) => {
-          // 요청 성공
-          navigate("/capsule/assign-number-url", {
-            state: {
-              capsule_number: response.data.capsule_number,
-              capsule_url: response.data.capsule_url,
-            },
-          });
+          console.log(response);
+          // navigate("/capsule/assign-number-url", {
+          //   state: {
+          //     capsule_number: response.data.capsule_number,
+          //     capsule_url: response.data.capsule_url,
+          //   },
+          // });
         })
         .catch((error) => {
-          // 요청 실패
-          console.error("Failed to send capsule data to server", error);
+          console.error(error);
+          if (error.response.status === 400) {
+            alert("잘못된 요청입니다.");
+          } else {
+            alert("오류가 발생했습니다.");
+          }
         });
     }
   };

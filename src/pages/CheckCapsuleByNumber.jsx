@@ -11,11 +11,6 @@ export default function CheckCapsuleByNumber() {
   const navigate = useNavigate();
   const [capsuleNum, setCapsuleNum] = useState(""); // 캡슐 번호 저장할 상태 변수
   const [password, setPassword] = useState(""); // 비밀번호 저장할 상태 변수
-  const [capsuleName, setCapsuleName] = useState("");
-  const [openDate, setOpenDate] = useState("");
-  const [dearName, setDearName] = useState("");
-  const [theme, setTheme] = useState("");
-  const [status, setStatus] = useState("");
 
   const handleCapsuleNumChange = (event) => {
     setCapsuleNum(event.target.value);
@@ -26,36 +21,47 @@ export default function CheckCapsuleByNumber() {
 
   // 확인 버튼 누르면 실행되는 함수
   const confirmBtnHandler = () => {
+    if (!capsuleNum) {
+      alert("캡슐번호를 입력해주세요.");
+      return;
+    }
+    if (!password) {
+      alert("비밀번호를 입력해주세요.");
+      return;
+    }
     // 서버에 캡슐 번호와 비밀번호 전송
     // 서버로부터 캡슐 번호, 캡슐 이름, 오픈 날짜, 받는 사람, 테마, 상태 정보 받아와 캡슐 확인페이지로 전달
     axios
-      .get("/pcapsule/retrieve", {
-        capsule_number: capsuleNum,
-        password: password,
+      .get("https://dev.mattie3e.store/pcapsule/retrieve", {
+        params: {
+          capsule_number: capsuleNum,
+          pcapsule_password: password,
+        },
       })
       .then((response) => {
-        setCapsuleNum(response.data.capsule_number);
-        setCapsuleName(response.data.pcapsule_name);
-        setOpenDate(response.data.open_data);
-        setDearName(response.data.dear_name);
-        setTheme(response.data.theme);
-        setStatus(response.data.status);
-        navigate("/capsule/verify", {
-          state: {
-            status: status,
-            capsule_number: capsuleNum,
-            password: password,
-            pcapsule_name: capsuleName,
-            open_data: openDate,
-            dear_name: dearName,
-            theme: theme,
-          },
-        });
-        // 비밀번호가 올바르지 않은 경우, 없는 캡슐 번호일 경우 처리
+        if (response.status === 200) {
+          navigate("/capsule/verify", {
+            state: {
+              capsule_number: response.data.result.pcapsules.capsule_number,
+              password: password,
+              pcapsule_name: response.data.result.pcapsules.pcapsule_name,
+              open_date: response.data.result.pcapsules.open_date,
+              dear_name: response.data.result.pcapsules.dear_name,
+              theme: response.data.result.pcapsules.theme,
+              // status: response.data.result.pcapsules.theme,
+            },
+          });
+        }
       })
       .catch(function (error) {
         console.log(error);
-        alert("오류가 발생했습니다.");
+        if (error.response.status === 404) {
+          alert("캡슐을 찾을 수 없습니다.");
+        } else if (error.response.status === 400) {
+          alert("잘못된 요청입니다.");
+        } else {
+          alert("오류가 발생했습니다.");
+        }
       });
   };
 
