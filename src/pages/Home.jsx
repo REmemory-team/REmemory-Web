@@ -2,7 +2,7 @@
 
 import "../styles/Home.css";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import capsuleImg1 from "../assets/capsule_list1.png";
@@ -10,6 +10,11 @@ import capsuleImg2 from "../assets/capsule_list2.png";
 import capsuleImg3 from "../assets/capsule_list3.png";
 import closeIcon from "../assets/icon_x.svg";
 import starIcon from "../assets/Vector.svg";
+import icon_menu from "../assets/icon_menu.png";
+
+import Menu from "../components/Menu";
+import ListItem from "../components/CapsuleListItem.jsx";
+import capsuleListData from "../Data/CapsuleListTest.js";
 
 //import axios from 'axios';
 
@@ -19,31 +24,22 @@ export default function Home() {
 
   const navigate = useNavigate();
 
+  const [openMenu, setOpenMenu] = useState(false);
   const [popupOpen, setPopupOpen] = useState("");
+  const [capsuleList, setCapsuleList] = useState([]);
 
-  const numberOfCapsules = 3;
+  const capsuleImages = [capsuleImg1,capsuleImg2,capsuleImg3];
+  const maxCapsule = 50;
 
-  //const [capsules, setCapsules] = useState("");
+  useEffect(()=>{
+    //캡슐 목록 받아오기
+    setCapsuleList(capsuleListData);
+  },[]);
 
-  /*useEffect(() => {
-    if(userInfo && userInfo.userNickname){
-      console.log(userInfo.userNickname);
-    }
-  },[userInfo]);*/
-
-  // useEffect(()=>{
-  //   const capsuleData = async () => {
-  //     try{
-  //       const response = await axios.get('serverURL');
-  //       setCapsules(response.data);
-  //     }
-  //     catch(error){
-  //       console.log(error);
-  //     }
-  //   };
-
-  //   capsuleData();
-  // },[]);
+  //홈화면 메뉴
+  const menuHandler = () => {
+    setOpenMenu(!openMenu);
+  };
 
   //만들기 버튼 누를시
   const handleSetting = () => {
@@ -61,29 +57,30 @@ export default function Home() {
     setPopupOpen(false);
   };
 
-  // const capsuleImg = (id) => {
-  //   const capsuleNumber = id % 3;
-  //   if (capsuleNumber === 1) {
-  //     return <img src={capsuleImg1} alt="1번 캡슐" />;
-  //   } else if (capsuleNumber === 2) {
-  //     return <img src={capsuleImg2} alt="2번 캡슐" />;
-  //   } else {
-  //     return <img src={capsuleImg3} alt="3번 캡슐" />;
-  //   }
-  // };
-
   return (
     <div className="home">
+      <img
+        className="image_menu"
+        src={icon_menu}
+        alt="메뉴아이콘"
+        onClick={menuHandler}
+      />
+      {openMenu && (
+        <div className="menu">
+          <Menu menuHandler={menuHandler} />
+        </div>
+      )}
+
       <div className="image_box">
         <div className="capsule_image"></div>
         <span>?</span>
       </div>
 
       <div className="button_making">
-        <button onClick={handleSetting}>타임캡슐 만들기</button>
+        <button className="home_btn" onClick={handleSetting}>타임캡슐 만들기</button>
       </div>
       <div className="button_checking">
-        <button onClick={handleChecking}>타임캡슐 확인하기</button>
+        <button className="home_btn" onClick={handleChecking}>타임캡슐 확인하기</button>
       </div>
 
       {popupOpen && (
@@ -91,7 +88,7 @@ export default function Home() {
           <div className="popup_header">
             <img id="star" src={starIcon} alt="별아이콘" />
             <span>
-              {userInfo.userNickname}의 타임캡슐 목록 ({numberOfCapsules}/50)
+              {userInfo.userNickname}의 타임캡슐 목록 ({capsuleList.length}/{maxCapsule})
             </span>
             <img
               id="x"
@@ -101,37 +98,20 @@ export default function Home() {
             />
           </div>
           <div className="content_box">
-            {/*
-              capsules.map((capsule)=>(
-                <div className="capsule_list">
-                  <div className="list_image">
-                    <img src={capsuleImg(capsule.id)} />
-                  </div>
-                  <span>타임캡슐 ${capsule.id}</span>
-                </div>
+            {
+              capsuleList.map((capsule,index)=>(
+                <ListItem
+                key={index}
+                imgSrc={capsuleImages[index%3]}
+                name={capsule.capsule_name}
+                number={capsule.capsule_number}
+                />
               ))
-            */}
-            <div className="capsule_list">
-              <div className="list_image">
-                <img src={capsuleImg1} alt="캡슐이미지1" />
-              </div>
-              <span>타임캡슐 1</span>
-            </div>
-            <div className="capsule_list">
-              <div className="list_image">
-                <img src={capsuleImg2} alt="캡슐이미지2" />
-              </div>
-              <span>타임캡슐 2</span>
-            </div>
-            <div className="capsule_list">
-              <div className="list_image">
-                <img src={capsuleImg3} alt="캡슐이미지3" />
-              </div>
-              <span>타임캡슐 3</span>
-            </div>
+            }
           </div>
         </div>
       )}
     </div>
   );
 }
+
