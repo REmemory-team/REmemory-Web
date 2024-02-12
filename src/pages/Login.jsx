@@ -44,32 +44,19 @@ const Login = () => {
 
   const handleKakaoCallback = async () => {
     const urlParams = new URLSearchParams(location.search);
-    const code = urlParams.get("code"); //서버로 보낼 인가코드
+    const code = urlParams.get("code"); // 서버로 보낼 인가코드
 
     try {
-      // 인가 코드를 사용하여 서버에서 accessToken 발급
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_BASE_URL}/token`, // 서버주소 넣기
+      // 서버로 인가 코드 전송
+      await axios.get(
+        `${process.env.REACT_APP_API_BASE_URL}`, // 백엔드 서버 주소 및 엔드포인트
         {
           code: code,
         }
       );
-
-      const accessToken = response.data.access_token;
-      console.log("accessToken:", accessToken);
-
-      // Kakao API를 사용하여 사용자 정보 가져오기
-      const kakaoUserInfo = await Kakao.API.request({
-        url: "/v2/user/me",
-        data: { propertyKeys: ["kakao_account.profile.nickname"] },
-      });
-
-      // 닉네임을 상태로 업데이트 또는 다른 로직 수행
-      const nickname = kakaoUserInfo.kakao_account.profile.nickname;
-
-      navigate("/");
+      navigate("/Nickname");
     } catch (error) {
-      console.error("Failed to get accessToken:", error);
+      console.error("Failed to send authorization code to server:", error);
     }
   };
 
@@ -77,7 +64,7 @@ const Login = () => {
     if (location.search.includes("code=")) {
       handleKakaoCallback();
     }
-  }, [location.search, navigate]);
+  }, [location.search]);
 
   const capsuleCheck = () => {
     navigate("/capsule/input-number");
