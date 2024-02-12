@@ -15,12 +15,13 @@ import { useState } from "react";
 const OpenCapsule = () => {
   const location = useLocation();
 
-  console.log(location.state.capsule_number);
-  console.log(location.state.password);
-  console.log(location.state.pcapsule_name);
-  console.log(location.state.open_date);
-  console.log(location.state.dear_name);
-  console.log(location.state.theme);
+  // console.log(location.state.capsule_number);
+  // console.log(location.state.password);
+  // console.log(location.state.pcapsule_name);
+  // console.log(location.state.open_date);
+  // console.log(location.state.dear_name);
+  // console.log(location.state.theme);
+  // console.log(location.state.status);
 
   const [isOpened, setIsOpened] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);

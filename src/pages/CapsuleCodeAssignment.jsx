@@ -70,8 +70,8 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
       <p className="message">캡슐번호를 기억하세요!</p>
       <div className="code-box">
         <div className="code-container">
-          <span className="code">캡슐번호&nbsp;&nbsp;</span>
-          <span className="assigned-code">|&nbsp;&nbsp;{capsuleNumber}</span>
+          <span className="code">캡슐번호&nbsp;</span>
+          <span className="assigned-code">|&nbsp;{capsuleNumber}</span>
         </div>
         <div className="copy-container">
           <img src={Copyimg} alt="복사하기" className="copy-img" />

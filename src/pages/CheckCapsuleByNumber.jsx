@@ -39,7 +39,14 @@ export default function CheckCapsuleByNumber() {
         },
       })
       .then((response) => {
+        console.log(response);
         if (response.status === 200) {
+          console.log(response.data.result.pcapsules.open_date);
+          const openDate = new Date(response.data.result.pcapsules.open_date);
+          console.log(openDate);
+          const currentDate = new Date();
+          const status = currentDate >= openDate ? "unlocked" : "locked";
+
           navigate("/capsule/verify", {
             state: {
               capsule_number: response.data.result.pcapsules.capsule_number,
@@ -48,7 +55,7 @@ export default function CheckCapsuleByNumber() {
               open_date: response.data.result.pcapsules.open_date,
               dear_name: response.data.result.pcapsules.dear_name,
               theme: response.data.result.pcapsules.theme,
-              // status: response.data.result.pcapsules.theme,
+              status: status,
             },
           });
         }
