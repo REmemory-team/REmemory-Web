@@ -29,10 +29,13 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
 
     // 백엔드 API로 캡슐번호 비밀번호 전송
     axios
-      .post("API_ENDPOINT_URL", {
-        capsule_number: newCapsuleNumber,
-        pcapsule_password: password,
-      })
+      .post(
+        `${process.env.REACT_APP_API_BASE_URL}pcapsule/create/savePassword`,
+        {
+          capsule_number: newCapsuleNumber,
+          pcapsule_password: password,
+        }
+      )
       .then((response) => {
         console.log(response);
       })

@@ -1,12 +1,10 @@
-// 캡슐번호 & URL 부여 (용도3)
-
 import "../styles/URLnCodeAssignment.css";
 
 import React, { useEffect, useState } from "react";
-
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Copyimg from "../assets/Copy.png";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const URLnCodeAssignment = () => {
   const [capsuleNumber, setCapsuleNumber] = useState("");
@@ -27,6 +25,25 @@ const URLnCodeAssignment = () => {
     const newCapsuleNumber = `${paddedRandomNum}`;
     setCapsuleNumber(newCapsuleNumber);
     setCopied(false);
+
+    savePasswordToBackend(newCapsuleNumber, password);
+  };
+
+  const savePasswordToBackend = (newCapsuleNumber, password) => {
+    axios
+      .post(
+        `${process.env.REACT_APP_API_BASE_URL}pcapsule/create/savePassword`,
+        {
+          capsule_number: newCapsuleNumber,
+          pcapsule_password: password,
+        }
+      )
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error("Error while sending capsule number:", error);
+      });
   };
 
   const handleCopyClick = () => {
@@ -36,14 +53,12 @@ const URLnCodeAssignment = () => {
   };
 
   const generateUrl = () => {
-    // URL 생성 로직 추가 (예: 서버에서 고유한 URL을 가져오거나 자체 로직으로 생성)
     const newUrl = "https://example.com/" + generateRandomString();
     setUrl(newUrl);
     setCopiedUrl(false);
   };
 
   const generateRandomString = () => {
-    // 원하는 길이의 랜덤 문자열 생성 로직 추가
     const length = 6;
     const characters =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -67,17 +82,11 @@ const URLnCodeAssignment = () => {
   };
 
   const handleSavePassword = () => {
-    // 비밀번호를 어디에 어떻게 저장할지 상의 후 추가
-
-    // 비밀번호가 숫자로만 구성되어 있고, 길이가 6자리인지 확인
     if (/^\d{6}$/.test(password)) {
-      // 비밀번호가 유효한 경우
-      // 비밀번호를 어디에 어떻게 저장할지 상의 후 추가
       console.log("비밀번호 저장 완료!");
       navigate("/login/kakao/home");
       window.alert("타입캡슐이 성공적으로 생성되었습니다!");
     } else {
-      // 비밀번호가 유효하지 않은 경우
       window.alert("비밀번호는 숫자 6자리여야 합니다.");
     }
   };
