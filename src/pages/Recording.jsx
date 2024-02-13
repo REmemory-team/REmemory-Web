@@ -7,7 +7,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 import fileIcon from "../assets/voice_file.png";
 
-// import axios from 'axios';
+import axios from 'axios';
 
 export default function Record() {
   const [isLoggedIn, setIsLoggedIn] = useState("");
@@ -24,7 +24,7 @@ export default function Record() {
   const receivedData = location.state;
   const dear_name = receivedData.dear_name;
   const navigate = useNavigate("");
-  // const userId = 1;
+  const userId = 1;
 
   //로그인 확인 함수(임시저장 버튼 여부)
   function checkLoggedIn() {
@@ -164,13 +164,13 @@ export default function Record() {
 
   //파일 변환, 전송
   const tempRecording = () => {
-    //파일 생성자를 사용해 파일로 변환
-    // console.log(URL.createObjectURL(audioUrl));
-    const sound = new File([audioUrl], "soundBlob", {
-      type: "audio/mpeg",
-    });
-    console.log(sound);
-    // console.log("임시저장 완료");
+    // //파일 생성자를 사용해 파일로 변환
+    // // console.log(URL.createObjectURL(audioUrl));
+    // const sound = new File([audioUrl], "soundBlob", {
+    //   type: "audio/mpeg",
+    // });
+    // console.log(sound);
+    console.log("임시저장 완료");
   };
 
   //작성 완료 버튼
@@ -178,28 +178,38 @@ export default function Record() {
     if(audioUrl){
       if(window.confirm("작성을 끝낼까요? 이후 수정이 불가합니다.")){
         if(audio && !audio.pause()){audio.pause();}
-        // navigate("/capsule/assign-number");
-          // axios
-          // .post(`https://dev.mattie3e.store/pcapsule/create/?userId=${userId}`, {
-          //   pcapsule_name: receivedData.capsule_name,
-          //   open_date: receivedData.open_date,
-          //   dear_name: receivedData.dear_name,
-          //   theme: receivedData.theme,
-          //   content_type: receivedData.content_type,
-          //   content: [
-          //     {
-          //       voice_url: audioUrl
-          //     }
-          //   ]
-          // })
-          // .then((response) => {
-          //   console.log("서버응답:",response);
-          //   navigate("/capsule/assign-number");
-          // })
-          // .catch((error) => {
-          //   console.error("오류:", error);
-          // });
+        // const rcapsule_number = "TEST_1111";
+        // const from_name = "JiN";
+        // console.log(audioUrl);
+        // const sound = new File([audioUrl], "soundBlob", {
+        //   type: "audio/mpeg",
+        // });
+        const data = {
+          pcapsule_name: receivedData.pcapsule_name,
+          open_date: receivedData.open_date,
+          dear_name: receivedData.dear_name,
+          theme: receivedData.theme,
+          content_type: receivedData.content_type,
+          content: [
+            {
+              voice_url: audioUrl
+            }
+          ]
+        };
+
+        axios.post('https://dev.mattie3e.store/pcapsule/create', data, {
+          params: {
+            userId: userId
+          }
+        })
+        .then((response) => {
+          console.log("서버응답:",response);
           navigate("/capsule/assign-number");
+        })
+        .catch((error) => {
+          console.error("오류:", error);
+        });
+          // navigate("/capsule/assign-number");
       }
     } else{
       alert("음성편지를 작성해주세요");
