@@ -32,10 +32,8 @@ const Login = () => {
       const isIOS = Boolean(navigator.userAgent.match(/iPhone|iPad|iPod/i));
 
       const res = await Kakao.Auth.authorize({
-        redirectUri: encodeURIComponent(
-          "http://localhost:3000/oauth/kakao/callback" //redirect_uri
-        ),
-        throughTalk: isAndroid ? false : isIOS ? false : true, //카카오 어플이 설치 되어있으면 앱 실행
+        redirectUri: "http://localhost:3000/login/kakao/nickname", //http://localhost:3000/oauth/kakao/callback
+        throughTalk: isAndroid ? false : isIOS ? false : true,
       });
     } catch (error) {
       console.error("Kakao login error:", error);
@@ -49,12 +47,12 @@ const Login = () => {
     try {
       // 서버로 인가 코드 전송
       await axios.get(
-        `${process.env.REACT_APP_API_BASE_URL}`, // 백엔드 서버 주소 및 엔드포인트
+        `${process.env.REACT_APP_API_BASE_URL}/user/auth?code=${code}`, // 백엔드 서버 주소 및 엔드포인트
         {
           code: code,
         }
       );
-      navigate("/Nickname");
+      navigate("/login/kakao/nickname");
     } catch (error) {
       console.error("Failed to send authorization code to server:", error);
     }
