@@ -21,6 +21,7 @@ import capsuleListData from "../Data/CapsuleListTest.js";
 export default function Home() {
   const location = useLocation();
   const userInfo = location.state;
+  const nickname = "리메모리"; //임시
 
   const navigate = useNavigate();
 
@@ -88,7 +89,7 @@ export default function Home() {
           <div className="popup_header">
             <img id="star" src={starIcon} alt="별아이콘" />
             <span>
-              {userInfo.userNickname}의 타임캡슐 목록 ({capsuleList.length}/{maxCapsule})
+              {nickname}의 타임캡슐 목록 ({capsuleList.length}/{maxCapsule})
             </span>
             <img
               id="x"
