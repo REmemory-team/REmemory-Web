@@ -11,8 +11,22 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  background: linear-gradient(0deg, #aa9acc 0%, #aa9acc 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #aa9acc 45.83%);
+  background: linear-gradient(0deg, #AA9ACC 0%, #AA9ACC 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #AA9ACC 45.83%);
+}
+.recording_page.theme1{
+  background: linear-gradient(180deg, #BED5F9 0%, #AA9ACC 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #AA9ACC 45.83%);
+}
+.recording_page.theme2{
+  background: linear-gradient(180deg, #FBF3C1 0%, rgba(251, 243, 193, 0.00) 100%), #FFF;
+}
+.recording_page.theme3{
+  background: linear-gradient(180deg, #6A88C2 27.78%, #C1C6F3 100%), #FFF;
+}
+.recording_page.theme4{
+  background: linear-gradient(180deg, rgba(255, 237, 251, 0.00) 0%, #FEE1F7 100%), #FFF;
+}
+.recording_page.theme5{
+  background: linear-gradient(180deg, #F3A0A0 0.01%, rgba(113, 155, 112, 0.20) 94.18%), #FFF;
 }
 
 .recording_page .temp_save_button {
@@ -44,21 +58,24 @@
   margin-top: 8.5rem;
 }
 
-.recording_page .capsule_pre_button {
-  width: 16.4375rem;
-  height: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
-  text-align: center;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 0.8125rem; /* 72.222% */
-  letter-spacing: 0.00413rem;
-  text-decoration-line: underline;
-  margin-top: 2rem;
-  cursor: pointer;
+.recording_page .recording_box.theme1{
+  background: rgba(223, 230, 255, 0.70);
+}
+.recording_page .recording_box.theme2{
+  background: rgba(255, 254, 246, 0.90);
+}
+.recording_page .recording_box.theme3{
+  background: rgba(36, 60, 122, 0.70);
+}
+.recording_page .recording_box.theme4{
+  background: rgba(250, 217, 243, 0.90);
+}
+.recording_page .recording_box.theme5{
+  background: rgba(255, 255, 255, 0.90);
+}
+
+.recording_page .dear_capsule.theme3{
+  color: #FFF;
 }
 
 .recording_page .record_submit_button {
@@ -70,7 +87,8 @@
   justify-content: center;
   background-color: rgba(193, 221, 255, 0.9);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-top: 4.31rem;
+  margin-top: 8.31rem;
+  margin-bottom: 5.19rem;
   font-family: Pretendard;
   font-size: 1.125rem;
   text-align: center;
@@ -80,6 +98,27 @@
   border-radius: 2rem;
   cursor: pointer;
 }
+
+.recording_page .record_submit_button.theme1{
+  background: rgba(193, 221, 255, 0.90);
+}
+.recording_page .record_submit_button.theme2{
+  background: rgba(255, 231, 184, 0.70);
+}
+.recording_page .record_submit_button.theme3{
+  background:  #516BB2;
+  color: #FFF;
+}
+.recording_page .record_submit_button.theme4{
+  background: rgba(255, 205, 241, 0.70);
+}
+.recording_page .record_submit_button.theme5{
+  background: rgba(82, 125, 84, 0.80);
+  color: #FFF;
+}
+
+
+
 .recording_page .icon_container {
   position: relative;
 }
@@ -114,18 +153,6 @@
   left: 2.44rem;
 }
 
-.recording_page .bold {
-  width: 6.1875rem;
-  height: 1.5625rem;
-  flex-shrink: 0;
-  border-radius: 1rem;
-  background: #beace6;
-  position: absolute;
-  top: 15.81rem;
-  left: 5.31rem;
-  z-index: 1;
-}
-
 .recording_page .light {
   width: 10.5rem;
   height: 1.5625rem;
@@ -136,4 +163,67 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   top: 15.81rem;
   left: 5.31rem;
+}
+
+.recording_page .bold {
+  width: 0rem;
+  height: 1.5625rem;
+  flex-shrink: 0;
+  border-radius: 1rem;
+  background: #beace6;
+  position: absolute;
+  top: 15.81rem;
+  left: 5.31rem;
+  transition: right 0.1s ease;
+}
+
+.recording_page .light.theme1{
+  background: #D4C0FF;
+}
+.recording_page .light.theme2{
+  background: #FFF5BD;
+}
+.recording_page .light.theme3{
+  background: #C0CEFF;  
+}
+.recording_page .light.theme4{
+  background: #FFD4F6;
+}
+.recording_page .light.theme5{
+  background: #EAA6A3;
+}
+
+.recording_page .bold.theme1{
+  background: #BEACE6;
+}
+.recording_page .bold.theme2{
+  background: #FFE894;
+}
+.recording_page .bold.theme3{
+  background: #9CA6D6; 
+}
+.recording_page .bold.theme4{
+  background: #FFCDF1;
+}
+.recording_page .bold.theme5{
+  background: #E88D89;
+}
+
+
+.recording_page .add_file{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  max-width: 90%;
+  left: 1.44rem;
+  top: 25.44rem;
+}
+
+.recording_page .file_icon{
+  cursor: pointer;
+}
+
+.recording_page .file_name{
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
 }

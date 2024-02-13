@@ -11,9 +11,12 @@ import icon_profile from "../assets/icon_profile.png";
 import icon_setting from "../assets/icon_setting.png";
 import image_logo from "../assets/image_logo.png";
 import text_logo from "../assets/text_logo.png";
+
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Menu = ({ menuHandler }) => {
+  const navigate = useNavigate();
   const userName = "린서";
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSocial, setIsSocial] = useState(true);
@@ -40,7 +43,7 @@ const Menu = ({ menuHandler }) => {
             </div>
             <div className="button_section">
               <img alt="" src={icon_setting} />
-              <button>계정 설정</button>
+              <button onClick={()=>{navigate('/login/kakao/settings')}}>계정 설정</button>
             </div>
           </div>
         ) : (
