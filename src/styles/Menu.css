@@ -8,15 +8,12 @@
 }
 .Menu img.btn_close {
   position: absolute;
-  top: 26px;
-  /* left: 359px; */
-  right: 26px;
-  /* border: 3px; */
-  /* width: 13px;
-    height: 13px; */
-  width: 17px;
-  height: 17px;
+  top: 1.6rem;
+  right: 1.65rem;
+  width: 1.05rem;
+  height: 1.1rem;
   margin: 0;
+  cursor: pointer;
 }
 .Menu .buttons {
   display: flex;
