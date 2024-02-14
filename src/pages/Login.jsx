@@ -32,8 +32,10 @@ const Login = () => {
       const isIOS = Boolean(navigator.userAgent.match(/iPhone|iPad|iPod/i));
 
       const res = await Kakao.Auth.authorize({
-        redirectUri: "http://localhost:3000/login/kakao/nickname", //http://localhost:3000/oauth/kakao/callback
-        throughTalk: isAndroid ? false : isIOS ? false : true,
+        redirectUri: encodeURIComponent(
+          "http://localhost:3000/oauth/kakao/callback" //redirect_uri
+        ),
+        throughTalk: isAndroid ? false : isIOS ? false : true, //카카오 어플이 설치 되어있으면 앱 실행
       });
     } catch (error) {
       console.error("Kakao login error:", error);
@@ -42,19 +44,32 @@ const Login = () => {
 
   const handleKakaoCallback = async () => {
     const urlParams = new URLSearchParams(location.search);
-    const code = urlParams.get("code"); // 서버로 보낼 인가코드
+    const code = urlParams.get("code"); //서버로 보낼 인가코드
 
     try {
-      // 서버로 인가 코드 전송
-      await axios.get(
-        `${process.env.REACT_APP_API_BASE_URL}/user/auth?code=${code}`, // 백엔드 서버 주소 및 엔드포인트
+      // 인가 코드를 사용하여 서버에서 accessToken 발급
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_BASE_URL}/token`, // 서버주소 넣기
         {
           code: code,
         }
       );
-      navigate("/login/kakao/nickname");
+
+      const accessToken = response.data.access_token;
+      console.log("accessToken:", accessToken);
+
+      // Kakao API를 사용하여 사용자 정보 가져오기
+      const kakaoUserInfo = await Kakao.API.request({
+        url: "/v2/user/me",
+        data: { propertyKeys: ["kakao_account.profile.nickname"] },
+      });
+
+      // 닉네임을 상태로 업데이트 또는 다른 로직 수행
+      const nickname = kakaoUserInfo.kakao_account.profile.nickname;
+
+      navigate("/");
     } catch (error) {
-      console.error("Failed to send authorization code to server:", error);
+      console.error("Failed to get accessToken:", error);
     }
   };
 
@@ -62,7 +77,7 @@ const Login = () => {
     if (location.search.includes("code=")) {
       handleKakaoCallback();
     }
-  }, [location.search]);
+  }, [location.search, navigate]);
 
   const capsuleCheck = () => {
     navigate("/capsule/input-number");

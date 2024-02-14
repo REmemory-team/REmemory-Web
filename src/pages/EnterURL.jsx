@@ -3,19 +3,20 @@
 import "../styles/EnterURL.css";
 
 import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 export default function EnterURL() {
+  const { capsuleId } = useParams();
   const navigate = useNavigate();
   const [recipient, setRecipient] = useState(""); // 서버로부터 가져온 받는 사람 정보 저장할 상태 변수
   const [theme, setTheme] = useState(""); // 서버로부터 가져온 테마 정보 저장할 상태 변수
   const [sender, setSender] = useState(""); // 보내는 사람 저장할 상태 변수
   const [charNum, setCharNum] = useState(0); // 보내는 사람 글자 수 세기 위한 상태 변수
+  const purpose = "rollingPaper";
 
   // 서버로부터 받는 사람, 테마 정보 가져오기
-  // URL 정보를 서버에 전송?
   useEffect(() => {
     axios
       .get("서버_URL")
@@ -24,7 +25,7 @@ export default function EnterURL() {
         setTheme(response.data.theme);
       })
       .catch((error) => {
-        console.error("Fetch error:", error);
+        console.error(error);
       });
   }, []);
 
@@ -40,7 +41,13 @@ export default function EnterURL() {
       // 작성 형식 선택 화면으로 이동
       // 받는 사람, 테마, 보내는 사람 정보 전달
       navigate("/capsule/letter-format", {
-        state: { recipient: recipient, theme: theme, sender: sender },
+        state: {
+          dear_name: recipient,
+          theme: theme,
+          sender: sender,
+          purpose: purpose,
+          capsule_number: capsuleId,
+        },
       });
     }
   };

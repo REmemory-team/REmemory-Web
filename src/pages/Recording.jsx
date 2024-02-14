@@ -3,11 +3,10 @@
 import "../styles/Recording.css";
 
 import React, { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
+import axios from "axios";
 import fileIcon from "../assets/voice_file.png";
-
-import axios from 'axios';
 
 export default function Record() {
   const [isLoggedIn, setIsLoggedIn] = useState("");
@@ -57,19 +56,19 @@ export default function Record() {
   // };
 
   //파일 아이콘 누를시
-  const attachAudio = () =>{
-    const fileInput = document.getElementById('audioFileInput');
+  const attachAudio = () => {
+    const fileInput = document.getElementById("audioFileInput");
     fileInput.click();
     // console.log("파일첨부");
-  }
+  };
 
   //오디오 파일 업로드
-  const handleFileUpload = (e) =>{
+  const handleFileUpload = (e) => {
     const file = e.target.files[0];
     setAudioUrl(file);
     setAudio(null);
     // console.log("파일첨부완료 =>", file);
-  }
+  };
 
   // useEffect(() => {
   //   console.log("음성첨부",audioUrl);
@@ -96,7 +95,8 @@ export default function Record() {
     }
 
     //마이크 사용 권한 획득
-    navigator.mediaDevices.getUserMedia({ audio: true })
+    navigator.mediaDevices
+      .getUserMedia({ audio: true })
       .then((stream) => {
         const mediaRecorder = new MediaRecorder(stream);
         mediaRecorder.start(); //녹음 시작
@@ -134,7 +134,7 @@ export default function Record() {
     source.disconnect();
     // setDisabled(false); //재생 버튼 다시 활성화
   };
-  
+
   //재생 버튼
   const play = () => {
     // console.log("재생");
@@ -175,9 +175,11 @@ export default function Record() {
 
   //작성 완료 버튼
   const decisionBtnHandler = () => {
-    if(audioUrl){
-      if(window.confirm("작성을 끝낼까요? 이후 수정이 불가합니다.")){
-        if(audio && !audio.pause()){audio.pause();}
+    if (audioUrl) {
+      if (window.confirm("작성을 끝낼까요? 이후 수정이 불가합니다.")) {
+        if (audio && !audio.pause()) {
+          audio.pause();
+        }
         // const rcapsule_number = "TEST_1111";
         // const from_name = "JiN";
         // console.log(audioUrl);
@@ -192,35 +194,38 @@ export default function Record() {
           content_type: receivedData.content_type,
           content: [
             {
-              voice_url: audioUrl
-            }
-          ]
+              voice_url: audioUrl,
+            },
+          ],
         };
 
-        axios.post('https://dev.mattie3e.store/pcapsule/create', data, {
-          params: {
-            userId: userId
-          }
-        })
-        .then((response) => {
-          console.log("서버응답:",response);
-          navigate("/capsule/assign-number");
-        })
-        .catch((error) => {
-          console.error("오류:", error);
-        });
-          // navigate("/capsule/assign-number");
+        axios
+          .post("https://dev.mattie3e.store/pcapsule/create", data, {
+            params: {
+              userId: userId,
+            },
+          })
+          .then((response) => {
+            console.log("서버응답:", response);
+            navigate("/capsule/assign-number", {
+              state: { capsule_number: response.data.result.capsule_number },
+            });
+          })
+          .catch((error) => {
+            console.error("오류:", error);
+          });
+        // navigate("/capsule/assign-number");
       }
-    } else{
+    } else {
       alert("음성편지를 작성해주세요");
     }
   };
 
   //재생바 보여주기
   useEffect(() => {
-    const bold = document.querySelector('.bold');
+    const bold = document.querySelector(".bold");
     if (audio) {
-      audio.addEventListener('timeupdate', () => {
+      audio.addEventListener("timeupdate", () => {
         const currentTime = audio.currentTime;
         const duration = audio.duration;
         const percentage = (currentTime / duration) * 100;
@@ -233,57 +238,64 @@ export default function Record() {
   return (
     <div className={`recording_page theme${nowTheme}`}>
       <div className="test">
-      {isLoggedIn && (
-        <div className="temp_save_button" onClick={tempRecording}>
-          임시저장
-        </div>
-      )}
+        {isLoggedIn && (
+          <div className="temp_save_button" onClick={tempRecording}>
+            임시저장
+          </div>
+        )}
 
-      <div className={`recording_box theme${nowTheme}`}>
-        <div className="icon_container">
-          <div className={`dear_capsule theme${nowTheme}`}>To. {dear_name} </div>
-          <div className="mike" onClick={onRec ? onRecAudio : offRecAudio}>
-            <img 
-            id='mii'
-            src={require(`../assets/Recording_icon${nowTheme}.png`)} 
-            alt="마이크 아이콘"
-            style={{
-              transition: "transform 0.8s ease",
-              transform: onRec ? "scale(1)" : "scale(1.1)" //녹음 중 이미지 확대
-            }}
+        <div className={`recording_box theme${nowTheme}`}>
+          <div className="icon_container">
+            <div className={`dear_capsule theme${nowTheme}`}>
+              To. {dear_name}{" "}
+            </div>
+            <div className="mike" onClick={onRec ? onRecAudio : offRecAudio}>
+              <img
+                id="mii"
+                src={require(`../assets/Recording_icon${nowTheme}.png`)}
+                alt="마이크 아이콘"
+                style={{
+                  transition: "transform 0.8s ease",
+                  transform: onRec ? "scale(1)" : "scale(1.1)", //녹음 중 이미지 확대
+                }}
+              />
+            </div>
+            <img
+              src={require(`../assets/play_btn${nowTheme}.png`)}
+              alt="재생 아이콘"
+              id="play_button"
+              onClick={!onRec ? null : play}
             />
-          </div>
-          <img
-            src={require(`../assets/play_btn${nowTheme}.png`)}
-            alt="재생 아이콘"
-            id="play_button"
-            onClick={!onRec? null : play}
-          />
-          <div className="play_bar">
-            <div className={`light theme${nowTheme}`}></div>
-            <div className={`bold theme${nowTheme}`}></div>
-          </div>
+            <div className="play_bar">
+              <div className={`light theme${nowTheme}`}></div>
+              <div className={`bold theme${nowTheme}`}></div>
+            </div>
 
-          <div className="add_file">
-          <img 
-            className="file_icon" 
-            src={fileIcon} 
-            alt="파일 아이콘" 
-            onClick={attachAudio}
-          />
-          <input
-            type="file"
-            id="audioFileInput"
-            accept = 'audio/*'
-            style = {{display : "none"}}
-            onChange = {handleFileUpload}
-          />
-          <span className="file_name">{audioUrl.name}</span>
+            <div className="add_file">
+              <img
+                className="file_icon"
+                src={fileIcon}
+                alt="파일 아이콘"
+                onClick={attachAudio}
+              />
+              <input
+                type="file"
+                id="audioFileInput"
+                accept="audio/*"
+                style={{ display: "none" }}
+                onChange={handleFileUpload}
+              />
+              <span className="file_name">{audioUrl.name}</span>
+            </div>
           </div>
+        </div>
+        <div
+          className={`record_submit_button theme${nowTheme}`}
+          onClick={decisionBtnHandler}
+        >
+          다했어요!
         </div>
       </div>
-      <div className={`record_submit_button theme${nowTheme}`} onClick={decisionBtnHandler}>다했어요!</div>
-    </div>
     </div>
   );
 }

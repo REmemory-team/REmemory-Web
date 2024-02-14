@@ -14,6 +14,9 @@ export default function WritingFormat() {
   console.log(location.state.open_date);
   console.log(location.state.dear_name);
   console.log(location.state.theme);
+  console.log(location.state.purpose);
+  console.log(location.state.format);
+  console.log(location.state.sender);
 
   // 정했어요! 버튼 누르면 실행되는 함수
   const decisionBtnHandler = () => {
@@ -26,7 +29,10 @@ export default function WritingFormat() {
           open_date: location.state.open_date,
           dear_name: location.state.dear_name,
           theme: location.state.theme,
+          purpose: location.state.purpose,
           content_type: format,
+          sender: location.state.sender,
+          capsule_number: location.state.capsule_number,
         },
       }); // 글 & 편지 작성 화면으로 넘어가기
     } else if (format === 2) {
@@ -36,7 +42,10 @@ export default function WritingFormat() {
           open_date: location.state.open_date,
           dear_name: location.state.dear_name,
           theme: location.state.theme,
+          purpose: location.state.purpose,
           content_type: format,
+          sender: location.state.sender,
+          capsule_number: location.state.capsule_number,
         },
       }); // 음성 편지 작성 화면으로 넘어가기
     }

@@ -3,46 +3,44 @@
 import "../styles/CapsuleCodeAssignment.css";
 
 import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Copyimg from "../assets/Copy.png";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const CapsuleCodeAssignment = ({ initialNickname }) => {
-  const [capsuleNumber, setCapsuleNumber] = useState("");
+  // const [capsuleNumber, setCapsuleNumber] = useState("");
   const [copied, setCopied] = useState(false);
-  const [nickname, setNickname] = useState(initialNickname || "");
+  // const [nickname, setNickname] = useState(initialNickname || "");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
 
-  useEffect(() => {
-    generateCapsuleNumber();
-  }, [nickname]);
+  // useEffect(() => {
+  //   generateCapsuleNumber();
+  // }, [nickname]);
 
-  const generateCapsuleNumber = () => {
-    const randomNum = Math.floor(Math.random() * 1000);
-    const paddedRandomNum = randomNum.toString().padStart(4, "0");
-    const newCapsuleNumber = `${paddedRandomNum} ${nickname}`;
-    setCapsuleNumber(newCapsuleNumber);
-    setCopied(false);
+  // const generateCapsuleNumber = () => {
+  //   const randomNum = Math.floor(Math.random() * 1000);
+  //   const paddedRandomNum = randomNum.toString().padStart(4, "0");
+  //   const newCapsuleNumber = `${paddedRandomNum} ${nickname}`;
+  //   setCapsuleNumber(newCapsuleNumber);
+  //   setCopied(false);
 
-    // 백엔드 API로 캡슐번호 비밀번호 전송
-    axios
-      .post(
-        `${process.env.REACT_APP_API_BASE_URL}pcapsule/create/savePassword`,
-        {
-          capsule_number: newCapsuleNumber,
-          pcapsule_password: password,
-        }
-      )
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error("Error while sending capsule number:", error);
-      });
-  };
+  //   // 백엔드 API로 캡슐번호 비밀번호 전송
+  //   axios
+  //     .post("https://dev.mattie3e.store/pcapsule/create/savePassword", {
+  //       capsule_number: location.state.capsule_number,
+  //       pcapsule_password: password,
+  //     })
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error while sending capsule number:", error);
+  //     });
+  // };
 
   const handleCopyClick = () => {
     console.log("카피 완료!");
@@ -51,7 +49,6 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
   };
 
   const handlePasswordChange = (e) => {
-    console.log("비밀번호 입력:", e.target.value);
     setPassword(e.target.value);
   };
 
@@ -59,9 +56,20 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
     // 비밀번호가 숫자로만 구성되어 있고, 길이가 6자리인지 확인
     if (/^\d{6}$/.test(password)) {
       // 비밀번호가 유효한 경우
-      console.log("비밀번호 저장 완료!");
-      navigate("/");
-      window.alert("타입캡슐이 성공적으로 생성되었습니다!");
+      axios
+        .post("https://dev.mattie3e.store/pcapsule/create/savePassword", {
+          capsule_number: location.state.capsule_number,
+          pcapsule_password: password,
+        })
+        .then((response) => {
+          if (response.status === 200) {
+            window.alert("타입캡슐이 성공적으로 생성되었습니다!");
+            navigate("/login/kakao/home");
+          }
+        })
+        .catch((error) => {
+          console.error("Error while sending capsule number:", error);
+        });
     } else {
       // 비밀번호가 유효하지 않은 경우
       window.alert("비밀번호는 숫자 6자리여야 합니다.");
@@ -74,11 +82,16 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
       <div className="code-box">
         <div className="code-container">
           <span className="code">캡슐번호&nbsp;</span>
-          <span className="assigned-code">|&nbsp;{capsuleNumber}</span>
+          <span className="assigned-code">
+            |&nbsp;{location.state.capsule_number}
+          </span>
         </div>
         <div className="copy-container">
           <img src={Copyimg} alt="복사하기" className="copy-img" />
-          <CopyToClipboard text={capsuleNumber} onCopy={handleCopyClick}>
+          <CopyToClipboard
+            text={location.state.capsule_number}
+            onCopy={handleCopyClick}
+          >
             <span className="copy">복사</span>
           </CopyToClipboard>
         </div>

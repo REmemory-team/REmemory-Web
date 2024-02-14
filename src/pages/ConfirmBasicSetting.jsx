@@ -24,18 +24,13 @@ export default function ConfirmBasicSetting() {
           open_date: `${userData.year}-${userData.month}-${userData.day}`,
           dear_name: "ME",
           theme: userData.theme,
-        },
-      });
-    } else if (userData.purpose === "toSomeone") {
-      navigate("/capsule/input-recipients", {
-        state: {
-          pcapsule_name: userData.capsuleName,
-          open_date: `${userData.year}-${userData.month}-${userData.day}`,
-          theme: userData.theme,
           purpose: userData.purpose,
         },
       });
-    } else if (userData.purpose === "rollingPaper") {
+    } else if (
+      userData.purpose === "toSomeone" ||
+      userData.purpose === "rollingPaper"
+    ) {
       navigate("/capsule/input-recipients", {
         state: {
           pcapsule_name: userData.capsuleName,

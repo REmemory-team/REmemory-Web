@@ -13,9 +13,11 @@ export default function Settings() {
   const [username, setUsername] = useState("");
 
   useEffect(() => {
+    const userId = 1;
     axios
-      .get("")
+      .get("https://dev.mattie3e.store/user/{userId}")
       .then((response) => {
+        console.log(response);
         setUsername(response.data.username);
         setNickname(response.data.nickname);
       })
@@ -33,37 +35,44 @@ export default function Settings() {
   const handleNicknameChange = (event) => {
     setNickname(event.target.value);
   };
+  // 닉네임 변경
   const changeBtnHandler = () => {
+    const userId = 2;
+    setNickname("티티티");
     axios
-      .post("", { nickname: nickname })
+      .post("https://dev.mattie3e.store/user/nickname", {
+        userId: userId,
+        nickname: nickname,
+      })
       .then((response) => {
-        alert("닉네임이 성공적으로 변경되었습니다.");
+        console.log(response);
+        if (response.status === 200) {
+          alert("닉네임이 변경되었습니다.");
+        }
       })
       .catch((error) => {
         console.error(error);
       });
   };
+  // 로그아웃
   const logoutBtnHandler = () => {
-    axios
-      .post("")
-      .then((response) => {
-        // 로그아웃 처리 성공
-        navigate("/");
-      })
-      .catch((error) => {
-        console.error(error);
-        alert("오류가 발생했습니다.");
-      });
+    sessionStorage.removeItem("userToken");
+    navigate("/");
   };
+  // 회원탈퇴
   const withdrawalBtnHandler = () => {
     const isConfirmed = window.confirm("정말로 탈퇴하시겠습니까?");
     if (isConfirmed) {
+      const userId = 1;
+
       axios
-        .post("")
+        .patch("https://dev.mattie3e.store/user/deactivate", { userId: userId })
         .then((response) => {
-          // 회원 탈퇴 처리 성공
-          alert("회원 탈퇴가 성공적으로 처리되었습니다.");
-          navigate("/");
+          console.log(response);
+          if (response.status === 200) {
+            alert("탈퇴가 성공적으로 처리되었습니다.");
+            navigate("/");
+          }
         })
         .catch((error) => {
           console.error(error);

@@ -22,18 +22,19 @@ export default function RecipientInput() {
       alert("타임캡슐을 받을 사람을 적어주세요!");
     } else if (purpose === "toSomeone") {
       // 용도2인 경우, 작성 형식 선택 화면으로 이동
-      // 캡슐이름, 오픈 날짜, 받는 사람, 테마 정보 전달
+      // 캡슐이름, 오픈 날짜, 받는 사람, 테마, 용도 정보 전달
       navigate("/capsule/letter-format", {
         state: {
           pcapsule_name: location.state.pcapsule_name,
           open_date: location.state.open_date,
           dear_name: recipient,
           theme: location.state.theme,
+          purpose: location.state.purpose,
         },
       });
     } else if (purpose === "rollingPaper") {
       // 용도3인 경우
-      // 서버에 캡슐 이름, 오픈 날짜, 받는 사람, 테마 정보 전송
+      // 서버에 캡슐 이름, 오픈 날짜, 받는 사람, 테마, 용도 정보 전송
       // 서버로부터 캡슐 번호, URL 받음
       // 캡슐번호 & URL 부여 화면으로 이동 (캡슐 번호, URL 전달)
       axios
@@ -41,16 +42,18 @@ export default function RecipientInput() {
           rcapsule_name: location.state.pcapsule_name,
           open_date: location.state.open_date,
           dear_name: recipient,
-          // theme: location.state.theme,
+          theme: location.state.theme,
         })
         .then((response) => {
           console.log(response);
-          // navigate("/capsule/assign-number-url", {
-          //   state: {
-          //     capsule_number: response.data.capsule_number,
-          //     capsule_url: response.data.capsule_url,
-          //   },
-          // });
+          if (response.status === 200) {
+            navigate("/capsule/assign-number-url", {
+              state: {
+                capsule_number: response.data.result.capsule_number,
+                capsule_url: response.data.result.capsule_url,
+              },
+            });
+          }
         })
         .catch((error) => {
           console.error(error);

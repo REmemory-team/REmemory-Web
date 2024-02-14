@@ -11,9 +11,8 @@ import icon_profile from "../assets/icon_profile.png";
 import icon_setting from "../assets/icon_setting.png";
 import image_logo from "../assets/image_logo.png";
 import text_logo from "../assets/text_logo.png";
-
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Menu = ({ menuHandler }) => {
   const navigate = useNavigate();
@@ -43,7 +42,13 @@ const Menu = ({ menuHandler }) => {
             </div>
             <div className="button_section">
               <img alt="" src={icon_setting} />
-              <button onClick={()=>{navigate('/login/kakao/settings')}}>계정 설정</button>
+              <button
+                onClick={() => {
+                  navigate("/login/kakao/settings");
+                }}
+              >
+                계정 설정
+              </button>
             </div>
           </div>
         ) : (
@@ -59,7 +64,13 @@ const Menu = ({ menuHandler }) => {
         )}
         <div className="button_section">
           <img alt="" src={icon_capsule} />
-          <button>타임캡슐 조회</button>
+          <button
+            onClick={() => {
+              navigate("/capsule/input-number");
+            }}
+          >
+            타임캡슐 조회
+          </button>
         </div>
         <img className="line" alt="" src={boundary_line} />
         <div className="button_section">
@@ -72,9 +83,9 @@ const Menu = ({ menuHandler }) => {
         </div>
       </div>
       <div className="logo">
-          <img className="image" alt="logo_rememory" src={image_logo}/>
-          <img className="text" alt="logo_rememory" src={text_logo}/>
-          {/* <p>RE:memory</p> */}
+        <img className="image" alt="logo_rememory" src={image_logo} />
+        <img className="text" alt="logo_rememory" src={text_logo} />
+        {/* <p>RE:memory</p> */}
       </div>
     </div>
   );
