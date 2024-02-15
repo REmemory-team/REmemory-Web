@@ -1,16 +1,35 @@
 .received-text-page {
   min-height: 100vh;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+.received-text-page-theme1 {
   background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
     linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 0%,
       rgba(170, 154, 204, 0) 46.53%
     );
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
+}
+.received-text-page-theme2 {
+  background: linear-gradient(180deg, #fbf3c1 0%, rgba(251, 243, 193, 0) 100%),
+    #fff;
+}
+.received-text-page-theme3 {
+  background: linear-gradient(180deg, #6a88c2 22.4%, #c1c6f3 100%),
+    linear-gradient(180deg, #9aa5cc 0%, rgba(154, 165, 204, 0) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #aa9acc 46.53%), #fff;
+}
+.received-text-page-theme4 {
+  background: linear-gradient(180deg, rgba(255, 237, 251, 0) 0%, #fee1f7 100%),
+    #fff;
+}
+.received-text-page-theme5 {
+  background: linear-gradient(180deg, #f3a0a0 0%, rgba(113, 155, 112, 0.2) 100%),
+    #fff;
 }
 .received-text-page .top-menu {
   width: 100%;
@@ -33,10 +52,24 @@
   width: 19.8rem;
   height: auto;
   flex-shrink: 0;
-  background-color: rgba(223, 230, 255, 0.7);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   margin-bottom: 3rem;
+}
+.received-text-page-theme1 .text-contents-box {
+  background-color: rgba(223, 230, 255, 0.7);
+}
+.received-text-page-theme2 .text-contents-box {
+  background-color: rgba(255, 254, 246, 0.9);
+}
+.received-text-page-theme3 .text-contents-box {
+  background-color: rgba(36, 60, 122, 0.7);
+}
+.received-text-page-theme4 .text-contents-box {
+  background-color: rgba(250, 217, 243, 0.9);
+}
+.received-text-page-theme5 .text-contents-box {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .received-text-page .text-contents {
   word-wrap: break-word;
@@ -51,6 +84,9 @@
   letter-spacing: 0.00413rem;
   flex-shrink: 0;
 }
+.received-text-page-theme3 .text-contents {
+  color: #fff;
+}
 .received-text-page .received-recipient,
 .received-text-page .received-sender {
   color: #000;
@@ -62,6 +98,10 @@
   letter-spacing: 0.00413rem;
   padding: 0.1rem 1.1rem;
   flex-shrink: 0;
+}
+.received-text-page-theme3 .received-recipient,
+.received-text-page-theme3 .received-sender {
+  color: #fff;
 }
 .received-text-page .received-sender {
   display: flex;

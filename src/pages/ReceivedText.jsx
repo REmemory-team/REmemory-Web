@@ -9,7 +9,6 @@ import React from "react";
 export default function ReceivedText() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { sender, theme, recipient, contents } = location.state;
 
   // 받는 사람, 보낸 사람, 편지 내용, 테마 정보 필요
 
@@ -25,7 +24,9 @@ export default function ReceivedText() {
   };
 
   return (
-    <div className="received-text-page">
+    <div
+      className={`received-text-page received-text-page-theme${location.state.theme}`}
+    >
       <div className="top-menu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,9 +59,11 @@ export default function ReceivedText() {
         </svg>
       </div>
       <div className="text-contents-box">
-        <p className="received-recipient">To. {recipient}</p>
-        <div className="text-contents">{contents}</div>
-        <p className="received-sender">From. {sender}</p>
+        <p className="received-recipient">To. {location.state.dear_name}</p>
+        <div className="text-contents">{location.state.body}</div>
+        {location.state.sender && (
+          <p className="received-sender">From. {location.state.sender}</p>
+        )}
       </div>
     </div>
   );

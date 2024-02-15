@@ -2,15 +2,18 @@
 
 import "../styles/RollingpaperOpen.css";
 
+import { useLocation, useNavigate } from "react-router-dom";
+
 import React from "react";
 import RollingpaperContents from "../components/RollingpaperContents";
 import rollingContentsTest from "../Data/rollingContentsTest";
-import { useNavigate } from "react-router-dom";
 
 export default function RollingpaperOpen() {
-  // 테마, 보낸사람, 작성 형식 정보 필요
-
+  const location = useLocation();
   const navigate = useNavigate();
+
+  // 테마, 보낸사람, 받는 사람, 작성 형식, 편지 내용 정보 필요
+  const capsuleContents = location.state;
 
   const backBtnHandler = () => {
     navigate(-1);
@@ -24,7 +27,9 @@ export default function RollingpaperOpen() {
   };
 
   return (
-    <div className="rollingpaper-open-page">
+    <div
+      className={`rollingpaper-open-page rolling-open-page-theme5`} // rolling-open-page-theme${capsuleContents.theme}
+    >
       <div className="top-menu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -63,8 +68,8 @@ export default function RollingpaperOpen() {
             key={item.id}
             sender={item.sender}
             format={item.format}
-            theme={item.theme}
-            recipient={item.recipient}
+            theme="5" // theme={capsuleContents.theme}
+            // recipient={capsuleContents.dear_name}
             contents={item.contents}
           />
         );

@@ -5,13 +5,11 @@ import "../styles/ReceivedVoice.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import React from "react";
-import playImg from "../assets/재생 버튼 이미지.png";
-import recordImg from "../assets/녹음 이미지.png";
+import voiceTest from "../Data/voiceTest";
 
 export default function ReceivedVoice() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { sender, theme, recipient, contents } = location.state;
 
   const backBtnHandler = () => {
     navigate(-1);
@@ -25,7 +23,9 @@ export default function ReceivedVoice() {
   };
 
   return (
-    <div className="received-voice-page">
+    <div
+      className={`received-voice-page received-voice-page-theme${voiceTest.theme}`}
+    >
       <div className="top-menu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,14 +58,20 @@ export default function ReceivedVoice() {
         </svg>
       </div>
       <div className="voice-contents-box">
-        <p className="received-recipient">To. {recipient}</p>
+        <p className="received-recipient">To. {voiceTest.dear_name}</p>
         <div className="voice-contents">
           <div className="record-image">
-            <img src={recordImg} alt="녹음 아이콘"></img>
+            <img
+              src={require(`../assets/Recording_icon${voiceTest.theme}.png`)}
+              alt="녹음 아이콘"
+            ></img>
           </div>
           <div className="record-bar">
             <div className="play-btn">
-              <img src={playImg} alt="재생 버튼"></img>
+              <img
+                src={require(`../assets/play_btn${voiceTest.theme}.png`)}
+                alt="재생 버튼"
+              ></img>
             </div>
             <div className="bar">
               <div className="base-bar"></div>
@@ -73,7 +79,9 @@ export default function ReceivedVoice() {
             </div>
           </div>
         </div>
-        <p className="received-sender">From. {sender}</p>
+        {voiceTest.sender && (
+          <p className="received-sender">From. {voiceTest.sender}</p>
+        )}
       </div>
     </div>
   );

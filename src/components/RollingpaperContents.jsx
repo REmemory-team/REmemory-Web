@@ -36,7 +36,10 @@ export default function RollingpaperContents({
   };
 
   return (
-    <div className="rollingpaper-contents" onClick={contentsBoxHandler}>
+    <div
+      className={`rollingpaper-contents rolling-contents-theme${theme}`}
+      onClick={contentsBoxHandler}
+    >
       <p className="rolling-sender">From. {sender}</p>
       <p className="rolling-format">{format} 메시지가 도착했습니다!</p>
     </div>

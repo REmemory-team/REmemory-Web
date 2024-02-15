@@ -1,62 +1,39 @@
 // 롤링페이퍼 타임캡슐 내용 테스트하기 위한 데이터
 
-const rollingContentsTest = [
-  {
-    id: 1,
-    sender: "레나",
-    format: "글/사진",
-    theme: "생일",
-    recipient: "찹도",
-    contents: "생일축하해요~~",
-  },
-  {
-    id: 2,
-    sender: "서린",
-    format: "음성",
-    theme: "리메모리",
-    recipient: "찹도",
-    contents: "",
-  },
-  {
-    id: 3,
-    sender: "지엔",
-    format: "글/사진",
-    theme: "졸업",
-    recipient: "찹도",
-    contents: "생일 축하해요~~~~",
-  },
-  {
-    id: 4,
-    sender: "리치",
-    format: "음성",
-    theme: "크리스마스",
-    recipient: "찹도",
-    contents: "생일 축하해요~~~~",
-  },
-  {
-    id: 5,
-    sender: "리처드",
-    format: "글/사진",
-    theme: "사랑",
-    recipient: "찹도",
-    contents: "생일 축하해요~~~~",
-  },
-  {
-    id: 6,
-    sender: "밀리",
-    format: "음성",
-    theme: "생일",
-    recipient: "찹도",
-    contents: "생일 축하해요~~~~",
-  },
-  {
-    id: 7,
-    sender: "신구",
-    format: "글/사진",
-    theme: "리메모리",
-    recipient: "찹도",
-    contents: "생일 축하해요~~~~",
-  },
-];
+const rollingContentsTest = {
+  dear_name: "위트",
+  theme: 1,
+  rolling_data: [
+    {
+      id: 1,
+      sender: "레나",
+      content_type: 1,
+      contents: [
+        {
+          body: "안녕",
+          image_url: null,
+        },
+        {
+          body: null,
+          image_url: "../assets/arrow.png",
+        },
+        {
+          body: null,
+          image_url: "../assets/Recording_icon.png",
+        },
+        {
+          body: "이 사진 기억나?",
+          image_url: null,
+        },
+      ],
+    },
+    {
+      id: 2,
+      sender: "서린",
+      content_type: 2,
+      contents: "../assets/조정석-01-아로하.mp3",
+    },
+  ],
+};
 
 export default rollingContentsTest;
