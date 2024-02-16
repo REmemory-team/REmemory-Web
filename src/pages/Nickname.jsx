@@ -1,31 +1,26 @@
 // 카카오 로그인 - 이름(닉네임) 설정
 
 import "../styles/Nickname.css";
-
 import React, { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 
 //import axios from 'axios';
+=======
+import axios from 'axios';
+>>>>>>> ccef2b8dfd10a860bafa9aca4563a46ee96387fc
 
 export default function Nickname() {
   const [userNickname, setUserNickname] = useState("");
   const maxLength = 10;
   const navigate = useNavigate();
 
-  //로그인 과정에서 받은 데이터
-  /*const userToken = 'user_token';
-  const userEmail = 'user_mail';
-  const userGender = 'user_gender';
-
-  const userData = {
-    token: userToken,
-    email: userEmail,
-    gender: userGender,
-    nickname: userNickname,
-  }*/
+  //로그인 과정에서 받은 데이터(아이디, 메일)
+  const id = 2;
+  const mail = "hello@naver.com";
 
   //사용자가 입력한 닉네임 저장 함수
+<<<<<<< HEAD
   const handleInputChange = (event) => {
     const inputNickname = event.target.value;
     if (inputNickname.length > maxLength) {
@@ -36,11 +31,21 @@ export default function Nickname() {
   //닉네임 유효성 검사
   const validNickname = (nickname) => {
     const regex = /^(?!\s)([ㄱ-ㅎ가-힣a-zA-Z0-9?!@#$%^&*()-_+=~`\s]){1,10}$/;
+=======
+  const handleInputChange = (e) => {
+    setUserNickname(e.target.value);
+  };
+
+  //닉네임 유효성 검사
+  const validNickname = (nickname) =>{
+    const regex = /^(?!\s)([ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9?!@#$%^&*()-_+=~`'"\s]){1,10}$/;
+>>>>>>> ccef2b8dfd10a860bafa9aca4563a46ee96387fc
     return regex.test(nickname);
   };
 
   //이걸로 할게요! 버튼 누를시
   const handleSubmit = () => {
+<<<<<<< HEAD
     if (validNickname(userNickname)) {
       navigate("/login/kakao/home", { state: { userNickname } });
       //백엔드로 데이터 넘기기
@@ -53,6 +58,26 @@ export default function Nickname() {
         });*/
     } else {
       alert("한글, 영어, 숫자, 특수문자로 구성된 닉네임을 입력해 주세요");
+=======
+    if(validNickname(userNickname)){
+      axios
+        .patch("https://dev.mattie3e.store/user",{
+          userId: id,
+          email: mail,
+          nickname: userNickname,
+        })
+        .then((response)=>{
+          console.log("서버응답: ",response);
+          navigate("/login/kakao/home");
+        })
+        .catch((error)=>{
+          console.log("오류: ",error);
+        })
+        // navigate("/login/kakao/home", { state: { userNickname } });
+    }
+    else{
+      alert("한글, 영어, 숫자, 특수문자로 구성된 1~10자리 닉네임을 입력해주세요");
+>>>>>>> ccef2b8dfd10a860bafa9aca4563a46ee96387fc
     }
   };
 
@@ -76,7 +101,7 @@ export default function Nickname() {
         </span>
       </div>
 
-      <button type="submit" id="nickname_submit" onClick={handleSubmit}>
+      <button id="nickname_submit" onClick={handleSubmit}>
         이걸로 할게요!
       </button>
     </div>
