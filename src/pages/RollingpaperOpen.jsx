@@ -12,9 +12,6 @@ export default function RollingpaperOpen() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // 테마, 보낸사람, 받는 사람, 작성 형식, 편지 내용 정보 필요
-  const capsuleContents = location.state;
-
   const backBtnHandler = () => {
     navigate(-1);
   };
@@ -28,7 +25,7 @@ export default function RollingpaperOpen() {
 
   return (
     <div
-      className={`rollingpaper-open-page rolling-open-page-theme5`} // rolling-open-page-theme${capsuleContents.theme}
+      className={`rollingpaper-open-page rolling-open-page-theme${rollingContentsTest.theme}`}
     >
       <div className="top-menu">
         <svg
@@ -62,14 +59,14 @@ export default function RollingpaperOpen() {
         </svg>
       </div>
       <div className="rolling-capsule-name">캡슐 이름</div>
-      {rollingContentsTest.map((item, index) => {
+      {rollingContentsTest.rolling_data.map((item, index) => {
         return (
           <RollingpaperContents
             key={item.id}
             sender={item.sender}
-            format={item.format}
-            theme="5" // theme={capsuleContents.theme}
-            // recipient={capsuleContents.dear_name}
+            format={item.content_type}
+            theme={rollingContentsTest.theme}
+            recipient={rollingContentsTest.dear_name}
             contents={item.contents}
           />
         );

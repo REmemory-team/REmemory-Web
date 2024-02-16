@@ -14,22 +14,22 @@ export default function RollingpaperContents({
 }) {
   const navigate = useNavigate();
   const contentsBoxHandler = () => {
-    if (format === "글/사진") {
+    if (format === 1) {
       navigate("/capsule/open/text", {
         state: {
-          sender,
-          theme,
-          recipient,
-          contents,
+          sender: sender,
+          theme: theme,
+          dear_name: recipient,
+          text_img_data: contents,
         },
       });
-    } else if (format === "음성") {
+    } else if (format === 2) {
       navigate("/capsule/open/voice", {
         state: {
-          sender,
-          theme,
-          recipient,
-          contents,
+          sender: sender,
+          theme: theme,
+          dear_name: recipient,
+          voice_data: contents,
         },
       });
     }
@@ -41,7 +41,11 @@ export default function RollingpaperContents({
       onClick={contentsBoxHandler}
     >
       <p className="rolling-sender">From. {sender}</p>
-      <p className="rolling-format">{format} 메시지가 도착했습니다!</p>
+      <p className="rolling-format">
+        {format === 1
+          ? "글/사진 메시지가 도착했습니다!"
+          : "음성 메시지가 도착했습니다!"}
+      </p>
     </div>
   );
 }
