@@ -10,8 +10,8 @@ import axios from "axios";
 export default function RecipientInput() {
   const navigate = useNavigate();
   const location = useLocation();
-  const purpose = location.state.purpose; // 이전 페이지에서 가져온 용도 정보
-  const [recipient, setRecipient] = useState(""); // 받는 사람 정보를 저장할 상태 변수
+  const purpose = location.state.purpose; // 용도
+  const [recipient, setRecipient] = useState(""); // 받는 사람
 
   const handleRecipientChange = (event) => {
     setRecipient(event.target.value);
@@ -22,7 +22,6 @@ export default function RecipientInput() {
       alert("타임캡슐을 받을 사람을 적어주세요!");
     } else if (purpose === "toSomeone") {
       // 용도2인 경우, 작성 형식 선택 화면으로 이동
-      // 캡슐이름, 오픈 날짜, 받는 사람, 테마, 용도 정보 전달
       navigate("/capsule/letter-format", {
         state: {
           pcapsule_name: location.state.pcapsule_name,
@@ -34,11 +33,9 @@ export default function RecipientInput() {
       });
     } else if (purpose === "rollingPaper") {
       // 용도3인 경우
-      // 서버에 캡슐 이름, 오픈 날짜, 받는 사람, 테마, 용도 정보 전송
-      // 서버로부터 캡슐 번호, URL 받음
       // 캡슐번호 & URL 부여 화면으로 이동 (캡슐 번호, URL 전달)
       axios
-        .post("https://dev.mattie3e.store/rcapsule/create", {
+        .post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/create`, {
           rcapsule_name: location.state.pcapsule_name,
           open_date: location.state.open_date,
           dear_name: recipient,
