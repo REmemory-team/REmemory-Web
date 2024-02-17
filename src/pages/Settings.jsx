@@ -153,7 +153,7 @@ export default function Settings() {
         <input
           type="text"
           onChange={handleNicknameChange}
-          placeholder={nickname}
+          value={nickname}
           className="nickname-input"
           maxLength="10"
         ></input>

@@ -23,8 +23,8 @@ export default function EnterURL() {
         `${process.env.REACT_APP_API_BASE_URL}/rcapsule/url_info/${capsuleId}`
       )
       .then((response) => {
-        if (response.status) {
-          setRecipient(response.data.result.recipient);
+        if (response.status === 200) {
+          setRecipient(response.data.result.dear_name);
           setTheme(response.data.result.theme);
         }
       })
