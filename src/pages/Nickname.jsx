@@ -15,6 +15,7 @@ export default function Nickname() {
 
   //로그인 과정에서 받은 데이터(아이디)
   const userId = sessionStorage.getItem("userId");
+
   useEffect(() => {
     // 세션 스토리지에서 닉네임을 가져와서 설정합니다.
     const storedNickname = sessionStorage.getItem("userNickname");
@@ -44,6 +45,7 @@ export default function Nickname() {
         .patch(
           `${process.env.REACT_APP_API_BASE_URL}/user/nickname`,
           {
+            userId: userId,
             nickname: userNickname,
           },
           {

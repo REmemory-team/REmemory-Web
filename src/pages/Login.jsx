@@ -49,6 +49,8 @@ const Login = () => {
         `${process.env.REACT_APP_API_BASE_URL}/user/auth?code=${code}`
       );
 
+      console.log(response);
+
       if (response.status === 200 && response.data.isSuccess) {
         const { token, userId, nickname } = response.data.result;
 
