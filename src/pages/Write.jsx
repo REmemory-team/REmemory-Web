@@ -9,27 +9,38 @@ import icon_alignCenter from "../assets/icon_alignCenter.png";
 import icon_alignLeft from "../assets/icon_alignLeft.png";
 import icon_alignRight from "../assets/icon_alignRight.png";
 import icon_camera from "../assets/icon_camera.png";
+import icon_alignCenter_white from "../assets/icon_alignCenter_white.png";
+import icon_alignLeft_white from "../assets/icon_alignLeft_white.png";
+import icon_alignRight_white from "../assets/icon_alignRight_white.png";
+import icon_camera_white from "../assets/icon_camera_white.png";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router";
 
 const Write = () => {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
-  // const location = useLocation();
-  // const receivedState = location.state;
-  // console.log(state);
+  const location = useLocation();
 
-  //임시
-  const receivedState = {
-    pcapsule_name: "pcapsule_name",
-    open_date: "open_date",
+  // state: {
+  //   dear_name: location.state.dear_name,
+  //   theme: location.state.theme,
+  //   purpose: location.state.purpose,
+  //   capsule_number: response.data.result.capsule_number,
+  // },
+  
+  const [receivedState, setReceivedState] = useState({
     dear_name: "dear_name",
-    theme: "theme",
-    content_type: "format",
-  };
+    theme: 1,
+    purpose: "",
+    capsule_number: "testMember1_21956"
+  });
+
+  // useEffect(()=>{
+  //   setReceivedState(location.state);
+  // }, location);
 
   const [state, setState] = useState({
-    ...receivedState,
+    capsule_number: receivedState.capsule_number,
     contents: [{ type: "text", content: "" }],
     alignType: "left",
   });
@@ -160,7 +171,7 @@ const Write = () => {
     }
   };
   return (
-    <div className={["Write", state.theme].join(" ")}>
+    <div className={["Write", receivedState.theme].join(" theme")}>
       <div className="write_top">
         <button className="btn_save" onClick={handleSave}>
           임시저장
@@ -168,7 +179,7 @@ const Write = () => {
       </div>
       <div className="write_center">
         <div className="to">
-          <p>To. {state.dear_name}</p>
+          <p>To. {receivedState.dear_name}</p>
         </div>
         <div className="text">
           {state.contents.map((item, index) => (
@@ -199,7 +210,7 @@ const Write = () => {
             className="btn_photo"
             onClick={addItem}
             alt=""
-            src={icon_camera}
+            src={receivedState.theme !== 3 ? icon_camera : icon_camera_white}
           />
           <input
             type="file"
@@ -213,7 +224,7 @@ const Write = () => {
               className="btn_align"
               onClick={changeAlignType}
               alt=""
-              src={icon_alignLeft}
+              src={receivedState.theme !== 3 ? icon_alignLeft : icon_alignLeft_white}
             />
           )}
           {state.alignType === "center" && (
@@ -221,7 +232,7 @@ const Write = () => {
               className="btn_align"
               onClick={changeAlignType}
               alt=""
-              src={icon_alignCenter}
+              src={receivedState.theme !== 3 ? icon_alignCenter : icon_alignCenter_white}
             />
           )}
           {state.alignType === "right" && (
@@ -229,7 +240,7 @@ const Write = () => {
               className="btn_align"
               onClick={changeAlignType}
               alt=""
-              src={icon_alignRight}
+              src={receivedState.theme !== 3 ? icon_alignRight : icon_alignRight_white}
             />
           )}
         </div>
