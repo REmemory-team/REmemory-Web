@@ -64,7 +64,7 @@ function App() {
         <Route path="/capsule/open/voice" element={<ReceivedVoice />}></Route>
 
         <Route
-          path="capsule/write/rolling/:capsuleId"
+          path="capsule/write/rolling/:rcapsule_number"
           element={<EnterURL />}
         ></Route>
 

@@ -8,7 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function EnterURL() {
-  const { capsuleId } = useParams();
+  const { rcapsule_number } = useParams();
   const navigate = useNavigate();
   const [recipient, setRecipient] = useState(""); // 서버로부터 가져온 받는 사람 정보 저장할 상태 변수
   const [theme, setTheme] = useState(""); // 서버로부터 가져온 테마 정보 저장할 상태 변수
@@ -20,7 +20,7 @@ export default function EnterURL() {
   useEffect(() => {
     axios
       .get(
-        `${process.env.REACT_APP_API_BASE_URL}/rcapsule/url_info/${capsuleId}`
+        `${process.env.REACT_APP_API_BASE_URL}/rcapsule/url_info/${rcapsule_number}`
       )
       .then((response) => {
         if (response.status === 200) {
@@ -55,7 +55,7 @@ export default function EnterURL() {
           theme: theme,
           sender: sender,
           purpose: purpose,
-          capsule_number: capsuleId,
+          capsule_number: rcapsule_number,
         },
       });
     }
