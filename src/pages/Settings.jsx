@@ -59,6 +59,8 @@ export default function Settings() {
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
+          setNickname(response.data.result.nickname);
+          sessionStorage.setItem("nickname", response.data.result.nickname);
           alert("닉네임이 변경되었습니다.");
         }
       })
@@ -153,7 +155,7 @@ export default function Settings() {
         <input
           type="text"
           onChange={handleNicknameChange}
-          value={nickname}
+          placeholder={nickname}
           className="nickname-input"
           maxLength="10"
         ></input>
