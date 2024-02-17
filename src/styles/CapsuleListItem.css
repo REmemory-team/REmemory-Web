@@ -7,12 +7,14 @@ display: flex;
 align-items: center;
 }
 .capsule_list .capsule_name {
+cursor: pointer;
 margin-left: 1.3rem;
 font-size: 1.125rem;
 font-weight: 500;
 width: 10rem;
 }
 .capsule_list .capsule_number{
+cursor: pointer;
 width: 5rem;
 margin-left: 0.85rem;
 margin-right: 1rem;
@@ -21,6 +23,7 @@ font-weight: 500;
 opacity: 0.4;
 }
 .capsule_list .list_image {
+cursor: pointer;
 width: 3.5rem;
 height: 100%;
 margin-left: 1.7rem;

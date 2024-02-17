@@ -9,7 +9,7 @@ import axios from "axios";
 import fileIcon from "../assets/voice_file.png";
 
 export default function Record() {
-  const [isLoggedIn, setIsLoggedIn] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState("1");
   const [stream, setStream] = useState("");
   const [media, setMedia] = useState("");
   const [onRec, setOnRec] = useState(true);
@@ -19,6 +19,9 @@ export default function Record() {
   const [audio, setAudio] = useState();
   // const [disabled, setDisabled] = useState(false);
   const [nowTheme, setNowTheme] = useState("1");
+  const [nowPurpose, setNowPurpose] = useState("");
+  const [capsule_number, setCapsule_number] = useState("");
+  const [rcapsule_number, setRcapsule_number] = useState("");
   const location = useLocation();
   const receivedData = location.state;
   const dear_name = receivedData.dear_name;
@@ -34,26 +37,14 @@ export default function Record() {
   //테마 정보
   useEffect(() => {
     setIsLoggedIn(checkLoggedIn());
+    setNowPurpose(receivedData.purpose);
     setNowTheme(String(receivedData.theme));
-  }, [receivedData.theme]);
+    setRcapsule_number("testMember1_41305");
+    setCapsule_number("testMember1_74177");
+    // setRcapsule_number(receivedData.capsule_number);
+  }, []);
 
-  //사용자가 임시 저장 버튼을 누를 때
-  /*const tempRecording = async () => {
-    //서버에 데이터 전송
-    try {
-      const response = await axios.post('/api/', {
-        // { record: 'url', Key: 'Value' }
-      });
-      console.log('서버 응답:', response.data);
-    } 
-    catch (error) {
-      console.error('오류 발생:', error);
-    }
-  };*/
-
-  // const tempRecording = () => {
-  //   alert("임시저장 완료");
-  // };
+  //receivedData.theme, receivedData.purpose
 
   //파일 아이콘 누를시
   const attachAudio = () => {
@@ -69,10 +60,6 @@ export default function Record() {
     setAudio(null);
     // console.log("파일첨부완료 =>", file);
   };
-
-  // useEffect(() => {
-  //   console.log("음성첨부",audioUrl);
-  // }, [audioUrl]);
 
   //사용자가 음성 녹음을 시작할 때
   const onRecAudio = () => {
@@ -164,9 +151,8 @@ export default function Record() {
 
   //파일 변환, 전송
   const tempRecording = () => {
-    // //파일 생성자를 사용해 파일로 변환
     // // console.log(URL.createObjectURL(audioUrl));
-    // const sound = new File([audioUrl], "soundBlob", {
+    // const sound = new File([audioUrl], "soundfile", {
     //   type: "audio/mpeg",
     // });
     // console.log(sound);
@@ -175,46 +161,50 @@ export default function Record() {
 
   //작성 완료 버튼
   const decisionBtnHandler = () => {
+    const formData = new FormData();
     if (audioUrl) {
       if (window.confirm("작성을 끝낼까요? 이후 수정이 불가합니다.")) {
         if (audio && !audio.pause()) {
           audio.pause();
         }
-        // const rcapsule_number = "TEST_1111";
-        // const from_name = "JiN";
-        // console.log(audioUrl);
-        // const sound = new File([audioUrl], "soundBlob", {
-        //   type: "audio/mpeg",
-        // });
-        const data = {
-          pcapsule_name: receivedData.pcapsule_name,
-          open_date: receivedData.open_date,
-          dear_name: receivedData.dear_name,
-          theme: receivedData.theme,
-          content_type: receivedData.content_type,
-          content: [
-            {
-              voice_url: audioUrl,
-            },
-          ],
-        };
-
-        axios
-          .post("https://dev.mattie3e.store/pcapsule/create", data, {
-            params: {
-              userId: userId,
-            },
+        if(nowPurpose === "toMe" || nowPurpose === "toSomeone"){
+          formData.append('capsule_number', capsule_number);
+          formData.append('voice_pcapsule', audioUrl);
+          axios.post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/voice`, formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
           })
           .then((response) => {
-            console.log("서버응답:", response);
-            navigate("/capsule/assign-number", {
-              state: { capsule_number: response.data.result.capsule_number },
+            console.log('서버응답:', response);
+            navigate("/capsule/assign-number",{
+              state: capsule_number,
             });
           })
           .catch((error) => {
-            console.error("오류:", error);
+            console.error('오류:', error);
           });
-        // navigate("/capsule/assign-number");
+      }
+      else if (nowPurpose === "rollingPaper"){
+        formData.append('voice_rcapsule',audioUrl);
+        axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/voice/${rcapsule_number}`, formData, {
+          params: {
+            from_name: "22",
+            content_type: "2",
+          },
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }).then((response) => {
+          console.log('서버응답:', response);
+          navigate("/capsule/assign-number",{
+            state: capsule_number,
+          });
+        })
+        .catch((error) => {
+          console.error('오류:', error);
+        });
+      }
       }
     } else {
       alert("음성편지를 작성해주세요");
