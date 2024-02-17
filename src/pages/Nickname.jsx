@@ -42,7 +42,7 @@ export default function Nickname() {
 
       axios
         .patch(
-          `${process.env.REACT_APP_API_BASE_URL}/user/${userId}`,
+          `${process.env.REACT_APP_API_BASE_URL}/user/nickname`,
           {
             nickname: userNickname,
           },
