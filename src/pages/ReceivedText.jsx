@@ -5,8 +5,10 @@ import "../styles/ReceivedText.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import React from "react";
-import textTest from "../Data/textTest";
-import 생일1 from "../assets/생일축하2.jpg";
+
+// import 생일1 from "../assets/생일축하2.jpg";
+
+// import textTest from "../Data/textTest";
 
 export default function ReceivedText() {
   const navigate = useNavigate();
@@ -27,7 +29,7 @@ export default function ReceivedText() {
 
   return (
     <div
-      className={`received-text-page received-text-page-theme${textTest.theme}`}
+      className={`received-text-page received-text-page-theme${location.state.theme}`}
     >
       <div className="top-menu">
         <svg
@@ -61,21 +63,27 @@ export default function ReceivedText() {
         </svg>
       </div>
       <div className="text-contents-box">
-        <p className="received-recipient">To. {textTest.dear_name}</p>
-        <div className={`text-contents align-${textTest.align_type}`}>
-          {textTest.text_img_data.map((item, index) => {
+        <p className="received-recipient">To. {location.state.dear_name}</p>
+        <div className={`text-contents align-${location.state.align_type}`}>
+          {location.state.text_img_data.map((item, index) => {
             if (item.body) {
               // 텍스트 데이터가 있는 경우
               return <p key={index}>{item.body}</p>;
             } else if (item.image_url) {
               // 이미지 데이터가 있는 경우
-              return <img key={index} src={생일1} alt={`Content ${index}`} />;
+              return (
+                <img
+                  key={index}
+                  src={item.image_url}
+                  alt={`Content ${index}`}
+                />
+              );
             }
             return null;
           })}
         </div>
-        {textTest.sender && (
-          <p className="received-sender">From. {textTest.sender}</p>
+        {location.state.sender && (
+          <p className="received-sender">From. {location.state.sender}</p>
         )}
       </div>
     </div>

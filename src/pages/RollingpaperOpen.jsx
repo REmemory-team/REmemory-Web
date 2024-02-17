@@ -6,7 +6,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import React from "react";
 import RollingpaperContents from "../components/RollingpaperContents";
-import rollingContentsTest from "../Data/rollingContentsTest";
+
+// import rollingContentsTest from "../Data/rollingContentsTest";
 
 export default function RollingpaperOpen() {
   const location = useLocation();
@@ -25,7 +26,7 @@ export default function RollingpaperOpen() {
 
   return (
     <div
-      className={`rollingpaper-open-page rolling-open-page-theme${rollingContentsTest.theme}`}
+      className={`rollingpaper-open-page rolling-open-page-theme${location.state.theme}`}
     >
       <div className="top-menu">
         <svg
@@ -59,14 +60,14 @@ export default function RollingpaperOpen() {
         </svg>
       </div>
       <div className="rolling-capsule-name">캡슐 이름</div>
-      {rollingContentsTest.rolling_data.map((item, index) => {
+      {location.state.rcapsule_cnt.map((item, index) => {
         return (
           <RollingpaperContents
             key={item.id}
             sender={item.sender}
             format={item.content_type}
-            theme={rollingContentsTest.theme}
-            recipient={rollingContentsTest.dear_name}
+            theme={location.state.theme}
+            recipient={location.state.dear_name}
             contents={item.contents}
           />
         );

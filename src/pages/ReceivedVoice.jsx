@@ -6,7 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import React from "react";
-import voiceTest from "../Data/voiceTest";
+
+// import voiceTest from "../Data/voiceTest";
 
 export default function ReceivedVoice() {
   const navigate = useNavigate();
@@ -78,7 +79,7 @@ export default function ReceivedVoice() {
 
   return (
     <div
-      className={`received-voice-page received-voice-page-theme${voiceTest.theme}`}
+      className={`received-voice-page received-voice-page-theme${location.state.theme}`}
     >
       <div className="top-menu">
         <svg
@@ -112,19 +113,19 @@ export default function ReceivedVoice() {
         </svg>
       </div>
       <div className="voice-contents-box">
-        <p className="received-recipient">To. {voiceTest.dear_name}</p>
+        <p className="received-recipient">To. {location.state.dear_name}</p>
         <div className="voice-contents">
-          <audio ref={audioRef} src={voiceTest.voice_data.voice_url} />
+          <audio ref={audioRef} src={location.state.voice_data.voice_url} />
           <div className="record-image">
             <img
-              src={require(`../assets/Recording_icon${voiceTest.theme}.png`)}
+              src={require(`../assets/Recording_icon${location.state.theme}.png`)}
               alt="녹음 아이콘"
             ></img>
           </div>
           <div className="record-bar">
             <div className="play-btn" onClick={playBtnHandler}>
               <img
-                src={require(`../assets/play_btn${voiceTest.theme}.png`)}
+                src={require(`../assets/play_btn${location.state.theme}.png`)}
                 alt="재생 버튼"
               ></img>
             </div>
@@ -134,8 +135,8 @@ export default function ReceivedVoice() {
             </div>
           </div>
         </div>
-        {voiceTest.sender && (
-          <p className="received-sender">From. {voiceTest.sender}</p>
+        {location.state.sender && (
+          <p className="received-sender">From. {location.state.sender}</p>
         )}
       </div>
     </div>
