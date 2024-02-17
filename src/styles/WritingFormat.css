@@ -113,9 +113,14 @@
   letter-spacing: 0.00413rem;
   border-radius: 95px;
   border: none;
+  cursor: pointer;
+  outline: none;
 }
 .format-select-page .selected-format {
   transform: scale(1.05);
   border: 0.09999999999rem solid #4d4d4d;
   flex-shrink: 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
 }
