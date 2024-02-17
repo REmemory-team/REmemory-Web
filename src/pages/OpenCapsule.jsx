@@ -75,29 +75,40 @@ const OpenCapsule = () => {
         },
       })
       .then((response) => {
-        const state = {
-          align_type: response.data.result.pcapsules.align_type,
-          capsule_number: response.data.result.pcapsules.capsule_number,
-          content_type: response.data.result.pcapsules.content_type,
-          dear_name: response.data.result.pcapsules.dear_name,
-          open_date: response.data.result.pcapsules.open_date,
-          pcapsule_name: response.data.result.pcapsules.pcapsule_name,
-          text_img_data: response.data.result.pcapsules.text_img_data,
-          voice_data: response.data.result.pcapsules.voice_data,
-          theme: response.data.result.pcapsules.theme,
-        };
-        switch(state.content_type){
-          case 1:
-            navigate("/capsule/open/rolling", {state});
-            break;
-          case 2:
+        const data = response.data.result;
+        //롤링페이퍼
+        if(data.rcapsules){
+          const state = {
+            capsule_number: data.rcapsules.capsule_number,
+            dear_name: data.rcapsules.dear_name,
+            open_date: data.rcapsules.open_date,
+            rcapsule_cnt: data.rcapsules.rcapsule_cnt,
+            rcapsule_name: data.rcapsules.rcapsule_name,
+            status: data.rcapsules.status,
+            theme: data.pcapsules.theme,
+          };
+          navigate("/capsule/open/rolling", {state});
+        }
+        else{
+          const state = {
+            align_type: data.pcapsules.align_type,
+            capsule_number: data.pcapsules.capsule_number,
+            content_type: data.pcapsules.content_type,
+            dear_name: data.pcapsules.dear_name,
+            open_date: data.pcapsules.open_date,
+            pcapsule_name: data.pcapsules.pcapsule_name,
+            text_img_data: data.pcapsules.text_img_data,
+            voice_data: data.pcapsules.voice_data,
+            theme: data.pcapsules.theme,
+          };          
+          //글+사진
+          if(state.content_type === 1){
             navigate("/capsule/open/text", {state});
-            break;
-          case 3:
+          }
+          //음성메세지
+          else{
             navigate("/capsule/open/voice", {state});
-            break;
-          default:
-            alert("올바르지 않은 content_type입니다.");
+          }
         }
       })
       .catch(function (error) {
