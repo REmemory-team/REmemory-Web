@@ -50,13 +50,11 @@ const Login = () => {
       );
 
       if (response.status === 200 && response.data.isSuccess) {
-        const { token, userID, nickname } = response.data.result;
-
-        console.log(response);
+        const { token, userId, nickname } = response.data.result;
 
         // 세션 스토리지에 저장
         sessionStorage.setItem("token", token);
-        sessionStorage.setItem("userID", userID);
+        sessionStorage.setItem("userId", userId);
         sessionStorage.setItem("nickname", nickname);
 
         if (nickname) {
@@ -66,11 +64,11 @@ const Login = () => {
         }
       } else {
         console.log("로그인 또는 회원가입에 실패했습니다.");
-        // 실패했을 경우 처리
+        navigate("/");
       }
     } catch (error) {
       console.error("Failed to send authorization code to server:", error);
-      // 실패 처리
+      navigate("/");
     }
   };
 

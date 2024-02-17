@@ -2,20 +2,27 @@
 
 import "../styles/Nickname.css";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Nickname() {
   const [userNickname, setUserNickname] = useState("");
+
   const maxLength = 10;
   const navigate = useNavigate();
 
   //로그인 과정에서 받은 데이터(아이디)
-  const id = 2;
+  const id = sessionStorage.getItem("userId");
+  useEffect(() => {
+    // 세션 스토리지에서 닉네임을 가져와서 설정합니다.
+    const storedNickname = sessionStorage.getItem("userNickname");
+    if (storedNickname !== null) {
+      setUserNickname(storedNickname);
+    }
+  }, []);
 
-  //사용자가 입력한 닉네임 저장 함수
   const handleInputChange = (e) => {
     setUserNickname(e.target.value);
   };
@@ -29,9 +36,9 @@ export default function Nickname() {
 
   //이걸로 할게요! 버튼 누를시
   const handleSubmit = () => {
-    if(validNickname(userNickname)) {
+    if (validNickname(userNickname)) {
       axios
-        .patch(`${process.env.REACT_APP_API_BASE_URL}/user/nickname`,{
+        .patch(`${process.env.REACT_APP_API_BASE_URL}/user/nickname`, {
           userId: id,
           nickname: userNickname,
         })
@@ -39,9 +46,9 @@ export default function Nickname() {
           console.log("서버응답: ", response);
           navigate("/login/kakao/home");
         })
-        .catch((error)=>{
-          console.log("오류: ",error);
-        })
+        .catch((error) => {
+          console.log("오류: ", error);
+        });
     } else {
       alert(
         "한글, 영어, 숫자, 특수문자로 구성된 1~10자리 닉네임을 입력해주세요"
