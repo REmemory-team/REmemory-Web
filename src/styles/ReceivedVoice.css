@@ -42,11 +42,13 @@
 .received-voice-page .back-btn {
   width: 1.64063rem;
   height: 1.09375rem;
+  cursor: pointer;
 }
 .received-voice-page .home-btn {
   width: 1.61456rem;
   height: 1.45313rem;
   stroke: rgba(0, 0, 0, 0);
+  cursor: pointer;
 }
 .received-voice-page .voice-contents-box {
   width: 19.8rem;
@@ -85,6 +87,7 @@
 }
 .received-voice-page .play-btn {
   margin-right: 0.9rem;
+  cursor: pointer;
 }
 .received-voice-page .bar {
   position: relative;
