@@ -1,15 +1,16 @@
-// 글/사진 편지 확인
+// 글&사진 편지 확인
 
 import "../styles/ReceivedText.css";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
 import React from "react";
+import textTest from "../Data/textTest";
+import 생일1 from "../assets/생일축하2.jpg";
 
 export default function ReceivedText() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { sender, theme, recipient, contents } = location.state;
 
   // 받는 사람, 보낸 사람, 편지 내용, 테마 정보 필요
 
@@ -25,7 +26,9 @@ export default function ReceivedText() {
   };
 
   return (
-    <div className="received-text-page">
+    <div
+      className={`received-text-page received-text-page-theme${textTest.theme}`}
+    >
       <div className="top-menu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,9 +61,22 @@ export default function ReceivedText() {
         </svg>
       </div>
       <div className="text-contents-box">
-        <p className="received-recipient">To. {recipient}</p>
-        <div className="text-contents">{contents}</div>
-        <p className="received-sender">From. {sender}</p>
+        <p className="received-recipient">To. {textTest.dear_name}</p>
+        <div className={`text-contents align-${textTest.align_type}`}>
+          {textTest.text_img_data.map((item, index) => {
+            if (item.body) {
+              // 텍스트 데이터가 있는 경우
+              return <p key={index}>{item.body}</p>;
+            } else if (item.image_url) {
+              // 이미지 데이터가 있는 경우
+              return <img key={index} src={생일1} alt={`Content ${index}`} />;
+            }
+            return null;
+          })}
+        </div>
+        {textTest.sender && (
+          <p className="received-sender">From. {textTest.sender}</p>
+        )}
       </div>
     </div>
   );

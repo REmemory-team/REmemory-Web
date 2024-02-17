@@ -6,9 +6,7 @@ import Menu from "../components/Menu";
 import icon_clock from "../assets/icon_clock.png";
 import icon_menu from "../assets/icon_menu.png";
 import image_circle from "../assets/image_circle.png";
-import image_ellipse from "../assets/image_ellipse.png";
-import image_openedCapsule from "../assets/image_openedCapsule.png";
-import image_unopenedCapsule from "../assets/image_unopenedCapsule.png";
+import image_empty from "../assets/image_empty.png";
 
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -35,7 +33,7 @@ const OpenCapsule = () => {
   })
 
   useEffect(()=>{
-    const targetDate = new Date(location.state.open_date);  
+    const targetDate = new Date(location.state.open_date); 
 
     const updateRemainingTime = () => {
       const currentDate = new Date();
@@ -99,9 +97,10 @@ const OpenCapsule = () => {
         console.log(error);
       });
   }
-  
+
+  const theme = 1;
   return (
-    <div className="OpenCapsule">
+    <div className={["OpenCapsule", theme].join(" theme")}>
       {location.state.status === "locked" && (
         <img
           className="image_menu"
@@ -110,23 +109,26 @@ const OpenCapsule = () => {
           onClick={menuHandler}
         />
       )}
-      {openMenu && (
+      {/* {openMenu && (
         <div className="menu">
           <Menu menuHandler={menuHandler} />
         </div>
-      )}
+      )} */}
+      <div className={["menu", openMenu].join(" ")}>
+        <Menu menuHandler={menuHandler}/>
+      </div>
       <div className="container">
         <div className="image_section">
           <img
             className={["img_isOpened", location.state.status !== "locked"].join("_")}
             alt=""
-            src={location.state.status !== "locked" ? image_openedCapsule : image_unopenedCapsule}
+            src={image_empty}
           />
           <div className={["ellipses", location.state.status !== "locked"].join("_")}>
             <img className="circle" alt="" src={image_circle} />
-            <img className="ellipse type1" alt="" src={image_ellipse} />
-            <img className="ellipse type2" alt="" src={image_ellipse} />
-            <img className="ellipse type3" alt="" src={image_ellipse} />
+            <img className="ellipse type1" alt="" src={image_empty} />
+            <img className="ellipse type2" alt="" src={image_empty} />
+            <img className="ellipse type3" alt="" src={image_empty} />
           </div>
         </div>
         <div className="text_section">

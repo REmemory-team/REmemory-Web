@@ -2,15 +2,22 @@
 
 import "../styles/CheckCapsuleByNumber.css";
 
+import { useLocation, useNavigate } from "react-router-dom";
+
 import React from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function CheckCapsuleByNumber() {
   const navigate = useNavigate();
-  const [capsuleNum, setCapsuleNum] = useState(""); // 캡슐 번호 저장할 상태 변수
-  const [password, setPassword] = useState(""); // 비밀번호 저장할 상태 변수
+  const location = useLocation();
+  const [capsuleNum, setCapsuleNum] = useState(""); // 캡슐 번호
+  const [password, setPassword] = useState(""); // 비밀번호
+
+  const initialCapsuleNum =
+    location.state && location.state.capsule_number
+      ? location.state.capsule_number
+      : "";
 
   const handleCapsuleNumChange = (event) => {
     setCapsuleNum(event.target.value);
@@ -29,23 +36,25 @@ export default function CheckCapsuleByNumber() {
       alert("비밀번호를 입력해주세요.");
       return;
     }
+    console.log(capsuleNum);
+    console.log(password);
     // 서버에 캡슐 번호와 비밀번호 전송
     // 서버로부터 캡슐 번호, 캡슐 이름, 오픈 날짜, 받는 사람, 테마, 상태 정보 받아와 캡슐 확인페이지로 전달
     axios
-      .get("https://dev.mattie3e.store/pcapsule/retrieve", {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve`, {
         params: {
-          capsule_number: capsuleNum,
-          pcapsule_password: password,
+          capsule_name: capsuleNum,
+          password: password,
         },
       })
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
-          console.log(response.data.result.pcapsules.open_date);
-          const openDate = new Date(response.data.result.pcapsules.open_date);
-          console.log(openDate);
-          const currentDate = new Date();
-          const status = currentDate >= openDate ? "unlocked" : "locked";
+          // console.log(response.data.result.pcapsules.open_date);
+          // const openDate = new Date(response.data.result.pcapsules.open_date);
+          // console.log(openDate);
+          // const currentDate = new Date();
+          // const status = currentDate >= openDate ? "unlocked" : "locked";
 
           navigate("/capsule/verify", {
             state: {
@@ -55,7 +64,8 @@ export default function CheckCapsuleByNumber() {
               open_date: response.data.result.pcapsules.open_date,
               dear_name: response.data.result.pcapsules.dear_name,
               theme: response.data.result.pcapsules.theme,
-              status: status,
+              content_type: response.data.result.pcapsules.content_type,
+              status: response.data.result.pcapsules.status,
             },
           });
         }
@@ -79,7 +89,9 @@ export default function CheckCapsuleByNumber() {
         type="text"
         value={capsuleNum}
         onChange={handleCapsuleNumChange}
-        placeholder="캡슐번호를 입력해주세요"
+        placeholder={
+          initialCapsuleNum ? initialCapsuleNum : "캡슐번호를 입력해주세요"
+        }
         className="number-input-field"
       ></input>
       <br />

@@ -55,12 +55,14 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
   const handleSavePassword = () => {
     // 비밀번호가 숫자로만 구성되어 있고, 길이가 6자리인지 확인
     if (/^\d{6}$/.test(password)) {
-      // 비밀번호가 유효한 경우
       axios
-        .post("https://dev.mattie3e.store/pcapsule/create/savePassword", {
-          capsule_number: location.state.capsule_number,
-          pcapsule_password: password,
-        })
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/savePassword`,
+          {
+            capsule_number: location.state.capsule_number,
+            pcapsule_password: password,
+          }
+        )
         .then((response) => {
           if (response.status === 200) {
             window.alert("타입캡슐이 성공적으로 생성되었습니다!");
@@ -68,10 +70,14 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
           }
         })
         .catch((error) => {
-          console.error("Error while sending capsule number:", error);
+          console.log(error);
+          if (error.response.status === 400) {
+            alert("잘못된 요청입니다.");
+          } else {
+            alert("오류가 발생했습니다.");
+          }
         });
     } else {
-      // 비밀번호가 유효하지 않은 경우
       window.alert("비밀번호는 숫자 6자리여야 합니다.");
     }
   };

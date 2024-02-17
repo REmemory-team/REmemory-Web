@@ -10,16 +10,22 @@ import { useNavigate } from "react-router-dom";
 export default function Settings() {
   const navigate = useNavigate();
   const [nickname, setNickname] = useState("");
-  const [username, setUsername] = useState("");
+  const [newNickname, setNewNickname] = useState("");
+
+  const token = sessionStorage.getItem("token");
+  const userId = sessionStorage.getItem("userId");
 
   useEffect(() => {
-    const userId = 1;
     axios
-      .get("https://dev.mattie3e.store/user/{userId}")
+      .get(`${process.env.REACT_APP_API_BASE_URL}/user/${userId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((response) => {
         console.log(response);
-        setUsername(response.data.username);
-        setNickname(response.data.nickname);
+        setNickname(response.data.result.nickname);
+        sessionStorage.setItem("nickname", response.data.result.nickname);
       })
       .catch((error) => {
         console.error(error);
@@ -33,17 +39,23 @@ export default function Settings() {
     navigate("/login/kakao/home");
   };
   const handleNicknameChange = (event) => {
-    setNickname(event.target.value);
+    setNewNickname(event.target.value);
   };
   // 닉네임 변경
   const changeBtnHandler = () => {
-    const userId = 2;
-    setNickname("티티티");
     axios
-      .post("https://dev.mattie3e.store/user/nickname", {
-        userId: userId,
-        nickname: nickname,
-      })
+      .patch(
+        `${process.env.REACT_APP_API_BASE_URL}/user/nickname`,
+        {
+          userId: userId,
+          nickname: newNickname,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
@@ -57,19 +69,27 @@ export default function Settings() {
   // 로그아웃
   const logoutBtnHandler = () => {
     sessionStorage.removeItem("userToken");
+    sessionStorage.removeItem("userId");
+    sessionStorage.removeItem("nickname");
     navigate("/");
   };
   // 회원탈퇴
   const withdrawalBtnHandler = () => {
     const isConfirmed = window.confirm("정말로 탈퇴하시겠습니까?");
     if (isConfirmed) {
-      const userId = 1;
-
       axios
-        .patch("https://dev.mattie3e.store/user/deactivate", { userId: userId })
+        .patch(
+          `${process.env.REACT_APP_API_BASE_URL}/user/deactivate`,
+          { userId: userId },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
         .then((response) => {
           console.log(response);
-          if (response.status === 200) {
+          if (response.data.isSuccess) {
             alert("탈퇴가 성공적으로 처리되었습니다.");
             navigate("/");
           }
@@ -117,7 +137,7 @@ export default function Settings() {
       <p className="settings">계정 설정</p>
       <div className="section1">
         <div className="user">
-          <p className="user-name">{username} 님</p>
+          <p className="user-name">{nickname} 님</p>
           <div className="kakao">
             <div className="kakao-logo"></div>
             <span className="kakao-login">
@@ -132,7 +152,6 @@ export default function Settings() {
         <p className="nickname">닉네임</p>
         <input
           type="text"
-          value={nickname}
           onChange={handleNicknameChange}
           placeholder={nickname}
           className="nickname-input"

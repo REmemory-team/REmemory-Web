@@ -1,15 +1,34 @@
 .rollingpaper-open-page {
   min-height: 100vh;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rolling-open-page-theme1 {
   background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
     linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 0%,
       rgba(170, 154, 204, 0) 46.53%
     );
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+.rolling-open-page-theme2 {
+  background: linear-gradient(180deg, #fbf3c1 0%, rgba(251, 243, 193, 0) 100%),
+    #fff;
+}
+.rolling-open-page-theme3 {
+  background: linear-gradient(180deg, #6a88c2 22.4%, #c1c6f3 100%),
+    linear-gradient(180deg, #9aa5cc 0%, rgba(154, 165, 204, 0) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #aa9acc 46.53%), #fff;
+}
+.rolling-open-page-theme4 {
+  background: linear-gradient(180deg, rgba(255, 237, 251, 0) 0%, #fee1f7 100%),
+    #fff;
+}
+.rolling-open-page-theme5 {
+  background: linear-gradient(180deg, #f3a0a0 0%, rgba(113, 155, 112, 0.2) 100%),
+    #fff;
 }
 .rollingpaper-open-page .top-menu {
   width: 100%;
@@ -29,7 +48,6 @@
   stroke: rgba(0, 0, 0, 0);
 }
 .rollingpaper-open-page .rolling-capsule-name {
-  color: #fff;
   text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
   font-family: Pretendard;
   font-size: 2.1875rem;
@@ -38,4 +56,19 @@
   line-height: 0.8125rem; /* 37.143% */
   letter-spacing: 0.00413rem;
   margin-bottom: 3.2rem;
+}
+.rolling-open-page-theme1 .rolling-capsule-name {
+  color: #fff;
+}
+.rolling-open-page-theme2 .rolling-capsule-name {
+  color: #75746f;
+}
+.rolling-open-page-theme3 .rolling-capsule-name {
+  color: #fff;
+}
+.rolling-open-page-theme4 .rolling-capsule-name {
+  color: #757575;
+}
+.rolling-open-page-theme5 .rolling-capsule-name {
+  color: #fff;
 }
