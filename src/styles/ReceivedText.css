@@ -84,6 +84,10 @@
   letter-spacing: 0.00413rem;
   flex-shrink: 0;
 }
+.received-text-page .text-contents-box .text-contents img {
+  max-width: 100%;
+  height: auto;
+}
 .received-text-page-theme3 .text-contents {
   color: #fff;
 }
@@ -106,4 +110,13 @@
 .received-text-page .received-sender {
   display: flex;
   justify-content: end;
+}
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
 }

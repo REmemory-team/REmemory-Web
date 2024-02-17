@@ -140,12 +140,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+.login-page .container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .login-page .logo-img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10.8rem;
+  /* margin-top: 10.75%; */
   margin-bottom: 5rem;
   position: relative;
   padding-top: 0.5rem;

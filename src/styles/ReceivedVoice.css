@@ -113,7 +113,7 @@
   background: #eaa6a3;
 }
 .received-voice-page .main-bar {
-  width: 6.1875rem;
+  width: 0rem;
   height: 1.5625rem;
   flex-shrink: 0;
   border-radius: 10px;

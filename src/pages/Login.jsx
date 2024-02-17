@@ -70,18 +70,20 @@ const Login = () => {
 
   return (
     <div className="login-page">
-      <div className="logo-img">
-        <img src={circle} alt="동그라미" className="circle" />
-        <img src={arrow} alt="화살표" className="arrow" />
-        <img src={twinkle} alt="반짝이" className="twinkle" />
-        <div className="re-memory">RE:memory</div>
-      </div>
-      <div className="capsule-check-btn" onClick={capsuleCheck}>
-        캡슐번호로 타임캡슐 확인
-      </div>
-      <div className="kakao-login-btn" onClick={kakaoLogin}>
-        <img src={kakaoicon} alt="kakaoicon" className="kakao-icon" />
-        <span className="kakao-login">카카오 로그인</span>
+      <div className="container">
+        <div className="logo-img">
+          <img src={circle} alt="동그라미" className="circle" />
+          <img src={arrow} alt="화살표" className="arrow" />
+          <img src={twinkle} alt="반짝이" className="twinkle" />
+          <div className="re-memory">RE:memory</div>
+        </div>
+        <div className="capsule-check-btn" onClick={capsuleCheck}>
+          캡슐번호로 타임캡슐 확인
+        </div>
+        <div className="kakao-login-btn" onClick={kakaoLogin}>
+          <img src={kakaoicon} alt="kakaoicon" className="kakao-icon" />
+          <span className="kakao-login">카카오 로그인</span>
+        </div>
       </div>
     </div>
     // <div className="login-page">

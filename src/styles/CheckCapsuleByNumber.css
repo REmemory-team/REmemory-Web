@@ -88,6 +88,8 @@
   letter-spacing: 0.00413rem;
 }
 .check-capsule-page .capsule-check-btn {
+  cursor: pointer;
+  outline: none;
   width: 18.7rem;
   height: 3.125rem;
   flex-shrink: 0;

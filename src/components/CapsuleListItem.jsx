@@ -2,10 +2,17 @@
 import "../styles/CapsuleListItem.css";
 
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 export default function CapsuleListItem({imgSrc, name, number}) {
+  const navigate = useNavigate();
+  const handleList = () =>{
+    navigate("/capsule/input-number",{
+      state: number
+    });
+  }
   return (
-    <div className="capsule_list">
+    <div className="capsule_list" onClick={handleList}>
         <div className="list_image">
         <img src={imgSrc} alt="캡슐이미지" />
         </div>

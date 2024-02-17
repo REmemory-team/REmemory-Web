@@ -3,8 +3,7 @@ const textTest = {
   pcapsule_name: "test 중인 캡슐1",
   open_date: "2024-02-12T15:00:00.000Z",
   dear_name: "위트",
-  sender: "레나",
-  theme: 1,
+  theme: 3,
   content_type: 1,
   text_img_data: [
     {
@@ -13,17 +12,18 @@ const textTest = {
     },
     {
       body: null,
-      image_url: "../assets/arrow.png",
+      image_url: "../assets/생일축하1.jpg",
     },
     {
       body: null,
-      image_url: "../assets/Recording_icon.png",
+      image_url: "../assets/생일축하2.jpg",
     },
     {
       body: "이 사진 기억나?",
       image_url: null,
     },
   ],
+  voice_data: null,
+  align_type: "left",
 };
-
 export default textTest;

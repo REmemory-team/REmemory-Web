@@ -28,7 +28,8 @@ export default function WritingFormat() {
     }
     axios
       .post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create`, {
-        userId: 1, // 수정
+        userId: 1,
+        // userId: sessionStorage.getItem("userId"),
         pcapsule_name: location.state.pcapsule_name,
         open_date: location.state.open_date,
         dear_name: location.state.dear_name,

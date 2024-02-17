@@ -1,9 +1,11 @@
 // 카카오 로그인 - 이름(닉네임) 설정
 
 import "../styles/Nickname.css";
+
 import React, { useState } from "react";
+
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
 
 export default function Nickname() {
   const [userNickname, setUserNickname] = useState("");
@@ -20,7 +22,8 @@ export default function Nickname() {
 
   //닉네임 유효성 검사
   const validNickname = (nickname) => {
-    const regex = /^(?!\s)([ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9?!@#$%^&*()-_+=~`'"\s]){1,10}$/;
+    const regex =
+      /^(?!\s)([ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9?!@#$%^&*()-_+=~`'"\s]){1,10}$/;
     return regex.test(nickname);
   };
 
@@ -32,15 +35,17 @@ export default function Nickname() {
           userId: id,
           nickname: userNickname,
         })
-        .then((response)=>{
-          console.log("서버응답: ",response);
+        .then((response) => {
+          console.log("서버응답: ", response);
           navigate("/login/kakao/home");
         })
         .catch((error)=>{
           console.log("오류: ",error);
         })
     } else {
-      alert("한글, 영어, 숫자, 특수문자로 구성된 1~10자리 닉네임을 입력해주세요");
+      alert(
+        "한글, 영어, 숫자, 특수문자로 구성된 1~10자리 닉네임을 입력해주세요"
+      );
     }
   };
 
