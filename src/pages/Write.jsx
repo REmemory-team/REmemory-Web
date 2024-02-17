@@ -29,21 +29,26 @@ const Write = () => {
   // },
   
   const [receivedState, setReceivedState] = useState({
-    dear_name: "dear_name",
+    dear_name: "",
     theme: 1,
     purpose: "",
-    capsule_number: "testMember1_21956"
+    capsule_number: ""
   });
-
-  // useEffect(()=>{
-  //   setReceivedState(location.state);
-  // }, location);
 
   const [state, setState] = useState({
     capsule_number: receivedState.capsule_number,
     contents: [{ type: "text", content: "" }],
     alignType: "left",
   });
+
+  useEffect(()=>{
+    setReceivedState(location.state);
+    setState({
+      ...state,
+      capsule_number: location.state.capsule_number,
+    })
+  }, [location]);
+
 
   //임시저장
   const handleSave = () => {
@@ -58,12 +63,14 @@ const Write = () => {
   const handleSubmit = async () => {
     if (window.confirm("작성을 끝낼까요?")) {
       console.log(state);
-      // try{
-      //     await axios.post('SERVER_URL', state);
-      // navigate(`/`);
-      // }catch(err){
-      //     alert(err.response.data.message);
-      // }
+      try{
+        await axios.post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/text_image`, state);
+        navigate(`/capsule/assign-number`,{
+          state: { capsule_number: state.capsule_number },
+        });
+      }catch(err){
+          alert(err.response.data.message);
+      }
     }
   };
 
@@ -140,9 +147,14 @@ const Write = () => {
   };
   const deleteImage = async (index) => {
     if (window.confirm("이미지를 삭제할까요?")) {
-      const newItems = [state.contents];
-      newItems[index - 1].content += "\n" + newItems[index + 1].content;
-      newItems.splice(index, 2);
+      const newItems = state.contents;
+      if(index>0){
+        newItems[index - 1].content += "\n" + newItems[index + 1].content;
+        newItems.splice(index, 2);
+      }
+      else{
+        newItems.splice(index, 1);
+      }
       await setState({
         ...state,
         contents: newItems,
