@@ -5,7 +5,9 @@ import "../styles/ReceivedText.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { ReactComponent as BackIcon } from "../assets/back_btn.svg";
+import { ReactComponent as BackIcon2 } from "../assets/back_btn2.svg";
 import { ReactComponent as HomeIcon } from "../assets/home_btn.svg";
+import { ReactComponent as HomeIcon2 } from "../assets/home_btn2.svg";
 import React from "react";
 
 // import 생일1 from "../assets/생일축하2.jpg";
@@ -29,13 +31,17 @@ export default function ReceivedText() {
     }
   };
 
+  const darkIcon = location.state.theme === "2" || location.state.theme === "4";
+  const BackIconToUse = darkIcon ? BackIcon2 : BackIcon;
+  const HomeIconToUse = darkIcon ? HomeIcon2 : HomeIcon;
+
   return (
     <div
       className={`received-text-page received-text-page-theme${location.state.theme}`}
     >
       <div className="top-menu">
-        <BackIcon className="back-btn" onClick={backBtnHandler} />
-        <HomeIcon className="home-btn" onClick={homeBtnHandler} />
+        <BackIconToUse className="back-btn" onClick={backBtnHandler} />
+        <HomeIconToUse className="home-btn" onClick={homeBtnHandler} />
       </div>
       <div className="text-contents-box">
         <p className="received-recipient">To. {location.state.dear_name}</p>

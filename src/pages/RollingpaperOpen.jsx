@@ -4,6 +4,10 @@ import "../styles/RollingpaperOpen.css";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
+import { ReactComponent as BackIcon } from "../assets/back_btn.svg";
+import { ReactComponent as BackIcon2 } from "../assets/back_btn2.svg";
+import { ReactComponent as HomeIcon } from "../assets/home_btn.svg";
+import { ReactComponent as HomeIcon2 } from "../assets/home_btn2.svg";
 import React from "react";
 import RollingpaperContents from "../components/RollingpaperContents";
 
@@ -24,40 +28,17 @@ export default function RollingpaperOpen() {
     }
   };
 
+  const darkIcon = location.state.theme === "2" || location.state.theme === "4";
+  const BackIconToUse = darkIcon ? BackIcon2 : BackIcon;
+  const HomeIconToUse = darkIcon ? HomeIcon2 : HomeIcon;
+
   return (
     <div
       className={`rollingpaper-open-page rolling-open-page-theme${location.state.theme}`}
     >
       <div className="top-menu">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="27"
-          height="19"
-          viewBox="0 0 27 19"
-          fill="none"
-          className="back-btn"
-          onClick={backBtnHandler}
-        >
-          <path
-            d="M26.625 8.04167H5.96042L11.1812 2.80625L9.125 0.75L0.375 9.5L9.125 18.25L11.1812 16.1938L5.96042 10.9583H26.625V8.04167Z"
-            fill="white"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="26"
-          height="24"
-          viewBox="0 0 26 24"
-          fill="none"
-          className="home-btn"
-          onClick={homeBtnHandler}
-        >
-          <path
-            d="M12.9167 0C12.9167 0 4.92642 6.8975 0.461125 10.633C0.319038 10.7568 0.204561 10.9091 0.125122 11.08C0.0456818 11.2509 0.00305301 11.4366 0 11.625C0 11.9676 0.136086 12.2961 0.37832 12.5383C0.620555 12.7806 0.949095 12.9167 1.29167 12.9167H3.875V21.9583C3.875 22.3009 4.01109 22.6294 4.25332 22.8717C4.49556 23.1139 4.8241 23.25 5.16667 23.25H9.04167C9.38424 23.25 9.71278 23.1139 9.95501 22.8717C10.1972 22.6294 10.3333 22.3009 10.3333 21.9583V16.7917H15.5V21.9583C15.5 22.3009 15.6361 22.6294 15.8783 22.8717C16.1206 23.1139 16.4491 23.25 16.7917 23.25H20.6667C21.0092 23.25 21.3378 23.1139 21.58 22.8717C21.8223 22.6294 21.9583 22.3009 21.9583 21.9583V12.9167H24.5417C24.8842 12.9167 25.2128 12.7806 25.455 12.5383C25.6973 12.2961 25.8333 11.9676 25.8333 11.625C25.8315 11.433 25.7861 11.2438 25.7003 11.072C25.6146 10.9001 25.4909 10.75 25.3386 10.633C20.9043 6.8975 12.9167 0 12.9167 0Z"
-            fill="white"
-            fill-opacity="0.9"
-          />
-        </svg>
+        <BackIconToUse className="back-btn" onClick={backBtnHandler} />
+        <HomeIconToUse className="home-btn" onClick={homeBtnHandler} />
       </div>
       <div className="rolling-capsule-name">캡슐 이름</div>
       {location.state.rcapsule_cnt.map((item, index) => {
