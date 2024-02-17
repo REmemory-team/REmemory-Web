@@ -40,7 +40,6 @@ export default function Nickname() {
       // Bearer 토큰 가져오기
       const token = sessionStorage.getItem("token");
 
-      // Bearer 토큰을 포함하여 요청을 보냅니다.
       axios
         .patch(
           `${process.env.REACT_APP_API_BASE_URL}/user/${userId}`,
@@ -49,7 +48,7 @@ export default function Nickname() {
           },
           {
             headers: {
-              Authorization: `Bearer ${token}`,
+              authorization: `Bearer ${token}`,
             },
           }
         )
