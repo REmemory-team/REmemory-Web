@@ -111,4 +111,6 @@
   letter-spacing: 0.00413rem;
   border-radius: 95px;
   border: none;
+  margin-bottom: 3rem;
+  cursor: pointer
 }

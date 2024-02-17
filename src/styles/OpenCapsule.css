@@ -6,7 +6,6 @@
     justify-content: center;
     background: linear-gradient(180deg, rgba(96, 87, 115, 0.00) 0%, #AA9ACC 60.42%), #FFF;
     min-height: 100vh;
-    user-select: none;
     overflow: hidden;
 }
 /*menu*/
@@ -39,6 +38,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    user-select: none;
 }
 .OpenCapsule .img_isOpened_true{
     width: 21rem;

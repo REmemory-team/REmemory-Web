@@ -11,7 +11,6 @@
   justify-content: center;
   overflow: hidden;
 }
-
 .CapsuleCodeAssignment .text-1 {
   position: absolute;
   width: 369px;
@@ -234,9 +233,15 @@
   height: 100%;
   background: #aa9acc;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.capsule-code-assignment .container{
+  display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  justify-content: center;
 }
 .capsule-code-assignment .message {
   color: #fff;
@@ -247,7 +252,7 @@
   font-weight: 400;
   line-height: 0.8125rem; /* 72.222% */
   letter-spacing: 0.00413rem;
-  margin-top: 6.5rem;
+  /* margin-top: 6.5rem; */
   margin-bottom: 2.5rem;
 }
 .capsule-code-assignment .code-box {
@@ -268,7 +273,7 @@
   color: #000;
   text-align: center;
   font-family: Pretendard;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
   line-height: 0.8125rem; /* 59.091% */
@@ -277,7 +282,7 @@
 .capsule-code-assignment .assigned-code {
   color: #000;
   font-family: Pretendard;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 400;
   line-height: 0.8125rem;
@@ -287,6 +292,7 @@
   margin-top: 0.8rem;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .capsule-code-assignment .copy-img {
   width: 0.9375rem;
@@ -320,7 +326,7 @@
   color: #000;
   text-align: center;
   font-family: Pretendard;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
   line-height: 0.8125rem; /* 59.091% */
@@ -329,7 +335,7 @@
 .capsule-code-assignment .divide {
   color: #000;
   font-family: Pretendard;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 400;
   line-height: 0.8125rem;
@@ -339,7 +345,7 @@
   width: 4.7rem;
   color: #000;
   font-family: Pretendard;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 400;
   line-height: 0.8125rem;
@@ -407,6 +413,7 @@
   font-weight: 400;
   line-height: 0.8125rem; /* 72.222% */
   letter-spacing: 0.00413rem;
+  cursor: pointer;
 }
 .capsule-code-assignment .copied-message {
   width: 7.75rem;
