@@ -40,14 +40,14 @@
   margin-bottom: 1.5rem;
 }
 .received-text-page .back-btn {
-  width: 1.64063rem;
-  height: 1.09375rem;
+  /* width: 1.64063rem;
+  height: 1.09375rem; */
   cursor: pointer;
 }
 .received-text-page .home-btn {
-  width: 1.61456rem;
+  /* width: 1.61456rem;
   height: 1.45313rem;
-  stroke: rgba(0, 0, 0, 0);
+  stroke: rgba(0, 0, 0, 0); */
   cursor: pointer;
 }
 .received-text-page .text-contents-box {

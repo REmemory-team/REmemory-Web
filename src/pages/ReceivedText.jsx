@@ -4,8 +4,8 @@ import "../styles/ReceivedText.css";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { ReactComponent as BackIcon } from "../assets/back-btn.svg";
-import { ReactComponent as HomeIcon } from "../assets/home-btn.svg";
+import { ReactComponent as BackIcon } from "../assets/back_btn.svg";
+import { ReactComponent as HomeIcon } from "../assets/home_btn.svg";
 import React from "react";
 
 // import 생일1 from "../assets/생일축하2.jpg";
