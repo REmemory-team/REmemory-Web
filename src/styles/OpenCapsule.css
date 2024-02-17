@@ -3,9 +3,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background: linear-gradient(180deg, rgba(96, 87, 115, 0.00) 0%, #AA9ACC 60.42%), #FFF;
     min-height: 100vh;
     user-select: none;
+    overflow: hidden;
 }
 /*menu*/
 .OpenCapsule .image_menu{
@@ -27,12 +29,7 @@
     animation: fade-in 0.25s forwards;
 }
 .OpenCapsule .menu.false{
-    /* display: none; */
     animation: fade-out .5s forwards;
-}
-.OpenCapsule .container{
-    position: absolute;
-    top: 12.75rem;
 }
 /*image - capsule*/
 .OpenCapsule .image_section{
@@ -41,6 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 .OpenCapsule .img_isOpened_true{
     width: 21rem;

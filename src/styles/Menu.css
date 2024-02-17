@@ -5,6 +5,7 @@
   color: #ffffff;
   width: 14.2rem;
   height: 100%;
+  user-select: none;
 }
 .Menu img.btn_close {
   position: absolute;

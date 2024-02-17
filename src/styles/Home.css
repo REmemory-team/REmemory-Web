@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: linear-gradient(180deg, rgba(96, 87, 115, 0) 1.41%, #aa9acc 59.9%),
     #fff;
   position: relative;
@@ -22,7 +23,6 @@
   right: 2rem;
   width: 1.25rem;
   height: 1rem;
-  flex-shrink: 0;
 }
 .home .menu{
   position: absolute;
@@ -32,8 +32,11 @@
   z-index: 1;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+  animation: fade-in 0.25s forwards;
 }
-
+.home .menu.false{
+  animation: fade-out .5s forwards;
+}
 .home .image_box {
   width: 22.04rem;
   height: 22.28rem;

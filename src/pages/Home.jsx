@@ -66,12 +66,14 @@ export default function Home() {
         alt="메뉴아이콘"
         onClick={menuHandler}
       />
-      {openMenu && (
+      {/* {openMenu && (
         <div className="menu">
           <Menu menuHandler={menuHandler} />
         </div>
-      )}
-
+      )} */}
+      <div className={["menu", openMenu].join(" ")}>
+        <Menu menuHandler={menuHandler}/>
+      </div>
       <div className="image_box">
         <div className="capsule_image"></div>
         <span>?</span>
