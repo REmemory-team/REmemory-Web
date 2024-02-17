@@ -62,7 +62,7 @@ const Login = () => {
         if (nickname) {
           navigate("/login/kakao/home");
         } else {
-          //navigate("/login/kakao/nickname");
+          navigate("/login/kakao/nickname");
         }
       } else {
         console.log("로그인 또는 회원가입에 실패했습니다.");
