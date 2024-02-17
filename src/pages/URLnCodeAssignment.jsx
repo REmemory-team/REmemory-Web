@@ -1,6 +1,6 @@
 import "../styles/URLnCodeAssignment.css";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -8,70 +8,17 @@ import Copyimg from "../assets/Copy.png";
 import axios from "axios";
 
 const URLnCodeAssignment = () => {
-  // const [capsuleNumber, setCapsuleNumber] = useState("");
   const [copied, setCopied] = useState(false);
-  // const [url, setUrl] = useState("");
   const [copiedUrl, setCopiedUrl] = useState(false);
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-
-  // useEffect(() => {
-  //   generateCapsuleNumber();
-  //   generateUrl();
-  // }, []);
-
-  // const generateCapsuleNumber = () => {
-  //   const randomNum = Math.floor(Math.random() * 1000);
-  //   const paddedRandomNum = randomNum.toString().padStart(4, "0");
-  //   const newCapsuleNumber = `${paddedRandomNum}`;
-  //   setCapsuleNumber(newCapsuleNumber);
-  //   setCopied(false);
-
-  //   savePasswordToBackend(newCapsuleNumber, password);
-  // };
-
-  // const savePasswordToBackend = (newCapsuleNumber, password) => {
-  //   axios
-  //     .post(
-  //       `${process.env.REACT_APP_API_BASE_URL}pcapsule/create/savePassword`,
-  //       {
-  //         capsule_number: newCapsuleNumber,
-  //         pcapsule_password: password,
-  //       }
-  //     )
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error while sending capsule number:", error);
-  //     });
-  // };
 
   const handleCopyClick = () => {
     console.log("카피 완료!");
     setCopied(true);
     setTimeout(() => setCopied(false), 820);
   };
-
-  // const generateUrl = () => {
-  //   const newUrl = "https://example.com/" + generateRandomString();
-  //   setUrl(newUrl);
-  //   setCopiedUrl(false);
-  // };
-
-  // const generateRandomString = () => {
-  //   const length = 6;
-  //   const characters =
-  //     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  //   let result = "";
-  //   for (let i = 0; i < length; i++) {
-  //     result += characters.charAt(
-  //       Math.floor(Math.random() * characters.length)
-  //     );
-  //   }
-  //   return result;
-  // };
 
   const handleCopyUrlClick = () => {
     setCopiedUrl(true);
@@ -85,10 +32,12 @@ const URLnCodeAssignment = () => {
   const handleSavePassword = () => {
     if (/^\d{6}$/.test(password)) {
       axios
-        .post("https://dev.mattie3e.store/pcapsule/create/savePassword", {
-          capsule_number: location.state.capsule_number,
-          rcapsule_password: password,
-        })
+        .patch(
+          `${process.env.REACT_APP_API_BASE_URL}/rcapsule/${location.state.capsule_number}`,
+          {
+            rcapsule_password: password,
+          }
+        )
         .then((response) => {
           console.log(response);
           if (response.status === 200) {
@@ -97,7 +46,12 @@ const URLnCodeAssignment = () => {
           }
         })
         .catch((error) => {
-          console.error("Error while sending capsule number:", error);
+          console.log(error);
+          if (error.response.status === 400) {
+            alert("잘못된 요청입니다.");
+          } else {
+            alert("오류가 발생했습니다.");
+          }
         });
     } else {
       window.alert("비밀번호는 숫자 6자리여야 합니다.");

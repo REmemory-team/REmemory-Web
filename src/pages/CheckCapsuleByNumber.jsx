@@ -32,7 +32,7 @@ export default function CheckCapsuleByNumber() {
     // 서버에 캡슐 번호와 비밀번호 전송
     // 서버로부터 캡슐 번호, 캡슐 이름, 오픈 날짜, 받는 사람, 테마, 상태 정보 받아와 캡슐 확인페이지로 전달
     axios
-      .get(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/retrieve`, {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve`, {
         params: {
           capsule_name: capsuleNum,
           password: password,

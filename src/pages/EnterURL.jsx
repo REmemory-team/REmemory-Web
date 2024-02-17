@@ -19,13 +19,22 @@ export default function EnterURL() {
   // 서버로부터 받는 사람, 테마 정보 가져오기
   useEffect(() => {
     axios
-      .get("서버_URL")
+      .get(
+        `${process.env.REACT_APP_API_BASE_URL}/rcapsule/url_info/${capsuleId}`
+      )
       .then((response) => {
-        setRecipient(response.data.recipient);
-        setTheme(response.data.theme);
+        if (response.status) {
+          setRecipient(response.data.result.recipient);
+          setTheme(response.data.result.theme);
+        }
       })
       .catch((error) => {
-        console.error(error);
+        console.log(error);
+        if (error.response.status === 400) {
+          alert("잘못된 요청입니다.");
+        } else {
+          alert("오류가 발생했습니다.");
+        }
       });
   }, []);
 
