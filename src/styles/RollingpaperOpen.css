@@ -39,8 +39,8 @@
   margin-bottom: 1.5rem;
 }
 .rollingpaper-open-page .back-btn {
-  width: 1.64063rem;
-  height: 1.09375rem;
+  /* width: 1.64063rem;
+  height: 1.09375rem; */
   cursor: pointer;
 }
 .rollingpaper-open-page .home-btn {

@@ -40,8 +40,8 @@
   margin-bottom: 1.5rem;
 }
 .received-voice-page .back-btn {
-  width: 1.64063rem;
-  height: 1.09375rem;
+  /* width: 1.64063rem;
+  height: 1.09375rem; */
   cursor: pointer;
 }
 .received-voice-page .home-btn {
