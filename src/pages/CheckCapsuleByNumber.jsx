@@ -2,15 +2,22 @@
 
 import "../styles/CheckCapsuleByNumber.css";
 
+import { useLocation, useNavigate } from "react-router-dom";
+
 import React from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function CheckCapsuleByNumber() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [capsuleNum, setCapsuleNum] = useState(""); // 캡슐 번호
   const [password, setPassword] = useState(""); // 비밀번호
+
+  const initialCapsuleNum =
+    location.state && location.state.capsule_number
+      ? location.state.capsule_number
+      : "";
 
   const handleCapsuleNumChange = (event) => {
     setCapsuleNum(event.target.value);
@@ -29,6 +36,8 @@ export default function CheckCapsuleByNumber() {
       alert("비밀번호를 입력해주세요.");
       return;
     }
+    console.log(capsuleNum);
+    console.log(password);
     // 서버에 캡슐 번호와 비밀번호 전송
     // 서버로부터 캡슐 번호, 캡슐 이름, 오픈 날짜, 받는 사람, 테마, 상태 정보 받아와 캡슐 확인페이지로 전달
     axios
@@ -80,7 +89,9 @@ export default function CheckCapsuleByNumber() {
         type="text"
         value={capsuleNum}
         onChange={handleCapsuleNumChange}
-        placeholder="캡슐번호를 입력해주세요"
+        placeholder={
+          initialCapsuleNum ? initialCapsuleNum : "캡슐번호를 입력해주세요"
+        }
         className="number-input-field"
       ></input>
       <br />
