@@ -26,6 +26,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const [openMenu, setOpenMenu] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [popupOpen, setPopupOpen] = useState("");
   const [capsuleList, setCapsuleList] = useState([]);
 
@@ -39,6 +40,9 @@ export default function Home() {
 
   //홈화면 메뉴
   const menuHandler = () => {
+    if(!isLoaded){
+      setIsLoaded(true);
+    }
     setOpenMenu(!openMenu);
   };
 
@@ -71,9 +75,9 @@ export default function Home() {
           <Menu menuHandler={menuHandler} />
         </div>
       )} */}
-      <div className={["menu", openMenu].join(" ")}>
+      { isLoaded && <div className={["menu", openMenu].join(" ")}>
         <Menu menuHandler={menuHandler}/>
-      </div>
+      </div>}
       <div className="image_box">
         <div className="capsule_image"></div>
         <span>?</span>
