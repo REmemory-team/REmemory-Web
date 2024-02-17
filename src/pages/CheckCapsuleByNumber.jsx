@@ -55,19 +55,33 @@ export default function CheckCapsuleByNumber() {
           // console.log(openDate);
           // const currentDate = new Date();
           // const status = currentDate >= openDate ? "unlocked" : "locked";
-
-          navigate("/capsule/verify", {
-            state: {
-              capsule_number: response.data.result.pcapsules.capsule_number,
-              password: password,
-              pcapsule_name: response.data.result.pcapsules.pcapsule_name,
-              open_date: response.data.result.pcapsules.open_date,
-              dear_name: response.data.result.pcapsules.dear_name,
-              theme: response.data.result.pcapsules.theme,
-              content_type: response.data.result.pcapsules.content_type,
-              status: response.data.result.pcapsules.status,
-            },
-          });
+          if (response.data.result.pcapsules) {
+            navigate("/capsule/verify", {
+              state: {
+                capsule_number: response.data.result.pcapsules.capsule_number,
+                password: password,
+                pcapsule_name: response.data.result.pcapsules.pcapsule_name,
+                open_date: response.data.result.pcapsules.open_date,
+                dear_name: response.data.result.pcapsules.dear_name,
+                theme: response.data.result.pcapsules.theme,
+                content_type: response.data.result.pcapsules.content_type,
+                status: response.data.result.pcapsules.status,
+              },
+            });
+          } else {
+            navigate("/capsule/verify", {
+              state: {
+                capsule_number: response.data.result.rcapsules.capsule_number,
+                password: password,
+                rcapsule_name: response.data.result.rcapsules.pcapsule_name,
+                open_date: response.data.result.rcapsules.open_date,
+                dear_name: response.data.result.rcapsules.dear_name,
+                theme: response.data.result.rcapsules.theme,
+                rcapsule_cnt: response.data.result.rcapsules.rcapsule_cnt,
+                status: response.data.result.rcapsules.status,
+              },
+            });
+          }
         }
       })
       .catch(function (error) {
