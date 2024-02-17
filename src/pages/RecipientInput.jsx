@@ -13,6 +13,9 @@ export default function RecipientInput() {
   const purpose = location.state.purpose; // 용도
   const [recipient, setRecipient] = useState(""); // 받는 사람
 
+  // const userID = sessionStorage.getItem("userID");
+  const userID = 1;
+
   const handleRecipientChange = (event) => {
     setRecipient(event.target.value);
   };
@@ -35,19 +38,22 @@ export default function RecipientInput() {
       // 용도3인 경우
       // 캡슐번호 & URL 부여 화면으로 이동 (캡슐 번호, URL 전달)
       axios
-        .post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/create`, {
-          rcapsule_name: location.state.pcapsule_name,
-          open_date: location.state.open_date,
-          dear_name: recipient,
-          theme: location.state.theme,
-        })
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/rcapsule/create?userId=${userID}`,
+          {
+            rcapsule_name: location.state.pcapsule_name,
+            open_date: location.state.open_date,
+            dear_name: recipient,
+            theme: location.state.theme,
+          }
+        )
         .then((response) => {
           console.log(response);
           if (response.status === 200) {
             navigate("/capsule/assign-number-url", {
               state: {
                 capsule_number: response.data.result.capsule_number,
-                capsule_url: response.data.result.capsule_url,
+                capsule_url: response.data.result.url,
               },
             });
           }
