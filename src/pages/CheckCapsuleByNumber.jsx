@@ -43,8 +43,8 @@ export default function CheckCapsuleByNumber() {
     axios
       .get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve`, {
         params: {
-          capsule_name: capsuleNum,
-          password: password,
+          capsule_number: capsuleNum,
+          capsule_password: password,
         },
       })
       .then((response) => {
