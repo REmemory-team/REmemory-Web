@@ -68,8 +68,8 @@ export default function Settings() {
   };
   // 로그아웃
   const logoutBtnHandler = () => {
-    sessionStorage.removeItem("userToken");
-    sessionStorage.removeItem("userId");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("userID");
     sessionStorage.removeItem("nickname");
     navigate("/");
   };
