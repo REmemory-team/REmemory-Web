@@ -33,13 +33,13 @@ export default function ReceivedText() {
     >
       <div className="top-menu">
         <img
-          src="../assets/back-button.svg"
+          src="../assets/back-button.png"
           alt="Back"
           className="back-btn"
           onClick={backBtnHandler}
         />
         <img
-          src="../assets/home-button.svg"
+          src="../assets/home-button.png"
           alt="Home"
           className="home-btn"
           onClick={homeBtnHandler}
