@@ -14,13 +14,12 @@ import icon_menu from "../assets/icon_menu.png";
 
 import Menu from "../components/Menu";
 import ListItem from "../components/CapsuleListItem.jsx";
-import capsuleListData from "../Data/CapsuleListTest.js";
+// import capsuleListData from "../Data/CapsuleListTest.js";
 
-//import axios from 'axios';
+import axios from 'axios';
 
 export default function Home() {
-  const location = useLocation();
-  const userInfo = location.state;
+  // const location = useLocation();
   const nickname = "리메모리"; //임시
 
   const navigate = useNavigate();
@@ -32,9 +31,27 @@ export default function Home() {
   const capsuleImages = [capsuleImg1,capsuleImg2,capsuleImg3];
   const maxCapsule = 50;
 
+  const userId = 1;
+  const token = "user";
+
   useEffect(()=>{
     //캡슐 목록 받아오기
-    setCapsuleList(capsuleListData);
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve/all`,{
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+      params: {
+        userId : userId,
+      },
+    })
+    .then((response) => {
+      console.log("서버응답:",response);
+      setCapsuleList(response.data.result.capsules);
+      // setCapsuleList(capsuleListData);
+    })
+    .catch((error) => {
+      console.error('오류:', error);
+    });
   },[]);
 
   //홈화면 메뉴
