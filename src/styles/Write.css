@@ -169,7 +169,7 @@
     color: white;
 }
 .Write.theme3 .write_center textarea::placeholder{
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
 }
 .Write.theme4 .write_center{
     background-color: rgba(250, 217, 243, 0.90);
