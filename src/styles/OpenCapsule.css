@@ -3,9 +3,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
     background: linear-gradient(180deg, rgba(96, 87, 115, 0.00) 0%, #AA9ACC 60.42%), #FFF;
     min-height: 100vh;
+    user-select: none;
 }
 /*menu*/
 .OpenCapsule .image_menu{
@@ -15,7 +15,6 @@
     right: 2rem;
     width: 1.25rem;
     height: 1rem;
-    flex-shrink: 0;
 }
 .OpenCapsule .menu{
     position: absolute;
@@ -25,6 +24,11 @@
     z-index: 1;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    animation: fade-in 0.25s forwards;
+}
+.OpenCapsule .menu.false{
+    /* display: none; */
+    animation: fade-out .5s forwards;
 }
 .OpenCapsule .container{
     position: absolute;
@@ -39,15 +43,23 @@
     justify-content: center;
 }
 .OpenCapsule .img_isOpened_true{
-    width: 21.125rem;
-    height: 13.625rem;
+    width: 21rem;
+    height: 14rem;
     flex-shrink: 0;
+    background-image: url('../assets/image_openedCapsule.png');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .OpenCapsule .img_isOpened_false{
-    width: 15rem;
-    height: 16.05rem;
+    width: 10rem;
+    height: 15rem;
     flex-shrink: 0;
     position: absolute;
+    background-image: url('../assets/image_unopenedCapsule.png');
+    background-size: 87%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 /*texts*/
 .OpenCapsule .text_section{
@@ -116,7 +128,10 @@
     position: absolute;
     width: 2.3125rem;
     height: 2.3125rem;
-    flex-shrink: 0;
+    background-image: url('../assets/image_ellipse.png');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .OpenCapsule .ellipse.type1{
     top: 4.75rem;
@@ -136,20 +151,88 @@
 .OpenCapsule .ellipses_false .ellipse{    
     width: 2.5625rem;
     height: 2.5625rem;
-    flex-shrink: 0;
+    background-image: url('../assets/image_ellipse.png');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .OpenCapsule .ellipses_false .ellipse.type1{
     top: 14.5rem;
-    left: 3.15rem;
+    left: 3.25rem;
 }
 .OpenCapsule .ellipses_false .ellipse.type2{
-    top: 3rem;
-    left: 17.45rem;
+    top: 1.75rem;
+    left: 16.5rem;
 }
 .OpenCapsule .ellipses_false .ellipse.type3{
-    top: 1.2rem;
-    left: 15.95rem;
-
+    top: -.4rem;
+    left: 14rem;
     width: 3.625rem;
     height: 3.625rem;
+}
+
+/*theme*/
+.OpenCapsule.theme2{background: linear-gradient(180deg, rgba(244, 229, 145, 0.30) 0%, #ECD862 48.61%, rgba(244, 163, 145, 0.85) 85.07%), #FFF;
+}
+.OpenCapsule.theme3{background: linear-gradient(180deg, rgba(96, 87, 115, 0.00) 0%, #6A88C2 60.42%), #FFF;
+}
+.OpenCapsule.theme4{background: linear-gradient(180deg, rgba(255, 163, 233, 0.00) 0%, #B474A5 100%), #FFF;
+}
+.OpenCapsule.theme5{background: linear-gradient(180deg, #E7AAA6 18.92%, rgba(115, 163, 98, 0.60) 91.15%), #FFF;
+}
+
+.OpenCapsule.theme2 .img_isOpened_true{
+    background-image: url('../assets/image_openedCapsule_theme2.png');
+}
+.OpenCapsule.theme3 .img_isOpened_true{
+    background-image: url('../assets/image_openedCapsule_theme3.png');
+}
+.OpenCapsule.theme4 .img_isOpened_true{
+    background-image: url('../assets/image_openedCapsule_theme4.png');
+}
+.OpenCapsule.theme5 .img_isOpened_true{
+    background-image: url('../assets/image_openedCapsule_theme5.png');
+}
+.OpenCapsule.theme2 .img_isOpened_false{
+    background-image: url('../assets/image_unopenedCapsule_theme2.png');
+}
+.OpenCapsule.theme3 .img_isOpened_false{
+    background-image: url('../assets/image_unopenedCapsule_theme3.png');
+}
+.OpenCapsule.theme4 .img_isOpened_false{
+    background-image: url('../assets/image_unopenedCapsule_theme4.png');
+}
+.OpenCapsule.theme5 .img_isOpened_false{
+    background-image: url('../assets/image_unopenedCapsule_theme5.png');
+}
+
+.OpenCapsule.theme2 .ellipses_false .ellipse{
+    background-image: url('../assets/image_ellipse_theme2_1.png'); 
+    background-size: 75%;
+}
+.OpenCapsule.theme2 .ellipses_false .ellipse.type2{    
+    background-size: 45%;
+}
+.OpenCapsule.theme2 .ellipses_false .ellipse.type3{    
+    background-image: url('../assets/image_ellipse_theme2.png');
+    background-size: 50%;
+    top: -.7rem;
+}
+.OpenCapsule.theme3 .ellipses_false .ellipse.type3{
+    background-image: url('../assets/image_ellipse_theme3.png');  
+    background-size: 60%;
+}
+.OpenCapsule.theme4 .ellipses_false .ellipse{
+    background-image: url('../assets/image_ellipse_theme4.png'); 
+    background-size: 50%;
+}
+.OpenCapsule.theme5 .ellipses_false .ellipse{
+    background-image: url('../assets/image_ellipse_theme5_1.png');
+    background-size: 60%;
+}
+.OpenCapsule.theme5 .ellipses_false .ellipse.type1{    
+    background-size: 80%;
+}
+.OpenCapsule.theme5 .ellipses_false .ellipse.type3{
+    background-image: url('../assets/image_ellipse_theme5.png');
 }
