@@ -85,7 +85,7 @@ const OpenCapsule = () => {
             rcapsule_cnt: data.rcapsules.rcapsule_cnt,
             rcapsule_name: data.rcapsules.rcapsule_name,
             status: data.rcapsules.status,
-            theme: data.pcapsules.theme,
+            theme: data.rcapsules.theme,
           };
           navigate("/capsule/open/rolling", {state});
         }
