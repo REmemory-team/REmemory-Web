@@ -14,7 +14,7 @@ export default function Nickname() {
   const navigate = useNavigate();
 
   //로그인 과정에서 받은 데이터(아이디)
-  const id = sessionStorage.getItem("userId");
+  const userId = sessionStorage.getItem("userId");
   useEffect(() => {
     // 세션 스토리지에서 닉네임을 가져와서 설정합니다.
     const storedNickname = sessionStorage.getItem("userNickname");
@@ -37,11 +37,22 @@ export default function Nickname() {
   //이걸로 할게요! 버튼 누를시
   const handleSubmit = () => {
     if (validNickname(userNickname)) {
+      // Bearer 토큰 가져오기
+      const token = sessionStorage.getItem("token");
+
+      // Bearer 토큰을 포함하여 요청을 보냅니다.
       axios
-        .patch(`${process.env.REACT_APP_API_BASE_URL}/user/nickname`, {
-          userId: id,
-          nickname: userNickname,
-        })
+        .patch(
+          `${process.env.REACT_APP_API_BASE_URL}/user/${userId}`,
+          {
+            nickname: userNickname,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
         .then((response) => {
           console.log("서버응답: ", response);
           navigate("/login/kakao/home");
