@@ -19,20 +19,20 @@ const Login = () => {
   useEffect(() => {
     const initKakao = async () => {
       if (!Kakao.isInitialized()) {
-        Kakao.init(process.env.REACT_APP_KAKAO_API_KEY); //리메모리 카카오톡 API 키
+        Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
       }
     };
 
     initKakao();
-  }, [navigate]);
+  }, []);
 
   const kakaoLogin = async () => {
     try {
       const isAndroid = Boolean(navigator.userAgent.match(/Android/i));
       const isIOS = Boolean(navigator.userAgent.match(/iPhone|iPad|iPod/i));
 
-      const res = await Kakao.Auth.authorize({
-        redirectUri: "http://localhost:3000/login/kakao/nickname", //http://localhost:3000/oauth/kakao/callback
+      await Kakao.Auth.authorize({
+        redirectUri: "http://rememory.site",
         throughTalk: isAndroid ? false : isIOS ? false : true,
       });
     } catch (error) {
@@ -42,19 +42,33 @@ const Login = () => {
 
   const handleKakaoCallback = async () => {
     const urlParams = new URLSearchParams(location.search);
-    const code = urlParams.get("code"); // 서버로 보낼 인가코드
+    const code = urlParams.get("code");
 
     try {
-      // 서버로 인가 코드 전송
-      await axios.get(
-        `${process.env.REACT_APP_API_BASE_URL}/user/auth?code=${code}`, // 백엔드 서버 주소 및 엔드포인트
-        {
-          code: code,
-        }
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_BASE_URL}/user/auth?code=${code}`
       );
-      navigate("/login/kakao/nickname");
+
+      if (response.status === 200 && response.data.isSuccess) {
+        const { token, userID, nickname } = response.data.result;
+
+        // 세션 스토리지에 저장
+        sessionStorage.setItem("token", token);
+        sessionStorage.setItem("userID", userID);
+        sessionStorage.setItem("nickname", nickname);
+
+        if (nickname) {
+          navigate("/login/kakao/home");
+        } else {
+          navigate("/login/kakao/nickname");
+        }
+      } else {
+        console.log("로그인 또는 회원가입에 실패했습니다.");
+        // 실패했을 경우 처리
+      }
     } catch (error) {
       console.error("Failed to send authorization code to server:", error);
+      // 실패 처리
     }
   };
 
@@ -84,29 +98,6 @@ const Login = () => {
         <span className="kakao-login">카카오 로그인</span>
       </div>
     </div>
-    // <div className="login-page">
-    //   <div className="re-memory">RE:memory</div>
-    //   <div className="twinkle">
-    //     <img src={twinkle} alt="반짝이" />
-    //   </div>
-    //   <div className="circle">
-    //     <img src={circle} alt="동그라미" />
-    //   </div>
-    //   <div className="arrow">
-    //     <img src={arrow} alt="화살표" />
-    //   </div>
-
-    //   <button className="button">
-    //     <span className="buttonText" onClick={capsuleCheck}>
-    //       캡슐번호로 타임캡슐 확인
-    //     </span>
-    //   </button>
-
-    //   <button className="kakaoLoginButton" onClick={kakaoLogin}></button>
-    //   <div className="kakaoicon">
-    //     <img src={kakaoicon} alt="kakaoicon" />
-    //   </div>
-    // </div>
   );
 };
 
