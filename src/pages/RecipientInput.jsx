@@ -13,8 +13,7 @@ export default function RecipientInput() {
   const purpose = location.state.purpose; // 용도
   const [recipient, setRecipient] = useState(""); // 받는 사람
 
-  // const userID = sessionStorage.getItem("userID");
-  const userID = 1;
+  const userId = sessionStorage.getItem("userId");
 
   const handleRecipientChange = (event) => {
     setRecipient(event.target.value);
@@ -39,7 +38,7 @@ export default function RecipientInput() {
       // 캡슐번호 & URL 부여 화면으로 이동 (캡슐 번호, URL 전달)
       axios
         .post(
-          `${process.env.REACT_APP_API_BASE_URL}/rcapsule/create?userId=${userID}`,
+          `${process.env.REACT_APP_API_BASE_URL}/rcapsule/create?userId=${userId}`,
           {
             rcapsule_name: location.state.pcapsule_name,
             open_date: location.state.open_date,

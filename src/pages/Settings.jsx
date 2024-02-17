@@ -13,7 +13,7 @@ export default function Settings() {
   const [newNickname, setNewNickname] = useState("");
 
   const token = sessionStorage.getItem("token");
-  const userId = sessionStorage.getItem("userID");
+  const userId = sessionStorage.getItem("userId");
 
   useEffect(() => {
     axios
