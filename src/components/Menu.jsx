@@ -12,12 +12,10 @@ import icon_setting from "../assets/icon_setting.png";
 import image_logo from "../assets/image_logo.png";
 import text_logo from "../assets/text_logo.png";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const Menu = ({ menuHandler }) => {
   const navigate = useNavigate();
-  //임시
-  // const userName = "린서";
   const { Kakao } = window;
 
   useEffect(() => {
@@ -51,7 +49,6 @@ const Menu = ({ menuHandler }) => {
     menuHandler();
   };
   const userNickname = sessionStorage.getItem("nickname");
-  console.log(userNickname);
 
   return (
     <div className="Menu">

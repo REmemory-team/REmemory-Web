@@ -11,8 +11,6 @@ import { ReactComponent as HomeIcon } from "../assets/home_btn.svg";
 import { ReactComponent as HomeIcon2 } from "../assets/home_btn2.svg";
 import React from "react";
 
-// import voiceTest from "../Data/voiceTest";
-
 export default function ReceivedVoice() {
   const navigate = useNavigate();
   const location = useLocation();

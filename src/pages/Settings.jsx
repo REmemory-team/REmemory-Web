@@ -90,7 +90,6 @@ export default function Settings() {
           }
         )
         .then((response) => {
-          console.log(response);
           if (response.data.isSuccess) {
             alert("탈퇴가 성공적으로 처리되었습니다.");
             navigate("/");

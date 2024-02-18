@@ -10,10 +10,6 @@ import { ReactComponent as HomeIcon } from "../assets/home_btn.svg";
 import { ReactComponent as HomeIcon2 } from "../assets/home_btn2.svg";
 import React from "react";
 
-// import 생일1 from "../assets/생일축하2.jpg";
-
-// import textTest from "../Data/textTest";
-
 export default function ReceivedText() {
   const navigate = useNavigate();
   const location = useLocation();

@@ -49,8 +49,6 @@ const Login = () => {
         `${process.env.REACT_APP_API_BASE_URL}/user/auth?code=${code}`
       );
 
-      console.log(response);
-
       if (response.status === 200 && response.data.isSuccess) {
         const { token, userId, nickname } = response.data.result;
 
@@ -65,7 +63,7 @@ const Login = () => {
           navigate("/login/kakao/nickname");
         }
       } else {
-        console.log("로그인 또는 회원가입에 실패했습니다.");
+        alert("로그인 또는 회원가입에 실패했습니다.");
         navigate("/");
       }
     } catch (error) {

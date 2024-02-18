@@ -11,8 +11,6 @@ import { ReactComponent as HomeIcon2 } from "../assets/home_btn2.svg";
 import React from "react";
 import RollingpaperContents from "../components/RollingpaperContents";
 
-// import rollingContentsTest from "../Data/rollingContentsTest";
-
 export default function RollingpaperOpen() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -31,8 +29,6 @@ export default function RollingpaperOpen() {
   const darkIcon = location.state.theme === 2 || location.state.theme === 4;
   const BackIconToUse = darkIcon ? BackIcon2 : BackIcon;
   const HomeIconToUse = darkIcon ? HomeIcon2 : HomeIcon;
-
-  console.log(location.state.rcapsules);
 
   return (
     <div

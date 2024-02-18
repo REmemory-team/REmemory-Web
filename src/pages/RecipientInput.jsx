@@ -53,7 +53,6 @@ export default function RecipientInput() {
           }
         )
         .then((response) => {
-          console.log(response);
           if (response.status === 200) {
             navigate("/capsule/assign-number-url", {
               state: {

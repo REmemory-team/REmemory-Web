@@ -16,7 +16,6 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
   const location = useLocation();
 
   const handleCopyClick = () => {
-    console.log("카피 완료!");
     setCopied(true);
     setTimeout(() => setCopied(false), 820);
   };

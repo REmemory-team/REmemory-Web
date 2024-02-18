@@ -17,7 +17,6 @@ export default function Record() {
   const [analyser, setAnalyser] = useState("");
   const [audioUrl, setAudioUrl] = useState("");
   const [playAudio, setPlayAudio] = useState();
-  // const [disabled, setDisabled] = useState(false);
   const [nowTheme, setNowTheme] = useState("1");
   const [nowPurpose, setNowPurpose] = useState("");
   const [capsule_number, setCapsule_number] = useState("");
@@ -110,7 +109,6 @@ export default function Record() {
 
   //재생 버튼
   const play = () => {
-    // console.log("재생");
     if (playAudio) {
       if (playAudio.paused) {
         //오디오가 일시 정지된 상태=> 멈춘 지점부터 다시 재생

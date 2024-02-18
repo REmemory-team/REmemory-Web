@@ -47,19 +47,15 @@ const Write = () => {
     window.alert("임시저장 되었습니다.");
   };
 
-  console.log(location.state);
   const handleSubmit = async () => {
     if (window.confirm("작성을 끝낼까요?")) {
-      console.log(state);
       try{
         if(location.state.purpose === "rollingPaper"){
-          const newState = {
+          const data = {
             ...state,
             from_name: location.state.from_name,
           }
-          console.log(location.state);
-          console.log(newState);
-          await axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/create/text_image`, newState);   
+          await axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/create/text_image`, data);   
           navigate('/');       
         } else{          
           await axios.post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/text_image`, state);

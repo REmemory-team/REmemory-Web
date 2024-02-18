@@ -19,10 +19,6 @@ export default function CheckCapsuleByNumber() {
       setCapsuleNum(location.state.capsule_number);
     }
   }, [location.state]);
-  // const initialCapsuleNum =
-  //   location.state && location.state.capsule_number
-  //     ? location.state.capsule_number
-  //     : "";
 
   const handleCapsuleNumChange = (event) => {
     setCapsuleNum(event.target.value);
@@ -41,8 +37,6 @@ export default function CheckCapsuleByNumber() {
       alert("비밀번호를 입력해주세요.");
       return;
     }
-    console.log(capsuleNum);
-    console.log(password);
     // 서버에 캡슐 번호와 비밀번호 전송
     // 서버로부터 캡슐 번호, 캡슐 이름, 오픈 날짜, 받는 사람, 테마, 상태 정보 받아와 캡슐 확인페이지로 전달
     axios
@@ -53,13 +47,7 @@ export default function CheckCapsuleByNumber() {
         },
       })
       .then((response) => {
-        console.log(response);
         if (response.status === 200) {
-          // console.log(response.data.result.pcapsules.open_date);
-          // const openDate = new Date(response.data.result.pcapsules.open_date);
-          // console.log(openDate);
-          // const currentDate = new Date();
-          // const status = currentDate >= openDate ? "unlocked" : "locked";
           if (response.data.result.pcapsules) {
             navigate("/capsule/verify", {
               state: {

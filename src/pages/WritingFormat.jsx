@@ -13,14 +13,6 @@ export default function WritingFormat() {
   const [format, setFormat] = useState(0); // 사용자가 선택한 작성 형식을 저장할 상태 변수
   const token = sessionStorage.getItem("token");
 
-  console.log(location.state.pcapsule_name);
-  console.log(location.state.open_date);
-  console.log(location.state.dear_name);
-  console.log(location.state.theme);
-  console.log(location.state.purpose);
-  // console.log(location.state.format);
-  console.log(location.state.sender);
-
   // 정했어요! 버튼 누르면 실행되는 함수
   const decisionBtnHandler = () => {
     if (!format) {
@@ -68,7 +60,6 @@ export default function WritingFormat() {
           }
         )
         .then((response) => {
-          console.log(response);
           if (response.status === 200) {
             if (format === 1) {
               navigate("/capsule/write/text", {

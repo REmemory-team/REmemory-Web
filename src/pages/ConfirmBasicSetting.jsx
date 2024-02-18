@@ -9,10 +9,6 @@ export default function ConfirmBasicSetting() {
   const navigate = useNavigate();
   const userData = location.state; // 캡슐 기본 설정 페이지로부터 전달받은 데이터
 
-  console.log(userData.capsuleName);
-  console.log(`${userData.year}-${userData.month}-${userData.day}`);
-  console.log(userData.theme);
-
   // '확인했어요!' 버튼을 누르면 실행되는 함수
   // 용도에 따라 다른 화면으로 이동
   // 캡슐 이름, 오픈 날짜, 받는 사람, 테마 정보 등을 전달

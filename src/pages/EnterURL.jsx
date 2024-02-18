@@ -16,8 +16,6 @@ export default function EnterURL() {
   const [charNum, setCharNum] = useState(0); // 보내는 사람 글자 수 세기 위한 상태 변수
   const purpose = "rollingPaper";
 
-  console.log(rcapsule_number);
-
   // 서버로부터 받는 사람, 테마 정보 가져오기
   useEffect(() => {
     axios
@@ -25,14 +23,12 @@ export default function EnterURL() {
         `${process.env.REACT_APP_API_BASE_URL}/rcapsule/url_info/${rcapsule_number}`
       )
       .then((response) => {
-        console.log(response);
         if (response.status === 200) {
           setRecipient(response.data.result.data.dear_name);
           setTheme(response.data.result.data.theme);
         }
       })
       .catch((error) => {
-        console.log(error);
         if (error.response.status === 400) {
           alert("잘못된 요청입니다.");
         } else if (error.response.status === 403) {

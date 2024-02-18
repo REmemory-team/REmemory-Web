@@ -15,7 +15,6 @@ const URLnCodeAssignment = () => {
   const location = useLocation();
 
   const handleCopyClick = () => {
-    console.log("카피 완료!");
     setCopied(true);
     setTimeout(() => setCopied(false), 820);
   };
@@ -39,7 +38,6 @@ const URLnCodeAssignment = () => {
           }
         )
         .then((response) => {
-          console.log(response);
           if (response.status === 200) {
             window.alert("타입캡슐이 성공적으로 생성되었습니다!");
             navigate("/login/kakao/home");

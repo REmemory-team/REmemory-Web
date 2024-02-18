@@ -70,8 +70,6 @@ const OpenCapsule = () => {
         },
       })
       .then((response) => {
-        console.log(response.data.result);
-        const data = response.data.result;
         //롤링페이퍼
         if (response.data.result.rcapsules) {
           navigate("/capsule/open/rolling", { state: response.data.result });
