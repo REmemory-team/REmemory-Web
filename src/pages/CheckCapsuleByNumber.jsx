@@ -67,7 +67,7 @@ export default function CheckCapsuleByNumber() {
                 content_type: response.data.result.pcapsules.content_type,
                 status: response.data.result.pcapsules.status,
               },
-              nickname: nickname,
+              nickname: location.nickname,
             });
           } else {
             navigate("/capsule/verify", {
