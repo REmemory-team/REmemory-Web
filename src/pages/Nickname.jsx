@@ -33,6 +33,7 @@ export default function Nickname() {
   const handleSubmit = () => {
     console.log(userNickname);
     if(validNickname(userNickname)){
+      sessionStorage.setItem("nickname", nickname);
       const token = sessionStorage.getItem("token");
       axios
         .patch(
