@@ -48,7 +48,6 @@ export default function Record() {
 
   //사용자가 음성 녹음을 시작할 때
   const onRecAudio = () => {
-    window.alert("녹음시작");
     // setDisabled(true); //녹음 중 재생 버튼 비활성화
 
     //AudioContext 객체 생성
@@ -247,7 +246,6 @@ export default function Record() {
               type="file"
               id="audioFileInput"
               accept="audio/*"
-              capture="microphone"
               style={{ display: "none" }}
               onChange={handleFileUpload}
             />
