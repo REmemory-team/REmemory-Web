@@ -32,6 +32,8 @@ export default function RollingpaperOpen() {
   const BackIconToUse = darkIcon ? BackIcon2 : BackIcon;
   const HomeIconToUse = darkIcon ? HomeIcon2 : HomeIcon;
 
+  console.log(location.state);
+
   return (
     <div
       className={`rollingpaper-open-page rolling-open-page-theme${location.state.theme}`}
@@ -40,12 +42,12 @@ export default function RollingpaperOpen() {
         <BackIconToUse className="back-btn" onClick={backBtnHandler} />
         <HomeIconToUse className="home-btn" onClick={homeBtnHandler} />
       </div>
-      <div className="rolling-capsule-name">캡슐 이름</div>
+      <div className="rolling-capsule-name">{location.state.capsule_name}</div>
       {location.state.rcapsules.map((item, index) => {
         return (
           <RollingpaperContents
             key={item.writer_id}
-            writerId={item.writerId}
+            writerId={item.writer_id}
             sender={item.from_name}
             format={item.content_type}
             theme={location.state.theme}

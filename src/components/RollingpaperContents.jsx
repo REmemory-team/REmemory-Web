@@ -11,15 +11,15 @@ export default function RollingpaperContents({
   format,
   theme,
   recipient,
-  contents,
 }) {
   const navigate = useNavigate();
 
   const contentsBoxHandler = () => {
+    console.log(writerId);
     axios
-      .get(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/retrieveDetail`, {
-        params: { writer_id: writerId },
-      })
+      .get(
+        `${process.env.REACT_APP_API_BASE_URL}/rcapsule/retrieveDetail?writer_id=${writerId}`
+      )
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
@@ -29,7 +29,7 @@ export default function RollingpaperContents({
                 sender: sender,
                 theme: theme,
                 dear_name: recipient,
-                text_img_data: response.data.result.text_img_data,
+                text_img_data: response.data.result.capsuledata.text_img_data,
               },
             });
           } else if (format === 2) {
@@ -38,7 +38,7 @@ export default function RollingpaperContents({
                 sender: sender,
                 theme: theme,
                 dear_name: recipient,
-                voice_data: response.data.result.voice_data,
+                voice_data: response.data.result.capsuledata.voice_data,
               },
             });
           }
