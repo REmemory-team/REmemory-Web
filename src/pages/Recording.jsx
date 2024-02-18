@@ -1,8 +1,10 @@
 // 음성 편지 작성
 
 import "../styles/Recording.css";
+
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+
 import axios from "axios";
 import fileIcon from "../assets/voice_file.png";
 
@@ -27,7 +29,7 @@ export default function Record() {
 
   //테마 정보
   useEffect(() => {
-    setIsLoggedIn(userId!==null);
+    setIsLoggedIn(userId !== null);
     setNowPurpose(receivedData.purpose);
     setNowTheme(receivedData.theme);
     setCapsule_number(receivedData.capsule_number);
@@ -105,12 +107,6 @@ export default function Record() {
 
     analyser.disconnect();
     source.disconnect();
-
-    // console.log(URL.createObjectURL(audioUrl));
-    // const sound = new File([audioUrl], "soundfile", {
-    //   type: "audio/mpeg",
-    // });
-    // setDisabled(false); //재생 버튼 다시 활성화
   };
 
   //재생 버튼
@@ -153,44 +149,52 @@ export default function Record() {
         if (playAudio && !playAudio.pause()) {
           playAudio.pause();
         }
-        if(nowPurpose === "toMe" || nowPurpose === "toSomeone"){
-          formData.append('capsule_number', capsule_number);
-          formData.append('voice_pcapsule', audioUrl);
-          axios.post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/voice`, formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-              authorization: `Bearer ${sessionStorage.getItem("token")}`,
-            }
-          })
-          .then((response) => {
-            console.log('서버응답:', response);
-            navigate("/capsule/assign-number",{
-              state: capsule_number,
+        if (nowPurpose === "toMe" || nowPurpose === "toSomeone") {
+          formData.append("capsule_number", capsule_number);
+          formData.append("voice_pcapsule", audioUrl);
+          axios
+            .post(
+              `${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/voice`,
+              formData,
+              {
+                headers: {
+                  "Content-Type": "multipart/form-data",
+                },
+              }
+            )
+            .then((response) => {
+              console.log("서버응답:", response);
+              navigate("/capsule/assign-number", {
+                state: capsule_number,
+              });
+            })
+            .catch((error) => {
+              window.alert("오류:", error);
             });
-          })
-          .catch((error) => {
-            window.alert('오류:', error);
-          });
-      }
-      else if (nowPurpose === "rollingPaper"){
-        formData.append('voice_rcapsule',audioUrl);
-        axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/voice/${capsule_number}`, formData, {
-          params: {
-            from_name: receivedData.from_name,
-            content_type: "2",
-          },
-          headers: {
-            'Content-Type': 'multipart/form-data',
-            authorization: `Bearer ${sessionStorage.getItem("token")}`,
-          }
-        }).then((response) => {
-          console.log('서버응답:', response);
-          navigate("/");
-        })
-        .catch((error) => {
-          console.error('오류:', error);
-        });
-      }
+        } else if (nowPurpose === "rollingPaper") {
+          formData.append("voice_rcapsule", audioUrl);
+          axios
+            .post(
+              `${process.env.REACT_APP_API_BASE_URL}/rcapsule/voice/${capsule_number}`,
+              formData,
+              {
+                params: {
+                  from_name: receivedData.from_name,
+                  content_type: "2",
+                },
+                headers: {
+                  "Content-Type": "multipart/form-data",
+                },
+              }
+            )
+            .then((response) => {
+              console.log("서버응답:", response);
+              navigate("/");
+            })
+            .catch((error) => {
+              console.error("오류:", error);
+            });
+        }
       }
     } else {
       alert("음성편지를 작성해주세요");
