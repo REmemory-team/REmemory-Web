@@ -21,6 +21,9 @@ export default function Nickname() {
     const storedNickname = sessionStorage.getItem("nickname");
     if (storedNickname !== null) {
       setUserNickname(storedNickname);
+    } else {
+      // 만약 닉네임이 null인 경우, 기본값으로 설정해줍니다.
+      setUserNickname("");
     }
   }, []);
 
@@ -31,7 +34,7 @@ export default function Nickname() {
   //닉네임 유효성 검사
   const validNickname = (nickname) => {
     const regex =
-      /^(?!\s)([ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9?!@#$%^&*()-_+=~`'"\s]){1,10}$/;
+      /^(?!\s)([ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9?!@#$%^&*()-_+=~`'"\s]){1,10} $/;
     return regex.test(nickname);
   };
 

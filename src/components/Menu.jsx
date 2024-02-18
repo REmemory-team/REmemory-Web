@@ -29,7 +29,7 @@ const Menu = ({ menuHandler }) => {
     initKakao();
   }, []);
 
-  const loginHandler = async() => {
+  const loginHandler = async () => {
     try {
       const isAndroid = Boolean(navigator.userAgent.match(/Android/i));
       const isIOS = Boolean(navigator.userAgent.match(/iPhone|iPad|iPod/i));
@@ -42,10 +42,10 @@ const Menu = ({ menuHandler }) => {
       console.error("Kakao login error:", error);
     }
   };
-  
+
   const goInstagram = () => {
-    window.open('https://www.instagram.com/rememory_official', '_blank');
-  }
+    window.open("https://www.instagram.com/rememory_official", "_blank");
+  };
 
   const closeMenu = () => {
     menuHandler();
