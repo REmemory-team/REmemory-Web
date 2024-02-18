@@ -21,13 +21,6 @@ const Write = () => {
   const fileInputRef = useRef(null);
   const location = useLocation();
   
-  // state: {
-  //   dear_name: location.state.dear_name,
-  //   theme: location.state.theme,
-  //   purpose: location.state.purpose,
-  //   capsule_number: response.data.result.capsule_number,
-  // },
-  
   const [receivedState, setReceivedState] = useState({
     dear_name: "",
     theme: 1,
@@ -49,29 +42,24 @@ const Write = () => {
     })
   }, [location]);
 
-
   //임시저장
   const handleSave = () => {
     window.alert("임시저장 되었습니다.");
   };
-
-  //타임캡슐 미리보기
-  // const goOverview = () => {
-  //   navigate(`/`);
-  // };
 
   const handleSubmit = async () => {
     if (window.confirm("작성을 끝낼까요?")) {
       console.log(state);
       try{
         if(location.state.purpose === "rollingPaper"){
-          await axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/create/text_image`, state);          
+          await axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/create/text_image`, state);   
+          navigate('/');       
         } else{          
           await axios.post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/text_image`, state);
+          navigate(`/capsule/assign-number`,{
+            state: { capsule_number: state.capsule_number },
+          });
         }
-        navigate(`/capsule/assign-number`,{
-          state: { capsule_number: state.capsule_number },
-        });
       }catch(err){
           alert(err.response.data.message);
       }
