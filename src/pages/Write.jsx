@@ -47,6 +47,7 @@ const Write = () => {
     window.alert("임시저장 되었습니다.");
   };
 
+  console.log(location.state);
   const handleSubmit = async () => {
     if (window.confirm("작성을 끝낼까요?")) {
       console.log(state);
@@ -56,6 +57,8 @@ const Write = () => {
             ...state,
             from_name: location.state.from_name,
           })
+          console.log(location.state);
+          console.log(state);
           await axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/create/text_image`, state);   
           navigate('/');       
         } else{          
