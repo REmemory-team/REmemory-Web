@@ -13,11 +13,9 @@ export default function CheckCapsuleByNumber() {
   const location = useLocation();
   const [capsuleNum, setCapsuleNum] = useState(""); // 캡슐 번호
   const [password, setPassword] = useState(""); // 비밀번호
-
-  const initialCapsuleNum =
-    location.state && location.state.capsule_number
-      ? location.state.capsule_number
-      : "";
+  if (location.state && location.state.capsuleNum) {
+    setCapsuleNum(location.state.capsuleNum);
+  }
 
   const handleCapsuleNumChange = (event) => {
     setCapsuleNum(event.target.value);
@@ -103,9 +101,7 @@ export default function CheckCapsuleByNumber() {
         type="text"
         value={capsuleNum}
         onChange={handleCapsuleNumChange}
-        placeholder={
-          initialCapsuleNum ? initialCapsuleNum : "캡슐번호를 입력해주세요"
-        }
+        placeholder="캡슐번호를 입력해주세요"
         className="number-input-field"
       ></input>
       <br />
