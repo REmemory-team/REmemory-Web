@@ -31,7 +31,6 @@ export default function Nickname() {
 
   //이걸로 할게요! 버튼 누를시
   const handleSubmit = () => {
-    console.log(userNickname);
     if(validNickname(userNickname)){
       const token = sessionStorage.getItem("token");
       axios
@@ -55,7 +54,6 @@ export default function Nickname() {
         .catch((error)=>{
           console.log("오류: ",error);
         })
-        // navigate("/login/kakao/home", { state: { userNickname } });
     }
     else{
       alert("한글, 영어, 숫자, 특수문자로 구성된 1~10자리 닉네임을 입력해주세요");
