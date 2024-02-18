@@ -159,7 +159,6 @@ export default function Record() {
           axios.post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/voice`, formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
-              authorization: `Bearer ${sessionStorage.getItem("token")}`,
             }
           })
           .then((response) => {
