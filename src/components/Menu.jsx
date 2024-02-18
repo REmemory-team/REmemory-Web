@@ -50,6 +50,7 @@ const Menu = ({ menuHandler, nickname }) => {
   const closeMenu = () => {
     menuHandler();
   };
+  console.log(nickname);
   if(!nickname){
     return(<div>불러오는 중입니다.</div>)
   }

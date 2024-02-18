@@ -91,6 +91,7 @@ const OpenCapsule = () => {
       });
   };
 
+  console.log(location.nickname);
   return (
     <div className={["OpenCapsule", theme].join(" theme")}>
       {location.state.status !== "OPENED" && (

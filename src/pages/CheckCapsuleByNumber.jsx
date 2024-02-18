@@ -97,6 +97,7 @@ export default function CheckCapsuleByNumber() {
       });
   };
 
+  console.log(location.nickname);
   return (
     <div className="check-capsule-page">
       <p className="check-capsule-message">캡슐번호로 타임캡슐 확인하기</p>
