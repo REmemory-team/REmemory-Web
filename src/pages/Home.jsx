@@ -86,7 +86,7 @@ export default function Home() {
   const handleClosePopup = () => {
     setPopupOpen(false);
   };
-  
+
   return (
     <div className="home">
       <img
