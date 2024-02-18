@@ -49,6 +49,7 @@ export default function Nickname() {
         )
         .then((response)=>{
           console.log("서버응답: ",response);
+          sessionStorage.setItem("nickname", userNickname);
           navigate("/login/kakao/home");
         })
         .catch((error)=>{
