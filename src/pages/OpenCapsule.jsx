@@ -91,7 +91,6 @@ const OpenCapsule = () => {
       });
   };
 
-  console.log(location.nickname);
   return (
     <div className={["OpenCapsule", theme].join(" theme")}>
       {location.state.status !== "OPENED" && (
@@ -104,7 +103,7 @@ const OpenCapsule = () => {
       )}
       {isLoaded && (
         <div className={["menu", openMenu].join(" ")}>
-          <Menu menuHandler={menuHandler} nickname={location.nickname ? location.nickname : {isLoggedIn: false}}/>
+          <Menu menuHandler={menuHandler}/>
         </div>
       )}
       <div className="container">

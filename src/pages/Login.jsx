@@ -60,7 +60,7 @@ const Login = () => {
         sessionStorage.setItem("nickname", nickname);
 
         if (nickname) {
-          navigate("/login/kakao/home", {nickname: nickname});
+          navigate("/login/kakao/home");
         } else {
           navigate("/login/kakao/nickname");
         }

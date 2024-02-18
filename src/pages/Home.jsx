@@ -96,7 +96,7 @@ export default function Home() {
       />
 
       { isLoaded && <div className={["menu", openMenu].join(" ")}>
-        <Menu menuHandler={menuHandler} nickname={location.nickname}/>
+        <Menu menuHandler={menuHandler}/>
       </div>}
       <div className="image_box">
         <div className="capsule_image"></div>
