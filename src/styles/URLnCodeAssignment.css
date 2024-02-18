@@ -338,12 +338,14 @@
   margin-top: 0.8rem;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .url-code-assignment .copy-img {
   width: 0.9375rem;
   height: 0.9375rem;
   flex-shrink: 0;
   margin-right: 0.4rem;
+  cursor: pointer;
 }
 .url-code-assignment .copy {
   color: #000;
@@ -354,6 +356,7 @@
   line-height: 0.8125rem; /* 86.667% */
   letter-spacing: 0.00413rem;
   text-decoration-line: underline;
+  cursor: pointer;
 }
 .url-code-assignment .password-box {
   width: 19.1875rem;
@@ -502,6 +505,7 @@
   font-weight: 400;
   line-height: 0.8125rem; /* 72.222% */
   letter-spacing: 0.00413rem;
+  cursor: pointer;
 }
 .url-code-assignment .copied-message {
   width: 7.75rem;
