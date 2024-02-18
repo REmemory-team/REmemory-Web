@@ -13,9 +13,11 @@ export default function CheckCapsuleByNumber() {
   const location = useLocation();
   const [capsuleNum, setCapsuleNum] = useState(""); // 캡슐 번호
   const [password, setPassword] = useState(""); // 비밀번호
-  if (location.state && location.state.capsuleNum) {
-    setCapsuleNum(location.state.capsuleNum);
-  }
+
+  const initialCapsuleNum =
+    location.state && location.state.capsule_number
+      ? location.state.capsule_number
+      : "";
 
   const handleCapsuleNumChange = (event) => {
     setCapsuleNum(event.target.value);
@@ -99,9 +101,11 @@ export default function CheckCapsuleByNumber() {
       <p className="check-capsule-message">캡슐번호로 타임캡슐 확인하기</p>
       <input
         type="text"
-        value={capsuleNum}
+        value={initialCapsuleNum ? initialCapsuleNum : capsuleNum}
         onChange={handleCapsuleNumChange}
-        placeholder="캡슐번호를 입력해주세요"
+        placeholder={
+          initialCapsuleNum ? initialCapsuleNum : "캡슐번호를 입력해주세요"
+        }
         className="number-input-field"
       ></input>
       <br />
