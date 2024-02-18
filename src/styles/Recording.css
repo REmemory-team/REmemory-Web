@@ -1,5 +1,3 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
-
 .recording_page {
   font-family: Pretendard;
   font-size: 1.125rem;
@@ -14,48 +12,28 @@
   background: linear-gradient(0deg, #aa9acc 0%, #aa9acc 100%),
     linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #aa9acc 45.83%);
 }
-.recording_page.theme1 {
-  background: linear-gradient(180deg, #bed5f9 0%, #aa9acc 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #aa9acc 45.83%);
-}
-.recording_page.theme2 {
-  background: linear-gradient(180deg, #fbf3c1 0%, rgba(251, 243, 193, 0) 100%),
-    #fff;
-}
-.recording_page.theme3 {
-  background: linear-gradient(180deg, #6a88c2 27.78%, #c1c6f3 100%), #fff;
-}
-.recording_page.theme4 {
-  background: linear-gradient(180deg, rgba(255, 237, 251, 0) 0%, #fee1f7 100%),
-    #fff;
-}
-.recording_page.theme5 {
-  background: linear-gradient(
-      180deg,
-      #f3a0a0 0.01%,
-      rgba(113, 155, 112, 0.2) 94.18%
-    ),
-    #fff;
-}
 
 .recording_page .temp_save_button {
   width: 5.125rem;
   height: 2rem;
+  border: none;
+  background: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: rgba(0, 0, 0, 0.5);
   flex-shrink: 0;
+  font-family: pretendard;
   text-align: center;
   font-size: 1.125rem;
   font-weight: 400;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem; /* 72.222%*/
   letter-spacing: 0.00413rem;
   position: absolute;
-  left: 18.38rem;
+  right: 1rem;
   top: 4.18rem;
   cursor: pointer;
-}
+} 
 
 .recording_page .recording_box {
   width: 18.75rem;
@@ -65,26 +43,6 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-color: rgba(223, 230, 255, 0.54);
   margin-top: 8.5rem;
-}
-
-.recording_page .recording_box.theme1 {
-  background: rgba(223, 230, 255, 0.7);
-}
-.recording_page .recording_box.theme2 {
-  background: rgba(255, 254, 246, 0.9);
-}
-.recording_page .recording_box.theme3 {
-  background: rgba(36, 60, 122, 0.7);
-}
-.recording_page .recording_box.theme4 {
-  background: rgba(250, 217, 243, 0.9);
-}
-.recording_page .recording_box.theme5 {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.recording_page .dear_capsule.theme3 {
-  color: #fff;
 }
 
 .recording_page .record_submit_button {
@@ -106,24 +64,6 @@
   letter-spacing: 0.00413rem;
   border-radius: 2rem;
   cursor: pointer;
-}
-
-.recording_page .record_submit_button.theme1 {
-  background: rgba(193, 221, 255, 0.9);
-}
-.recording_page .record_submit_button.theme2 {
-  background: rgba(255, 231, 184, 0.7);
-}
-.recording_page .record_submit_button.theme3 {
-  background: #516bb2;
-  color: #fff;
-}
-.recording_page .record_submit_button.theme4 {
-  background: rgba(255, 205, 241, 0.7);
-}
-.recording_page .record_submit_button.theme5 {
-  background: rgba(82, 125, 84, 0.8);
-  color: #fff;
 }
 
 .recording_page .icon_container {
@@ -184,6 +124,86 @@
   transition: right 0.1s ease;
 }
 
+.recording_page .add_file {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  max-width: 90%;
+  left: 1.44rem;
+  top: 25.44rem;
+}
+
+.recording_page .file_icon {
+  cursor: pointer;
+}
+
+.recording_page .file_name {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.recording_page.theme1 {
+  background: linear-gradient(180deg, #bed5f9 0%, #aa9acc 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #aa9acc 45.83%);
+}
+.recording_page.theme2 {
+  background: linear-gradient(180deg, #fbf3c1 0%, rgba(251, 243, 193, 0) 100%),
+    #fff;
+}
+.recording_page.theme3 {
+  background: linear-gradient(180deg, #6a88c2 27.78%, #c1c6f3 100%), #fff;
+}
+.recording_page.theme4 {
+  background: linear-gradient(180deg, rgba(255, 237, 251, 0) 0%, #fee1f7 100%),
+    #fff;
+}
+.recording_page.theme5 {
+  background: linear-gradient(
+      180deg,
+      #f3a0a0 0.01%,
+      rgba(113, 155, 112, 0.2) 94.18%
+    ),
+    #fff;
+}
+
+.recording_page .recording_box.theme1 {
+  background: rgba(223, 230, 255, 0.7);
+}
+.recording_page .recording_box.theme2 {
+  background: rgba(255, 254, 246, 0.9);
+}
+.recording_page .recording_box.theme3 {
+  background: rgba(36, 60, 122, 0.7);
+}
+.recording_page .recording_box.theme4 {
+  background: rgba(250, 217, 243, 0.9);
+}
+.recording_page .recording_box.theme5 {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.recording_page .dear_capsule.theme3 {
+  color: #fff;
+}
+
+.recording_page .record_submit_button.theme1 {
+  background: rgba(193, 221, 255, 0.9);
+}
+.recording_page .record_submit_button.theme2 {
+  background: rgba(255, 231, 184, 0.7);
+}
+.recording_page .record_submit_button.theme3 {
+  background: #516bb2;
+  color: #fff;
+}
+.recording_page .record_submit_button.theme4 {
+  background: rgba(255, 205, 241, 0.7);
+}
+.recording_page .record_submit_button.theme5 {
+  background: rgba(82, 125, 84, 0.8);
+  color: #fff;
+}
+
 .recording_page .light.theme1 {
   background: #d4c0ff;
 }
@@ -214,22 +234,4 @@
 }
 .recording_page .bold.theme5 {
   background: #e88d89;
-}
-
-.recording_page .add_file {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  max-width: 90%;
-  left: 1.44rem;
-  top: 25.44rem;
-}
-
-.recording_page .file_icon {
-  cursor: pointer;
-}
-
-.recording_page .file_name {
-  margin-left: 0.5rem;
-  font-size: 0.8rem;
 }

@@ -42,23 +42,25 @@ export default function Home() {
   const userNickname = sessionStorage.getItem("nickname");
 
   useEffect(()=>{
+    if(popupOpen){
     //캡슐 목록 받아오기
-    axios.get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve/all`,{
-      params: {
-        userId : userId,
-      },
-      headers: {
-        authorization: `Bearer ${token}`,
-      },
-    })
-    .then((response) => {
-      console.log("서버응답:",response);
-      setCapsuleList(response.data.result.capsules);
-    })
-    .catch((error) => {
-      console.error('오류:', error);
-    });
-  },[token, userId]);
+      axios.get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve/all`,{
+        params: {
+          userId : userId,
+        },
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        console.log("팝업-서버응답:",response);
+        setCapsuleList(response.data.result.capsules);
+      })
+      .catch((error) => {
+        console.error('팝업-오류:', error);
+      });
+   }
+  },[popupOpen, token, userId]);
 
   //홈화면 메뉴
   const menuHandler = () => {
