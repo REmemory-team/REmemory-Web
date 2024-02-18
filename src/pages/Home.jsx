@@ -48,7 +48,7 @@ export default function Home() {
         userId : userId,
       },
       headers: {
-        'Authorization': `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
     })
     .then((response) => {
