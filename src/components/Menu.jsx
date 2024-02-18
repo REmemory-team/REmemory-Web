@@ -53,68 +53,70 @@ const Menu = ({ menuHandler, nickname }) => {
   if(!nickname){
     return(<div>불러오는 중입니다.</div>)
   }
-  return (
-    <div className="Menu">
-      <img className="btn_close" alt="" src={icon_close} onClick={closeMenu} />
-      <div className="buttons">
-        {nickname.isLoggedIn ? (
-          <div>
-            <div className="button_section">
-              <img className="profile" alt="" src={icon_profile} />
-              <div className="profile">
-                <button>{nickname} 님</button>
-                <p>카카오톡으로 로그인 중</p>
+  else{
+    return (
+      <div className="Menu">
+        <img className="btn_close" alt="" src={icon_close} onClick={closeMenu} />
+        <div className="buttons">
+          {nickname.isLoggedIn ? (
+            <div>
+              <div className="button_section">
+                <img className="profile" alt="" src={icon_profile} />
+                <div className="profile">
+                  <button>{nickname} 님</button>
+                  <p>카카오톡으로 로그인 중</p>
+                </div>
+              </div>
+              <div className="button_section">
+                <img alt="" src={icon_setting} />
+                <button
+                  onClick={() => {
+                    navigate("/login/kakao/settings");
+                  }}
+                >
+                  계정 설정
+                </button>
               </div>
             </div>
-            <div className="button_section">
-              <img alt="" src={icon_setting} />
-              <button
-                onClick={() => {
-                  navigate("/login/kakao/settings");
-                }}
-              >
-                계정 설정
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div>
-            <div className="button_section">
-              <img className="profile" alt="" src={icon_profile} />
-              <div className="profile">
-                <button onClick={loginHandler}>로그인</button>
-                <p>현재 비로그인 상태입니다.</p>
+          ) : (
+            <div>
+              <div className="button_section">
+                <img className="profile" alt="" src={icon_profile} />
+                <div className="profile">
+                  <button onClick={loginHandler}>로그인</button>
+                  <p>현재 비로그인 상태입니다.</p>
+                </div>
               </div>
             </div>
+          )}
+          <div className="button_section">
+            <img alt="" src={icon_capsule} />
+            <button
+              onClick={() => {
+                navigate("/capsule/input-number", {nickname: nickname});
+              }}
+            >
+              타임캡슐 조회
+            </button>
           </div>
-        )}
-        <div className="button_section">
-          <img alt="" src={icon_capsule} />
-          <button
-            onClick={() => {
-              navigate("/capsule/input-number", {nickname: nickname});
-            }}
-          >
-            타임캡슐 조회
-          </button>
+          <img className="line" alt="" src={boundary_line} />
+          <div className="button_section">
+            <img alt="" src={icon_chat} />
+            <button>질문/문의</button>
+          </div>
+          <div className="button_section">
+            <img alt="" src={icon_instagram} />
+            <button onClick={goInstagram}>인스타그램</button>
+          </div>
         </div>
-        <img className="line" alt="" src={boundary_line} />
-        <div className="button_section">
-          <img alt="" src={icon_chat} />
-          <button>질문/문의</button>
-        </div>
-        <div className="button_section">
-          <img alt="" src={icon_instagram} />
-          <button onClick={goInstagram}>인스타그램</button>
+        <div className="logo">
+          <img className="image" alt="logo_rememory" src={image_logo} />
+          <img className="text" alt="logo_rememory" src={text_logo} />
+          {/* <p>RE:memory</p> */}
         </div>
       </div>
-      <div className="logo">
-        <img className="image" alt="logo_rememory" src={image_logo} />
-        <img className="text" alt="logo_rememory" src={text_logo} />
-        {/* <p>RE:memory</p> */}
-      </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Menu;
