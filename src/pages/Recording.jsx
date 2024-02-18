@@ -1,17 +1,15 @@
 // 음성 편지 작성
 
 import "../styles/Recording.css";
-
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
 import axios from "axios";
 import fileIcon from "../assets/voice_file.png";
 
 export default function Record() {
-  const [isLoggedIn, setIsLoggedIn] = useState();
-  const [stream, setStream] = useState("");
-  const [media, setMedia] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [stream, setStream] = useState();
+  const [media, setMedia] = useState();
   const [onRec, setOnRec] = useState(true);
   const [source, setSource] = useState("");
   const [analyser, setAnalyser] = useState("");
@@ -21,7 +19,6 @@ export default function Record() {
   const [nowTheme, setNowTheme] = useState("1");
   const [nowPurpose, setNowPurpose] = useState("");
   const [capsule_number, setCapsule_number] = useState("");
-  // const [rcapsule_number, setRcapsule_number] = useState("");
   const location = useLocation();
   const receivedData = location.state;
   const dear_name = receivedData.dear_name;
@@ -32,7 +29,7 @@ export default function Record() {
   useEffect(() => {
     setIsLoggedIn(userId!==null);
     setNowPurpose(receivedData.purpose);
-    setNowTheme(String(receivedData.theme));
+    setNowTheme(receivedData.theme);
     setCapsule_number(receivedData.capsule_number);
   }, []);
 
@@ -40,7 +37,6 @@ export default function Record() {
   const attachAudio = () => {
     const fileInput = document.getElementById("audioFileInput");
     fileInput.click();
-    // console.log("파일첨부");
   };
 
   //오디오 파일 업로드
@@ -48,7 +44,6 @@ export default function Record() {
     const file = e.target.files[0];
     setAudioUrl(file);
     setPlayAudio(null);
-    // console.log("파일첨부완료 =>", file);
   };
 
   //사용자가 음성 녹음을 시작할 때
@@ -147,11 +142,6 @@ export default function Record() {
 
   //파일 변환, 전송
   const tempRecording = () => {
-    // // console.log(URL.createObjectURL(audioUrl));
-    // const sound = new File([audioUrl], "soundfile", {
-    //   type: "audio/mpeg",
-    // });
-    // console.log(sound);
     console.log("임시저장 완료");
   };
 
@@ -168,7 +158,8 @@ export default function Record() {
           formData.append('voice_pcapsule', audioUrl);
           axios.post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/voice`, formData, {
             headers: {
-              'Content-Type': 'multipart/form-data'
+              'Content-Type': 'multipart/form-data',
+              authorization: `Bearer ${sessionStorage.getItem("token")}`,
             }
           })
           .then((response) => {
@@ -189,13 +180,12 @@ export default function Record() {
             content_type: "2",
           },
           headers: {
-            'Content-Type': 'multipart/form-data'
+            'Content-Type': 'multipart/form-data',
+            authorization: `Bearer ${sessionStorage.getItem("token")}`,
           }
         }).then((response) => {
           console.log('서버응답:', response);
-          navigate("/capsule/assign-number",{
-            state: capsule_number,
-          });
+          navigate("/");
         })
         .catch((error) => {
           console.error('오류:', error);
@@ -235,7 +225,6 @@ export default function Record() {
           </div>
           <div className="mike" onClick={onRec ? onRecAudio : offRecAudio}>
             <img
-              id="mii"
               src={require(`../assets/Recording_icon${nowTheme}.png`)}
               alt="마이크 아이콘"
               style={{
@@ -265,7 +254,8 @@ export default function Record() {
             <input
               type="file"
               id="audioFileInput"
-              accept="audio/mp3"
+              accept="audio/*"
+              capture="microphone"
               style={{ display: "none" }}
               onChange={handleFileUpload}
             />
