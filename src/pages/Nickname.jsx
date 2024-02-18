@@ -19,12 +19,8 @@ export default function Nickname() {
   useEffect(() => {
     // 세션 스토리지에서 닉네임을 가져와서 설정합니다.
     const storedNickname = sessionStorage.getItem("nickname");
-    if (storedNickname !== null) {
-      setUserNickname(storedNickname);
-    } else {
-      // 만약 닉네임이 null인 경우, 기본값으로 설정해줍니다.
-      setUserNickname("");
-    }
+    // 세션 스토리지에서 가져온 값이 null이거나 undefined인 경우 빈 문자열("")로 설정합니다.
+    setUserNickname(storedNickname || "");
   }, []);
 
   const handleInputChange = (e) => {
@@ -85,7 +81,14 @@ export default function Nickname() {
           value={userNickname}
           onChange={handleInputChange}
           maxLength={maxLength}
+          // 입력 제한을 위한 추가 설정
+          onInput={(e) => {
+            if (e.target.value.length > maxLength) {
+              e.target.value = e.target.value.slice(0, maxLength);
+            }
+          }}
         />
+
         <span>
           {userNickname.length}/{maxLength}
         </span>
