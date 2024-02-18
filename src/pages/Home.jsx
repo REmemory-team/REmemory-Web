@@ -3,7 +3,7 @@
 import "../styles/Home.css";
 
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import capsuleImg1 from "../assets/capsule_list1.png";
 import capsuleImg2 from "../assets/capsule_list2.png";
@@ -20,7 +20,7 @@ import ListItem from "../components/CapsuleListItem.jsx";
 import axios from 'axios';
 
 export default function Home() {
-
+  const location = useLocation();
   const navigate = useNavigate();
 
   const [openMenu, setOpenMenu] = useState(false);
@@ -96,7 +96,7 @@ export default function Home() {
       />
 
       { isLoaded && <div className={["menu", openMenu].join(" ")}>
-        <Menu menuHandler={menuHandler}/>
+        <Menu menuHandler={menuHandler} nickname={location.nickname}/>
       </div>}
       <div className="image_box">
         <div className="capsule_image"></div>

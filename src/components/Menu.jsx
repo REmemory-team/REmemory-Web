@@ -14,12 +14,12 @@ import text_logo from "../assets/text_logo.png";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const Menu = ({ menuHandler }) => {
+const Menu = ({ menuHandler, nickname }) => {
   const navigate = useNavigate();
   //임시
-  const userName = "린서";
+  // const userName = "린서";
   const { Kakao } = window;
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const initKakao = async () => {
@@ -29,7 +29,6 @@ const Menu = ({ menuHandler }) => {
         // setIsLoggedIn(true);
       }
     };
-
     initKakao();
   }, []);
 
@@ -39,7 +38,6 @@ const Menu = ({ menuHandler }) => {
       const isIOS = Boolean(navigator.userAgent.match(/iPhone|iPad|iPod/i));
 
       await Kakao.Auth.authorize({
-        //redirectUri 수정 필요
         redirectUri: "http://rememory.site",
         throughTalk: isAndroid ? false : isIOS ? false : true,
       });
@@ -47,9 +45,11 @@ const Menu = ({ menuHandler }) => {
       console.error("Kakao login error:", error);
     }
   };
+  
   const goInstagram = () => {
     window.open('https://www.instagram.com/rememory_official', '_blank');
   }
+
   const closeMenu = () => {
     menuHandler();
   };
@@ -58,12 +58,12 @@ const Menu = ({ menuHandler }) => {
     <div className="Menu">
       <img className="btn_close" alt="" src={icon_close} onClick={closeMenu} />
       <div className="buttons">
-        {isLoggedIn ? (
+        {nickname ? (
           <div>
             <div className="button_section">
               <img className="profile" alt="" src={icon_profile} />
               <div className="profile">
-                <button>{userName} 님</button>
+                <button>{nickname} 님</button>
                 <p>카카오톡으로 로그인 중</p>
               </div>
             </div>
@@ -93,7 +93,7 @@ const Menu = ({ menuHandler }) => {
           <img alt="" src={icon_capsule} />
           <button
             onClick={() => {
-              navigate("/capsule/input-number");
+              navigate("/capsule/input-number", {nickname: nickname});
             }}
           >
             타임캡슐 조회
