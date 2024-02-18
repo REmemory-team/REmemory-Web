@@ -20,7 +20,7 @@ const Write = () => {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
   const location = useLocation();
-
+  
   // state: {
   //   dear_name: location.state.dear_name,
   //   theme: location.state.theme,
@@ -64,7 +64,11 @@ const Write = () => {
     if (window.confirm("작성을 끝낼까요?")) {
       console.log(state);
       try{
-        await axios.post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/text_image`, state);
+        if(location.state.purpose === "rollingPaper"){
+          await axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/create/text_image`, state);          
+        } else{          
+          await axios.post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/text_image`, state);
+        }
         navigate(`/capsule/assign-number`,{
           state: { capsule_number: state.capsule_number },
         });
