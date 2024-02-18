@@ -31,7 +31,7 @@ export default function ReceivedText() {
     }
   };
 
-  const darkIcon = location.state.theme === "2" || location.state.theme === "4";
+  const darkIcon = location.state.theme === 2 || location.state.theme === 4;
   const BackIconToUse = darkIcon ? BackIcon2 : BackIcon;
   const HomeIconToUse = darkIcon ? HomeIcon2 : HomeIcon;
 

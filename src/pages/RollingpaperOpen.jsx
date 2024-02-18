@@ -28,11 +28,11 @@ export default function RollingpaperOpen() {
     }
   };
 
-  const darkIcon = location.state.theme === "2" || location.state.theme === "4";
+  const darkIcon = location.state.theme === 2 || location.state.theme === 4;
   const BackIconToUse = darkIcon ? BackIcon2 : BackIcon;
   const HomeIconToUse = darkIcon ? HomeIcon2 : HomeIcon;
 
-  console.log(location.state);
+  console.log(location.state.rcapsules);
 
   return (
     <div
@@ -42,7 +42,7 @@ export default function RollingpaperOpen() {
         <BackIconToUse className="back-btn" onClick={backBtnHandler} />
         <HomeIconToUse className="home-btn" onClick={homeBtnHandler} />
       </div>
-      <div className="rolling-capsule-name">{location.state.capsule_name}</div>
+      <div className="rolling-capsule-name">{location.state.rcapsule_name}</div>
       {location.state.rcapsules.map((item, index) => {
         return (
           <RollingpaperContents

@@ -35,11 +35,9 @@ export default function EnterURL() {
         console.log(error);
         if (error.response.status === 400) {
           alert("잘못된 요청입니다.");
-        }
-        else if(error.response.status === 403){
+        } else if (error.response.status === 403) {
           alert("유효하지 않은 타임캡슐입니다.");
-        } 
-        else {
+        } else {
           alert("오류가 발생했습니다.");
         }
       });
