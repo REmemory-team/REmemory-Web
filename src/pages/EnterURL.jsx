@@ -25,6 +25,7 @@ export default function EnterURL() {
         `${process.env.REACT_APP_API_BASE_URL}/rcapsule/url_info/${rcapsule_number}`
       )
       .then((response) => {
+        console.log(response);
         if (response.status === 200) {
           setRecipient(response.data.result.dear_name);
           setTheme(response.data.result.theme);
