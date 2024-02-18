@@ -11,6 +11,7 @@ export default function WritingFormat() {
   const location = useLocation();
   const navigate = useNavigate();
   const [format, setFormat] = useState(0); // 사용자가 선택한 작성 형식을 저장할 상태 변수
+  const token = sessionStorage.getItem("token");
 
   console.log(location.state.pcapsule_name);
   console.log(location.state.open_date);
@@ -27,14 +28,22 @@ export default function WritingFormat() {
       return;
     }
     axios
-      .post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create`, {
-        userId: sessionStorage.getItem("userId"),
-        pcapsule_name: location.state.pcapsule_name,
-        open_date: location.state.open_date,
-        dear_name: location.state.dear_name,
-        theme: location.state.theme,
-        content_type: format,
-      })
+      .post(
+        `${process.env.REACT_APP_API_BASE_URL}/pcapsule/create`,
+        {
+          userId: sessionStorage.getItem("userId"),
+          pcapsule_name: location.state.pcapsule_name,
+          open_date: location.state.open_date,
+          dear_name: location.state.dear_name,
+          theme: location.state.theme,
+          content_type: format,
+        },
+        {
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
