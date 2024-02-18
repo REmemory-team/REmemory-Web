@@ -126,11 +126,15 @@
     font-weight: 400;
     font-size: 1.1125rem;
     background-color: #C1DDFF;
+    color: #000000;
     width: 100%;
     padding: 0.8rem;
     border-radius: 3rem;
     margin-bottom: 5rem;
     box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+.Write button span{
+    white-space: nowrap;
 }
 /* .Write .write_bottom button:first-child{
     background-color: transparent;

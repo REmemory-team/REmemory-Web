@@ -19,7 +19,7 @@ export default function WritingFormat() {
   console.log(location.state.theme);
   console.log(location.state.purpose);
   // console.log(location.state.format);
-  // console.log(location.state.sender);
+  console.log(location.state.sender);
 
   // 정했어요! 버튼 누르면 실행되는 함수
   const decisionBtnHandler = () => {
@@ -27,61 +27,79 @@ export default function WritingFormat() {
       alert("작성 형식을 선택해주세요!");
       return;
     }
-    axios
-      .post(
-        `${process.env.REACT_APP_API_BASE_URL}/pcapsule/create`,
-        {
-          userId: sessionStorage.getItem("userId"),
-          pcapsule_name: location.state.pcapsule_name,
-          open_date: location.state.open_date,
-          dear_name: location.state.dear_name,
-          theme: location.state.theme,
-          content_type: format,
-        },
-        {
-          headers: {
-            authorization: `Bearer ${token}`,
+    if (location.state.purpose === "rollingPaper") {
+      if (format === 1) {
+        navigate("/capsule/write/text", {
+          state: {
+            dear_name: location.state.dear_name,
+            theme: location.state.theme,
+            purpose: location.state.purpose,
+            capsule_number: location.state.capsule_number,
+            from_name: location.state.sender,
           },
-        }
-      )
-      .then((response) => {
-        console.log(response);
-        if (response.status === 200) {
-          if (format === 1) {
-            navigate("/capsule/write/text", {
-              state: {
-                dear_name: location.state.dear_name,
-                theme: location.state.theme,
-                purpose: location.state.purpose,
-                capsule_number:
-                  location.state.purpose === "rollingPaper"
-                    ? location.state.capsule_number
-                    : response.data.result.capsule_number,
-              },
-            }); // 글 & 편지 작성 화면으로 넘어가기
-          } else if (format === 2) {
-            navigate("/capsule/write/voice", {
-              state: {
-                dear_name: location.state.dear_name,
-                theme: location.state.theme,
-                purpose: location.state.purpose,
-                capsule_number:
-                  location.state.purpose === "rollingPaper"
-                    ? location.state.capsule_number
-                    : response.data.result.capsule_number,
-              },
-            }); // 음성 편지 작성 화면으로 넘어가기
+        }); // 글 & 편지 작성 화면으로 넘어가기
+      } else if (format === 2) {
+        navigate("/capsule/write/voice", {
+          state: {
+            dear_name: location.state.dear_name,
+            theme: location.state.theme,
+            purpose: location.state.purpose,
+            capsule_number: location.state.capsule_number,
+            from_name: location.state.sender,
+          },
+        }); // 음성 편지 작성 화면으로 넘어가기
+      }
+    } else {
+      axios
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/pcapsule/create`,
+          {
+            userId: sessionStorage.getItem("userId"),
+            pcapsule_name: location.state.pcapsule_name,
+            open_date: location.state.open_date,
+            dear_name: location.state.dear_name,
+            theme: location.state.theme,
+            content_type: format,
+          },
+          {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
           }
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-        if (error.response.status === 400) {
-          alert("잘못된 요청입니다.");
-        } else {
-          alert("오류가 발생했습니다.");
-        }
-      });
+        )
+        .then((response) => {
+          console.log(response);
+          if (response.status === 200) {
+            if (format === 1) {
+              navigate("/capsule/write/text", {
+                state: {
+                  dear_name: location.state.dear_name,
+                  theme: location.state.theme,
+                  purpose: location.state.purpose,
+                  capsule_number: response.data.result.capsule_number,
+                },
+              }); // 글 & 편지 작성 화면으로 넘어가기
+            } else if (format === 2) {
+              navigate("/capsule/write/voice", {
+                state: {
+                  dear_name: location.state.dear_name,
+                  theme: location.state.theme,
+                  purpose: location.state.purpose,
+                  capsule_number: response.data.result.capsule_number,
+                },
+              }); // 음성 편지 작성 화면으로 넘어가기
+            }
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+          if (error.response.status === 400) {
+            alert("잘못된 요청입니다.");
+          } else {
+            alert("오류가 발생했습니다.");
+          }
+        });
+    }
   };
 
   return (

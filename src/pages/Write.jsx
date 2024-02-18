@@ -20,7 +20,7 @@ const Write = () => {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
   const location = useLocation();
-
+  
   // state: {
   //   dear_name: location.state.dear_name,
   //   theme: location.state.theme,
@@ -64,7 +64,11 @@ const Write = () => {
     if (window.confirm("작성을 끝낼까요?")) {
       console.log(state);
       try{
-        await axios.post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/text_image`, state);
+        if(location.state.purpose === "rollingPaper"){
+          await axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/create/text_image`, state);          
+        } else{          
+          await axios.post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/text_image`, state);
+        }
         navigate(`/capsule/assign-number`,{
           state: { capsule_number: state.capsule_number },
         });
@@ -186,7 +190,7 @@ const Write = () => {
     <div className={["Write", receivedState.theme].join(" theme")}>
       <div className="write_top">
         <button className="btn_save" onClick={handleSave}>
-          임시저장
+          <span>임시저장</span>
         </button>
       </div>
       <div className="write_center">
@@ -260,7 +264,7 @@ const Write = () => {
       <div className="write_bottom">
         {/* <button className="btn_overview">타임캡슐 미리보기</button> */}
         <button className="btn_submit" onClick={handleSubmit}>
-          다했어요!
+          <span>다했어요!</span>
         </button>
       </div>
     </div>

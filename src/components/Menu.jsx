@@ -17,10 +17,8 @@ import { useState, useEffect } from "react";
 const Menu = ({ menuHandler }) => {
   const navigate = useNavigate();
   //임시
-  const userName = "린서";
+  // const userName = "린서";
   const { Kakao } = window;
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isSocial, setIsSocial] = useState(true);
 
   useEffect(() => {
     const initKakao = async () => {
@@ -28,7 +26,6 @@ const Menu = ({ menuHandler }) => {
         Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
       }
     };
-
     initKakao();
   }, []);
 
@@ -41,27 +38,32 @@ const Menu = ({ menuHandler }) => {
         redirectUri: "http://rememory.site",
         throughTalk: isAndroid ? false : isIOS ? false : true,
       });
-      setIsLoggedIn(!isLoggedIn);
-      // navigate("/capsule/verify");
     } catch (error) {
       console.error("Kakao login error:", error);
     }
   };
+  
+  const goInstagram = () => {
+    window.open('https://www.instagram.com/rememory_official', '_blank');
+  }
+
   const closeMenu = () => {
     menuHandler();
   };
+  const userNickname = sessionStorage.getItem("nickname");
+  console.log(userNickname);
 
   return (
     <div className="Menu">
       <img className="btn_close" alt="" src={icon_close} onClick={closeMenu} />
       <div className="buttons">
-        {isLoggedIn ? (
+        {userNickname ? (
           <div>
             <div className="button_section">
               <img className="profile" alt="" src={icon_profile} />
               <div className="profile">
-                <button>{userName} 님</button>
-                {isSocial && <p>카카오톡으로 로그인 중</p>}
+                <button>{userNickname} 님</button>
+                <p>카카오톡으로 로그인 중</p>
               </div>
             </div>
             <div className="button_section">
@@ -103,7 +105,7 @@ const Menu = ({ menuHandler }) => {
         </div>
         <div className="button_section">
           <img alt="" src={icon_instagram} />
-          <button>인스타그램</button>
+          <button onClick={goInstagram}>인스타그램</button>
         </div>
       </div>
       <div className="logo">

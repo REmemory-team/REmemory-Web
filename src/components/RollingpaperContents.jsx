@@ -2,10 +2,11 @@
 
 import "../styles/RollingpaperContents.css";
 
-import React from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function RollingpaperContents({
+  writerId,
   sender,
   format,
   theme,
@@ -13,26 +14,40 @@ export default function RollingpaperContents({
   contents,
 }) {
   const navigate = useNavigate();
+
   const contentsBoxHandler = () => {
-    if (format === 1) {
-      navigate("/capsule/open/text", {
-        state: {
-          sender: sender,
-          theme: theme,
-          dear_name: recipient,
-          text_img_data: contents,
-        },
+    axios
+      .get(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/retrieveDetail`, {
+        params: { writer_id: writerId },
+      })
+      .then((response) => {
+        console.log(response);
+        if (response.status === 200) {
+          if (format === 1) {
+            navigate("/capsule/open/text", {
+              state: {
+                sender: sender,
+                theme: theme,
+                dear_name: recipient,
+                text_img_data: response.data.result.text_img_data,
+              },
+            });
+          } else if (format === 2) {
+            navigate("/capsule/open/voice", {
+              state: {
+                sender: sender,
+                theme: theme,
+                dear_name: recipient,
+                voice_data: response.data.result.voice_data,
+              },
+            });
+          }
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("오류가 발생했습니다.");
       });
-    } else if (format === 2) {
-      navigate("/capsule/open/voice", {
-        state: {
-          sender: sender,
-          theme: theme,
-          dear_name: recipient,
-          voice_data: contents,
-        },
-      });
-    }
   };
 
   return (

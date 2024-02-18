@@ -86,7 +86,7 @@ export default function RecipientInput() {
           value={recipient}
           className="recipient"
           onChange={handleRecipientChange}
-          maxLength="10"
+          maxLength={10}
         ></input>
       </div>
       <button className="recipient-page-done-btn" onClick={doneBtnHandler}>

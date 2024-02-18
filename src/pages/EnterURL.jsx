@@ -35,7 +35,11 @@ export default function EnterURL() {
         console.log(error);
         if (error.response.status === 400) {
           alert("잘못된 요청입니다.");
-        } else {
+        }
+        else if(error.response.status === 403){
+          alert("유효하지 않은 타임캡슐입니다.");
+        } 
+        else {
           alert("오류가 발생했습니다.");
         }
       });
@@ -72,10 +76,9 @@ export default function EnterURL() {
       <div className="sender-input-field">
         <input
           type="text"
-          value={sender}
           className="sender"
           onChange={handleSenderChange}
-          maxLength="9"
+          maxLength={10}
           placeholder="입력해주세요"
         ></input>
         <span className="count-char-num">{charNum}/10</span>
