@@ -85,7 +85,7 @@ export default function Home() {
   const handleClosePopup = () => {
     setPopupOpen(false);
   };
-  console.log(location.nickname);
+  
   return (
     <div className="home">
       <img
