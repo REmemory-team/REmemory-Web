@@ -31,6 +31,7 @@ export default function Nickname() {
 
   //이걸로 할게요! 버튼 누를시
   const handleSubmit = () => {
+    console.log(userNickname);
     if(validNickname(userNickname)){
       const token = sessionStorage.getItem("token");
       axios
