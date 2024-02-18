@@ -105,12 +105,6 @@ export default function Record() {
 
     analyser.disconnect();
     source.disconnect();
-
-    // console.log(URL.createObjectURL(audioUrl));
-    // const sound = new File([audioUrl], "soundfile", {
-    //   type: "audio/mpeg",
-    // });
-    // setDisabled(false); //재생 버튼 다시 활성화
   };
 
   //재생 버튼
