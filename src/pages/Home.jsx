@@ -129,7 +129,7 @@ export default function Home() {
               capsuleList.map((capsule,index)=>(
                 <ListItem
                 key={index}
-                imgSrc={capsuleImages[capsule.capsule_theme-1]}
+                imgSrc={capsuleImages[capsule.theme-1]}
                 name={capsule.capsule_name}
                 number={capsule.capsule_number}
                 />
