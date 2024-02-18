@@ -15,15 +15,6 @@ import image_empty from "../assets/image_empty.png";
 const OpenCapsule = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  // state: {
-  //   capsule_number: response.data.result.pcapsules.capsule_number,
-  //   password: password,
-  //   pcapsule_name: response.data.result.pcapsules.pcapsule_name,
-  //   open_date: response.data.result.pcapsules.open_date,
-  //   dear_name: response.data.result.pcapsules.dear_name,
-  //   theme: response.data.result.pcapsules.theme,
-  //   status: status,
-  // }
   const [openMenu, setOpenMenu] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [remainingTime, setRemainingTime] = useState({
@@ -79,39 +70,19 @@ const OpenCapsule = () => {
         },
       })
       .then((response) => {
-        console.log(response);
         const data = response.data.result;
         //롤링페이퍼
-        if (data.rcapsules) {
-          const state = {
-            capsule_number: data.rcapsules.capsule_number,
-            dear_name: data.rcapsules.dear_name,
-            open_date: data.rcapsules.open_date,
-            rcapsule_cnt: data.rcapsules.rcapsule_cnt,
-            rcapsule_name: data.rcapsules.rcapsule_name,
-            status: data.rcapsules.status,
-            theme: data.rcapsules.theme,
-          };
-          navigate("/capsule/open/rolling", { state });
+        if (response.data.result.rcapsules) {
+          navigate("/capsule/open/rolling", response.data.result);
         } else {
-          const state = {
-            align_type: data.pcapsules.align_type,
-            capsule_number: data.pcapsules.capsule_number,
-            content_type: data.pcapsules.content_type,
-            dear_name: data.pcapsules.dear_name,
-            open_date: data.pcapsules.open_date,
-            pcapsule_name: data.pcapsules.pcapsule_name,
-            text_img_data: data.pcapsules.text_img_data,
-            voice_data: data.pcapsules.voice_data,
-            theme: data.pcapsules.theme,
-          };
           //글+사진
+          const state = response.data.result.pcapsules;
           if (state.content_type === 1) {
-            navigate("/capsule/open/text", { state });
+            navigate("/capsule/open/text", {state});
           }
           //음성메세지
           else {
-            navigate("/capsule/open/voice", { state });
+            navigate("/capsule/open/voice", {state});
           }
         }
       })
@@ -130,11 +101,6 @@ const OpenCapsule = () => {
           onClick={menuHandler}
         />
       )}
-      {/* {openMenu && (
-        <div className="menu">
-          <Menu menuHandler={menuHandler} />
-        </div>
-      )} */}
       {isLoaded && (
         <div className={["menu", openMenu].join(" ")}>
           <Menu menuHandler={menuHandler} />
