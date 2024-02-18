@@ -159,3 +159,15 @@
   margin-top: 1.5rem;
   overflow-y: auto;
 }
+
+.home .content_box::-webkit-scrollbar {
+  width: 1rem;
+}
+.home .content_box::-webkit-scrollbar-thumb {
+  background-color: #a091bf;
+  border-radius: 1.5rem;
+}
+.home .content_box::-webkit-scrollbar-track {
+  background-color: white;
+  border-radius: 1.5rem;
+}
