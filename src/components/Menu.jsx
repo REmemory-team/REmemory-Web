@@ -20,12 +20,13 @@ const Menu = ({ menuHandler }) => {
   const userName = "린서";
   const { Kakao } = window;
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isSocial, setIsSocial] = useState(true);
 
   useEffect(() => {
     const initKakao = async () => {
       if (!Kakao.isInitialized()) {
         Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
+        //로그인 성공 시 닉네임과 함께 로그인 상태 띄우기
+        // setIsLoggedIn(true);
       }
     };
 
@@ -38,15 +39,17 @@ const Menu = ({ menuHandler }) => {
       const isIOS = Boolean(navigator.userAgent.match(/iPhone|iPad|iPod/i));
 
       await Kakao.Auth.authorize({
+        //redirectUri 수정 필요
         redirectUri: "http://rememory.site",
         throughTalk: isAndroid ? false : isIOS ? false : true,
       });
-      setIsLoggedIn(!isLoggedIn);
-      // navigate("/capsule/verify");
     } catch (error) {
       console.error("Kakao login error:", error);
     }
   };
+  const goInstagram = () => {
+    window.open('https://www.instagram.com/rememory_official', '_blank');
+  }
   const closeMenu = () => {
     menuHandler();
   };
@@ -61,7 +64,7 @@ const Menu = ({ menuHandler }) => {
               <img className="profile" alt="" src={icon_profile} />
               <div className="profile">
                 <button>{userName} 님</button>
-                {isSocial && <p>카카오톡으로 로그인 중</p>}
+                <p>카카오톡으로 로그인 중</p>
               </div>
             </div>
             <div className="button_section">
@@ -103,7 +106,7 @@ const Menu = ({ menuHandler }) => {
         </div>
         <div className="button_section">
           <img alt="" src={icon_instagram} />
-          <button>인스타그램</button>
+          <button onClick={goInstagram}>인스타그램</button>
         </div>
       </div>
       <div className="logo">
