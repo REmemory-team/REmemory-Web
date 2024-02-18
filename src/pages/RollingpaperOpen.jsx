@@ -41,15 +41,15 @@ export default function RollingpaperOpen() {
         <HomeIconToUse className="home-btn" onClick={homeBtnHandler} />
       </div>
       <div className="rolling-capsule-name">캡슐 이름</div>
-      {location.state.rcapsule_cnt.map((item, index) => {
+      {location.state.rcapsules.map((item, index) => {
         return (
           <RollingpaperContents
-            key={item.id}
-            sender={item.sender}
+            key={item.writer_id}
+            writerId={item.writerId}
+            sender={item.from_name}
             format={item.content_type}
             theme={location.state.theme}
             recipient={location.state.dear_name}
-            contents={item.contents}
           />
         );
       })}

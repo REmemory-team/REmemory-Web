@@ -70,19 +70,20 @@ const OpenCapsule = () => {
         },
       })
       .then((response) => {
+        console.log(response.data.result);
         const data = response.data.result;
         //롤링페이퍼
         if (response.data.result.rcapsules) {
-          navigate("/capsule/open/rolling", response.data.result);
+          navigate("/capsule/open/rolling", { state: response.data.result });
         } else {
           //글+사진
           const state = response.data.result.pcapsules;
           if (state.content_type === 1) {
-            navigate("/capsule/open/text", {state});
+            navigate("/capsule/open/text", { state });
           }
           //음성메세지
           else {
-            navigate("/capsule/open/voice", {state});
+            navigate("/capsule/open/voice", { state });
           }
         }
       })
@@ -103,7 +104,7 @@ const OpenCapsule = () => {
       )}
       {isLoaded && (
         <div className={["menu", openMenu].join(" ")}>
-          <Menu menuHandler={menuHandler}/>
+          <Menu menuHandler={menuHandler} />
         </div>
       )}
       <div className="container">

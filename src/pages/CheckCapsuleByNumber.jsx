@@ -89,7 +89,7 @@ export default function CheckCapsuleByNumber() {
         if (error.response.status === 404) {
           alert("캡슐을 찾을 수 없습니다.");
         } else if (error.response.status === 400) {
-          alert("잘못된 요청입니다.");
+          alert(error.response.data.message);
         } else {
           alert("오류가 발생했습니다.");
         }
@@ -115,6 +115,7 @@ export default function CheckCapsuleByNumber() {
         onChange={handlePasswordChange}
         placeholder="비밀번호를 입력해주세요"
         className="password-input-field"
+        maxLength={6}
       ></input>
       <br />
       <button onClick={confirmBtnHandler} className="capsule-check-btn">
