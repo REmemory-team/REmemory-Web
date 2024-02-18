@@ -33,7 +33,6 @@ export default function Nickname() {
   const handleSubmit = () => {
     console.log(userNickname);
     if(validNickname(userNickname)){
-      sessionStorage.setItem("nickname", nickname);
       const token = sessionStorage.getItem("token");
       axios
         .patch(
@@ -50,6 +49,7 @@ export default function Nickname() {
         )
         .then((response)=>{
           console.log("서버응답: ",response);
+          sessionStorage.setItem("nickname", nickname);
           navigate("/login/kakao/home");
         })
         .catch((error)=>{
