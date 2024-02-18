@@ -12,16 +12,40 @@ import icon_setting from "../assets/icon_setting.png";
 import image_logo from "../assets/image_logo.png";
 import text_logo from "../assets/text_logo.png";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Menu = ({ menuHandler }) => {
   const navigate = useNavigate();
+  //임시
   const userName = "린서";
+  const { Kakao } = window;
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSocial, setIsSocial] = useState(true);
 
-  const loginHandler = () => {
-    setIsLoggedIn(!isLoggedIn);
+  useEffect(() => {
+    const initKakao = async () => {
+      if (!Kakao.isInitialized()) {
+        Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
+      }
+    };
+
+    initKakao();
+  }, []);
+
+  const loginHandler = async() => {
+    try {
+      const isAndroid = Boolean(navigator.userAgent.match(/Android/i));
+      const isIOS = Boolean(navigator.userAgent.match(/iPhone|iPad|iPod/i));
+
+      await Kakao.Auth.authorize({
+        redirectUri: "http://rememory.site",
+        throughTalk: isAndroid ? false : isIOS ? false : true,
+      });
+      setIsLoggedIn(!isLoggedIn);
+      // navigate("/capsule/verify");
+    } catch (error) {
+      console.error("Kakao login error:", error);
+    }
   };
   const closeMenu = () => {
     menuHandler();
