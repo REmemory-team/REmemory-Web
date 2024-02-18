@@ -75,7 +75,7 @@ export default function EnterURL() {
           value={sender}
           className="sender"
           onChange={handleSenderChange}
-          maxLength="10"
+          maxLength="9"
           placeholder="입력해주세요"
         ></input>
         <span className="count-char-num">{charNum}/10</span>

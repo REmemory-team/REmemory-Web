@@ -53,7 +53,10 @@ export default function WritingFormat() {
                 dear_name: location.state.dear_name,
                 theme: location.state.theme,
                 purpose: location.state.purpose,
-                capsule_number: response.data.result.capsule_number,
+                capsule_number:
+                  location.state.purpose === "rollingPaper"
+                    ? location.state.capsule_number
+                    : response.data.result.capsule_number,
               },
             }); // 글 & 편지 작성 화면으로 넘어가기
           } else if (format === 2) {
@@ -62,7 +65,10 @@ export default function WritingFormat() {
                 dear_name: location.state.dear_name,
                 theme: location.state.theme,
                 purpose: location.state.purpose,
-                capsule_number: location.state.capsule_number,
+                capsule_number:
+                  location.state.purpose === "rollingPaper"
+                    ? location.state.capsule_number
+                    : response.data.result.capsule_number,
               },
             }); // 음성 편지 작성 화면으로 넘어가기
           }
