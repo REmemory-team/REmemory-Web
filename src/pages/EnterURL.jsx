@@ -16,6 +16,8 @@ export default function EnterURL() {
   const [charNum, setCharNum] = useState(0); // 보내는 사람 글자 수 세기 위한 상태 변수
   const purpose = "rollingPaper";
 
+  console.log(rcapsule_number);
+
   // 서버로부터 받는 사람, 테마 정보 가져오기
   useEffect(() => {
     axios
@@ -64,7 +66,7 @@ export default function EnterURL() {
   return (
     <div className="url-page">
       <p className="url-recipient-message">받는 사람!</p>
-      <div className="url-recipient">To. </div>
+      <div className="url-recipient">To. {recipient}</div>
       <p className="url-sender-message">자신을 알려주세요!</p>
       <div className="sender-input-field">
         <input
