@@ -181,7 +181,6 @@ export default function Record() {
           },
           headers: {
             'Content-Type': 'multipart/form-data',
-            authorization: `Bearer ${sessionStorage.getItem("token")}`,
           }
         }).then((response) => {
           console.log('서버응답:', response);
