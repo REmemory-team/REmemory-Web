@@ -186,7 +186,7 @@ const Write = () => {
     <div className={["Write", receivedState.theme].join(" theme")}>
       <div className="write_top">
         <button className="btn_save" onClick={handleSave}>
-          임시저장
+          <span>임시저장</span>
         </button>
       </div>
       <div className="write_center">
@@ -260,7 +260,7 @@ const Write = () => {
       <div className="write_bottom">
         {/* <button className="btn_overview">타임캡슐 미리보기</button> */}
         <button className="btn_submit" onClick={handleSubmit}>
-          다했어요!
+          <span>다했어요!</span>
         </button>
       </div>
     </div>
