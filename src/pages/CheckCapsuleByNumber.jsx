@@ -2,11 +2,11 @@
 
 import "../styles/CheckCapsuleByNumber.css";
 
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import React from "react";
 import axios from "axios";
-import { useState } from "react";
 
 export default function CheckCapsuleByNumber() {
   const navigate = useNavigate();
@@ -14,9 +14,11 @@ export default function CheckCapsuleByNumber() {
   const [capsuleNum, setCapsuleNum] = useState(""); // 캡슐 번호
   const [password, setPassword] = useState(""); // 비밀번호
 
-  if (location.state && location.state.capsule_number) {
-    setCapsuleNum(location.state.capsule_number);
-  }
+  useEffect(() => {
+    if (location.state && location.state.capsule_number) {
+      setCapsuleNum(location.state.capsule_number);
+    }
+  }, [location.state]);
   // const initialCapsuleNum =
   //   location.state && location.state.capsule_number
   //     ? location.state.capsule_number
