@@ -27,8 +27,8 @@ export default function EnterURL() {
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
-          setRecipient(response.data.result.dear_name);
-          setTheme(response.data.result.theme);
+          setRecipient(response.data.result.data.dear_name);
+          setTheme(response.data.result.data.theme);
         }
       })
       .catch((error) => {
