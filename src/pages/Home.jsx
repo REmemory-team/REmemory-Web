@@ -44,6 +44,7 @@ export default function Home() {
   useEffect(()=>{
     if(popupOpen){
     //캡슐 목록 받아오기
+      console.log(token,userId,userNickname);
       axios.get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve/all`,{
         params: {
           userId : userId,
