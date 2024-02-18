@@ -17,17 +17,19 @@
   display: flex;
   justify-content: space-between;
   padding: 0rem 1.5rem;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
   margin-bottom: 0.5rem;
 }
 .setting-page .back-btn {
   width: 1.64063rem;
   height: 1.09375rem;
+  cursor: pointer;
 }
 .setting-page .home-btn {
   width: 1.61456rem;
   height: 1.45313rem;
   stroke: rgba(0, 0, 0, 0);
+  cursor: pointer;
 }
 .setting-page .settings {
   color: #000;
@@ -161,6 +163,7 @@
   line-height: 0.8125rem; /* 86.667% */
   letter-spacing: 0.00413rem;
   text-decoration-line: underline;
+  cursor: pointer;
 }
 .setting-page .section3 {
   display: flex;
@@ -182,6 +185,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin-right: 0.6rem;
+  cursor: pointer;
 }
 .setting-page .logout-title {
   color: #000;
@@ -191,6 +195,7 @@
   font-weight: 500;
   line-height: 0.8125rem; /* 72.222% */
   letter-spacing: 0.00413rem;
+  cursor: pointer;
 }
 .setting-page .withdrawal {
   color: rgba(0, 0, 0, 0.6);
@@ -201,6 +206,7 @@
   line-height: 0.8125rem; /* 86.667% */
   letter-spacing: 0.00413rem;
   text-decoration-line: underline;
+  cursor: pointer;
 }
 .setting-page .footer {
   margin-top: 0.5rem;

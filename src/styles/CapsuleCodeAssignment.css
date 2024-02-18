@@ -237,7 +237,7 @@
   justify-content: center;
   position: relative;
 }
-.capsule-code-assignment .container{
+.capsule-code-assignment .container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -299,6 +299,7 @@
   height: 0.9375rem;
   flex-shrink: 0;
   margin-right: 0.4rem;
+  cursor: pointer;
 }
 .capsule-code-assignment .copy {
   color: #000;
@@ -309,6 +310,7 @@
   line-height: 0.8125rem; /* 86.667% */
   letter-spacing: 0.00413rem;
   text-decoration-line: underline;
+  cursor: pointer;
 }
 .capsule-code-assignment .password-box {
   width: 18.75rem;
@@ -342,10 +344,10 @@
   letter-spacing: 0.00413rem;
 }
 .capsule-code-assignment .password-input {
-  width: 4.7rem;
+  width: 5.7rem;
   color: #000;
   font-family: Pretendard;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 0.8125rem;

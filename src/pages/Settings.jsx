@@ -13,7 +13,7 @@ export default function Settings() {
   const [newNickname, setNewNickname] = useState("");
 
   const token = sessionStorage.getItem("token");
-  const userId = sessionStorage.getItem("userID");
+  const userId = sessionStorage.getItem("userId");
 
   useEffect(() => {
     axios
@@ -59,6 +59,8 @@ export default function Settings() {
       .then((response) => {
         console.log(response);
         if (response.status === 200) {
+          setNickname(response.data.result.nickname);
+          sessionStorage.setItem("nickname", response.data.result.nickname);
           alert("닉네임이 변경되었습니다.");
         }
       })
@@ -68,7 +70,7 @@ export default function Settings() {
   };
   // 로그아웃
   const logoutBtnHandler = () => {
-    sessionStorage.removeItem("userToken");
+    sessionStorage.removeItem("token");
     sessionStorage.removeItem("userId");
     sessionStorage.removeItem("nickname");
     navigate("/");

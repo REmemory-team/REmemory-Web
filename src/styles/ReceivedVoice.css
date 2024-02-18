@@ -36,12 +36,12 @@
   display: flex;
   justify-content: space-between;
   padding: 0rem 1.5rem;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
   margin-bottom: 1.5rem;
 }
 .received-voice-page .back-btn {
-  width: 1.64063rem;
-  height: 1.09375rem;
+  /* width: 1.64063rem;
+  height: 1.09375rem; */
   cursor: pointer;
 }
 .received-voice-page .home-btn {
@@ -99,6 +99,7 @@
   flex-shrink: 0;
   border-radius: 10px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 .received-voice-page-theme1 .base-bar {
   background: #d4c0ff;
@@ -122,6 +123,7 @@
   border-radius: 10px;
   position: absolute;
   top: 0.129rem;
+  cursor: pointer;
 }
 .received-voice-page-theme1 .main-bar {
   background: #beace6;

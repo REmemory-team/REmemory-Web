@@ -2,7 +2,7 @@
 
 import "../styles/CapsuleCodeAssignment.css";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -10,37 +10,10 @@ import Copyimg from "../assets/Copy.png";
 import axios from "axios";
 
 const CapsuleCodeAssignment = ({ initialNickname }) => {
-  // const [capsuleNumber, setCapsuleNumber] = useState("");
   const [copied, setCopied] = useState(false);
-  // const [nickname, setNickname] = useState(initialNickname || "");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-
-  // useEffect(() => {
-  //   generateCapsuleNumber();
-  // }, [nickname]);
-
-  // const generateCapsuleNumber = () => {
-  //   const randomNum = Math.floor(Math.random() * 1000);
-  //   const paddedRandomNum = randomNum.toString().padStart(4, "0");
-  //   const newCapsuleNumber = `${paddedRandomNum} ${nickname}`;
-  //   setCapsuleNumber(newCapsuleNumber);
-  //   setCopied(false);
-
-  //   // 백엔드 API로 캡슐번호 비밀번호 전송
-  //   axios
-  //     .post("https://dev.mattie3e.store/pcapsule/create/savePassword", {
-  //       capsule_number: location.state.capsule_number,
-  //       pcapsule_password: password,
-  //     })
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error while sending capsule number:", error);
-  //     });
-  // };
 
   const handleCopyClick = () => {
     console.log("카피 완료!");
@@ -83,7 +56,7 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
   };
 
   return (
-    <div className="CapsuleCodeAssignment">
+    <div className="capsule-code-assignment">
       <div className="container">
         <p className="message">캡슐번호를 기억하세요!</p>
         <div className="code-box">

@@ -2,15 +2,15 @@
 
 import "../styles/OpenCapsule.css";
 
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
 import Menu from "../components/Menu";
+import axios from "axios";
 import icon_clock from "../assets/icon_clock.png";
 import icon_menu from "../assets/icon_menu.png";
 import image_circle from "../assets/image_circle.png";
 import image_empty from "../assets/image_empty.png";
-
-import { useLocation, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
 
 const OpenCapsule = () => {
   const location = useLocation();
@@ -31,41 +31,45 @@ const OpenCapsule = () => {
     hours: 0,
     minutes: 0,
     seconds: 0,
-  })
+  });
   const theme = location.state.theme;
-  
-  useEffect(()=>{
-    if(location.state.status !== "OPENED"){
-      const targetDate = new Date(location.state.open_date); 
-  
+
+  useEffect(() => {
+    if (location.state.status !== "OPENED") {
+      const targetDate = new Date(location.state.open_date);
+
       const updateRemainingTime = () => {
         const currentDate = new Date();
         const timeDiff = targetDate.getTime() - currentDate.getTime();
-        if(timeDiff <= 0 ){
+        if (timeDiff <= 0) {
           clearInterval(interValId);
-          setRemainingTime({days:0, hours:0, minutes:0, seconds:0});
-        } else{  
-          const days = Math.floor(timeDiff/(1000*60*60*24));
-          const hours = Math.floor((timeDiff % (1000*60*60*24))/(1000*60*60));
-          const minutes = Math.floor((timeDiff % (1000*60*60))/(1000*60));
-          const seconds = Math.floor((timeDiff % (1000*60))/1000);
-          setRemainingTime({days, hours, minutes, seconds});
+          setRemainingTime({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        } else {
+          const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (timeDiff % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+          setRemainingTime({ days, hours, minutes, seconds });
         }
       };
-      updateRemainingTime();    
+      updateRemainingTime();
       const interValId = setInterval(updateRemainingTime, 1000);
-  
+
       return () => clearInterval(interValId);
     }
   }, []);
 
   const menuHandler = () => {
-    if(!isLoaded){
+    if (!isLoaded) {
       setIsLoaded(true);
     }
     setOpenMenu(!openMenu);
   };
-  
+
   const checkCapsule = () => {
     axios
       .get("https://dev.mattie3e.store/capsule/retrieve/detail", {
@@ -75,9 +79,10 @@ const OpenCapsule = () => {
         },
       })
       .then((response) => {
+        console.log(response);
         const data = response.data.result;
         //롤링페이퍼
-        if(data.rcapsules){
+        if (data.rcapsules) {
           const state = {
             capsule_number: data.rcapsules.capsule_number,
             dear_name: data.rcapsules.dear_name,
@@ -87,9 +92,8 @@ const OpenCapsule = () => {
             status: data.rcapsules.status,
             theme: data.rcapsules.theme,
           };
-          navigate("/capsule/open/rolling", {state});
-        }
-        else{
+          navigate("/capsule/open/rolling", { state });
+        } else {
           const state = {
             align_type: data.pcapsules.align_type,
             capsule_number: data.pcapsules.capsule_number,
@@ -100,21 +104,21 @@ const OpenCapsule = () => {
             text_img_data: data.pcapsules.text_img_data,
             voice_data: data.pcapsules.voice_data,
             theme: data.pcapsules.theme,
-          };          
+          };
           //글+사진
-          if(state.content_type === 1){
-            navigate("/capsule/open/text", {state});
+          if (state.content_type === 1) {
+            navigate("/capsule/open/text", { state });
           }
           //음성메세지
-          else{
-            navigate("/capsule/open/voice", {state});
+          else {
+            navigate("/capsule/open/voice", { state });
           }
         }
       })
       .catch(function (error) {
         console.log(error);
       });
-  }
+  };
 
   return (
     <div className={["OpenCapsule", theme].join(" theme")}>
@@ -131,17 +135,26 @@ const OpenCapsule = () => {
           <Menu menuHandler={menuHandler} />
         </div>
       )} */}
-      { isLoaded && <div className={["menu", openMenu].join(" ")}>
-        <Menu menuHandler={menuHandler}/>
-      </div>}
+      {isLoaded && (
+        <div className={["menu", openMenu].join(" ")}>
+          <Menu menuHandler={menuHandler} />
+        </div>
+      )}
       <div className="container">
         <div className="image_section">
           <img
-            className={["img_isOpened", location.state.status === "OPENED"].join("_")}
+            className={[
+              "img_isOpened",
+              location.state.status === "OPENED",
+            ].join("_")}
             alt=""
             src={image_empty}
           />
-          <div className={["ellipses", location.state.status === "OPENED"].join("_")}>
+          <div
+            className={["ellipses", location.state.status === "OPENED"].join(
+              "_"
+            )}
+          >
             <img className="circle" alt="" src={image_circle} />
             <img className="ellipse type1" alt="" src={image_empty} />
             <img className="ellipse type2" alt="" src={image_empty} />
@@ -155,8 +168,17 @@ const OpenCapsule = () => {
           ) : (
             <div className="maintext">타임캡슐 오픈까지</div>
           )}
-          <button className={["btn_isOpened", location.state.status === "OPENED"].join("_")}>
-            {location.state.status === "OPENED" ? <p onClick={checkCapsule}>확인하기</p> : `${remainingTime.days}일 ${remainingTime.hours}시간 ${remainingTime.minutes}분 ${remainingTime.seconds}초`}
+          <button
+            className={[
+              "btn_isOpened",
+              location.state.status === "OPENED",
+            ].join("_")}
+          >
+            {location.state.status === "OPENED" ? (
+              <p onClick={checkCapsule}>확인하기</p>
+            ) : (
+              `${remainingTime.days}일 ${remainingTime.hours}시간 ${remainingTime.minutes}분 ${remainingTime.seconds}초`
+            )}
           </button>
         </div>
       </div>

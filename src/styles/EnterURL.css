@@ -138,4 +138,5 @@
   font-weight: 400;
   line-height: 0.8125rem; /* 72.222% */
   letter-spacing: 0.00413rem;
+  cursor: pointer;
 }

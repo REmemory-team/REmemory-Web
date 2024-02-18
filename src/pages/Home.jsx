@@ -3,24 +3,23 @@
 import "../styles/Home.css";
 
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import capsuleImg1 from "../assets/capsule_list1.png";
 import capsuleImg2 from "../assets/capsule_list2.png";
 import capsuleImg3 from "../assets/capsule_list3.png";
+import capsuleImg4 from "../assets/capsule_list4.png";
+import capsuleImg5 from "../assets/capsule_list5.png";
 import closeIcon from "../assets/icon_x.svg";
 import starIcon from "../assets/Vector.svg";
 import icon_menu from "../assets/icon_menu.png";
 
 import Menu from "../components/Menu";
 import ListItem from "../components/CapsuleListItem.jsx";
-// import capsuleListData from "../Data/CapsuleListTest.js";
 
 import axios from 'axios';
 
 export default function Home() {
-  // const location = useLocation();
-  const nickname = "리메모리"; //임시
 
   const navigate = useNavigate();
 
@@ -29,31 +28,39 @@ export default function Home() {
   const [popupOpen, setPopupOpen] = useState("");
   const [capsuleList, setCapsuleList] = useState([]);
 
-  const capsuleImages = [capsuleImg1,capsuleImg2,capsuleImg3];
+  const capsuleImages = [
+    capsuleImg1,
+    capsuleImg2,
+    capsuleImg3,
+    capsuleImg4,
+    capsuleImg5
+  ];
   const maxCapsule = 50;
 
-  const userId = 1;
-  const token = "user";
+  const token = sessionStorage.getItem("token");
+  const userId = sessionStorage.getItem("userId");
+  const userNickname = sessionStorage.getItem("nickname");
 
   useEffect(()=>{
+    if(popupOpen){
     //캡슐 목록 받아오기
-    axios.get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve/all`,{
-      headers: {
-        'Authorization': `Bearer ${token}`,
-      },
-      params: {
-        userId : userId,
-      },
-    })
-    .then((response) => {
-      console.log("서버응답:",response);
-      setCapsuleList(response.data.result.capsules);
-      // setCapsuleList(capsuleListData);
-    })
-    .catch((error) => {
-      console.error('오류:', error);
-    });
-  },[]);
+      axios.get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve/all`,{
+        params: {
+          userId : userId,
+        },
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        console.log("팝업-서버응답:",response);
+        setCapsuleList(response.data.result.capsules);
+      })
+      .catch((error) => {
+        console.error('팝업-오류:', error);
+      });
+   }
+  },[popupOpen, token, userId]);
 
   //홈화면 메뉴
   const menuHandler = () => {
@@ -87,11 +94,7 @@ export default function Home() {
         alt="메뉴아이콘"
         onClick={menuHandler}
       />
-      {/* {openMenu && (
-        <div className="menu">
-          <Menu menuHandler={menuHandler} />
-        </div>
-      )} */}
+
       { isLoaded && <div className={["menu", openMenu].join(" ")}>
         <Menu menuHandler={menuHandler}/>
       </div>}
@@ -112,7 +115,7 @@ export default function Home() {
           <div className="popup_header">
             <img id="star" src={starIcon} alt="별아이콘" />
             <span>
-              {nickname}의 타임캡슐 목록 ({capsuleList.length}/{maxCapsule})
+              {userNickname}의 타임캡슐 목록 ({capsuleList.length}/{maxCapsule})
             </span>
             <img
               id="x"
@@ -126,7 +129,7 @@ export default function Home() {
               capsuleList.map((capsule,index)=>(
                 <ListItem
                 key={index}
-                imgSrc={capsuleImages[index%3]}
+                imgSrc={capsuleImages[capsule.capsule_theme-1]}
                 name={capsule.capsule_name}
                 number={capsule.capsule_number}
                 />

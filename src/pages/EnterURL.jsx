@@ -8,7 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function EnterURL() {
-  const { capsuleId } = useParams();
+  const { rcapsule_number } = useParams();
   const navigate = useNavigate();
   const [recipient, setRecipient] = useState(""); // 서버로부터 가져온 받는 사람 정보 저장할 상태 변수
   const [theme, setTheme] = useState(""); // 서버로부터 가져온 테마 정보 저장할 상태 변수
@@ -16,16 +16,19 @@ export default function EnterURL() {
   const [charNum, setCharNum] = useState(0); // 보내는 사람 글자 수 세기 위한 상태 변수
   const purpose = "rollingPaper";
 
+  console.log(rcapsule_number);
+
   // 서버로부터 받는 사람, 테마 정보 가져오기
   useEffect(() => {
     axios
       .get(
-        `${process.env.REACT_APP_API_BASE_URL}/rcapsule/url_info/${capsuleId}`
+        `${process.env.REACT_APP_API_BASE_URL}/rcapsule/url_info/${rcapsule_number}`
       )
       .then((response) => {
-        if (response.status) {
-          setRecipient(response.data.result.recipient);
-          setTheme(response.data.result.theme);
+        console.log(response);
+        if (response.status === 200) {
+          setRecipient(response.data.result.data.dear_name);
+          setTheme(response.data.result.data.theme);
         }
       })
       .catch((error) => {
@@ -55,7 +58,7 @@ export default function EnterURL() {
           theme: theme,
           sender: sender,
           purpose: purpose,
-          capsule_number: capsuleId,
+          capsule_number: rcapsule_number,
         },
       });
     }
@@ -64,7 +67,7 @@ export default function EnterURL() {
   return (
     <div className="url-page">
       <p className="url-recipient-message">받는 사람!</p>
-      <div className="url-recipient">To. </div>
+      <div className="url-recipient">To. {recipient}</div>
       <p className="url-sender-message">자신을 알려주세요!</p>
       <div className="sender-input-field">
         <input

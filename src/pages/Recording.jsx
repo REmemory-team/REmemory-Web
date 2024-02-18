@@ -9,7 +9,7 @@ import axios from "axios";
 import fileIcon from "../assets/voice_file.png";
 
 export default function Record() {
-  const [isLoggedIn, setIsLoggedIn] = useState("1");
+  const [isLoggedIn, setIsLoggedIn] = useState();
   const [stream, setStream] = useState("");
   const [media, setMedia] = useState("");
   const [onRec, setOnRec] = useState(true);
@@ -21,30 +21,20 @@ export default function Record() {
   const [nowTheme, setNowTheme] = useState("1");
   const [nowPurpose, setNowPurpose] = useState("");
   const [capsule_number, setCapsule_number] = useState("");
-  const [rcapsule_number, setRcapsule_number] = useState("");
+  // const [rcapsule_number, setRcapsule_number] = useState("");
   const location = useLocation();
   const receivedData = location.state;
   const dear_name = receivedData.dear_name;
   const navigate = useNavigate("");
-  const userId = 1;
-
-  //로그인 확인 함수(임시저장 버튼 여부)
-  function checkLoggedIn() {
-    // const loginData = 0; //서버에서 로그인 여부 받아오기
-    return true;
-  }
+  const userId = sessionStorage.getItem("userId");
 
   //테마 정보
   useEffect(() => {
-    setIsLoggedIn(checkLoggedIn());
+    setIsLoggedIn(userId!==null);
     setNowPurpose(receivedData.purpose);
     setNowTheme(String(receivedData.theme));
-    setRcapsule_number("testMember1_41305");
-    setCapsule_number("testMember1_74177");
-    // setRcapsule_number(receivedData.capsule_number);
+    setCapsule_number(receivedData.capsule_number);
   }, []);
-
-  //receivedData.theme, receivedData.purpose
 
   //파일 아이콘 누를시
   const attachAudio = () => {
@@ -187,9 +177,9 @@ export default function Record() {
       }
       else if (nowPurpose === "rollingPaper"){
         formData.append('voice_rcapsule',audioUrl);
-        axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/voice/${rcapsule_number}`, formData, {
+        axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/voice/${capsule_number}`, formData, {
           params: {
-            from_name: "22",
+            from_name: receivedData.from_name,
             content_type: "2",
           },
           headers: {
@@ -227,64 +217,61 @@ export default function Record() {
 
   return (
     <div className={`recording_page theme${nowTheme}`}>
-      <div className="test">
-        {isLoggedIn && (
-          <div className="temp_save_button" onClick={tempRecording}>
-            임시저장
+      {isLoggedIn && (
+        <button className="temp_save_button" onClick={tempRecording}>
+          임시저장
+        </button>
+      )}
+      <div className={`recording_box theme${nowTheme}`}>
+        <div className="icon_container">
+          <div className={`dear_capsule theme${nowTheme}`}>
+            To. {dear_name}{" "}
           </div>
-        )}
-
-        <div className={`recording_box theme${nowTheme}`}>
-          <div className="icon_container">
-            <div className={`dear_capsule theme${nowTheme}`}>
-              To. {dear_name}{" "}
-            </div>
-            <div className="mike" onClick={onRec ? onRecAudio : offRecAudio}>
-              <img
-                id="mii"
-                src={require(`../assets/Recording_icon${nowTheme}.png`)}
-                alt="마이크 아이콘"
-                style={{
-                  transition: "transform 0.8s ease",
-                  transform: onRec ? "scale(1)" : "scale(1.1)", //녹음 중 이미지 확대
-                }}
-              />
-            </div>
+          <div className="mike" onClick={onRec ? onRecAudio : offRecAudio}>
             <img
-              src={require(`../assets/play_btn${nowTheme}.png`)}
-              alt="재생 아이콘"
-              id="play_button"
-              onClick={!onRec ? null : play}
+              id="mii"
+              src={require(`../assets/Recording_icon${nowTheme}.png`)}
+              alt="마이크 아이콘"
+              style={{
+                transition: "transform 0.8s ease",
+                transform: onRec ? "scale(1)" : "scale(1.1)", //녹음 중 이미지 확대
+              }}
             />
-            <div className="play_bar">
-              <div className={`light theme${nowTheme}`}></div>
-              <div className={`bold theme${nowTheme}`}></div>
-            </div>
+          </div>
+          <img
+            src={require(`../assets/play_btn${nowTheme}.png`)}
+            alt="재생 아이콘"
+            id="play_button"
+            onClick={!onRec ? null : play}
+          />
+          <div className="play_bar">
+            <div className={`light theme${nowTheme}`}></div>
+            <div className={`bold theme${nowTheme}`}></div>
+          </div>
 
-            <div className="add_file">
-              <img
-                className="file_icon"
-                src={fileIcon}
-                alt="파일 아이콘"
-                onClick={attachAudio}
-              />
-              <input
-                type="file"
-                id="audioFileInput"
-                accept="audio/*"
-                style={{ display: "none" }}
-                onChange={handleFileUpload}
-              />
-              <span className="file_name">{audioUrl.name}</span>
-            </div>
+          <div className="add_file">
+            <img
+              className="file_icon"
+              src={fileIcon}
+              alt="파일 아이콘"
+              onClick={attachAudio}
+            />
+            <input
+              type="file"
+              id="audioFileInput"
+              accept="audio/*"
+              style={{ display: "none" }}
+              onChange={handleFileUpload}
+            />
+            <span className="file_name">{audioUrl.name}</span>
           </div>
         </div>
-        <div
-          className={`record_submit_button theme${nowTheme}`}
-          onClick={decisionBtnHandler}
-        >
-          다했어요!
-        </div>
+      </div>
+      <div
+        className={`record_submit_button theme${nowTheme}`}
+        onClick={decisionBtnHandler}
+      >
+        다했어요!
       </div>
     </div>
   );
