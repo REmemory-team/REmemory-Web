@@ -16,7 +16,7 @@ export default function Record() {
   const [source, setSource] = useState("");
   const [analyser, setAnalyser] = useState("");
   const [audioUrl, setAudioUrl] = useState("");
-  const [audio, setAudio] = useState();
+  const [playAudio, setPlayAudio] = useState();
   // const [disabled, setDisabled] = useState(false);
   const [nowTheme, setNowTheme] = useState("1");
   const [nowPurpose, setNowPurpose] = useState("");
@@ -47,12 +47,13 @@ export default function Record() {
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     setAudioUrl(file);
-    setAudio(null);
+    setPlayAudio(null);
     // console.log("파일첨부완료 =>", file);
   };
 
   //사용자가 음성 녹음을 시작할 때
   const onRecAudio = () => {
+    window.alert("녹음시작");
     // setDisabled(true); //녹음 중 재생 버튼 비활성화
 
     //AudioContext 객체 생성
@@ -96,7 +97,7 @@ export default function Record() {
     media.ondataavailable = function (e) {
       setAudioUrl(e.data);
       setOnRec(true);
-      setAudio(null);
+      setPlayAudio(null);
     };
 
     //마이크 해제
@@ -109,19 +110,24 @@ export default function Record() {
 
     analyser.disconnect();
     source.disconnect();
+
+    // console.log(URL.createObjectURL(audioUrl));
+    // const sound = new File([audioUrl], "soundfile", {
+    //   type: "audio/mpeg",
+    // });
     // setDisabled(false); //재생 버튼 다시 활성화
   };
 
   //재생 버튼
   const play = () => {
     // console.log("재생");
-    if (audio) {
-      if (audio.paused) {
+    if (playAudio) {
+      if (playAudio.paused) {
         //오디오가 일시 정지된 상태=> 멈춘 지점부터 다시 재생
-        audio.play();
+        playAudio.play();
       } else {
         //오디오가 재생 중인 상태=> 멈춤
-        audio.pause();
+        playAudio.pause();
       }
     } else {
       if (audioUrl) {
@@ -131,7 +137,7 @@ export default function Record() {
         // newAudio.onended = () => setDisabled(false);
         // setDisabled(true);
         newAudio.play();
-        setAudio(newAudio); //현재 재생 중인 오디오 업데이트
+        setPlayAudio(newAudio); //현재 재생 중인 오디오 업데이트
       } else {
         alert("실행 가능한 녹음 파일이 없습니다");
         // setDisabled(false);
@@ -154,8 +160,8 @@ export default function Record() {
     const formData = new FormData();
     if (audioUrl) {
       if (window.confirm("작성을 끝낼까요? 이후 수정이 불가합니다.")) {
-        if (audio && !audio.pause()) {
-          audio.pause();
+        if (playAudio && !playAudio.pause()) {
+          playAudio.pause();
         }
         if(nowPurpose === "toMe" || nowPurpose === "toSomeone"){
           formData.append('capsule_number', capsule_number);
@@ -172,7 +178,7 @@ export default function Record() {
             });
           })
           .catch((error) => {
-            console.error('오류:', error);
+            window.alert('오류:', error);
           });
       }
       else if (nowPurpose === "rollingPaper"){
@@ -204,16 +210,16 @@ export default function Record() {
   //재생바 보여주기
   useEffect(() => {
     const bold = document.querySelector(".bold");
-    if (audio) {
-      audio.addEventListener("timeupdate", () => {
-        const currentTime = audio.currentTime;
-        const duration = audio.duration;
+    if (playAudio) {
+      playAudio.addEventListener("timeupdate", () => {
+        const currentTime = playAudio.currentTime;
+        const duration = playAudio.duration;
         const percentage = (currentTime / duration) * 100;
         const boldWidth = (percentage * 10.5) / 100;
         bold.style.width = `${boldWidth}rem`;
       });
     }
-  }, [audio]);
+  }, [playAudio]);
 
   return (
     <div className={`recording_page theme${nowTheme}`}>
@@ -259,7 +265,7 @@ export default function Record() {
             <input
               type="file"
               id="audioFileInput"
-              accept="audio/*"
+              accept="audio/mp3"
               style={{ display: "none" }}
               onChange={handleFileUpload}
             />
