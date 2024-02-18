@@ -164,11 +164,11 @@
   width: 2rem;
 }
 .home .content_box::-webkit-scrollbar-thumb {
-  background-color: #2f3542;
+  background-color: #a091bf;
   border-radius: 1.5rem;
 }
 .home .content_box::-webkit-scrollbar-track {
-  background-color: grey;
+  background-color: none;
   border-radius: 1.5rem;
   box-shadow: inset 0px 0px 5px white;
 }
