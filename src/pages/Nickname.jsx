@@ -18,7 +18,7 @@ export default function Nickname() {
 
   useEffect(() => {
     // 세션 스토리지에서 닉네임을 가져와서 설정합니다.
-    const storedNickname = sessionStorage.getItem("userNickname");
+    const storedNickname = sessionStorage.getItem("nickname");
     if (storedNickname !== null) {
       setUserNickname(storedNickname);
     }
@@ -55,7 +55,7 @@ export default function Nickname() {
           }
         )
         .then((response) => {
-          console.log("서버응답: ", response);
+          console.log("닉네임설정-서버응답: ", response);
           navigate("/login/kakao/home");
         })
         .catch((error) => {
