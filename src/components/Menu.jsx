@@ -19,14 +19,11 @@ const Menu = ({ menuHandler, nickname }) => {
   //임시
   // const userName = "린서";
   const { Kakao } = window;
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const initKakao = async () => {
       if (!Kakao.isInitialized()) {
         Kakao.init(process.env.REACT_APP_KAKAO_API_KEY);
-        //로그인 성공 시 닉네임과 함께 로그인 상태 띄우기
-        // setIsLoggedIn(true);
       }
     };
     initKakao();
@@ -53,12 +50,14 @@ const Menu = ({ menuHandler, nickname }) => {
   const closeMenu = () => {
     menuHandler();
   };
-
+  if(!nickname){
+    return(<div>불러오는 중입니다.</div>)
+  }
   return (
     <div className="Menu">
       <img className="btn_close" alt="" src={icon_close} onClick={closeMenu} />
       <div className="buttons">
-        {nickname ? (
+        {nickname.isLoggedIn ? (
           <div>
             <div className="button_section">
               <img className="profile" alt="" src={icon_profile} />

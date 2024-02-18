@@ -103,7 +103,7 @@ const OpenCapsule = () => {
       )}
       {isLoaded && (
         <div className={["menu", openMenu].join(" ")}>
-          <Menu menuHandler={menuHandler} nickname={location.nickname}/>
+          <Menu menuHandler={menuHandler} nickname={location.nickname ? location.nickname : {isLoggedIn: false}}/>
         </div>
       )}
       <div className="container">
