@@ -53,13 +53,13 @@ const Write = () => {
       console.log(state);
       try{
         if(location.state.purpose === "rollingPaper"){
-          setState({
+          const newState = {
             ...state,
             from_name: location.state.from_name,
-          })
+          }
           console.log(location.state);
-          console.log(state);
-          await axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/create/text_image`, state);   
+          console.log(newState);
+          await axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/create/text_image`, newState);   
           navigate('/');       
         } else{          
           await axios.post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/text_image`, state);
