@@ -5,12 +5,18 @@
   flex-shrink: 0;
   position: relative;
 }
+.format-select-page .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3.5rem;
+}
 .format-select-page .division-line1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 6rem;
-  margin-bottom: 4.2rem;
+  /* padding-top: 6rem; */
+  margin-bottom: 3.5rem;
 }
 .format-select-page .line1,
 .format-select-page .line2 {
@@ -19,15 +25,19 @@
   background: rgba(255, 255, 255, 0.8);
   flex-shrink: 0;
 }
+.format-select-page .line1 {
+  margin-right: 0.9rem;
+}
 .format-select-page .pencil-icon {
   width: 2.1875rem;
   height: 2.1875rem;
   flex-shrink: 0;
+  margin-right: 0.9rem;
 }
 .format-select-page .person-to-send {
   color: #fff;
   text-align: center;
-  font-family: Pretendard;
+  font-family: retendard;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
@@ -62,7 +72,7 @@
   margin-bottom: 1.5rem;
 }
 .format-select-page .voice-container {
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
 }
 .format-select-page .text,
 .format-select-page .voice {
@@ -89,7 +99,7 @@
   width: 21.375rem;
   height: 0.125rem;
   background: rgba(255, 255, 255, 0.8);
-  margin-bottom: 9.5rem;
+  margin-bottom: 4.3rem;
   flex-shrink: 0;
 }
 .format-select-page .decision-btn-container {
