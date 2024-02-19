@@ -162,7 +162,7 @@ export default function Record() {
             .then((response) => {
               console.log("서버응답:", response);
               navigate("/capsule/assign-number", {
-                state: capsule_number,
+                state: { capsule_number: capsule_number },
               });
             })
             .catch((error) => {
