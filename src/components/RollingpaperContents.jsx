@@ -20,6 +20,7 @@ export default function RollingpaperContents({
         `${process.env.REACT_APP_API_BASE_URL}/rcapsule/retrieveDetail?writer_id=${writerId}`
       )
       .then((response) => {
+        console.log(response);
         if (response.status === 200) {
           if (format === 1) {
             navigate("/capsule/open/text", {
