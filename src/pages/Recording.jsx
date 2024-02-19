@@ -24,11 +24,11 @@ export default function Record() {
   const receivedData = location.state;
   const dear_name = receivedData.dear_name;
   const navigate = useNavigate("");
-  const userId = sessionStorage.getItem("userId");
+  // const userId = sessionStorage.getItem("userId");
 
   //테마 정보
   useEffect(() => {
-    setIsLoggedIn(userId !== null);
+    setIsLoggedIn(false);
     setNowPurpose(receivedData.purpose);
     setNowTheme(receivedData.theme);
     setCapsule_number(receivedData.capsule_number);
@@ -135,7 +135,7 @@ export default function Record() {
 
   //파일 변환, 전송
   const tempRecording = () => {
-    console.log("임시저장 완료");
+    window.alert("임시저장 되었습니다.");
   };
 
   //작성 완료 버튼
