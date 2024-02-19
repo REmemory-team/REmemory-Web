@@ -1,9 +1,11 @@
 // 카카오 로그인 - 이름(닉네임) 설정
 
 import "../styles/Nickname.css";
+
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Nickname() {
   const [userNickname, setUserNickname] = useState("");
