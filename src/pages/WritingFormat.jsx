@@ -60,6 +60,7 @@ export default function WritingFormat() {
           }
         )
         .then((response) => {
+          console.log(response);
           if (response.status === 200) {
             if (format === 1) {
               navigate("/capsule/write/text", {
