@@ -91,7 +91,7 @@ const Login = () => {
         <div className="re-memory">RE:memory</div>
       </div>
       <div className="capsule-check-btn" onClick={capsuleCheck}>
-        캡슐번호로 타임캡슐 확인!
+        캡슐번호로 타임캡슐 확인
       </div>
       <div className="kakao-login-btn" onClick={kakaoLogin}>
         <img src={kakaoicon} alt="kakaoicon" className="kakao-icon" />
