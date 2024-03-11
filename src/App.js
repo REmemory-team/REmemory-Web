@@ -18,11 +18,17 @@ import RecipientInput from "./pages/RecipientInput";
 import Recording from "./pages/Recording";
 import RollingpaperOpen from "./pages/RollingpaperOpen";
 import Settings from "./pages/Settings.jsx";
+import TagManager from "react-gtm-module";
 import URLnCodeAssignment from "./pages/URLnCodeAssignment.jsx";
 import Write from "./pages/Write";
 import WritingFormat from "./pages/WritingFormat";
 
 function App() {
+  const tagManagerArgs = {
+    gtmId: "GTM-K5HF8J77",
+  };
+
+  TagManager.initialize(tagManagerArgs);
   return (
     <div className="App">
       {/* <Router> */}
