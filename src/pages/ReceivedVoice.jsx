@@ -104,8 +104,12 @@ export default function ReceivedVoice() {
           <div className="record-bar">
             <div className="play-btn" onClick={playBtnHandler}>
               <img
-                src={require(`../assets/play_btn${location.state.theme}.png`)}
-                alt="재생 버튼"
+                src={
+                  play
+                    ? require(`../assets/pause_btn${location.state.theme}.png`)
+                    : require(`../assets/play_btn${location.state.theme}.png`)
+                }
+                alt={play ? "정지 버튼" : "재생 버튼"}
               ></img>
             </div>
             <div className="bar">

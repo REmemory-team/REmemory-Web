@@ -78,9 +78,7 @@ export default function EnterURL() {
         <span className="count-char-num">{charNum}/10</span>
       </div>
       <div className="how-to-write">
-        <p className="how-to-write-title">
-          &nbsp;&nbsp;롤링페이퍼 작성 방법 설명
-        </p>
+        <p className="how-to-write-title">&nbsp;&nbsp;롤링페이퍼 URL</p>
         <p className="how-to-write-content">
           • 해당 링크에서는 접속자 개별적으로 내용을 작성할 수 있습니
           <br />

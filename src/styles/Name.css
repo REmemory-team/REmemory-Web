@@ -1,0 +1,178 @@
+.name {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+.name__theme1 {
+  background: #aa9acc;
+}
+.name__theme2 {
+  background: #f6d075;
+}
+.name__theme3 {
+  background: #5a68a3;
+}
+.name__theme4 {
+  background: #e1a3c7;
+}
+.name__theme5 {
+  background: #9cb58b;
+}
+.name__wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 26%;
+  padding-bottom: 25%;
+}
+.name__image {
+  margin-bottom: 2rem;
+}
+.name__theme1 .name__image {
+  width: 10.39869rem;
+  height: 8.93281rem;
+}
+.name__theme2 .name__image {
+  width: 6.5625rem;
+  height: 9.4375rem;
+}
+.name__theme3 .name__image {
+  width: 6.0625rem;
+  height: 8.9375rem;
+}
+.name__theme4 .name__image {
+  width: 6.25rem;
+  height: 10.0625rem;
+}
+.name__theme5 .name__image {
+  width: 6.125rem;
+  height: 10.625rem;
+}
+.name__message1,
+.name__message2 {
+  color: #fff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.8125rem; /* 65% */
+  letter-spacing: 0.00413rem;
+  margin-bottom: 1.8rem;
+}
+.name__name {
+  width: 19.1875rem;
+  height: 4.7rem;
+  text-align: center;
+  border-radius: 95px;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 1rem 2.5rem;
+  border: none;
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+  caret-color: #606060;
+  margin-bottom: 2.5rem;
+}
+.name__name::placeholder {
+  color: #9a9a9a;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+  flex-shrink: 0;
+}
+.name__name:focus {
+  outline: none;
+}
+.name__date {
+  width: 19.1875rem;
+  height: 4.7rem;
+  border-radius: 95px;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+.name__date--input {
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+  width: 2.8rem;
+  border: none;
+  border-bottom: solid #aaaaaa 1px;
+  background: none;
+  flex-shrink: 0;
+  margin-right: 0.05rem;
+}
+.name__date--input::placeholder {
+  color: #9a9a9a;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+}
+.name__date--input:focus {
+  outline: none;
+}
+.name__date--year {
+  width: 4.3rem;
+  flex-shrink: 0;
+}
+.name__date--mark {
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+.name__container {
+  width: 78%;
+  display: flex;
+  justify-content: end;
+}
+.name__btn {
+  width: 5.625rem;
+  height: 2.4375rem;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #000;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.8125rem; /* 72.222% */
+  letter-spacing: 0.00413rem;
+  border: none;
+  border-radius: 16px;
+}

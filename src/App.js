@@ -2,15 +2,16 @@ import "./App.css";
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
-import CapsuleBasicSetting from "./pages/CapsuleBasicSetting";
 import CapsuleCodeAssignment from "./pages/CapsuleCodeAssignment.jsx";
 import CheckCapsuleByNumber from "./pages/CheckCapsuleByNumber";
 import ConfirmBasicSetting from "./pages/ConfirmBasicSetting";
 import EnterURL from "./pages/EnterURL";
 import Home from "./pages/Home";
 import Login from "./pages/Login.jsx";
+import Name from "./pages/Name.jsx";
 import Nickname from "./pages/Nickname";
 import OpenCapsule from "./pages/OpenCapsule";
+import Purpose from "./pages/Purpose.jsx";
 import React from "react";
 import ReceivedText from "./pages/ReceivedText";
 import ReceivedVoice from "./pages/ReceivedVoice";
@@ -19,6 +20,7 @@ import Recording from "./pages/Recording";
 import RollingpaperOpen from "./pages/RollingpaperOpen";
 import Settings from "./pages/Settings.jsx";
 import TagManager from "react-gtm-module";
+import Theme from "./pages/Theme.jsx";
 import URLnCodeAssignment from "./pages/URLnCodeAssignment.jsx";
 import Write from "./pages/Write";
 import WritingFormat from "./pages/WritingFormat";
@@ -45,10 +47,6 @@ function App() {
         <Route
           path="/capsule/input-number"
           element={<CheckCapsuleByNumber />}
-        ></Route>
-        <Route
-          path="/capsule/settings"
-          element={<CapsuleBasicSetting />}
         ></Route>
         <Route
           path="/capsule/settings/confirm"
@@ -78,6 +76,9 @@ function App() {
         <Route path="/login/kakao/nickname" element={<Nickname />} />
         <Route path="/login/kakao/home" element={<Home />}></Route>
         <Route path="/login/kakao/settings" element={<Settings />}></Route>
+        <Route path="/capsule/settings/theme" element={<Theme />}></Route>
+        <Route path="/capsule/settings/purpose" element={<Purpose />}></Route>
+        <Route path="/capsule/settings/name-date" element={<Name />}></Route>
       </Routes>
       {/* </Router> */}
     </div>

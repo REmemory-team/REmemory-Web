@@ -1,12 +1,26 @@
 .confirm-setting-page {
   min-height: 100vh;
   height: 100%;
-  background: #aa9acc;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
   position: relative;
+}
+.confirm-setting-page1 {
+  background: #aa9acc;
+}
+.confirm-setting-page2 {
+  background: #f6d075;
+}
+.confirm-setting-page3 {
+  background: #5a68a3;
+}
+.confirm-setting-page4 {
+  background: #e1a3c7;
+}
+.confirm-setting-page5 {
+  background: #9cb58b;
 }
 .confirm-setting-page .confirm-message {
   color: #fff;
@@ -47,6 +61,13 @@
   align-items: center;
   position: relative;
 }
+.confirm-setting-page .info-boxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 .confirm-setting-page .capsuleName {
   color: #1c1c1c;
   font-family: Pretendard;
@@ -56,14 +77,18 @@
   line-height: 0.8125rem; /* 65% */
   letter-spacing: 0.00413rem;
   margin-top: 6.8rem;
-  margin-bottom: 3.8rem;
+  margin-bottom: 2.7rem;
   flex-shrink: 0;
 }
 .confirm-setting-page .info-box {
   display: flex;
   align-items: center;
-  margin-bottom: 2.2rem;
+  justify-content: center;
+  margin-bottom: 0.8rem;
   flex-shrink: 0;
+  position: relative;
+  height: 3.5rem;
+  width: 100%;
 }
 .confirm-setting-page .info-icon {
   margin-right: 1rem;
@@ -113,4 +138,26 @@
   border: none;
   margin-bottom: 3rem;
   cursor: pointer;
+}
+.confirm-setting-page .theme-icon1 {
+  fill: #7e61b5;
+}
+.confirm-setting-page .theme-icon2 {
+  fill: #ee853d;
+}
+.confirm-setting-page .theme-icon3 {
+  fill: #566398;
+}
+.confirm-setting-page .theme-icon4 {
+  fill: #ed8ec6;
+}
+.confirm-setting-page .theme-icon5 {
+  fill: #4d5f42;
+}
+.confirm-setting-page .theme-icon-clock {
+  width: 4.375rem;
+  height: 4.375rem;
+  position: absolute;
+  top: 0.4rem;
+  left: 3.8rem;
 }
