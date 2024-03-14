@@ -90,12 +90,12 @@ const Login = () => {
         <img src={twinkle} alt="반짝이" className="twinkle" />
         <div className="re-memory">RE:memory</div>
       </div>
-      <div className="capsule-check-btn" onClick={capsuleCheck}>
-        캡슐번호로 타임캡슐 확인
-      </div>
       <div className="kakao-login-btn" onClick={kakaoLogin}>
         <img src={kakaoicon} alt="kakaoicon" className="kakao-icon" />
-        <span className="kakao-login">카카오 로그인</span>
+        <span className="kakao-login">카카오계정으로 캡슐 만들기</span>
+      </div>
+      <div className="capsule-check-btn" onClick={capsuleCheck}>
+        <span className="capsule-check-txt">캡슐번호로 타임캡슐 확인</span>
       </div>
     </div>
   );
