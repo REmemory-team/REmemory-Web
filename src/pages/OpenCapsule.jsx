@@ -2,7 +2,7 @@
 
 import "../styles/OpenCapsule.css";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import Menu from "../components/Menu";
@@ -14,10 +14,13 @@ import image_empty from "../assets/image_empty.png";
 import image_textballon from "../assets/image_textballon.png";
 import image_add from "../assets/image_add.png";
 import image_add_background from "../assets/image_add_background.png";
+import image_share from "../assets/image_share.png";
 
 const OpenCapsule = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const copyUrlRef = useRef();
+
   const [openMenu, setOpenMenu] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [remainingTime, setRemainingTime] = useState({
@@ -28,6 +31,7 @@ const OpenCapsule = () => {
   });
   const theme = location.state.theme;
   const status = location.state.status;
+  const isPcapsule = location.state && location.state.pcapsule_name;
   
   const userNickname = sessionStorage.getItem("nickname");
 
@@ -95,7 +99,24 @@ const OpenCapsule = () => {
         console.log(error);
       });
   };
+  const handleCreateCapsule = () => {
+    if(userNickname){
+      navigate(`/login/kakao/home`);
+    }else{
+      navigate(`/`);
+    }
+  }
 
+  const handleCopyUrl = (e) => {
+    if(!document.queryCommandSupported("copy")){
+        return alert("복사 기능이 지원되지 않는 브라우저입니다");
+    }
+    copyUrlRef.current.select();
+    document.execCommand('copy');
+    e.target.focus();
+
+    alert("복사되었습니다");
+}
   return (
     <div className={["OpenCapsule", theme].join(" theme")}>
       {status !== "OPENED" && (
@@ -153,18 +174,24 @@ const OpenCapsule = () => {
           </button>
         </div>
       </div>
-      {location.state.pcapsule_name &&
         <div className="create_new">
+          { isPcapsule &&
           <div className="textBalloon">
             <img alt="" src={image_textballon}/>
             <p>새로운 캡슐 만들러가기</p>
-          </div>            
-          <div className="btn_create" onClick={()=>{userNickname ? navigate('/login/kakao/home'): navigate('/')}}>
+          </div>}            
+          <div className="btn_bottom" onClick={isPcapsule ? handleCreateCapsule: handleCopyUrl}>
             <img alt="" src={image_add_background}/>
-            <img alt="" src={image_add}/>
+            <img className={isPcapsule?"add":"share"} alt="" src={isPcapsule ? image_add : image_share}/>
+            <form>
+              <textarea
+                  ref={copyUrlRef}
+                  defaultValue={window.location.href}
+              />
+            </form>   
+            {!isPcapsule && <p>공유하기</p>}
           </div>
         </div>
-      }
     </div>
   );
 };
