@@ -238,9 +238,15 @@
 /*create new*/
 .OpenCapsule .create_new{
     display: flex;
+    align-items: center;
     position: absolute;
-    right: 1rem;
-    bottom: 1rem;
+    right: 3rem;
+    bottom: 2rem;
+    width: fit-content;
+}
+.OpenCapsule .textBalloon{
+    color: #6C6961;
+    position: absolute;
 }
 .OpenCapsule .create_new .btn_create{
     cursor: pointer;
@@ -248,11 +254,15 @@
 }
 .OpenCapsule .create_new .btn_create img{
     position: absolute;
-    width: 3.5rem;
-    height: 3.5rem;
-}
-.OpenCapsule .create_new .btn_create img:nth-child(2){
     width: 1.5rem;
     height: 1.5rem;
     padding: 1rem;
+    z-index: 2;
+}
+.OpenCapsule .create_new .btn_create img:first-child{
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0;
+    z-index: 1;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }

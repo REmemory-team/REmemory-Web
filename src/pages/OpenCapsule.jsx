@@ -153,7 +153,10 @@ const OpenCapsule = () => {
       </div>
       {location.state.pcapsule_name &&
         <div className="create_new">
-          <img alt="" src={image_textballon}/>
+          <div className="textBalloon">
+            <img alt="" src={image_textballon}/>
+            새로운 캡슐 만들러가기
+          </div>            
           <div className="btn_create" onClick={()=>{userNickname ? navigate('/login/kakao/home'): navigate('/')}}>
             <img alt="" src={image_add_background}/>
             <img alt="" src={image_add}/>
