@@ -145,22 +145,12 @@
 } */
 
 /*theme*/
-.Write.theme2{
-    /* background-color: #FBF3C1; */
-    background: linear-gradient(180deg, #FBF3C1 0%, rgba(251, 243, 193, 0.00) 100%), #FFF;
-}
-.Write.theme3{
-    /* background-color: #6A88C2; */
-    background: linear-gradient(180deg, #6A88C2 22.4%, #C1C6F3 100%), linear-gradient(180deg, #9AA5CC 0%, rgba(154, 165, 204, 0.00) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #AA9ACC 46.53%), #FFF;
-}
-.Write.theme4{
-    /* background-color: #FEE1F7; */
-    background: linear-gradient(180deg, rgba(255, 237, 251, 0.00) 0%, #FEE1F7 100%), #FFF;
-}
-.Write.theme5{
-    /* background-color: #F3A0A0; */
-    background: linear-gradient(180deg, #F3A0A0 0%, rgba(113, 155, 112, 0.20) 100%), #FFF;
-}
+.Write.theme2{background: linear-gradient(180deg, #FBF3C1 0%, rgba(251, 243, 193, 0.00) 100%), #FFF;}
+.Write.theme3{background: linear-gradient(180deg, #6A88C2 22.4%, #C1C6F3 100%), linear-gradient(180deg, #9AA5CC 0%, rgba(154, 165, 204, 0.00) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #AA9ACC 46.53%), #FFF;}
+.Write.theme4{background: linear-gradient(180deg, rgba(255, 237, 251, 0.00) 0%, #FEE1F7 100%), #FFF;}
+.Write.theme5{background: linear-gradient(180deg, #F3A0A0 0%, rgba(113, 155, 112, 0.20) 100%), #FFF;}
+.Write.theme6{background: linear-gradient(180deg, #CDB8AC 0%, rgba(205, 184, 172, 0.20) 100%), #FFF;}
+.Write.theme7{background: linear-gradient(180deg, #A5C8D3 0%, #A5C8D3 0.01%, rgba(165, 200, 211, 0.20) 100%), #FFF;}
 
 .Write.theme2 .write_center{
     background-color: rgba(255, 254, 246, 0.90);
@@ -178,7 +168,10 @@
 .Write.theme4 .write_center{
     background-color: rgba(250, 217, 243, 0.90);
 }
-.Write.theme5 .write_center{
+.Write.theme5 .write_center,
+.Write.theme6 .write_center,
+.Write.theme7 .write_center
+{
     background-color: rgba(255, 255, 255, 0.90);;
 }
 
@@ -194,4 +187,10 @@
 }
 .Write.theme5 .write_bottom button{
     background-color: rgba(82, 125, 84, 0.70);
+}
+.Write.theme6 .write_bottom button{
+    background-color: rgba(183, 160, 147, 0.70);
+}
+.Write.theme7 .write_bottom button{
+    background-color: rgba(116, 162, 177, 0.70);
 }
