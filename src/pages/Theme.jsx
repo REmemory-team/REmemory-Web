@@ -41,23 +41,23 @@ export default function Theme() {
           <div
             className={`theme__option ${theme === 3 ? "theme__selected" : ""}`}
             onClick={() => handleSelection(3)}
-            style={{ backgroundColor: "#B0C5ED" }}
-          >
-            졸업 테마
-          </div>
-          <div
-            className={`theme__option ${theme === 4 ? "theme__selected" : ""}`}
-            onClick={() => handleSelection(4)}
             style={{ backgroundColor: "#F9D8F0" }}
           >
             사랑 테마
           </div>
           <div
+            className={`theme__option ${theme === 4 ? "theme__selected" : ""}`}
+            onClick={() => handleSelection(4)}
+            style={{ backgroundColor: "#E0CABE" }}
+          >
+            어버이날 테마
+          </div>
+          <div
             className={`theme__option ${theme === 5 ? "theme__selected" : ""}`}
             onClick={() => handleSelection(5)}
-            style={{ backgroundColor: "#C3DBBF" }}
+            style={{ backgroundColor: "#A5C8D3" }}
           >
-            크리스마스 테마
+            스승의 날 테마
           </div>
         </div>
         <div className="theme__container">

@@ -10,13 +10,13 @@
   background: #f6d075;
 }
 .purpose__theme3 {
-  background: #5a68a3;
-}
-.purpose__theme4 {
   background: #e1a3c7;
 }
+.purpose__theme4 {
+  background: #cdb8ac;
+}
 .purpose__theme5 {
-  background: #9cb58b;
+  background: #a5c8d3;
 }
 .purpose__wrapper {
   width: 100%;
@@ -39,16 +39,16 @@
   height: 9.4375rem;
 }
 .purpose__theme3 .purpose__image {
-  width: 6.0625rem;
-  height: 8.9375rem;
-}
-.purpose__theme4 .purpose__image {
   width: 6.25rem;
   height: 10.0625rem;
 }
+.purpose__theme4 .purpose__image {
+  width: 7.0625rem;
+  height: 9.5625rem;
+}
 .purpose__theme5 .purpose__image {
   width: 6.125rem;
-  height: 10.625rem;
+  height: 9.625rem;
 }
 .purpose__message {
   color: #fff;
@@ -99,13 +99,13 @@
   fill: #ee853d;
 }
 .purpose__icon3 {
-  fill: #566398;
-}
-.purpose__icon4 {
   fill: #ed8ec6;
 }
+.purpose__icon4 {
+  fill: #61534a;
+}
 .purpose__icon5 {
-  fill: #4d5f42;
+  fill: #445b63;
 }
 .purpose__icons {
   display: flex;

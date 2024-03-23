@@ -19,16 +19,23 @@
     #fff;
 }
 .received-voice-page-theme3 {
-  background: linear-gradient(180deg, #6a88c2 22.4%, #c1c6f3 100%),
-    linear-gradient(180deg, #9aa5cc 0%, rgba(154, 165, 204, 0) 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #aa9acc 46.53%), #fff;
-}
-.received-voice-page-theme4 {
   background: linear-gradient(180deg, rgba(255, 237, 251, 0) 0%, #fee1f7 100%),
     #fff;
 }
+.received-voice-page-theme4 {
+  background: linear-gradient(
+      180deg,
+      #cdb8ac 0.01%,
+      rgba(205, 184, 172, 0.2) 94.18%
+    ),
+    #fff;
+}
 .received-voice-page-theme5 {
-  background: linear-gradient(180deg, #f3a0a0 0%, rgba(113, 155, 112, 0.2) 100%),
+  background: linear-gradient(
+      180deg,
+      #a5c8d3 0.01%,
+      rgba(165, 200, 211, 0.2) 94.18%
+    ),
     #fff;
 }
 .received-voice-page .top-menu {
@@ -64,10 +71,10 @@
   background-color: rgba(255, 254, 246, 0.9);
 }
 .received-voice-page-theme3 .voice-contents-box {
-  background-color: rgba(36, 60, 122, 0.7);
+  background-color: rgba(250, 217, 243, 0.9);
 }
 .received-voice-page-theme4 .voice-contents-box {
-  background-color: rgba(250, 217, 243, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .received-voice-page-theme5 .voice-contents-box {
   background-color: rgba(255, 255, 255, 0.9);
@@ -108,13 +115,13 @@
   background: #fff5bd;
 }
 .received-voice-page-theme3 .base-bar {
-  background: #c0ceff;
-}
-.received-voice-page-theme4 .base-bar {
   background: #ffd4f6;
 }
+.received-voice-page-theme4 .base-bar {
+  background: #d5c3b9;
+}
 .received-voice-page-theme5 .base-bar {
-  background: #eaa6a3;
+  background: #bed9e2;
 }
 .received-voice-page .main-bar {
   width: 0rem;
@@ -132,13 +139,13 @@
   background: #ffe894;
 }
 .received-voice-page-theme3 .main-bar {
-  background: #9ca6d6;
-}
-.received-voice-page-theme4 .main-bar {
   background: #ffcdf1;
 }
+.received-voice-page-theme4 .main-bar {
+  background: #b7a093;
+}
 .received-voice-page-theme5 .main-bar {
-  background: #e88d89;
+  background: #9bbcc7;
 }
 .received-voice-page .received-recipient,
 .received-voice-page .received-sender {
@@ -152,10 +159,10 @@
   padding: 0.1rem 1.3rem;
   flex-shrink: 0;
 }
-.received-voice-page-theme3 .received-recipient,
+/* .received-voice-page-theme3 .received-recipient,
 .received-voice-page-theme3 .received-sender {
   color: #fff;
-}
+} */
 .received-voice-page .received-sender {
   display: flex;
   justify-content: end;
