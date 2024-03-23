@@ -10,13 +10,13 @@
   background: #f6d075;
 }
 .name__theme3 {
-  background: #5a68a3;
-}
-.name__theme4 {
   background: #e1a3c7;
 }
+.name__theme4 {
+  background: #cdb8ac;
+}
 .name__theme5 {
-  background: #9cb58b;
+  background: #a5c8d3;
 }
 .name__wrapper {
   width: 100%;
@@ -39,16 +39,16 @@
   height: 9.4375rem;
 }
 .name__theme3 .name__image {
-  width: 6.0625rem;
-  height: 8.9375rem;
-}
-.name__theme4 .name__image {
   width: 6.25rem;
   height: 10.0625rem;
 }
+.name__theme4 .name__image {
+  width: 7.0625rem;
+  height: 9.5625rem;
+}
 .name__theme5 .name__image {
   width: 6.125rem;
-  height: 10.625rem;
+  height: 9.625rem;
 }
 .name__message1,
 .name__message2 {

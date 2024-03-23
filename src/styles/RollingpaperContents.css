@@ -14,13 +14,13 @@
   background-color: rgba(255, 239, 198, 0.9);
 }
 .rolling-contents-theme3 {
-  background-color: rgba(207, 220, 253, 0.9);
-}
-.rolling-contents-theme4 {
   background-color: rgba(255, 230, 250, 0.9);
 }
+.rolling-contents-theme4 {
+  background-color: rgba(231, 227, 225, 0.9);
+}
 .rolling-contents-theme5 {
-  background-color: rgba(218, 233, 214, 0.9);
+  background-color: rgba(225, 239, 244, 0.9);
 }
 .rollingpaper-contents:last-child {
   margin-bottom: 3rem;

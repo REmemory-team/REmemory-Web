@@ -14,13 +14,13 @@
   background: #f6d075;
 }
 .confirm-setting-page3 {
-  background: #5a68a3;
-}
-.confirm-setting-page4 {
   background: #e1a3c7;
 }
+.confirm-setting-page4 {
+  background: #cdb8ac;
+}
 .confirm-setting-page5 {
-  background: #9cb58b;
+  background: #a5c8d3;
 }
 .confirm-setting-page .confirm-message {
   color: #fff;
@@ -146,13 +146,13 @@
   fill: #ee853d;
 }
 .confirm-setting-page .theme-icon3 {
-  fill: #566398;
-}
-.confirm-setting-page .theme-icon4 {
   fill: #ed8ec6;
 }
+.confirm-setting-page .theme-icon4 {
+  fill: #61534a;
+}
 .confirm-setting-page .theme-icon5 {
-  fill: #4d5f42;
+  fill: #445b63;
 }
 .confirm-setting-page .theme-icon-clock {
   width: 4.375rem;
