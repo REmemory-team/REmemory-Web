@@ -27,10 +27,12 @@ const OpenCapsule = () => {
     seconds: 0,
   });
   const theme = location.state.theme;
+  const status = location.state.status;
+  
   const userNickname = sessionStorage.getItem("nickname");
 
   useEffect(() => {
-    if (location.state.status !== "OPENED") {
+    if (status !== "OPENED") {
       const targetDate = new Date(location.state.open_date);
 
       const updateRemainingTime = () => {
@@ -96,7 +98,7 @@ const OpenCapsule = () => {
 
   return (
     <div className={["OpenCapsule", theme].join(" theme")}>
-      {location.state.status !== "OPENED" && (
+      {status !== "OPENED" && (
         <img
           className="image_menu"
           alt=""
@@ -114,13 +116,13 @@ const OpenCapsule = () => {
           <img
             className={[
               "img_isOpened",
-              location.state.status === "OPENED",
+              status === "OPENED",
             ].join("_")}
             alt=""
             src={image_empty}
           />
           <div
-            className={["ellipses", location.state.status === "OPENED"].join(
+            className={["ellipses", status === "OPENED"].join(
               "_"
             )}
           >
@@ -132,7 +134,7 @@ const OpenCapsule = () => {
         </div>
         <div className="text_section">
           <img className="clock" alt="" src={icon_clock} />
-          {location.state.status === "OPENED" ? (
+          {status === "OPENED" ? (
             <div className="maintext">오픈된 타임캡슐</div>
           ) : (
             <div className="maintext">타임캡슐 오픈까지</div>
@@ -140,10 +142,10 @@ const OpenCapsule = () => {
           <button
             className={[
               "btn_isOpened",
-              location.state.status === "OPENED",
+              status === "OPENED",
             ].join("_")}
           >
-            {location.state.status === "OPENED" ? (
+            {status === "OPENED" ? (
               <p onClick={checkCapsule}>확인하기</p>
             ) : (
               `${remainingTime.days}일 ${remainingTime.hours}시간 ${remainingTime.minutes}분 ${remainingTime.seconds}초`
@@ -155,7 +157,7 @@ const OpenCapsule = () => {
         <div className="create_new">
           <div className="textBalloon">
             <img alt="" src={image_textballon}/>
-            새로운 캡슐 만들러가기
+            <p>새로운 캡슐 만들러가기</p>
           </div>            
           <div className="btn_create" onClick={()=>{userNickname ? navigate('/login/kakao/home'): navigate('/')}}>
             <img alt="" src={image_add_background}/>

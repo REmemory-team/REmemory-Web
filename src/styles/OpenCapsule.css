@@ -239,30 +239,43 @@
 .OpenCapsule .create_new{
     display: flex;
     align-items: center;
+    justify-content: end;
     position: absolute;
-    right: 3rem;
-    bottom: 2rem;
-    width: fit-content;
+    bottom: 3rem;
+    width: 100%;
 }
 .OpenCapsule .textBalloon{
-    color: #6C6961;
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+}
+.OpenCapsule .textBalloon img{
     position: absolute;
 }
-.OpenCapsule .create_new .btn_create{
-    cursor: pointer;
-    position:  relative;
+.OpenCapsule .textBalloon p{
+    position: absolute;
+    color: #6C6961;
+    font-size: .8rem;
+    text-align: center;
 }
-.OpenCapsule .create_new .btn_create img{
+.OpenCapsule .btn_create{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3rem;
+}
+.OpenCapsule .btn_create img{
     position: absolute;
     width: 1.5rem;
     height: 1.5rem;
-    padding: 1rem;
-    z-index: 2;
+    margin-bottom: .4rem;
 }
-.OpenCapsule .create_new .btn_create img:first-child{
+.OpenCapsule .btn_create img:first-child{
     width: 3.5rem;
     height: 3.5rem;
-    padding: 0;
-    z-index: 1;
+    margin: 0;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
