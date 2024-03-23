@@ -11,6 +11,9 @@ import icon_clock from "../assets/icon_clock.png";
 import icon_menu from "../assets/icon_menu.png";
 import image_circle from "../assets/image_circle.png";
 import image_empty from "../assets/image_empty.png";
+import image_textballon from "../assets/image_textballon.png";
+import image_add from "../assets/image_add.png";
+import image_add_background from "../assets/image_add_background.png";
 
 const OpenCapsule = () => {
   const location = useLocation();
@@ -24,6 +27,7 @@ const OpenCapsule = () => {
     seconds: 0,
   });
   const theme = location.state.theme;
+  const userNickname = sessionStorage.getItem("nickname");
 
   useEffect(() => {
     if (location.state.status !== "OPENED") {
@@ -147,6 +151,15 @@ const OpenCapsule = () => {
           </button>
         </div>
       </div>
+      {location.state.pcapsule_name &&
+        <div className="create_new">
+          <img alt="" src={image_textballon}/>
+          <div className="btn_create" onClick={()=>{userNickname ? navigate('/login/kakao/home'): navigate('/')}}>
+            <img alt="" src={image_add_background}/>
+            <img alt="" src={image_add}/>
+          </div>
+        </div>
+      }
     </div>
   );
 };

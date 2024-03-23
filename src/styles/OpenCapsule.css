@@ -234,3 +234,25 @@
 .OpenCapsule.theme5 .ellipses_false .ellipse.type3{
     background-image: url('../assets/image_ellipse_theme5.png');
 }
+
+/*create new*/
+.OpenCapsule .create_new{
+    display: flex;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
+.OpenCapsule .create_new .btn_create{
+    cursor: pointer;
+    position:  relative;
+}
+.OpenCapsule .create_new .btn_create img{
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+.OpenCapsule .create_new .btn_create img:nth-child(2){
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 1rem;
+}
