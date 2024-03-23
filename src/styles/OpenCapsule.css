@@ -8,14 +8,24 @@
     min-height: 100vh;
     overflow: hidden;
 }
-/*menu*/
-.OpenCapsule .image_menu{
+/*top buttons*/
+.OpenCapsule .btn_top{
     position: absolute;
+    top: 0;
+    padding: 2rem 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.OpenCapsule .btn_top img{
     cursor: pointer;
-    top: 2rem;
-    right: 2rem;
     width: 1.25rem;
     height: 1rem;
+}
+.OpenCapsule .btn_top img:first-child{
+    width: 1.6rem;
+    height: 1.4rem;
 }
 .OpenCapsule .menu{
     position: absolute;
@@ -29,6 +39,30 @@
 }
 .OpenCapsule .menu.false{
     animation: fade-out .5s forwards;
+}
+/*numberOfLetters*/
+.OpenCapsule .numberOfLetters{
+    display: flex;
+    cursor: default;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #534287;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-size: 1.25rem;
+    padding-bottom: 2rem;
+}
+.OpenCapsule .numberOfLetters p{
+    margin-right: .6rem;
+}
+.OpenCapsule .numberOfLetters .counter{
+    background-color: #ffffff;
+    width: 1.4rem;
+    padding: 0.2rem 0;
+    text-align: center;
+    border-radius: .4rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 /*image - capsule*/
 .OpenCapsule .image_section{
@@ -168,70 +202,6 @@
     width: 3.625rem;
     height: 3.625rem;
 }
-
-/*theme*/
-.OpenCapsule.theme2{background: linear-gradient(180deg, rgba(244, 229, 145, 0.30) 0%, #ECD862 48.61%, rgba(244, 163, 145, 0.85) 85.07%), #FFF;}
-.OpenCapsule.theme3{background: linear-gradient(180deg, rgba(96, 87, 115, 0.00) 0%, #6A88C2 60.42%), #FFF;}
-.OpenCapsule.theme4{background: linear-gradient(180deg, rgba(255, 163, 233, 0.00) 0%, #B474A5 100%), #FFF;}
-.OpenCapsule.theme5{background: linear-gradient(180deg, #E7AAA6 18.92%, rgba(115, 163, 98, 0.60) 91.15%), #FFF;}
-.OpenCapsule.theme6{background: linear-gradient(180deg, #EFEAE7 17.17%, #B09888 81.67%), #FFF;}
-.OpenCapsule.theme7{background: linear-gradient(180deg, rgba(165, 200, 211, 0.20) 0%, #A5C8D3 95%), #FFF;}
-
-.OpenCapsule.theme2 .img_isOpened_true{background-image: url('../assets/image_openedCapsule_theme2.png');}
-.OpenCapsule.theme3 .img_isOpened_true{background-image: url('../assets/image_openedCapsule_theme3.png');}
-.OpenCapsule.theme4 .img_isOpened_true{background-image: url('../assets/image_openedCapsule_theme4.png');}
-.OpenCapsule.theme5 .img_isOpened_true{background-image: url('../assets/image_openedCapsule_theme5.png');}
-.OpenCapsule.theme6 .img_isOpened_true{background-image: url('../assets/image_openedCapsule_theme6.png');}
-.OpenCapsule.theme7 .img_isOpened_true{background-image: url('../assets/image_openedCapsule_theme7.png');}
-
-.OpenCapsule.theme2 .img_isOpened_false{background-image: url('../assets/image_unopenedCapsule_theme2.png');}
-.OpenCapsule.theme3 .img_isOpened_false{background-image: url('../assets/image_unopenedCapsule_theme3.png');}
-.OpenCapsule.theme4 .img_isOpened_false{background-image: url('../assets/image_unopenedCapsule_theme4.png');}
-.OpenCapsule.theme5 .img_isOpened_false{background-image: url('../assets/image_unopenedCapsule_theme5.png');}
-.OpenCapsule.theme6 .img_isOpened_false{background-image: url('../assets/image_unopenedCapsule_theme6.png');}
-.OpenCapsule.theme7 .img_isOpened_false{background-image: url('../assets/image_unopenedCapsule_theme7.png');}
-
-.OpenCapsule.theme2 .ellipses_false .ellipse{
-    background-image: url('../assets/image_ellipse_theme2_1.png'); 
-    background-size: 75%;
-}
-.OpenCapsule.theme2 .ellipses_false .ellipse.type2{    
-    background-size: 45%;
-}
-.OpenCapsule.theme2 .ellipses_false .ellipse.type3{    
-    background-image: url('../assets/image_ellipse_theme2.png');
-    background-size: 50%;
-    top: -.2rem;
-}
-.OpenCapsule.theme3 .ellipses_false .ellipse.type3{
-    background-image: url('../assets/image_ellipse_theme3.png');  
-    background-size: 60%;
-}
-.OpenCapsule.theme4 .ellipses_false .ellipse{
-    background-image: url('../assets/image_ellipse_theme4.png'); 
-    background-size: 50%;
-}
-.OpenCapsule.theme5 .ellipses_false .ellipse{
-    background-image: url('../assets/image_ellipse_theme5_1.png');
-    background-size: 60%;
-}
-.OpenCapsule.theme5 .ellipses_false .ellipse.type1{    
-    background-size: 80%;
-}
-.OpenCapsule.theme5 .ellipses_false .ellipse.type2{  
-    left: 17.25rem;
-}
-.OpenCapsule.theme5 .ellipses_false .ellipse.type3{
-    background-image: url('../assets/image_ellipse_theme5.png');
-}
-
-.OpenCapsule.theme6 .ellipses_false .ellipse.type3,
-.OpenCapsule.theme7 .ellipses_false .ellipse.type3
-{
-    background-image: url('../assets/image_ellipse_theme67.png'); 
-    background-size: 60%;
-}
-
 /*create new*/
 .OpenCapsule .create_new{
     display: flex;
@@ -293,4 +263,74 @@
     bottom: 0;
     left: 0;
     opacity: 0;
+}
+
+/*theme*/
+.OpenCapsule.theme2{background: linear-gradient(180deg, rgba(244, 229, 145, 0.30) 0%, #ECD862 48.61%, rgba(244, 163, 145, 0.85) 85.07%), #FFF;}
+.OpenCapsule.theme3{background: linear-gradient(180deg, rgba(96, 87, 115, 0.00) 0%, #6A88C2 60.42%), #FFF;}
+.OpenCapsule.theme4{background: linear-gradient(180deg, rgba(255, 163, 233, 0.00) 0%, #B474A5 100%), #FFF;}
+.OpenCapsule.theme5{background: linear-gradient(180deg, #E7AAA6 18.92%, rgba(115, 163, 98, 0.60) 91.15%), #FFF;}
+.OpenCapsule.theme6{background: linear-gradient(180deg, #EFEAE7 17.17%, #B09888 81.67%), #FFF;}
+.OpenCapsule.theme7{background: linear-gradient(180deg, rgba(165, 200, 211, 0.20) 0%, #A5C8D3 95%), #FFF;}
+
+.OpenCapsule.theme2 .numberOfLetters{color: #E7A495};
+.OpenCapsule.theme3 .numberOfLetters{color: #414B76};
+.OpenCapsule.theme4 .numberOfLetters{color: #D19AC4};
+.OpenCapsule.theme5 .numberOfLetters{color: #6B3737};
+.OpenCapsule.theme6 .numberOfLetters{color: #605149};
+.OpenCapsule.theme7 .numberOfLetters{color: #455C65};
+
+.OpenCapsule.theme2 .img_isOpened_true{background-image: url('../assets/image_openedCapsule_theme2.png');}
+.OpenCapsule.theme3 .img_isOpened_true{background-image: url('../assets/image_openedCapsule_theme3.png');}
+.OpenCapsule.theme4 .img_isOpened_true{background-image: url('../assets/image_openedCapsule_theme4.png');}
+.OpenCapsule.theme5 .img_isOpened_true{background-image: url('../assets/image_openedCapsule_theme5.png');}
+.OpenCapsule.theme6 .img_isOpened_true{background-image: url('../assets/image_openedCapsule_theme6.png');}
+.OpenCapsule.theme7 .img_isOpened_true{background-image: url('../assets/image_openedCapsule_theme7.png');}
+
+.OpenCapsule.theme2 .img_isOpened_false{background-image: url('../assets/image_unopenedCapsule_theme2.png');}
+.OpenCapsule.theme3 .img_isOpened_false{background-image: url('../assets/image_unopenedCapsule_theme3.png');}
+.OpenCapsule.theme4 .img_isOpened_false{background-image: url('../assets/image_unopenedCapsule_theme4.png');}
+.OpenCapsule.theme5 .img_isOpened_false{background-image: url('../assets/image_unopenedCapsule_theme5.png');}
+.OpenCapsule.theme6 .img_isOpened_false{background-image: url('../assets/image_unopenedCapsule_theme6.png');}
+.OpenCapsule.theme7 .img_isOpened_false{background-image: url('../assets/image_unopenedCapsule_theme7.png');}
+
+.OpenCapsule.theme2 .ellipses_false .ellipse{
+    background-image: url('../assets/image_ellipse_theme2_1.png'); 
+    background-size: 75%;
+}
+.OpenCapsule.theme2 .ellipses_false .ellipse.type2{    
+    background-size: 45%;
+}
+.OpenCapsule.theme2 .ellipses_false .ellipse.type3{    
+    background-image: url('../assets/image_ellipse_theme2.png');
+    background-size: 50%;
+    top: -.2rem;
+}
+.OpenCapsule.theme3 .ellipses_false .ellipse.type3{
+    background-image: url('../assets/image_ellipse_theme3.png');  
+    background-size: 60%;
+}
+.OpenCapsule.theme4 .ellipses_false .ellipse{
+    background-image: url('../assets/image_ellipse_theme4.png'); 
+    background-size: 50%;
+}
+.OpenCapsule.theme5 .ellipses_false .ellipse{
+    background-image: url('../assets/image_ellipse_theme5_1.png');
+    background-size: 60%;
+}
+.OpenCapsule.theme5 .ellipses_false .ellipse.type1{    
+    background-size: 80%;
+}
+.OpenCapsule.theme5 .ellipses_false .ellipse.type2{  
+    left: 17.25rem;
+}
+.OpenCapsule.theme5 .ellipses_false .ellipse.type3{
+    background-image: url('../assets/image_ellipse_theme5.png');
+}
+
+.OpenCapsule.theme6 .ellipses_false .ellipse.type3,
+.OpenCapsule.theme7 .ellipses_false .ellipse.type3
+{
+    background-image: url('../assets/image_ellipse_theme67.png'); 
+    background-size: 60%;
 }

@@ -9,6 +9,7 @@ import Menu from "../components/Menu";
 import axios from "axios";
 import icon_clock from "../assets/icon_clock.png";
 import icon_menu from "../assets/icon_menu.png";
+import icon_home from "../assets/icon_home.png";
 import image_circle from "../assets/image_circle.png";
 import image_empty from "../assets/image_empty.png";
 import image_textballon from "../assets/image_textballon.png";
@@ -32,6 +33,18 @@ const OpenCapsule = () => {
   const theme = location.state.theme;
   const status = location.state.status;
   const isPcapsule = location.state && location.state.pcapsule_name;
+  const { tens, units } = seperateDigits(location.state.rcapsule_cnt);
+
+  function seperateDigits(number){
+    let tens, units;
+    if(number>99){
+      tens = 9; units = 9;
+    } else{
+      tens = Math.floor(number/10);
+      units = number % 10;
+    }
+    return { tens, units };
+  }
   
   const userNickname = sessionStorage.getItem("nickname");
 
@@ -70,7 +83,6 @@ const OpenCapsule = () => {
     }
     setOpenMenu(!openMenu);
   };
-
   const checkCapsule = () => {
     axios
       .get("https://dev.mattie3e.store/capsule/retrieve/detail", {
@@ -101,12 +113,11 @@ const OpenCapsule = () => {
   };
   const handleCreateCapsule = () => {
     if(userNickname){
-      navigate(`/login/kakao/home`);
+      navigate(`/capsule/settings/theme`);
     }else{
       navigate(`/`);
     }
   }
-
   const handleCopyUrl = (e) => {
     if(!document.queryCommandSupported("copy")){
         return alert("복사 기능이 지원되지 않는 브라우저입니다");
@@ -119,20 +130,36 @@ const OpenCapsule = () => {
 }
   return (
     <div className={["OpenCapsule", theme].join(" theme")}>
-      {status !== "OPENED" && (
+      {/* {status !== "OPENED" && ( */}
+      <div className="btn_top">
         <img
-          className="image_menu"
+          className="icon_home"
+          alt=""
+          src={icon_home}
+          onClick={() => {userNickname ? navigate(`/login/kakao/home`) : navigate(`/`)}}
+        />
+        <img
+          className="icon_menu"
           alt=""
           src={icon_menu}
           onClick={menuHandler}
         />
-      )}
+      </div>
+      {/* )} */}
       {isLoaded && (
         <div className={["menu", openMenu].join(" ")}>
           <Menu menuHandler={menuHandler} />
         </div>
       )}
       <div className="container">
+        {status !== "OPENED" &&
+          <div className="numberOfLetters">
+            <p>작성된 편지 : </p>
+            <p className="counter">{tens}</p>
+            <p className="counter">{units}</p>
+            <p>통</p>
+          </div>
+        }
         <div className="image_section">
           <img
             className={[
