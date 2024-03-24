@@ -82,6 +82,10 @@ const Login = () => {
     navigate("/capsule/input-number");
   };
 
+  const Login = () => {
+    navigate("/login/kakao/nickname");
+  };
+  //kakaoLogin
   return (
     <div className="login-page">
       <div className="logo-img">
@@ -90,7 +94,7 @@ const Login = () => {
         <img src={twinkle} alt="반짝이" className="twinkle" />
         <div className="re-memory">RE:memory</div>
       </div>
-      <div className="kakao-login-btn" onClick={kakaoLogin}>
+      <div className="kakao-login-btn" onClick={Login}>
         <img src={kakaoicon} alt="kakaoicon" className="kakao-icon" />
         <span className="kakao-login">카카오계정으로 캡슐 만들기</span>
       </div>
