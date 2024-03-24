@@ -61,14 +61,18 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
         <div className="code-box">
           <div className="code-container">
             <span className="code">캡슐번호&nbsp;</span>
-            <span className="assigned-code">
-              |&nbsp;{location.state.capsule_number}
-            </span>
+            {location.state && location.state.capsule_number ? (
+              <span className="assigned-code">
+                |&nbsp;{location.state.capsule_number}
+              </span>
+            ) : (
+              <span className="assigned-code">|&nbsp;capsule number</span>
+            )}
           </div>
           <div className="copy-container">
             <img src={Copyimg} alt="복사하기" className="copy-img" />
             <CopyToClipboard
-              text={location.state.capsule_number}
+              text={location.state?.capsule_number}
               onCopy={handleCopyClick}
             >
               <span className="copy">복사</span>
@@ -88,7 +92,7 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
           ></input>
         </div>
         <div className="guide-box">
-          <p className="guide-title">&nbsp;&nbsp;꼭 읽어보세요!</p>
+          <p className="guide-title">&nbsp;&nbsp;캡슐번호와 비밀번호</p>
           <p className="guide-content">
             • 캡슐번호는 홈화면에서 “타임캡슐 확인하기"를 통해 다시 확
             <br />

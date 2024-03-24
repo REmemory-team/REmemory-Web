@@ -62,14 +62,18 @@ const URLnCodeAssignment = () => {
       <div className="code-box">
         <div className="code-container">
           <span className="code">캡슐번호&nbsp;&nbsp;</span>
-          <span className="assigned-code">
-            |&nbsp;&nbsp;{location.state.capsule_number}
-          </span>
+          {location.state && location.state.capsule_number ? (
+            <span className="assigned-code">
+              |&nbsp;&nbsp;{location.state.capsule_number}
+            </span>
+          ) : (
+            <span className="assigned-code">|&nbsp;&nbsp;capsule number</span>
+          )}
         </div>
         <div className="copy-container">
           <img src={Copyimg} alt="복사하기" className="copy-img" />
           <CopyToClipboard
-            text={location.state.capsule_number}
+            text={location.state?.capsule_number}
             onCopy={handleCopyClick}
           >
             <span className="copy">복사</span>
@@ -91,18 +95,24 @@ const URLnCodeAssignment = () => {
       <div className="url-box">
         <div className="url">롤링페이퍼 URL</div>
         <div className="url-copy-container">
-          <span className="assigned-url">{location.state.capsule_url}</span>
-          <img src={Copyimg} alt="복사하기" className="copy-img" />
-          <CopyToClipboard
-            text={location.state.capsule_url}
-            onCopy={handleCopyUrlClick}
-          >
-            <span className="copy">복사</span>
-          </CopyToClipboard>
+          {location.state && location.state.capsule_url ? (
+            <>
+              <span className="assigned-url">{location.state.capsule_url}</span>
+              <img src={Copyimg} alt="복사하기" className="copy-img" />
+              <CopyToClipboard
+                text={location.state.capsule_url}
+                onCopy={handleCopyUrlClick}
+              >
+                <span className="copy">복사</span>
+              </CopyToClipboard>
+            </>
+          ) : (
+            <span className="assigned-url">No URL available</span>
+          )}
         </div>
       </div>
       <div className="guide-box">
-        <p className="guide-title">&nbsp;&nbsp;꼭 읽어보세요!</p>
+        <p className="guide-title">&nbsp;&nbsp;캡슐번호와 비밀번호</p>
         <p className="guide-content">
           &nbsp;&nbsp;&nbsp;• 캡슐 번호는 홈 화면에서 "타임캡슐 확인하기"를 통해
           다시 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;확인하실 수 있습니다.
