@@ -74,7 +74,11 @@ export default function Home() {
 
   //만들기 버튼 누를시
   const handleSetting = () => {
-    navigate("/capsule/settings/theme");
+    navigate("/capsule/settings/theme", {
+      state: {
+        sender: userNickname,
+      },
+    });
   };
 
   //내가 만든 타임캡슐 버튼 누를시(팝업창)

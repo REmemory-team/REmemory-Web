@@ -18,7 +18,7 @@ export default function Record() {
   const [audioUrl, setAudioUrl] = useState("");
   const [playAudio, setPlayAudio] = useState();
   const [nowTheme, setNowTheme] = useState("");
-  const [nowPurpose, setNowPurpose] = useState("1");
+  const [nowPurpose, setNowPurpose] = useState("");
   const [capsule_number, setCapsule_number] = useState("");
   const [audioState, setaudioState] = useState(false);
   const location = useLocation();
@@ -34,50 +34,38 @@ export default function Record() {
     setCapsule_number(receivedData.capsule_number);
   }, []);
 
-  //파일 아이콘 누를시
   const attachAudio = () => {
     const fileInput = document.getElementById("audioFileInput");
     fileInput.click();
   };
 
-  //오디오 파일 업로드
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     setAudioUrl(file);
     setPlayAudio(null);
   };
 
-  //사용자가 음성 녹음을 시작할 때
   const onRecAudio = () => {
-    // setDisabled(true); //녹음 중 재생 버튼 비활성화
-
-    //AudioContext 객체 생성
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    //오디오 분석기 생성
     const analyser = audioCtx.createScriptProcessor(0, 1, 1);
     setAnalyser(analyser);
 
     function makeSound(stream) {
-      //마이크를 통해 발생한 오디오 스트림
       const source = audioCtx.createMediaStreamSource(stream);
       setSource(source);
-      //오디오 스트림을 오디오 분석기와 연결
       source.connect(analyser);
-      //오디오 분석기와 오디오 스피커 연결
       analyser.connect(audioCtx.destination);
     }
 
-    //마이크 사용 권한 획득
     navigator.mediaDevices
       .getUserMedia({ audio: true })
       .then((stream) => {
         const mediaRecorder = new MediaRecorder(stream);
-        mediaRecorder.start(); //녹음 시작
-        setStream(stream); //현재 마이크 스트림 저장
-        setMedia(mediaRecorder); //현재 녹음기 객체 저장
-        makeSound(stream); //마이크 스트림을 사용하여 오디오 처리
+        mediaRecorder.start(); 
+        setStream(stream);
+        setMedia(mediaRecorder);
+        makeSound(stream);
 
-        //녹음 시작시 onRec 상태 변경
         analyser.onaudioprocess = function (e) {
           setOnRec(false);
         };
@@ -87,7 +75,6 @@ export default function Record() {
       });
   };
 
-  //사용자가 음성 녹음을 중지할 때
   const offRecAudio = () => {
     media.ondataavailable = function (e) {
       setAudioUrl(e.data);
@@ -95,19 +82,16 @@ export default function Record() {
       setPlayAudio(null);
     };
 
-    //마이크 해제
     stream.getAudioTracks().forEach(function (track) {
       track.stop();
     });
 
-    //녹음기 중지
     media.stop();
 
     analyser.disconnect();
     source.disconnect();
   };
 
-  //재생 버튼
   const play = () => {
     if (playAudio) {
       if (playAudio.paused) {
@@ -132,7 +116,6 @@ export default function Record() {
     }
   };
 
-  //작성 완료 버튼
   const decisionBtnHandler = () => {
     const formData = new FormData();
     if (audioUrl) {
@@ -190,7 +173,6 @@ export default function Record() {
     }
   };
 
-  //재생바 보여주기
   useEffect(() => {
     const bold = document.querySelector(".bold");
     if (playAudio) {
