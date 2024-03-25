@@ -9,7 +9,7 @@ import axios from "axios";
 import fileIcon from "../assets/voice_file.png";
 
 export default function Record() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  //const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [stream, setStream] = useState();
   const [media, setMedia] = useState();
   const [onRec, setOnRec] = useState(true);
@@ -17,18 +17,18 @@ export default function Record() {
   const [analyser, setAnalyser] = useState("");
   const [audioUrl, setAudioUrl] = useState("");
   const [playAudio, setPlayAudio] = useState();
-  const [nowTheme, setNowTheme] = useState("1");
-  const [nowPurpose, setNowPurpose] = useState("");
+  const [nowTheme, setNowTheme] = useState("");
+  const [nowPurpose, setNowPurpose] = useState("1");
   const [capsule_number, setCapsule_number] = useState("");
+  const [audioState, setaudioState] = useState(false);
   const location = useLocation();
   const receivedData = location.state;
   const dear_name = receivedData.dear_name;
   const navigate = useNavigate("");
   // const userId = sessionStorage.getItem("userId");
 
-  //테마 정보
   useEffect(() => {
-    setIsLoggedIn(false);
+    //setIsLoggedIn(false);
     setNowPurpose(receivedData.purpose);
     setNowTheme(receivedData.theme);
     setCapsule_number(receivedData.capsule_number);
@@ -111,31 +111,25 @@ export default function Record() {
   const play = () => {
     if (playAudio) {
       if (playAudio.paused) {
-        //오디오가 일시 정지된 상태=> 멈춘 지점부터 다시 재생
         playAudio.play();
+        setaudioState(true);
       } else {
-        //오디오가 재생 중인 상태=> 멈춤
         playAudio.pause();
+        setaudioState(false);
       }
     } else {
       if (audioUrl) {
         const newAudio = new Audio(URL.createObjectURL(audioUrl));
         newAudio.loop = false;
         newAudio.volume = 1;
-        // newAudio.onended = () => setDisabled(false);
-        // setDisabled(true);
+        newAudio.onended = () => setaudioState(false);
         newAudio.play();
+        setaudioState(true);
         setPlayAudio(newAudio); //현재 재생 중인 오디오 업데이트
       } else {
         alert("실행 가능한 녹음 파일이 없습니다");
-        // setDisabled(false);
       }
     }
-  };
-
-  //파일 변환, 전송
-  const tempRecording = () => {
-    window.alert("임시저장 되었습니다.");
   };
 
   //작성 완료 버튼
@@ -161,9 +155,7 @@ export default function Record() {
             )
             .then((response) => {
               console.log("서버응답:", response);
-              navigate("/capsule/assign-number", {
-                state: { capsule_number: capsule_number },
-              });
+              navigate("/"); //편지 작성 완료 화면으로
             })
             .catch((error) => {
               window.alert("오류:", error);
@@ -186,7 +178,7 @@ export default function Record() {
             )
             .then((response) => {
               console.log("서버응답:", response);
-              navigate("/");
+              navigate("/"); //편지 작성 완료 화면으로
             })
             .catch((error) => {
               console.error("오류:", error);
@@ -214,11 +206,6 @@ export default function Record() {
 
   return (
     <div className={`recording_page theme${nowTheme}`}>
-      {isLoggedIn && (
-        <button className="temp_save_button" onClick={tempRecording}>
-          임시저장
-        </button>
-      )}
       <div className={`recording_box theme${nowTheme}`}>
         <div className="icon_container">
           <div className={`dear_capsule theme${nowTheme}`}>
@@ -228,15 +215,16 @@ export default function Record() {
             <img
               src={require(`../assets/Recording_icon${nowTheme}.png`)}
               alt="마이크 아이콘"
-              style={{
-                transition: "transform 0.8s ease",
-                transform: onRec ? "scale(1)" : "scale(1.1)", //녹음 중 이미지 확대
-              }}
+              className={onRec ? "mic_icon" : "mic_icon moving"}
             />
           </div>
           <img
-            src={require(`../assets/play_btn${nowTheme}.png`)}
-            alt="재생 아이콘"
+            src={
+              audioState
+                ? require(`../assets/pause_btn${nowTheme}.png`)
+                : require(`../assets/play_btn${nowTheme}.png`)
+            }
+            alt={audioState ? "정지 버튼" : "재생 버튼"}
             id="play_button"
             onClick={!onRec ? null : play}
           />

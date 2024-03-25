@@ -13,8 +13,6 @@ import capsuleImg2 from "../assets/capsule_list2.png";
 import capsuleImg3 from "../assets/capsule_list3.png";
 import capsuleImg4 from "../assets/capsule_list4.png";
 import capsuleImg5 from "../assets/capsule_list5.png";
-import capsuleImg6 from "../assets/capsule_list6.png";
-import capsuleImg7 from "../assets/capsule_list7.png";
 import closeIcon from "../assets/icon_x.svg";
 import icon_menu from "../assets/icon_menu.png";
 import starIcon from "../assets/Vector.svg";
@@ -34,8 +32,6 @@ export default function Home() {
     capsuleImg3,
     capsuleImg4,
     capsuleImg5,
-    capsuleImg6,
-    capsuleImg7,
   ];
   const maxCapsule = 50;
 
