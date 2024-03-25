@@ -7,12 +7,14 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import ListItem from "../components/CapsuleListItem.jsx";
 import Menu from "../components/Menu";
-import axios from "axios";
+//import axios from "axios";
 import capsuleImg1 from "../assets/capsule_list1.png";
 import capsuleImg2 from "../assets/capsule_list2.png";
 import capsuleImg3 from "../assets/capsule_list3.png";
 import capsuleImg4 from "../assets/capsule_list4.png";
 import capsuleImg5 from "../assets/capsule_list5.png";
+import capsuleImg6 from "../assets/capsule_list6.png";
+import capsuleImg7 from "../assets/capsule_list7.png";
 import closeIcon from "../assets/icon_x.svg";
 import icon_menu from "../assets/icon_menu.png";
 import starIcon from "../assets/Vector.svg";
@@ -32,17 +34,20 @@ export default function Home() {
     capsuleImg3,
     capsuleImg4,
     capsuleImg5,
+    capsuleImg6,
+    capsuleImg7,
   ];
   const maxCapsule = 50;
 
-  const token = sessionStorage.getItem("token");
-  const userId = sessionStorage.getItem("userId");
-  const userNickname = sessionStorage.getItem("nickname");
+  //const token = sessionStorage.getItem("token");
+  //const userId = sessionStorage.getItem("userId");
+  //const userNickname = sessionStorage.getItem("nickname");
+  const userNickname = location.state.nickname;
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (popupOpen) {
       //캡슐 목록 받아오기
-      axios
+      /*axios
         .get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve/all`, {
           params: {
             userId: userId,
@@ -58,8 +63,10 @@ export default function Home() {
         .catch((error) => {
           console.error("팝업-오류:", error);
         });
+
     }
   }, [popupOpen, token, userId]);
+  */
 
   //홈화면 메뉴
   const menuHandler = () => {
@@ -71,13 +78,17 @@ export default function Home() {
 
   //만들기 버튼 누를시
   const handleSetting = () => {
-    //타임캡슐 만들기로 라우팅
     navigate("/capsule/settings/theme");
   };
 
-  //확인하기 버튼 누를시(팝업창)
+  //내가 만든 타임캡슐 버튼 누를시(팝업창)
   const handleChecking = () => {
     setPopupOpen(true);
+  };
+
+  //캡슐번호로 타임캡슐 확인 버튼 누를시
+  const handleInputNumber = () => {
+    navigate("/capsule/input-number");
   };
 
   //팝업창 닫기
@@ -99,20 +110,22 @@ export default function Home() {
           <Menu menuHandler={menuHandler} />
         </div>
       )}
+
       <div className="image_box">
         <div className="capsule_image"></div>
         <span>?</span>
       </div>
-
-      <div className="button_making">
-        <button className="home_btn" onClick={handleSetting}>
-          타임캡슐 만들기
-        </button>
-      </div>
-      <div className="button_checking">
-        <button className="home_btn" onClick={handleChecking}>
-          타임캡슐 확인하기
-        </button>
+      
+      <div className="button_box">
+          <button className="home_btn button_main" onClick={handleSetting}>
+            타임캡슐 만들기
+          </button>
+          <button className="home_btn button_main" onClick={handleChecking}>
+            내가 만든 타임캡슐
+          </button>
+          <button className="home_btn button_input_number" onClick={handleInputNumber}>
+            캡슐번호로 타임캡슐 확인
+          </button>
       </div>
 
       {popupOpen && (
