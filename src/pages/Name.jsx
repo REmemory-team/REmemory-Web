@@ -41,13 +41,29 @@ export default function Name() {
   const isValidNumberInput = (value) => {
     return /^\d*$/.test(value);
   };
-  // 사용자가 입력한 날짜가 현재 날짜 이후인지 확인
+  // 사용자가 입력한 날짜가 현재 날짜 이후인지 확인 (오늘도 포함)
   const isPastDate = (inputYear, inputMonth, inputDay) => {
     const currentDate = new Date();
     const inputDate = new Date(inputYear, inputMonth - 1, inputDay);
 
-    return inputDate <= currentDate;
+    // 현재 날짜의 시간 부분을 모두 0으로 설정
+    const currentWithoutTime = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      currentDate.getDate()
+    );
+    // 입력한 날짜의 시간 부분을 모두 0으로 설정
+    const inputWithoutTime = new Date(
+      inputDate.getFullYear(),
+      inputDate.getMonth(),
+      inputDate.getDate()
+    );
+    console.log(inputWithoutTime);
+    console.log(currentWithoutTime);
+
+    return inputWithoutTime < currentWithoutTime;
   };
+
   // 날짜 유효성 검사
   const isValidDate = (inputYear, inputMonth, inputDay) => {
     const year = parseInt(inputYear, 10);
@@ -106,7 +122,7 @@ export default function Name() {
     }
     // 사용자가 입력한 날짜가 과거인지 확인
     if (isPastDate(year, month, day)) {
-      alert("캡슐 오픈 시기는 내일 이후로 설정해주세요!");
+      alert("캡슐 오픈 시기는 오늘 이후로 설정해주세요!");
       return;
     }
     navigate("/capsule/settings/confirm", {

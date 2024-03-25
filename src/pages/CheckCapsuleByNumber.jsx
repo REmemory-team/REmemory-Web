@@ -29,64 +29,74 @@ export default function CheckCapsuleByNumber() {
 
   // 확인 버튼 누르면 실행되는 함수
   const confirmBtnHandler = () => {
-    if (!capsuleNum) {
-      alert("캡슐번호를 입력해주세요.");
-      return;
-    }
-    if (!password) {
-      alert("비밀번호를 입력해주세요.");
-      return;
-    }
-    // 서버에 캡슐 번호와 비밀번호 전송
-    // 서버로부터 캡슐 번호, 캡슐 이름, 오픈 날짜, 받는 사람, 테마, 상태 정보 받아와 캡슐 확인페이지로 전달
-    axios
-      .get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve`, {
-        params: {
-          capsule_number: capsuleNum,
-          capsule_password: password,
-        },
-      })
-      .then((response) => {
-        if (response.status === 200) {
-          if (response.data.result.pcapsules) {
-            navigate("/capsule/verify", {
-              state: {
-                capsule_number: response.data.result.pcapsules.capsule_number,
-                password: password,
-                pcapsule_name: response.data.result.pcapsules.pcapsule_name,
-                open_date: response.data.result.pcapsules.open_date,
-                dear_name: response.data.result.pcapsules.dear_name,
-                theme: response.data.result.pcapsules.theme,
-                content_type: response.data.result.pcapsules.content_type,
-                status: response.data.result.pcapsules.status,
-              },
-            });
-          } else {
-            navigate("/capsule/verify", {
-              state: {
-                capsule_number: response.data.result.rcapsules.capsule_number,
-                password: password,
-                rcapsule_name: response.data.result.rcapsules.pcapsule_name,
-                open_date: response.data.result.rcapsules.open_date,
-                dear_name: response.data.result.rcapsules.dear_name,
-                theme: response.data.result.rcapsules.theme,
-                rcapsule_cnt: response.data.result.rcapsules.rcapsule_cnt,
-                status: response.data.result.rcapsules.status,
-              },
-            });
-          }
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-        if (error.response.status === 404) {
-          alert("캡슐을 찾을 수 없습니다.");
-        } else if (error.response.status === 400) {
-          alert(error.response.data.message);
-        } else {
-          alert("오류가 발생했습니다.");
-        }
-      });
+    // if (!capsuleNum) {
+    //   alert("캡슐번호를 입력해주세요.");
+    //   return;
+    // }
+    // if (!password) {
+    //   alert("비밀번호를 입력해주세요.");
+    //   return;
+    // }
+    // axios
+    //   .get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve`, {
+    //     params: {
+    //       capsule_number: capsuleNum,
+    //       capsule_password: password,
+    //     },
+    //   })
+    //   .then((response) => {
+    //     if (response.status === 200) {
+    //       if (response.data.result.pcapsules) {
+    //         navigate("/capsule/verify", {
+    //           state: {
+    //             capsule_number: response.data.result.pcapsules.capsule_number,
+    //             password: password,
+    //             pcapsule_name: response.data.result.pcapsules.pcapsule_name,
+    //             open_date: response.data.result.pcapsules.open_date,
+    //             dear_name: response.data.result.pcapsules.dear_name,
+    //             theme: response.data.result.pcapsules.theme,
+    //             content_type: response.data.result.pcapsules.content_type,
+    //             status: response.data.result.pcapsules.status,
+    //           },
+    //         });
+    //       } else {
+    //         navigate("/capsule/verify", {
+    //           state: {
+    //             capsule_number: response.data.result.rcapsules.capsule_number,
+    //             password: password,
+    //             rcapsule_name: response.data.result.rcapsules.pcapsule_name,
+    //             open_date: response.data.result.rcapsules.open_date,
+    //             dear_name: response.data.result.rcapsules.dear_name,
+    //             theme: response.data.result.rcapsules.theme,
+    //             rcapsule_cnt: response.data.result.rcapsules.rcapsule_cnt,
+    //             status: response.data.result.rcapsules.status,
+    //           },
+    //         });
+    //       }
+    //     }
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //     if (error.response.status === 404) {
+    //       alert("캡슐을 찾을 수 없습니다.");
+    //     } else if (error.response.status === 400) {
+    //       alert(error.response.data.message);
+    //     } else {
+    //       alert("오류가 발생했습니다.");
+    //     }
+    //   });
+    navigate("/capsule/verify", {
+      state: {
+        capsule_number: "testMember1_74177",
+        password: "123456",
+        pcapsule_name: "test 중인 캡슐1",
+        open_date: "2024-02-12T15:00:00.000Z",
+        dear_name: "위트",
+        theme: 1,
+        content_type: 1,
+        status: "OPENED",
+      },
+    });
   };
 
   return (
