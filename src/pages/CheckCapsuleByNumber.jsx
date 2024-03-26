@@ -92,7 +92,7 @@ export default function CheckCapsuleByNumber() {
         pcapsule_name: "test 중인 캡슐1",
         open_date: "2024-02-12T15:00:00.000Z",
         dear_name: "위트",
-        theme: 1,
+        theme: 3,
         content_type: 1,
         status: "OPENED",
       },
