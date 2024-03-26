@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import ListItem from "../components/CapsuleListItem.jsx";
 import Menu from "../components/Menu";
-//import axios from "axios";
+import axios from "axios";
 import capsuleImg1 from "../assets/capsule_list1.png";
 import capsuleImg2 from "../assets/capsule_list2.png";
 import capsuleImg3 from "../assets/capsule_list3.png";
@@ -40,17 +40,17 @@ export default function Home() {
   //const userNickname = sessionStorage.getItem("nickname");
   const userNickname = location.state.nickname;
 
-  /*useEffect(() => {
+  useEffect(() => {
     if (popupOpen) {
       //캡슐 목록 받아오기
-      /*axios
+      axios
         .get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve/all`, {
           params: {
-            userId: userId,
+            userId: 10,
           },
-          headers: {
-            authorization: `Bearer ${token}`,
-          },
+          // headers: {
+          //   authorization: `Bearer ${token}`,
+          // },
         })
         .then((response) => {
           console.log("팝업-서버응답:", response);
@@ -59,10 +59,8 @@ export default function Home() {
         .catch((error) => {
           console.error("팝업-오류:", error);
         });
-
     }
-  }, [popupOpen, token, userId]);
-  */
+  }, [popupOpen]);
 
   //홈화면 메뉴
   const menuHandler = () => {
@@ -115,17 +113,20 @@ export default function Home() {
         <div className="capsule_image"></div>
         <span>?</span>
       </div>
-      
+
       <div className="button_box">
-          <button className="home_btn button_main" onClick={handleSetting}>
-            타임캡슐 만들기
-          </button>
-          <button className="home_btn button_main" onClick={handleChecking}>
-            내가 만든 타임캡슐
-          </button>
-          <button className="home_btn button_input_number" onClick={handleInputNumber}>
-            캡슐번호로 타임캡슐 확인
-          </button>
+        <button className="home_btn button_main" onClick={handleSetting}>
+          타임캡슐 만들기
+        </button>
+        <button className="home_btn button_main" onClick={handleChecking}>
+          내가 만든 타임캡슐
+        </button>
+        <button
+          className="home_btn button_input_number"
+          onClick={handleInputNumber}
+        >
+          캡슐번호로 타임캡슐 확인
+        </button>
       </div>
 
       {popupOpen && (

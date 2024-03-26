@@ -87,7 +87,7 @@ export default function CheckCapsuleByNumber() {
     //   });
     navigate("/capsule/verify", {
       state: {
-        capsule_number: "testMember1_74177",
+        capsule_number: "리메모리_72297",
         password: "123456",
         pcapsule_name: "test 중인 캡슐1",
         open_date: "2024-02-12T15:00:00.000Z",
