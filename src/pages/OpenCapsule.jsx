@@ -86,7 +86,7 @@ const OpenCapsule = () => {
   };
   const checkCapsule = () => {
     axios
-      .get("https://dev.mattie3e.store/capsule/retrieve/detail", {
+      .get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve/detail`, {
         params: {
           capsule_number: location.state.capsule_number,
           capsule_password: location.state.password,
