@@ -54,6 +54,7 @@ export default function RecipientInput() {
         )
         .then((response) => {
           if (response.status === 200) {
+            console.log(response);
             navigate("/capsule/assign-number-url", {
               state: {
                 capsule_number: response.data.result.capsule_number,

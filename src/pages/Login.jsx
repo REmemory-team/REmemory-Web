@@ -83,7 +83,7 @@ const Login = () => {
   };
 
   const Login = () => {
-    navigate("/login/kakao/home");
+    navigate("/login/kakao/home", { state: { nickname: "닉네임" } });
   };
   //kakaoLogin
   return (
