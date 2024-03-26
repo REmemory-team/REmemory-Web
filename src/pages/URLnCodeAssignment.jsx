@@ -40,7 +40,7 @@ const URLnCodeAssignment = () => {
         .then((response) => {
           if (response.status === 200) {
             window.alert("타입캡슐이 성공적으로 생성되었습니다!");
-            navigate("/login/kakao/home");
+            navigate("/login/kakao/home", { state: { nickname: "리메모리" } });
           }
         })
         .catch((error) => {
