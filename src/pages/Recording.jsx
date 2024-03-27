@@ -61,7 +61,7 @@ export default function Record() {
       .getUserMedia({ audio: true })
       .then((stream) => {
         const mediaRecorder = new MediaRecorder(stream);
-        mediaRecorder.start(); 
+        mediaRecorder.start();
         setStream(stream);
         setMedia(mediaRecorder);
         makeSound(stream);
