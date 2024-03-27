@@ -138,7 +138,9 @@ export default function Record() {
             )
             .then((response) => {
               console.log("서버응답:", response);
-              navigate("/"); //편지 작성 완료 화면으로
+              navigate("/capsule/assign-number", {
+                state: { capsule_number: capsule_number },
+              });
             })
             .catch((error) => {
               window.alert("오류:", error);

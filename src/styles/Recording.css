@@ -172,11 +172,11 @@
     #fff;
 }
 .recording_page.theme3 {
-  background: linear-gradient(180deg, #6a88c2 27.78%, #c1c6f3 100%), #fff;
-}
-.recording_page.theme4 {
   background: linear-gradient(180deg, rgba(255, 237, 251, 0) 0%, #fee1f7 100%),
     #fff;
+}
+.recording_page.theme4 {
+  background: linear-gradient(180deg, #CDB8AC 0.01%, rgba(205, 184, 172, 0.20) 94.18%), #FFF;
 }
 .recording_page.theme5 {
   background: linear-gradient(180deg, #A5C8D3 0.01%, rgba(165, 200, 211, 0.20) 94.18%), #FFF;
@@ -250,7 +250,7 @@
 
 /* 크리스마스, 어버이날 테마
 .recording_page.theme3 {
-  background: linear-gradient(180deg, #CDB8AC 0.01%, rgba(205, 184, 172, 0.20) 94.18%), #FFF;
+  background: linear-gradient(180deg, #6a88c2 27.78%, #c1c6f3 100%), #fff;
 }
 .recording_page.theme5 {
   background: linear-gradient(
