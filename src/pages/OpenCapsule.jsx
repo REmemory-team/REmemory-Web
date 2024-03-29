@@ -48,8 +48,8 @@ const OpenCapsule = () => {
   }
 
   const userNickname = sessionStorage.getItem("nickname");
-
   useEffect(() => {
+    console.log(location.state.open_date);
     if (status !== "OPENED") {
       const targetDate = new Date(location.state.open_date);
 

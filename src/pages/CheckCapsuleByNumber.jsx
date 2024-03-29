@@ -85,18 +85,18 @@ export default function CheckCapsuleByNumber() {
           alert("오류가 발생했습니다.");
         }
       });
-    // navigate("/capsule/verify", {
-    //   state: {
-    //     capsule_number: "리메모리_61624",
-    //     password: "123456",
-    //     pcapsule_name: "test 중인 캡슐1",
-    //     open_date: "2024-02-12T15:00:00.000Z",
-    //     dear_name: "위트",
-    //     theme: 4,
-    //     content_type: 1,
-    //     status: "OPENED",
-    //   },
-    // });
+    navigate("/capsule/verify", {
+      state: {
+        capsule_number: "리메모리_32926",
+        password: "123456",
+        pcapsule_name: "test 중인 캡슐1",
+        open_date: "2024-02-12T15:00:00.000Z",
+        dear_name: "위트",
+        theme: 4,
+        content_type: 1,
+        status: "OPENED",
+      },
+    });
   };
 
   return (
