@@ -155,7 +155,7 @@ const OpenCapsule = () => {
         </div>
       )}
       <div className="container">
-        { isPcapsule && (
+        { !isPcapsule && (
           <div className="numberOfLetters">
             <p>작성된 편지 : </p>
             <p className="counter">{tens}</p>
