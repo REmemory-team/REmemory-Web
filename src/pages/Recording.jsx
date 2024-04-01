@@ -163,7 +163,7 @@ export default function Record() {
             )
             .then((response) => {
               console.log("서버응답:", response);
-              navigate("/"); //편지 작성 완료 화면으로
+              navigate("/capsule/write/Complete"); //편지 작성 완료 화면으로
             })
             .catch((error) => {
               console.error("오류:", error);

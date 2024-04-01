@@ -21,12 +21,12 @@ const Write = () => {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
   const location = useLocation();
-  
+
   const [receivedState, setReceivedState] = useState({
     dear_name: "",
     theme: 1,
     purpose: "",
-    capsule_number: ""
+    capsule_number: "",
   });
 
   const [state, setState] = useState({
@@ -34,49 +34,55 @@ const Write = () => {
     contents: [{ type: "text", content: "" }],
     align_type: "left",
   });
-  
+
   const [cursor, setCursor] = useState({
     pos: null,
     index: null,
   });
 
-  useEffect(()=>{
+  useEffect(() => {
     setReceivedState(location.state);
     setState({
       ...state,
       capsule_number: location.state.capsule_number,
-    })
+    });
   }, [location]);
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     resizeTextarea(state.contents);
   }, [state]);
 
   const handleSubmit = async () => {
     if (window.confirm("작성을 끝낼까요?")) {
-      try{
-        if(location.state.purpose === "rollingPaper"){
+      try {
+        if (location.state.purpose === "rollingPaper") {
           const data = {
             ...state,
             from_name: location.state.from_name,
-          }
-          await axios.post(`${process.env.REACT_APP_API_BASE_URL}/rcapsule/create/text_image`, data);   
-          navigate('/');       
-        } else{          
-          await axios.post(`${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/text_image`, state);
-          navigate(`/capsule/assign-number`,{
+          };
+          await axios.post(
+            `${process.env.REACT_APP_API_BASE_URL}/rcapsule/create/text_image`,
+            data
+          );
+          navigate("/capsule/write/Complete");
+        } else {
+          await axios.post(
+            `${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/text_image`,
+            state
+          );
+          navigate(`/capsule/assign-number`, {
             state: { capsule_number: state.capsule_number },
           });
         }
-      }catch(err){
-          alert(err.response.data.message);
+      } catch (err) {
+        alert(err.response.data.message);
       }
     }
   };
 
   //textarea 길이 조정
   const autoResizeTextarea = (e, index) => {
-    setCursor({pos: e.target.selectionStart, index: index});
+    setCursor({ pos: e.target.selectionStart, index: index });
     let textarea = document.querySelector(`.index${e.target.id}`);
     if (textarea) {
       textarea.style.height = "0";
@@ -85,10 +91,10 @@ const Write = () => {
     }
   };
   const resizeTextarea = (contents) => {
-    for(let i=0; i<contents.length; i++){
-      if(state.contents[i].type === "text"){
-        if(document.getElementById(`${i}`)){
-          document.getElementById(`${i}`).value = contents[i].content;        
+    for (let i = 0; i < contents.length; i++) {
+      if (state.contents[i].type === "text") {
+        if (document.getElementById(`${i}`)) {
+          document.getElementById(`${i}`).value = contents[i].content;
           let textarea = document.querySelector(`.index${i}`);
           if (textarea) {
             textarea.style.height = "0";
@@ -98,7 +104,7 @@ const Write = () => {
         }
       }
     }
-  }
+  };
 
   //이미지 첨부
   const addItem = () => {
@@ -118,7 +124,12 @@ const Write = () => {
       //선택한 파일 읽기
       const reader = new FileReader();
       //편지 맨 뒤에 이미지 삽입하는 경우
-      if(cursor.pos === null || (cursor.index === (state.contents.length-1) && state.contents[cursor.index].content.substring(cursor.pos).length === 0)){
+      if (
+        cursor.pos === null ||
+        (cursor.index === state.contents.length - 1 &&
+          state.contents[cursor.index].content.substring(cursor.pos).length ===
+            0)
+      ) {
         reader.onload = (event) => {
           newArray.push({ type: "image", content: event.target.result });
           newArray.push({ type: "text", content: "" });
@@ -132,45 +143,72 @@ const Write = () => {
         if (state.contents[state.contents.length - 1].content.length === 0) {
           newArray.splice(newArray.length - 1, 1);
         }
-      }else{
-        const textBeforeClick = state.contents[cursor.index].content.substring(0, cursor.pos);
-        const textAfterClick = state.contents[cursor.index].content.substring(cursor.pos);
+      } else {
+        const textBeforeClick = state.contents[cursor.index].content.substring(
+          0,
+          cursor.pos
+        );
+        const textAfterClick = state.contents[cursor.index].content.substring(
+          cursor.pos
+        );
         reader.onload = (event) => {
-          if(textBeforeClick.length !== 0 && textAfterClick.length !== 0){ //텍스트 사이에 이미지 삽입의 경우
-            newArray.splice(cursor.index, 1, {type: "text", content: textBeforeClick});
-            newArray.splice(cursor.index+1, 0, {type: "text", content: textAfterClick});
-            newArray.splice(cursor.index+1, 0, { type: "image", content: event.target.result });
-          }else if(textBeforeClick.length === 0){ //텍스트 맨 앞에 이미지 삽입의 경우
-            if(cursor.index === 0){ //편지 최상단
+          if (textBeforeClick.length !== 0 && textAfterClick.length !== 0) {
+            //텍스트 사이에 이미지 삽입의 경우
+            newArray.splice(cursor.index, 1, {
+              type: "text",
+              content: textBeforeClick,
+            });
+            newArray.splice(cursor.index + 1, 0, {
+              type: "text",
+              content: textAfterClick,
+            });
+            newArray.splice(cursor.index + 1, 0, {
+              type: "image",
+              content: event.target.result,
+            });
+          } else if (textBeforeClick.length === 0) {
+            //텍스트 맨 앞에 이미지 삽입의 경우
+            if (cursor.index === 0) {
+              //편지 최상단
               newArray.unshift({ type: "image", content: event.target.result });
-            } else{
-              newArray.splice(cursor.index-1, 0, { type: "image", content: event.target.result });
+            } else {
+              newArray.splice(cursor.index - 1, 0, {
+                type: "image",
+                content: event.target.result,
+              });
             }
-          }else{ //텍스트 맨 뒤에 이미지 삽입의 경우
-            newArray.splice(cursor.index+1, 0, { type: "image", content: event.target.result });
+          } else {
+            //텍스트 맨 뒤에 이미지 삽입의 경우
+            newArray.splice(cursor.index + 1, 0, {
+              type: "image",
+              content: event.target.result,
+            });
           }
           setState({
             ...state,
             contents: newArray,
           });
           resizeTextarea(state.contents);
-        }
+        };
         reader.readAsDataURL(selectedFile);
       }
-      setCursor({pos: null, index: null});
+      setCursor({ pos: null, index: null });
     }
   };
- 
+
   //이미지 삭제
   const deleteImage = (index) => {
     if (window.confirm("이미지를 삭제할까요?")) {
       const newItems = state.contents;
       //앞뒤 content가 둘 다 text인 경우 병합
-      if(index !== 0 && newItems[index-1].type === "text" && newItems[index+1].type === "text"){
+      if (
+        index !== 0 &&
+        newItems[index - 1].type === "text" &&
+        newItems[index + 1].type === "text"
+      ) {
         newItems[index - 1].content += newItems[index + 1].content;
         newItems.splice(index, 2);
-      }
-      else{
+      } else {
         newItems.splice(index, 1);
       }
       setState({
@@ -235,7 +273,9 @@ const Write = () => {
               {item.type === "text" ? (
                 <textarea
                   value={item.content}
-                  onClick={(e)=>{setCursor({pos: e.target.selectionStart, index: index})}}
+                  onClick={(e) => {
+                    setCursor({ pos: e.target.selectionStart, index: index });
+                  }}
                   onChange={(e) => handleContentChange(index, e.target.value)}
                   className={`${state.align_type} index${index}`}
                   placeholder="여기에 작성하세요."
@@ -273,7 +313,11 @@ const Write = () => {
               className="btn_align"
               onClick={changeAlignType}
               alt=""
-              src={receivedState.theme !== 3 ? icon_alignLeft : icon_alignLeft_white}
+              src={
+                receivedState.theme !== 3
+                  ? icon_alignLeft
+                  : icon_alignLeft_white
+              }
             />
           )}
           {state.align_type === "center" && (
@@ -281,7 +325,11 @@ const Write = () => {
               className="btn_align"
               onClick={changeAlignType}
               alt=""
-              src={receivedState.theme !== 3 ? icon_alignCenter : icon_alignCenter_white}
+              src={
+                receivedState.theme !== 3
+                  ? icon_alignCenter
+                  : icon_alignCenter_white
+              }
             />
           )}
           {state.align_type === "right" && (
@@ -289,7 +337,11 @@ const Write = () => {
               className="btn_align"
               onClick={changeAlignType}
               alt=""
-              src={receivedState.theme !== 3 ? icon_alignRight : icon_alignRight_white}
+              src={
+                receivedState.theme !== 3
+                  ? icon_alignRight
+                  : icon_alignRight_white
+              }
             />
           )}
         </div>

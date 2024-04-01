@@ -1,0 +1,118 @@
+.CompleteWriting {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #aa9acc 45.83%),
+    linear-gradient(180deg, #bed5f9 0%, #aa9acc 100%);
+}
+
+/*top buttons*/
+.CompleteWriting .btn_top {
+  position: absolute;
+  top: 0;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CompleteWriting .btn_top img {
+  cursor: pointer;
+  width: 1.25rem;
+  height: 1rem;
+}
+
+.CompleteWriting .btn_top img:first-child {
+  width: 1.6rem;
+  height: 1.4rem;
+}
+
+.CompleteWriting .menu {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  background-color: #5e4e80;
+  z-index: 1;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  animation: fade-in 0.25s forwards;
+}
+
+.CompleteWriting .menu.false {
+  animation: fade-out 0.5s forwards;
+}
+/*btn*/
+.CompleteWriting .btn {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+.CompleteWriting .btn img {
+  position: absolute;
+}
+.CompleteWriting .btn p {
+  position: absolute;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+/*tema*/
+.CompleteWriting.theme2 {
+  background: linear-gradient(
+      180deg,
+      rgba(244, 229, 145, 0.3) 0%,
+      #ecd862 48.61%,
+      rgba(244, 163, 145, 0.85) 85.07%
+    ),
+    #fff;
+}
+
+.CompleteWriting.theme3 {
+  background: linear-gradient(180deg, rgba(96, 87, 115, 0) 0%, #6a88c2 60.42%),
+    #fff;
+}
+
+.CompleteWriting.theme4 {
+  background: linear-gradient(180deg, rgba(255, 163, 233, 0) 0%, #b474a5 100%),
+    #fff;
+}
+
+.CompleteWriting.theme5 {
+  background: linear-gradient(
+      180deg,
+      #e7aaa6 18.92%,
+      rgba(115, 163, 98, 0.6) 91.15%
+    ),
+    #fff;
+}
+
+.CompleteWriting.theme6 {
+  background: linear-gradient(180deg, #efeae7 17.17%, #b09888 81.67%), #fff;
+}
+
+.CompleteWriting.theme7 {
+  background: linear-gradient(180deg, rgba(165, 200, 211, 0.2) 0%, #a5c8d3 95%),
+    #fff;
+}
+
+.CompleteWriting .numberOfLetters {
+  color: #e7a495;
+}
+
+.CompleteWriting .img_isOpened_true {
+  background-image: url("../assets/image_openedCapsule.png");
+}
+
+.CompleteWriting .img_isOpened_false {
+  background-image: url("../assets/image_unopenedCapsule.png");
+}
+
+.CompleteWriting .ellipses_false .ellipse {
+  background-image: url("../assets/image_ellipse.png");
+}

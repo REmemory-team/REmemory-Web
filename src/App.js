@@ -24,6 +24,7 @@ import Theme from "./pages/Theme.jsx";
 import URLnCodeAssignment from "./pages/URLnCodeAssignment.jsx";
 import Write from "./pages/Write";
 import WritingFormat from "./pages/WritingFormat";
+import CompleteWriting from "./pages/CompleteWriting.jsx";
 
 function App() {
   const tagManagerArgs = {
@@ -79,6 +80,10 @@ function App() {
         <Route path="/capsule/settings/theme" element={<Theme />}></Route>
         <Route path="/capsule/settings/purpose" element={<Purpose />}></Route>
         <Route path="/capsule/settings/name-date" element={<Name />}></Route>
+        <Route
+          path="/capsule/write/Complete"
+          element={<CompleteWriting />}
+        ></Route>
       </Routes>
       {/* </Router> */}
     </div>
