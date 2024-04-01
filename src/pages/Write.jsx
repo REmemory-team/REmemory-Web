@@ -32,7 +32,7 @@ const Write = () => {
   const [state, setState] = useState({
     capsule_number: receivedState.capsule_number,
     contents: [{ type: "text", content: "" }],
-    alignType: "left",
+    align_type: "left",
   });
   
   const [cursor, setCursor] = useState({
@@ -205,20 +205,20 @@ const Write = () => {
 
   //텍스트 좌, 우, 가운데 정렬
   const changeAlignType = () => {
-    if (state.alignType === "left") {
+    if (state.align_type === "left") {
       setState({
         ...state,
-        alignType: "center",
+        align_type: "center",
       });
-    } else if (state.alignType === "center") {
+    } else if (state.align_type === "center") {
       setState({
         ...state,
-        alignType: "right",
+        align_type: "right",
       });
     } else {
       setState({
         ...state,
-        alignType: "left",
+        align_type: "left",
       });
     }
   };
@@ -237,7 +237,7 @@ const Write = () => {
                   value={item.content}
                   onClick={(e)=>{setCursor({pos: e.target.selectionStart, index: index})}}
                   onChange={(e) => handleContentChange(index, e.target.value)}
-                  className={`${state.alignType} index${index}`}
+                  className={`${state.align_type} index${index}`}
                   placeholder="여기에 작성하세요."
                   onKeyDown={(e) => autoResizeTextarea(e, index)}
                   onKeyUp={(e) => autoResizeTextarea(e, index)}
@@ -268,7 +268,7 @@ const Write = () => {
             ref={fileInputRef}
             onChange={handleFileChange}
           />
-          {state.alignType === "left" && (
+          {state.align_type === "left" && (
             <img
               className="btn_align"
               onClick={changeAlignType}
@@ -276,7 +276,7 @@ const Write = () => {
               src={receivedState.theme !== 3 ? icon_alignLeft : icon_alignLeft_white}
             />
           )}
-          {state.alignType === "center" && (
+          {state.align_type === "center" && (
             <img
               className="btn_align"
               onClick={changeAlignType}
@@ -284,7 +284,7 @@ const Write = () => {
               src={receivedState.theme !== 3 ? icon_alignCenter : icon_alignCenter_white}
             />
           )}
-          {state.alignType === "right" && (
+          {state.align_type === "right" && (
             <img
               className="btn_align"
               onClick={changeAlignType}
