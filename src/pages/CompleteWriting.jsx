@@ -1,17 +1,11 @@
-//편지 작성 완료 화면
-
-import "../styles/CompleteWriting.css";
-
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
 import Menu from "../components/Menu";
 import icon_home from "../assets/icon_home.png";
 import icon_menu from "../assets/icon_menu.png";
-import img_check from "../assets/CompleteWring_check.png";
-import img_capsule from "../assets/기본 캡슐이미지1.png";
-import img_chat from "../assets/CompleteWriting_chat.png";
 import img_btn from "../assets/CompleteWriting_btn.png";
+
+import "../styles/CompleteWriting.css";
 
 const CompleteWriting = () => {
   const location = useLocation();
@@ -21,9 +15,19 @@ const CompleteWriting = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const userNickname = sessionStorage.getItem("nickname");
 
-  const theme = location.state ? location.state.theme : "";
-  const status = location.state ? location.state.status : "";
-  const isPcapsule = location.state && location.state.pcapsule_name;
+  const theme = location.state?.theme || "7"; // 기본값을 1로 설정
+
+  const themes = {
+    1: "rememory",
+    2: "birthday",
+    3: "graduration",
+    4: "love",
+    5: "christmas",
+    6: "parents",
+    7: "teacher",
+  };
+
+  import(`../styles/theme/${themes[theme]}.css`);
 
   const menuHandler = () => {
     if (!isLoaded) {
@@ -37,7 +41,7 @@ const CompleteWriting = () => {
   };
 
   return (
-    <div className={["CompleteWriting", theme].join(" theme")}>
+    <div className={`CompleteWriting`}>
       <div className="btn_top">
         <img
           className="icon_home"
@@ -55,16 +59,17 @@ const CompleteWriting = () => {
         />
       </div>
       {isLoaded && (
-        <div className={["menu", openMenu].join(" ")}>
+        <div className={`menu ${openMenu ? "open" : ""}`}>
           <Menu menuHandler={menuHandler} />
         </div>
       )}
-      <img className="img_check" alt="" src={img_check} />
+
+      <div className="img_check" alt=""></div>
       <p className="text_Complete">편지 작성 완료!</p>
-      <img className="img_capsule" alt="" src={img_capsule} />
+      <div className="img_capsule" alt="" />
 
       <div className="chat">
-        <img alt="" src={img_chat} />
+        <div alt="" />
         <p>캡슐이 열리길 기다리는 동안 ••</p>
       </div>
 

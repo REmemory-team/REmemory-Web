@@ -1,0 +1,70 @@
+.CompleteWriting {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 237, 251, 0) 0%, #fee1f7 100%);
+}
+
+.CompleteWriting .img_check {
+  position: absolute;
+  width: 43px;
+  height: 43px;
+  top: 153px;
+  background-image: url("../../assets/love/check.png");
+}
+
+.CompleteWriting .text_Complete {
+  color: rgba(125, 88, 113, 1);
+  font-family: "Pretendard";
+  font-weight: 600;
+  letter-spacing: 0.00264rem;
+  text-align: center;
+  font-size: 25px;
+
+  position: absolute;
+  top: 182px;
+  width: 376px;
+  height: 73px;
+}
+
+.CompleteWriting .img_capsule {
+  width: 144px;
+  height: 212px;
+  top: 288px;
+  left: 125px;
+  gap: 0px;
+  opacity: 0px;
+  margin-bottom: 3rem;
+  background-image: url("../../assets/love/capsule.png");
+}
+
+.CompleteWriting .chat {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  width: 260px;
+  height: 48.34px;
+  top: 577px;
+  left: 67px;
+  gap: 0px;
+  opacity: 0px;
+
+  background-image: url("../../assets/love/chat.png");
+}
+
+.CompleteWriting .chat p {
+  position: absolute;
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.004125rem;
+  text-align: center;
+  margin-bottom: 1.6rem;
+}

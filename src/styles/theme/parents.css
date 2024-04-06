@@ -1,0 +1,71 @@
+.CompleteWriting {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    179.98deg,
+    #cdb8ac 0.01%,
+    rgba(205, 184, 172, 0.2) 94.18%
+  );
+}
+
+.CompleteWriting .img_check {
+  position: absolute;
+  width: 43px;
+  height: 43px;
+  top: 153px;
+  background-image: url("../../assets/parents/check.png");
+}
+
+.CompleteWriting .text_Complete {
+  color: white;
+  font-family: "Pretendard";
+  font-weight: 600;
+  letter-spacing: 0.00264rem;
+  text-align: center;
+  font-size: 25px;
+
+  position: absolute;
+  top: 182px;
+  width: 376px;
+  height: 73px;
+}
+
+.CompleteWriting .img_capsule {
+  width: 165px;
+  height: 223px;
+  margin-bottom: 5rem;
+  background-image: url("../../assets/parents/capsule.png");
+  background-repeat: no-repeat;
+}
+
+.CompleteWriting .chat {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  width: 260px;
+  height: 48.34px;
+  top: 577px;
+  left: 67px;
+  gap: 0px;
+  opacity: 0px;
+
+  background-image: url("../../assets/parents/chat.png");
+}
+
+.CompleteWriting .chat p {
+  position: absolute;
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.004125rem;
+  text-align: center;
+  margin-bottom: 1.6rem;
+}

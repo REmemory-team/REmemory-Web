@@ -1,0 +1,74 @@
+.CompleteWriting {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    179.98deg,
+    #f3a0a0 0.01%,
+    rgba(63, 146, 61, 0.2) 94.18%
+  );
+}
+
+.CompleteWriting .img_check {
+  position: absolute;
+  width: 43px;
+  height: 43px;
+  top: 153px;
+  background-image: url("../../assets/christmas/check.png");
+}
+
+.CompleteWriting .text_Complete {
+  color: rgba(255, 255, 255, 1);
+  font-family: "Pretendard";
+  font-weight: 600;
+  letter-spacing: 0.00264rem;
+  text-align: center;
+  font-size: 25px;
+
+  position: absolute;
+  top: 182px;
+  width: 376px;
+  height: 73px;
+}
+
+.CompleteWriting .img_capsule {
+  width: 143px;
+  height: 249px;
+  top: 255px;
+  left: 125px;
+  gap: 0px;
+  opacity: 0px;
+
+  margin-bottom: 3rem;
+  background-image: url("../../assets/christmas/capsule.png");
+}
+
+.CompleteWriting .chat {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: 48.34px;
+  top: 577px;
+  left: 67px;
+  gap: 0px;
+  opacity: 0px;
+  position: absolute;
+
+  background-image: url("../../assets/christmas/chat.png");
+}
+
+.CompleteWriting .chat p {
+  position: absolute;
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.004125rem;
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
