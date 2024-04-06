@@ -59,9 +59,9 @@ const CompleteWriting = () => {
           <Menu menuHandler={menuHandler} />
         </div>
       )}
-      <img className="" alt="" src={img_check} />
-      <p>편지 작성 완료!</p>
-      <img className="" alt="" src={img_capsule} />
+      <img className="img_check" alt="" src={img_check} />
+      <p className="text_Complete">편지 작성 완료!</p>
+      <img className="img_capsule" alt="" src={img_capsule} />
 
       <div className="chat">
         <img alt="" src={img_chat} />
@@ -69,7 +69,7 @@ const CompleteWriting = () => {
       </div>
 
       <div className="btn" onClick={newCapsule}>
-        <img className="" alt="" src={img_btn} />
+        <img alt="" src={img_btn} />
         <p>새로운 캡슐 만들러가기</p>
       </div>
     </div>
