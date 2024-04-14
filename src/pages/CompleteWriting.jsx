@@ -1,11 +1,13 @@
+import "../styles/CompleteWriting.css";
+
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+
+import DisplayAds from "../components/ads/DisplayAds";
 import Menu from "../components/Menu";
 import icon_home from "../assets/icon_home.png";
 import icon_menu from "../assets/icon_menu.png";
 import img_btn from "../assets/CompleteWriting_btn.png";
-
-import "../styles/CompleteWriting.css";
 
 const CompleteWriting = () => {
   const location = useLocation();
@@ -77,6 +79,7 @@ const CompleteWriting = () => {
         <img alt="" src={img_btn} />
         <p>새로운 캡슐 만들러가기</p>
       </div>
+      <DisplayAds />
     </div>
   );
 };

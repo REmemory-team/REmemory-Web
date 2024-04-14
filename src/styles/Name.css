@@ -158,6 +158,7 @@
   width: 78%;
   display: flex;
   justify-content: end;
+  margin-bottom: 1.4em;
 }
 .name__btn {
   width: 5.625rem;

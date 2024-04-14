@@ -5,6 +5,7 @@ import "../styles/ConfirmBasicSetting.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { ReactComponent as ClockIcon } from "../assets/clock.svg";
+import DisplayAds from "../components/ads/DisplayAds";
 import { ReactComponent as LetterIcon } from "../assets/letter.svg";
 import { ReactComponent as ThemeIcon } from "../assets/theme.svg";
 
@@ -92,6 +93,7 @@ export default function ConfirmBasicSetting() {
       <button className="setting-confirm-btn" onClick={confirmBtnHandler}>
         확인했어요!
       </button>
+      <DisplayAds />
     </div>
   );
 }

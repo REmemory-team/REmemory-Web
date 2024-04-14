@@ -2,6 +2,7 @@ import "../styles/Purpose.css";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
+import DisplayAds from "../components/ads/DisplayAds";
 import { ReactComponent as LineIcon } from "../assets/Line.svg";
 import { ReactComponent as PersonIcon } from "../assets/person.svg";
 import { ReactComponent as PersonsIcon } from "../assets/persons.svg";
@@ -81,6 +82,7 @@ export default function Purpose() {
             next
           </button>
         </div>
+        <DisplayAds />
       </div>
     </div>
   );

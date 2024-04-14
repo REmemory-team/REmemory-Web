@@ -5,6 +5,7 @@ import "../styles/Login.css";
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import DisplayAds from "../components/ads/DisplayAds";
 import arrow from "../assets/arrow.png";
 import axios from "axios";
 import circle from "../assets/circle.png";
@@ -101,6 +102,7 @@ const Login = () => {
       <div className="capsule-check-btn" onClick={capsuleCheck}>
         <span className="capsule-check-txt">캡슐번호로 타임캡슐 확인</span>
       </div>
+      <DisplayAds />
     </div>
   );
 };

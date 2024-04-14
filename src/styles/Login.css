@@ -64,6 +64,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  margin-bottom: 1.4em;
 }
 .login-page .capsule-check-txt {
   color: rgba(255, 255, 255, 1);

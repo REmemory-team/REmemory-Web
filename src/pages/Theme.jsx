@@ -1,5 +1,6 @@
 import "../styles/Theme.css";
 
+import DisplayAds from "../components/ads/DisplayAds";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -65,6 +66,7 @@ export default function Theme() {
             next
           </button>
         </div>
+        <DisplayAds />
       </div>
     </div>
   );

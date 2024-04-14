@@ -3,6 +3,7 @@ import "../styles/Name.css";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import DisplayAds from "../components/ads/DisplayAds";
 import React from "react";
 
 export default function Name() {
@@ -187,6 +188,7 @@ export default function Name() {
             next
           </button>
         </div>
+        <DisplayAds />
       </div>
     </div>
   );

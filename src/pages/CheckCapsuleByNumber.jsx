@@ -5,6 +5,7 @@ import "../styles/CheckCapsuleByNumber.css";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import DisplayAds from "../components/ads/DisplayAds";
 import React from "react";
 import axios from "axios";
 
@@ -122,6 +123,7 @@ export default function CheckCapsuleByNumber() {
       <button onClick={confirmBtnHandler} className="capsule-check-btn">
         확인
       </button>
+      <DisplayAds />
     </div>
   );
 }
