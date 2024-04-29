@@ -1,9 +1,10 @@
 import "../styles/Theme.css";
 
-import DisplayAds from "../components/ads/DisplayAds";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+
+// import DisplayAds from "../components/ads/DisplayAds";
 
 export default function Theme() {
   const navigate = useNavigate();
@@ -66,7 +67,16 @@ export default function Theme() {
             next
           </button>
         </div>
-        <DisplayAds />
+        {/* <DisplayAds /> */}
+        <iframe
+          src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
+          width="320"
+          height="90"
+          frameborder="0"
+          scrolling="no"
+          referrerpolicy="unsafe-url"
+          browsingtopics
+        ></iframe>
       </div>
     </div>
   );

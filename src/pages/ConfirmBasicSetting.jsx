@@ -5,18 +5,16 @@ import "../styles/ConfirmBasicSetting.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { ReactComponent as ClockIcon } from "../assets/clock.svg";
-import DisplayAds from "../components/ads/DisplayAds";
 import { ReactComponent as LetterIcon } from "../assets/letter.svg";
 import { ReactComponent as ThemeIcon } from "../assets/theme.svg";
+
+// import DisplayAds from "../components/ads/DisplayAds";
 
 export default function ConfirmBasicSetting() {
   const location = useLocation();
   const navigate = useNavigate();
-  const userData = location.state; // 캡슐 기본 설정 페이지로부터 전달받은 데이터
+  const userData = location.state;
 
-  // '확인했어요!' 버튼을 누르면 실행되는 함수
-  // 용도에 따라 다른 화면으로 이동
-  // 캡슐 이름, 오픈 날짜, 받는 사람, 테마 정보 등을 전달
   const confirmBtnHandler = (event) => {
     if (userData.purpose === "toMe") {
       navigate("/capsule/letter-format", {
@@ -93,7 +91,16 @@ export default function ConfirmBasicSetting() {
       <button className="setting-confirm-btn" onClick={confirmBtnHandler}>
         확인했어요!
       </button>
-      <DisplayAds />
+      {/* <DisplayAds /> */}
+      <iframe
+        src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
+        width="320"
+        height="90"
+        frameborder="0"
+        scrolling="no"
+        referrerpolicy="unsafe-url"
+        browsingtopics
+      ></iframe>
     </div>
   );
 }

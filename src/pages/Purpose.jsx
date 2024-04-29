@@ -2,12 +2,18 @@ import "../styles/Purpose.css";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
-import DisplayAds from "../components/ads/DisplayAds";
 import { ReactComponent as LineIcon } from "../assets/Line.svg";
 import { ReactComponent as PersonIcon } from "../assets/person.svg";
 import { ReactComponent as PersonsIcon } from "../assets/persons.svg";
 import React from "react";
 import { useState } from "react";
+
+// import DisplayAds from "../components/ads/DisplayAds";
+
+
+
+
+
 
 export default function Purpose() {
   const navigate = useNavigate();
@@ -82,7 +88,16 @@ export default function Purpose() {
             next
           </button>
         </div>
-        <DisplayAds />
+        {/* <DisplayAds /> */}
+        <iframe
+          src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
+          width="320"
+          height="90"
+          frameborder="0"
+          scrolling="no"
+          referrerpolicy="unsafe-url"
+          browsingtopics
+        ></iframe>
       </div>
     </div>
   );

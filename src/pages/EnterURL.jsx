@@ -10,13 +10,12 @@ import axios from "axios";
 export default function EnterURL() {
   const { rcapsule_number } = useParams();
   const navigate = useNavigate();
-  const [recipient, setRecipient] = useState(""); // 서버로부터 가져온 받는 사람 정보 저장할 상태 변수
-  const [theme, setTheme] = useState(""); // 서버로부터 가져온 테마 정보 저장할 상태 변수
-  const [sender, setSender] = useState(""); // 보내는 사람 저장할 상태 변수
-  const [charNum, setCharNum] = useState(0); // 보내는 사람 글자 수 세기 위한 상태 변수
+  const [recipient, setRecipient] = useState("");
+  const [theme, setTheme] = useState("");
+  const [sender, setSender] = useState("");
+  const [charNum, setCharNum] = useState(0);
   const purpose = "rollingPaper";
 
-  // 서버로부터 받는 사람, 테마 정보 가져오기
   useEffect(() => {
     axios
       .get(

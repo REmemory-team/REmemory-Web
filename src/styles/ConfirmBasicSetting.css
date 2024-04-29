@@ -6,6 +6,7 @@
   align-items: center;
   flex-shrink: 0;
   position: relative;
+  padding-bottom: 10%;
 }
 .confirm-setting-page1 {
   background: #aa9acc;
@@ -138,7 +139,7 @@
   border: none;
   margin-bottom: 3rem;
   cursor: pointer;
-  margin-bottom: 1.4em;
+  margin-bottom: 5em;
 }
 .confirm-setting-page .theme-icon1 {
   fill: #7e61b5;

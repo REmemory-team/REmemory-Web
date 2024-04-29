@@ -3,7 +3,6 @@
 import "../styles/Home.css";
 
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 
 import ListItem from "../components/CapsuleListItem.jsx";
 import Menu from "../components/Menu";
@@ -16,9 +15,9 @@ import capsuleImg5 from "../assets/capsule_list5.png";
 import closeIcon from "../assets/icon_x.svg";
 import icon_menu from "../assets/icon_menu.png";
 import starIcon from "../assets/Vector.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-  const location = useLocation();
   const navigate = useNavigate();
 
   const [openMenu, setOpenMenu] = useState(false);
@@ -35,10 +34,9 @@ export default function Home() {
   ];
   const maxCapsule = 50;
 
-  //const token = sessionStorage.getItem("token");
-  //const userId = sessionStorage.getItem("userId");
-  //const userNickname = sessionStorage.getItem("nickname");
-  const userNickname = location.state.nickname;
+  const token = sessionStorage.getItem("token");
+  const userId = sessionStorage.getItem("userId");
+  const userNickname = sessionStorage.getItem("nickname");
 
   useEffect(() => {
     if (popupOpen) {
@@ -46,11 +44,11 @@ export default function Home() {
       axios
         .get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve/all`, {
           params: {
-            userId: 10,
+            userId: userId,
           },
-          // headers: {
-          //   authorization: `Bearer ${token}`,
-          // },
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
         })
         .then((response) => {
           console.log("팝업-서버응답:", response);

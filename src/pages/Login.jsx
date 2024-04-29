@@ -5,12 +5,13 @@ import "../styles/Login.css";
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import DisplayAds from "../components/ads/DisplayAds";
 import arrow from "../assets/arrow.png";
 import axios from "axios";
 import circle from "../assets/circle.png";
 import kakaoicon from "../assets/kakaoicon.png";
 import twinkle from "../assets/twinkle.png";
+
+// import DisplayAds from "../components/ads/DisplayAds";
 
 const Login = () => {
   const { Kakao } = window;
@@ -84,7 +85,7 @@ const Login = () => {
   };
 
   const Login = () => {
-    navigate("/login/kakao/home", { state: { nickname: "리메모리" } });
+    navigate("/login/kakao/home");
   };
   //kakaoLogin
   return (
@@ -102,7 +103,16 @@ const Login = () => {
       <div className="capsule-check-btn" onClick={capsuleCheck}>
         <span className="capsule-check-txt">캡슐번호로 타임캡슐 확인</span>
       </div>
-      <DisplayAds />
+      {/* <DisplayAds /> */}
+      <iframe
+        src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
+        width="320"
+        height="90"
+        frameborder="0"
+        scrolling="no"
+        referrerpolicy="unsafe-url"
+        browsingtopics
+      ></iframe>
     </div>
   );
 };

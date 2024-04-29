@@ -53,15 +53,13 @@
   width: 50%;
   align-items: center;
   justify-content: center;
-
   position: absolute;
   width: 18.75rem;
   height: 4.3125rem;
   top: 39.75rem;
   left: 2.9375rem;
-
   cursor: pointer;
-  margin-bottom: 1.4em;
+  margin-bottom: 2.5em;
 }
 .CompleteWriting .btn img {
   position: absolute;

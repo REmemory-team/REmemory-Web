@@ -3,11 +3,12 @@ import "../styles/CompleteWriting.css";
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import DisplayAds from "../components/ads/DisplayAds";
 import Menu from "../components/Menu";
 import icon_home from "../assets/icon_home.png";
 import icon_menu from "../assets/icon_menu.png";
 import img_btn from "../assets/CompleteWriting_btn.png";
+
+// import DisplayAds from "../components/ads/DisplayAds";
 
 const CompleteWriting = () => {
   const location = useLocation();
@@ -79,7 +80,16 @@ const CompleteWriting = () => {
         <img alt="" src={img_btn} />
         <p>새로운 캡슐 만들러가기</p>
       </div>
-      <DisplayAds />
+      {/* <DisplayAds /> */}
+      <iframe
+        src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
+        width="320"
+        height="90"
+        frameborder="0"
+        scrolling="no"
+        referrerpolicy="unsafe-url"
+        browsingtopics
+      ></iframe>
     </div>
   );
 };

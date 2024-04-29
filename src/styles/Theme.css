@@ -11,7 +11,7 @@
   flex-direction: column;
   align-items: center;
   padding-top: 30%;
-  padding-bottom: 25%;
+  padding-bottom: 10%;
 }
 .theme__message {
   color: #fff;
@@ -79,4 +79,5 @@
   letter-spacing: 0.00413rem;
   border: none;
   border-radius: 16px;
+  margin-bottom: 2rem;
 }
