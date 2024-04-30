@@ -114,7 +114,7 @@ const Login = () => {
         browsingtopics
       ></iframe>
       <div>
-        <p style ={{fontSize:'10px',color:'#adb5db'}}>쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음</p>
+        <p style ={{fontSize:'10px',color:'#495057'}}>쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음</p>
       </div>
     </div>
   );
