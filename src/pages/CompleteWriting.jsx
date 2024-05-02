@@ -1,3 +1,4 @@
+//편지 작성 완료 화면
 import "../styles/CompleteWriting.css";
 
 import React, { useState } from "react";
@@ -18,7 +19,7 @@ const CompleteWriting = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const userNickname = sessionStorage.getItem("nickname");
 
-  const theme = location.state?.theme || "7"; // 기본값을 1로 설정
+  const theme = location.state?.theme || "1"; // 기본값을 1로 설정
 
   const themes = {
     1: "rememory",
@@ -91,7 +92,9 @@ const CompleteWriting = () => {
         browsingtopics
       ></iframe>
       <div>
-        <p style ={{fontSize:'10px',color:'#495057'}}>쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음</p>
+        <p style={{ fontSize: "10px", color: "#495057" }}>
+          쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음
+        </p>
       </div>
     </div>
   );

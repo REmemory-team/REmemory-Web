@@ -84,10 +84,9 @@ const Login = () => {
     navigate("/capsule/input-number");
   };
 
-  const Login = () => {
-    navigate("/login/kakao/home");
-  };
-  //kakaoLogin
+  // const Login = () => {
+  //   navigate("/login/kakao/home");
+  // };
   return (
     <div className="login-page">
       <div className="logo-img">
@@ -96,7 +95,7 @@ const Login = () => {
         <img src={twinkle} alt="반짝이" className="twinkle" />
         <div className="re-memory">RE:memory</div>
       </div>
-      <div className="kakao-login-btn" onClick={Login}>
+      <div className="kakao-login-btn" onClick={kakaoLogin}>
         <img src={kakaoicon} alt="kakaoicon" className="kakao-icon" />
         <span className="kakao-login">카카오계정으로 캡슐 만들기</span>
       </div>
@@ -114,7 +113,9 @@ const Login = () => {
         browsingtopics
       ></iframe>
       <div>
-        <p style ={{fontSize:'10px',color:'#495057'}}>쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음</p>
+        <p style={{ fontSize: "10px", color: "#495057" }}>
+          쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음
+        </p>
       </div>
     </div>
   );
