@@ -57,7 +57,6 @@ export default function Home() {
   }, [popupOpen]);
 
   const menuHandler = () => {
-    alert("메뉴버튼");
     if (!isLoaded) {
       setIsLoaded(true);
     }
@@ -91,7 +90,7 @@ export default function Home() {
           className="image_menu"
           src={icon_menu}
           alt="메뉴아이콘"
-          onClick={menuHandler}
+          onClick={handleInputNumber}
         />
       </div>
       {isLoaded && (
