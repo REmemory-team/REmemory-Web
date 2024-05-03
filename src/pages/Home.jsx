@@ -57,6 +57,7 @@ export default function Home() {
   }, [popupOpen]);
 
   const menuHandler = () => {
+    alert("메뉴버튼");
     if (!isLoaded) {
       setIsLoaded(true);
     }
