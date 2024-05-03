@@ -14,14 +14,14 @@
   overflow: hidden;
 }
 
-.home .image_menu {
+/* .home .image_menu {
   position: absolute;
   cursor: pointer;
   top: 2rem;
   right: 2rem;
   width: 1.25rem;
   height: 1rem;
-}
+} */
 .home .menu {
   position: absolute;
   right: 0;
