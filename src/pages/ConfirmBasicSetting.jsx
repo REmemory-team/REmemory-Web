@@ -1,5 +1,3 @@
-// 캡슐 기본 설정 확인
-
 import "../styles/ConfirmBasicSetting.css";
 
 import { useLocation, useNavigate } from "react-router-dom";
@@ -7,8 +5,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { ReactComponent as ClockIcon } from "../assets/clock.svg";
 import { ReactComponent as LetterIcon } from "../assets/letter.svg";
 import { ReactComponent as ThemeIcon } from "../assets/theme.svg";
-
-// import DisplayAds from "../components/ads/DisplayAds";
 
 export default function ConfirmBasicSetting() {
   const location = useLocation();
@@ -91,7 +87,6 @@ export default function ConfirmBasicSetting() {
       <button className="setting-confirm-btn" onClick={confirmBtnHandler}>
         확인했어요!
       </button>
-      {/* <DisplayAds /> */}
       <iframe
         src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
         width="320"
@@ -102,7 +97,9 @@ export default function ConfirmBasicSetting() {
         browsingtopics
       ></iframe>
       <div>
-        <p style ={{fontSize:'10px',color:'#495057'}}>쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음</p>
+        <p style={{ fontSize: "10px", color: "#495057" }}>
+          쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음
+        </p>
       </div>
     </div>
   );
