@@ -4,7 +4,7 @@ import "../styles/Nickname.css";
 
 import React, { useState } from "react";
 
-//import axios from "axios";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Nickname() {
@@ -13,7 +13,7 @@ export default function Nickname() {
   const navigate = useNavigate();
 
   //로그인 과정에서 받은 데이터(아이디)
-  //const userId = sessionStorage.getItem("userId");
+  const userId = sessionStorage.getItem("userId");
 
   //사용자가 입력한 닉네임 저장 함수
   const handleInputChange = (e) => {
@@ -37,7 +37,6 @@ export default function Nickname() {
           nickname: userNickname,
         },
       });
-      /*
       const token = sessionStorage.getItem("token");
       axios
         .patch(
@@ -60,7 +59,6 @@ export default function Nickname() {
         .catch((error) => {
           console.log("오류: ", error);
         });
-      */
     } else {
       alert(
         "한글, 영어, 숫자, 특수문자로 구성된 1~10자리 닉네임을 입력해주세요"
