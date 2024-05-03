@@ -1,5 +1,3 @@
-// 롤링페이퍼 타임캡슐 오픈 시 화면
-
 import "../styles/RollingpaperOpen.css";
 
 import { useLocation, useNavigate } from "react-router-dom";
@@ -20,9 +18,9 @@ export default function RollingpaperOpen() {
   };
   const homeBtnHandler = () => {
     if (sessionStorage.getItem("token")) {
-      navigate("/login/kakao/home"); // 로그인한 경우 "홈 화면"으로 이동
+      navigate("/login/kakao/home");
     } else {
-      navigate("/"); // 로그인하지 않은 경우 "웹 처음 입장 시" 화면으로 이동
+      navigate("/");
     }
   };
 

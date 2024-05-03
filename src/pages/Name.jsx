@@ -5,8 +5,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import React from "react";
 
-// import DisplayAds from "../components/ads/DisplayAds";
-
 export default function Name() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -16,57 +14,52 @@ export default function Name() {
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
 
-  // 현재 날짜를 저장
   const [currentYear, setCurrentYear] = useState("");
   const [currentMonth, setCurrentMonth] = useState("");
   const [currentDay, setCurrentDay] = useState("");
 
-  // 캡슐 이름 유효성 검사
   const validateCapsuleName = (name) => {
     const regex = /^[ㄱ-ㅎ가-힣a-zA-Z0-9\s]+$/;
     return regex.test(name);
   };
+
   const handleNameChange = (event) => {
     setCapsuleName(event.target.value);
   };
-  // 현재 날짜 가져오기
+
   useEffect(() => {
     const today = new Date();
-    const formattedMonth = (today.getMonth() + 1).toString().padStart(2, "0"); // 한 자리 수일 경우 0을 채워줌
+    const formattedMonth = (today.getMonth() + 1).toString().padStart(2, "0");
     const formattedDay = today.getDate().toString().padStart(2, "0");
 
     setCurrentYear(today.getFullYear().toString());
     setCurrentMonth(formattedMonth);
     setCurrentDay(formattedDay);
   }, []);
-  // 숫자 입력 검증 함수
+
   const isValidNumberInput = (value) => {
     return /^\d*$/.test(value);
   };
-  // 사용자가 입력한 날짜가 현재 날짜 이후인지 확인 (오늘도 포함)
+
   const isPastDate = (inputYear, inputMonth, inputDay) => {
     const currentDate = new Date();
     const inputDate = new Date(inputYear, inputMonth - 1, inputDay);
 
-    // 현재 날짜의 시간 부분을 모두 0으로 설정
     const currentWithoutTime = new Date(
       currentDate.getFullYear(),
       currentDate.getMonth(),
       currentDate.getDate()
     );
-    // 입력한 날짜의 시간 부분을 모두 0으로 설정
+
     const inputWithoutTime = new Date(
       inputDate.getFullYear(),
       inputDate.getMonth(),
       inputDate.getDate()
     );
-    console.log(inputWithoutTime);
-    console.log(currentWithoutTime);
 
     return inputWithoutTime < currentWithoutTime;
   };
 
-  // 날짜 유효성 검사
   const isValidDate = (inputYear, inputMonth, inputDay) => {
     const year = parseInt(inputYear, 10);
     const month = parseInt(inputMonth, 10) - 1;
@@ -108,7 +101,7 @@ export default function Name() {
       alert("캡슐 이름을 입력해주세요!");
       return;
     }
-    // 캡슐 이름 유효성 검사
+
     if (!validateCapsuleName(trimmedCapsuleName)) {
       alert("캡슐 이름은 한글, 영어, 숫자로만 작성해주세요!");
       return;
@@ -117,12 +110,12 @@ export default function Name() {
       alert("오픈 날짜를 입력해주세요!");
       return;
     }
-    // 날짜 유효성 검사
+
     if (!isValidDate(year, month, day)) {
       alert("유효하지 않은 날짜입니다. 다시 입력해주세요!");
       return;
     }
-    // 사용자가 입력한 날짜가 과거인지 확인
+
     if (isPastDate(year, month, day)) {
       alert("캡슐 오픈 시기는 오늘 이후로 설정해주세요!");
       return;
@@ -189,7 +182,6 @@ export default function Name() {
             next
           </button>
         </div>
-        {/* <DisplayAds /> */}
         <iframe
           src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
           width="320"
@@ -200,8 +192,10 @@ export default function Name() {
           browsingtopics
         ></iframe>
         <div>
-        <p style ={{fontSize:'10px',color:'#495057'}}>쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음</p>
-      </div>
+          <p style={{ fontSize: "10px", color: "#495057" }}>
+            쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음
+          </p>
+        </div>
       </div>
     </div>
   );

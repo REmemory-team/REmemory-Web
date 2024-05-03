@@ -1,5 +1,3 @@
-// 캡슐번호 부여 (용도1&2)
-
 import "../styles/CapsuleCodeAssignment.css";
 
 import React, { useState } from "react";
@@ -25,7 +23,6 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
   };
 
   const handleSavePassword = () => {
-    // 비밀번호가 숫자로만 구성되어 있고, 길이가 6자리인지 확인
     if (/^\d{6}$/.test(password)) {
       axios
         .post(
@@ -39,7 +36,6 @@ const CapsuleCodeAssignment = ({ initialNickname }) => {
           if (response.status === 200) {
             window.alert("타입캡슐이 성공적으로 생성되었습니다!");
             navigate("/login/kakao/home");
-            // navigate("/login/kakao/home", { state: { nickname: "리메모리" } });
           }
         })
         .catch((error) => {

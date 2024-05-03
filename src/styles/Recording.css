@@ -27,13 +27,13 @@
   text-align: center;
   font-size: 1.125rem;
   font-weight: 400;
-  line-height: 0.8125rem; /* 72.222%*/
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   position: absolute;
   right: 1rem;
   top: 4.18rem;
   cursor: pointer;
-} 
+}
 
 .recording_page .recording_box {
   width: 18.75rem;
@@ -60,7 +60,7 @@
   font-size: 1.125rem;
   text-align: center;
   font-weight: 400;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   border-radius: 2rem;
   cursor: pointer;
@@ -79,7 +79,7 @@
   color: #000;
   font-size: 1.125rem;
   font-weight: 600;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   position: absolute;
   top: 0.56rem;
@@ -93,7 +93,7 @@
   left: 4.87rem;
 }
 
-.recording_page .mic_icon{
+.recording_page .mic_icon {
   transition: transform 0.8s ease;
   transform: scale(1);
 }
@@ -176,10 +176,20 @@
     #fff;
 }
 .recording_page.theme4 {
-  background: linear-gradient(180deg, #CDB8AC 0.01%, rgba(205, 184, 172, 0.20) 94.18%), #FFF;
+  background: linear-gradient(
+      180deg,
+      #cdb8ac 0.01%,
+      rgba(205, 184, 172, 0.2) 94.18%
+    ),
+    #fff;
 }
 .recording_page.theme5 {
-  background: linear-gradient(180deg, #A5C8D3 0.01%, rgba(165, 200, 211, 0.20) 94.18%), #FFF;
+  background: linear-gradient(
+      180deg,
+      #a5c8d3 0.01%,
+      rgba(165, 200, 211, 0.2) 94.18%
+    ),
+    #fff;
 }
 
 .recording_page .recording_box.theme1 {
@@ -192,7 +202,7 @@
   background: rgba(250, 217, 243, 0.9);
 }
 .recording_page .recording_box.theme4 {
-  background: rgba(255, 255, 255, 0.90);
+  background: rgba(255, 255, 255, 0.9);
 }
 .recording_page .recording_box.theme5 {
   background: rgba(255, 255, 255, 0.9);
@@ -208,11 +218,11 @@
   background: rgba(255, 205, 241, 0.7);
 }
 .recording_page .record_submit_button.theme4 {
-  background: rgba(183, 160, 147, 0.80);
+  background: rgba(183, 160, 147, 0.8);
   color: #fff;
 }
 .recording_page .record_submit_button.theme5 {
-  background: rgba(116, 162, 177, 0.80);
+  background: rgba(116, 162, 177, 0.8);
   color: #fff;
 }
 
@@ -226,10 +236,10 @@
   background: #ffd4f6;
 }
 .recording_page .light.theme4 {
-  background: #D5C3B9;
+  background: #d5c3b9;
 }
 .recording_page .light.theme5 {
-  background: #BED9E2;
+  background: #bed9e2;
 }
 
 .recording_page .bold.theme1 {
@@ -242,56 +252,8 @@
   background: #ffcdf1;
 }
 .recording_page .bold.theme4 {
-  background: #B7A093;
+  background: #b7a093;
 }
 .recording_page .bold.theme5 {
-  background: #9BBCC7;
+  background: #9bbcc7;
 }
-
-/* 크리스마스, 어버이날 테마
-.recording_page.theme3 {
-  background: linear-gradient(180deg, #6a88c2 27.78%, #c1c6f3 100%), #fff;
-}
-.recording_page.theme5 {
-  background: linear-gradient(
-      180deg,
-      #f3a0a0 0.01%,
-      rgba(113, 155, 112, 0.2) 94.18%
-    ),
-    #fff;
-}
-
-.recording_page .recording_box.theme3 {
-  background: rgba(36, 60, 122, 0.7);
-}
-.recording_page .recording_box.theme5 {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.recording_page .dear_capsule.theme3 {
-  color: #fff;
-}
-
-.recording_page .record_submit_button.theme3 {
-  background: #516bb2;
-  color: #fff;
-}
-.recording_page .record_submit_button.theme5 {
-  background: rgba(82, 125, 84, 0.8);
-  color: #fff;
-}
-
-.recording_page .light.theme3 {
-  background: #c0ceff;
-}
-.recording_page .bold.theme5 {
-  background: #e88d89;
-}
-.recording_page .light.theme3 {
-  background: #c0ceff;
-}
-.recording_page .light.theme5 {
-  background: #eaa6a3;
-}
-
-*/

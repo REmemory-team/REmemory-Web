@@ -1,5 +1,3 @@
-// 캡슐 확인 - 메뉴
-
 import "../styles/Menu.css";
 
 import boundary_line from "../assets/boundary_line.png";
@@ -108,7 +106,6 @@ const Menu = ({ menuHandler }) => {
       <div className="logo">
         <img className="image" alt="logo_rememory" src={image_logo} />
         <img className="text" alt="logo_rememory" src={text_logo} />
-        {/* <p>RE:memory</p> */}
       </div>
     </div>
   );

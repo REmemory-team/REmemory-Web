@@ -1,5 +1,3 @@
-/* CapsuleCodeAssignment.css */
-
 .CapsuleCodeAssignment {
   margin: 0;
   padding: 0;
@@ -41,15 +39,6 @@
 }
 
 .CapsuleCodeAssignment .copy {
-  /* position: absolute;
-  top: 162px;
-  left: 40px;
-  font-family: "Pretendard", sans-serif;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 13px;
-  letter-spacing: 0.066px;
-  text-align: center; */
   display: flex;
   width: 307px;
   height: 106px;
@@ -65,7 +54,7 @@
   font-size: 22px;
   font-style: normal;
   font-weight: 700;
-  line-height: 13px; /* 59.091% */
+  line-height: 13px;
   letter-spacing: 0.066px;
 }
 
@@ -162,7 +151,7 @@
   font-size: 22px;
   font-style: normal;
   font-weight: 700;
-  line-height: 13px; /* 59.091% */
+  line-height: 13px;
   letter-spacing: 0.066px;
 }
 
@@ -227,7 +216,6 @@
   border: none;
 }
 
-/* --------------------------수정---------------------------- */
 .capsule-code-assignment {
   min-height: 100vh;
   height: 100%;
@@ -250,9 +238,8 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
-  /* margin-top: 6.5rem; */
   margin-bottom: 2.5rem;
 }
 .capsule-code-assignment .code-box {
@@ -276,7 +263,7 @@
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 0.8125rem; /* 59.091% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }
 .capsule-code-assignment .assigned-code {
@@ -307,7 +294,7 @@
   font-size: 0.9375rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 0.8125rem; /* 86.667% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   text-decoration-line: underline;
   cursor: pointer;
@@ -331,7 +318,7 @@
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 0.8125rem; /* 59.091% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }
 .capsule-code-assignment .divide {
@@ -366,7 +353,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }
 .capsule-code-assignment .guide-box {
@@ -384,7 +371,7 @@
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 0.8125rem; /* 54.167% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }
 .capsule-code-assignment .guide-content {
@@ -393,7 +380,7 @@
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 0.8125rem; /* 108.333% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }
 .capsule-code-assignment .bold {
@@ -413,7 +400,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   cursor: pointer;
 }
@@ -429,7 +416,7 @@
   font-size: 0.9rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   display: flex;
   align-items: center;

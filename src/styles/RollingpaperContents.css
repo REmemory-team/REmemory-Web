@@ -31,7 +31,7 @@
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 81.25% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }
 .rollingpaper-contents .rolling-format {
@@ -41,6 +41,6 @@
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 81.25% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }

@@ -1,5 +1,3 @@
-// URL 들어왔을 시 화면
-
 import "../styles/EnterURL.css";
 
 import React, { useEffect, useState } from "react";
@@ -42,13 +40,11 @@ export default function EnterURL() {
     setSender(event.target.value);
     setCharNum(event.target.value.length);
   };
-  // 정했어요! 버튼 누르면 실행되는 함수
+
   const decisionBtnHandler = () => {
     if (!sender) {
       alert("자신을 알려주세요!");
     } else {
-      // 작성 형식 선택 화면으로 이동
-      // 받는 사람, 테마, 보내는 사람 정보 전달
       navigate("/capsule/letter-format", {
         state: {
           dear_name: recipient,

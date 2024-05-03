@@ -58,7 +58,7 @@
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 0.8125rem; /* 65% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   margin-bottom: 1.8rem;
 }
@@ -78,7 +78,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   caret-color: #606060;
   margin-bottom: 2.5rem;
@@ -90,7 +90,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   flex-shrink: 0;
 }
@@ -116,7 +116,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   width: 2.8rem;
   border: none;
@@ -132,7 +132,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }
 .name__date--input:focus {
@@ -149,7 +149,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   margin-right: 0.5rem;
   flex-shrink: 0;
@@ -172,7 +172,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   border: none;
   border-radius: 16px;

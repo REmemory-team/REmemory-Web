@@ -1,34 +1,33 @@
 .capsule_list {
-/* width: 20rem; */
-width: 100%;
-height: 3.25rem;
-margin-bottom: 1.87rem;
-display: flex;
-align-items: center;
+  width: 100%;
+  height: 3.25rem;
+  margin-bottom: 1.87rem;
+  display: flex;
+  align-items: center;
 }
 .capsule_list .capsule_name {
-cursor: pointer;
-margin-left: 1.3rem;
-font-size: 1.125rem;
-font-weight: 500;
-width: 10rem;
+  cursor: pointer;
+  margin-left: 1.3rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  width: 10rem;
 }
-.capsule_list .capsule_number{
-cursor: pointer;
-width: 5rem;
-margin-left: 0.85rem;
-margin-right: 1rem;
-font-size: 0.8rem;
-font-weight: 500;
-opacity: 0.4;
+.capsule_list .capsule_number {
+  cursor: pointer;
+  width: 5rem;
+  margin-left: 0.85rem;
+  margin-right: 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.4;
 }
 .capsule_list .list_image {
-cursor: pointer;
-width: 3.5rem;
-height: 100%;
-margin-left: 1.7rem;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-shrink: 0;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 100%;
+  margin-left: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }

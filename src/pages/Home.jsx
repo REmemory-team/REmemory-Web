@@ -1,5 +1,3 @@
-// 카카오 로그인 - 홈 화면
-
 import "../styles/Home.css";
 
 import React, { useEffect, useState } from "react";
@@ -40,7 +38,6 @@ export default function Home() {
 
   useEffect(() => {
     if (popupOpen) {
-      //캡슐 목록 받아오기
       axios
         .get(`${process.env.REACT_APP_API_BASE_URL}/capsule/retrieve/all`, {
           params: {
@@ -51,7 +48,6 @@ export default function Home() {
           },
         })
         .then((response) => {
-          console.log("팝업-서버응답:", response);
           setCapsuleList(response.data.result.capsules);
         })
         .catch((error) => {
@@ -60,7 +56,6 @@ export default function Home() {
     }
   }, [popupOpen]);
 
-  //홈화면 메뉴
   const menuHandler = () => {
     if (!isLoaded) {
       setIsLoaded(true);
@@ -68,7 +63,6 @@ export default function Home() {
     setOpenMenu(!openMenu);
   };
 
-  //만들기 버튼 누를시
   const handleSetting = () => {
     navigate("/capsule/settings/theme", {
       state: {
@@ -77,17 +71,14 @@ export default function Home() {
     });
   };
 
-  //내가 만든 타임캡슐 버튼 누를시(팝업창)
   const handleChecking = () => {
     setPopupOpen(true);
   };
 
-  //캡슐번호로 타임캡슐 확인 버튼 누를시
   const handleInputNumber = () => {
     navigate("/capsule/input-number");
   };
 
-  //팝업창 닫기
   const handleClosePopup = () => {
     setPopupOpen(false);
   };

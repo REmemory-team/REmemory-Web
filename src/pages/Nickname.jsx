@@ -1,5 +1,3 @@
-// 카카오 로그인 - 이름(닉네임) 설정
-
 import "../styles/Nickname.css";
 
 import React, { useState } from "react";
@@ -12,24 +10,20 @@ export default function Nickname() {
   const maxLength = 10;
   const navigate = useNavigate();
 
-  //로그인 과정에서 받은 데이터(아이디)
   const userId = sessionStorage.getItem("userId");
 
-  //사용자가 입력한 닉네임 저장 함수
   const handleInputChange = (e) => {
     if (e.target.value.length > maxLength) {
       alert("닉네임은 10자 이내로 설정해 주세요");
     } else setUserNickname(e.target.value);
   };
 
-  //닉네임 유효성 검사
   const validNickname = (nickname) => {
     const regex =
       /^(?!\s)([ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9?!@#$%^&*()-_+=~`'"\s]){1,10}$/;
     return regex.test(nickname);
   };
 
-  //이걸로 할게요! 버튼 누를시
   const handleSubmit = () => {
     if (validNickname(userNickname)) {
       navigate("/login/kakao/home", {
@@ -52,7 +46,6 @@ export default function Nickname() {
           }
         )
         .then((response) => {
-          console.log("서버응답: ", response);
           sessionStorage.setItem("nickname", userNickname);
           navigate("/login/kakao/home");
         })

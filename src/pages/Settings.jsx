@@ -1,5 +1,3 @@
-// 계정 설정 화면
-
 import "../styles/Settings.css";
 
 import React, { useEffect, useState } from "react";
@@ -25,7 +23,6 @@ export default function Settings() {
         },
       })
       .then((response) => {
-        console.log(response);
         setNickname(response.data.result.nickname);
         sessionStorage.setItem("nickname", response.data.result.nickname);
       })
@@ -37,13 +34,15 @@ export default function Settings() {
   const backBtnHandler = () => {
     navigate(-1);
   };
+
   const homeBtnHandler = () => {
     navigate("/login/kakao/home");
   };
+
   const handleNicknameChange = (event) => {
     setNewNickname(event.target.value);
   };
-  // 닉네임 변경
+
   const changeBtnHandler = () => {
     axios
       .patch(
@@ -59,7 +58,6 @@ export default function Settings() {
         }
       )
       .then((response) => {
-        console.log(response);
         if (response.status === 200) {
           setNickname(response.data.result.nickname);
           sessionStorage.setItem("nickname", response.data.result.nickname);
@@ -70,14 +68,14 @@ export default function Settings() {
         console.error(error);
       });
   };
-  // 로그아웃
+
   const logoutBtnHandler = () => {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("userId");
     sessionStorage.removeItem("nickname");
     navigate("/");
   };
-  // 회원탈퇴
+
   const withdrawalBtnHandler = () => {
     const isConfirmed = window.confirm("정말로 탈퇴하시겠습니까?");
     if (isConfirmed) {

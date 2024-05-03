@@ -7,7 +7,6 @@
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
-  /* position: relative; */
 }
 .check-capsule-page .check-capsule-message {
   color: #000;
@@ -16,7 +15,7 @@
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 65% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   flex-shrink: 0;
   margin-top: 9rem;
@@ -37,7 +36,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   caret-color: #606060;
   margin-bottom: 0.4rem;
@@ -49,7 +48,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }
 .check-capsule-page .number-input-field:focus {
@@ -70,7 +69,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   caret-color: #606060;
   margin-bottom: 2.3rem;
@@ -85,7 +84,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }
 .check-capsule-page .capsule-check-btn {
@@ -104,11 +103,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   margin-bottom: 15rem;
 }
-/* .check-capsule-page iframe {
-  position: absolute;
-  bottom: 2rem;
-} */

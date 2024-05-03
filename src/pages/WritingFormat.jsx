@@ -1,5 +1,3 @@
-// 작성 형식 선택
-
 import "../styles/WritingFormat.css";
 
 import React, { useState } from "react";
@@ -11,10 +9,9 @@ import axios from "axios";
 export default function WritingFormat() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [format, setFormat] = useState(0); // 사용자가 선택한 작성 형식을 저장할 상태 변수
+  const [format, setFormat] = useState(0);
   const token = sessionStorage.getItem("token");
 
-  // 정했어요! 버튼 누르면 실행되는 함수
   const decisionBtnHandler = () => {
     if (!format) {
       alert("작성 형식을 선택해주세요!");
@@ -30,7 +27,7 @@ export default function WritingFormat() {
             capsule_number: location.state.capsule_number,
             from_name: location.state.sender,
           },
-        }); // 글 & 편지 작성 화면으로 넘어가기
+        });
       } else if (format === 2) {
         navigate("/capsule/write/voice", {
           state: {
@@ -40,7 +37,7 @@ export default function WritingFormat() {
             capsule_number: location.state.capsule_number,
             from_name: location.state.sender,
           },
-        }); // 음성 편지 작성 화면으로 넘어가기
+        });
       }
     } else {
       axios
@@ -61,7 +58,6 @@ export default function WritingFormat() {
           }
         )
         .then((response) => {
-          console.log(response);
           if (response.status === 200) {
             if (format === 1) {
               navigate("/capsule/write/text", {
@@ -71,7 +67,7 @@ export default function WritingFormat() {
                   purpose: location.state.purpose,
                   capsule_number: response.data.result.capsule_number,
                 },
-              }); // 글 & 편지 작성 화면으로 넘어가기
+              });
             } else if (format === 2) {
               navigate("/capsule/write/voice", {
                 state: {
@@ -80,7 +76,7 @@ export default function WritingFormat() {
                   purpose: location.state.purpose,
                   capsule_number: response.data.result.capsule_number,
                 },
-              }); // 음성 편지 작성 화면으로 넘어가기
+              });
             }
           }
         })

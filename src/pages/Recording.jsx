@@ -1,5 +1,3 @@
-// 음성 편지 작성
-
 import "../styles/Recording.css";
 
 import React, { useEffect, useState } from "react";
@@ -9,7 +7,6 @@ import axios from "axios";
 import fileIcon from "../assets/voice_file.png";
 
 export default function Record() {
-  //const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [stream, setStream] = useState();
   const [media, setMedia] = useState();
   const [onRec, setOnRec] = useState(true);
@@ -25,10 +22,8 @@ export default function Record() {
   const receivedData = location.state;
   const dear_name = receivedData.dear_name;
   const navigate = useNavigate("");
-  // const userId = sessionStorage.getItem("userId");
 
   useEffect(() => {
-    //setIsLoggedIn(false);
     setNowPurpose(receivedData.purpose);
     setNowTheme(receivedData.theme);
     setCapsule_number(receivedData.capsule_number);
@@ -109,7 +104,7 @@ export default function Record() {
         newAudio.onended = () => setaudioState(false);
         newAudio.play();
         setaudioState(true);
-        setPlayAudio(newAudio); //현재 재생 중인 오디오 업데이트
+        setPlayAudio(newAudio);
       } else {
         alert("실행 가능한 녹음 파일이 없습니다");
       }
@@ -137,7 +132,6 @@ export default function Record() {
               }
             )
             .then((response) => {
-              console.log("서버응답:", response);
               navigate("/capsule/assign-number", {
                 state: { capsule_number: capsule_number },
               });
@@ -162,8 +156,7 @@ export default function Record() {
               }
             )
             .then((response) => {
-              console.log("서버응답:", response);
-              navigate("/capsule/write/Complete"); //편지 작성 완료 화면으로
+              navigate("/capsule/write/Complete");
             })
             .catch((error) => {
               console.error("오류:", error);

@@ -1,5 +1,3 @@
-// 음성 편지 확인
-
 import "../styles/ReceivedVoice.css";
 
 import { useEffect, useRef, useState } from "react";
@@ -15,7 +13,7 @@ export default function ReceivedVoice() {
   const navigate = useNavigate();
   const location = useLocation();
   const audioRef = useRef(null);
-  const [play, setPlay] = useState(false); // 오디오 재생 상태
+  const [play, setPlay] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -44,9 +42,9 @@ export default function ReceivedVoice() {
   };
   const homeBtnHandler = () => {
     if (sessionStorage.getItem("token")) {
-      navigate("/login/kakao/home"); // 로그인한 경우 "홈 화면"으로 이동
+      navigate("/login/kakao/home");
     } else {
-      navigate("/"); // 로그인하지 않은 경우 "웹 처음 입장 시" 화면으로 이동
+      navigate("/");
     }
   };
 
@@ -66,16 +64,14 @@ export default function ReceivedVoice() {
     const audio = audioRef.current;
     if (!audio) return;
 
-    // 클릭 이벤트가 발생한 요소가 base-bar인지 main-bar인지 확인
     const isMainBarClick = e.target.classList.contains("main-bar");
-    const bar = isMainBarClick ? e.target.parentNode : e.target; // main-bar 클릭 시, 부모 요소인 base-bar를 사용
+    const bar = isMainBarClick ? e.target.parentNode : e.target;
 
     const barRect = bar.getBoundingClientRect();
-    const clickPositionX = e.clientX - barRect.left; // 클릭 지점의 X 좌표
-    const barWidth = barRect.width; // base-bar의 실제 너비
-    const clickPositionRatio = clickPositionX / barWidth; // 클릭된 위치의 비율
+    const clickPositionX = e.clientX - barRect.left;
+    const barWidth = barRect.width;
+    const clickPositionRatio = clickPositionX / barWidth;
 
-    // 오디오 재생 위치 업데이트
     audio.currentTime = clickPositionRatio * audio.duration;
   };
 

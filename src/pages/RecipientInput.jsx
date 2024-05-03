@@ -1,5 +1,3 @@
-// 2,3번 용도 시작 - 타임캡슐 받을 사람 입력
-
 import "../styles/RecipientInput.css";
 
 import React, { useState } from "react";
@@ -10,8 +8,8 @@ import axios from "axios";
 export default function RecipientInput() {
   const navigate = useNavigate();
   const location = useLocation();
-  const purpose = location.state.purpose; // 용도
-  const [recipient, setRecipient] = useState(""); // 받는 사람
+  const purpose = location.state.purpose;
+  const [recipient, setRecipient] = useState("");
 
   const userId = sessionStorage.getItem("userId");
   const token = sessionStorage.getItem("token");
@@ -19,12 +17,11 @@ export default function RecipientInput() {
   const handleRecipientChange = (event) => {
     setRecipient(event.target.value);
   };
-  // 다했어요! 버튼을 누르면 실행되는 함수
+
   const doneBtnHandler = () => {
     if (!recipient) {
       alert("타임캡슐을 받을 사람을 적어주세요!");
     } else if (purpose === "toSomeone") {
-      // 용도2인 경우, 작성 형식 선택 화면으로 이동
       navigate("/capsule/letter-format", {
         state: {
           pcapsule_name: location.state.pcapsule_name,
@@ -35,8 +32,6 @@ export default function RecipientInput() {
         },
       });
     } else if (purpose === "rollingPaper") {
-      // 용도3인 경우
-      // 캡슐번호 & URL 부여 화면으로 이동 (캡슐 번호, URL 전달)
       axios
         .post(
           `${process.env.REACT_APP_API_BASE_URL}/rcapsule/create`,
@@ -54,7 +49,6 @@ export default function RecipientInput() {
         )
         .then((response) => {
           if (response.status === 200) {
-            console.log(response);
             navigate("/capsule/assign-number-url", {
               state: {
                 capsule_number: response.data.result.capsule_number,

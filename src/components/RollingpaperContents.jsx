@@ -1,5 +1,3 @@
-// 롤링페이퍼 타임캡슐 오픈 시 화면 - 작성된 편지들
-
 import "../styles/RollingpaperContents.css";
 
 import axios from "axios";
@@ -20,7 +18,6 @@ export default function RollingpaperContents({
         `${process.env.REACT_APP_API_BASE_URL}/rcapsule/retrieveDetail?writer_id=${writerId}`
       )
       .then((response) => {
-        console.log(response);
         if (response.status === 200) {
           if (format === 1) {
             navigate("/capsule/open/text", {

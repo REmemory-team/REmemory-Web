@@ -1,5 +1,3 @@
-// 글&사진 편지 작성
-
 import "../styles/Write.css";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -80,7 +78,6 @@ const Write = () => {
     }
   };
 
-  //textarea 길이 조정
   const autoResizeTextarea = (e, index) => {
     setCursor({ pos: e.target.selectionStart, index: index });
     let textarea = document.querySelector(`.index${e.target.id}`);
@@ -106,7 +103,6 @@ const Write = () => {
     }
   };
 
-  //이미지 첨부
   const addItem = () => {
     const imageCount = state.contents.filter(
       (item) => item.type === "image"
@@ -121,9 +117,7 @@ const Write = () => {
     const selectedFile = e.target.files[0];
     const newArray = state.contents;
     if (selectedFile) {
-      //선택한 파일 읽기
       const reader = new FileReader();
-      //편지 맨 뒤에 이미지 삽입하는 경우
       if (
         cursor.pos === null ||
         (cursor.index === state.contents.length - 1 &&
@@ -139,7 +133,6 @@ const Write = () => {
           });
         };
         reader.readAsDataURL(selectedFile);
-        // 이미지 연달아 첨부하는 경우 또는 맨 위에 이미지 첨부하는 경우
         if (state.contents[state.contents.length - 1].content.length === 0) {
           newArray.splice(newArray.length - 1, 1);
         }
@@ -153,7 +146,6 @@ const Write = () => {
         );
         reader.onload = (event) => {
           if (textBeforeClick.length !== 0 && textAfterClick.length !== 0) {
-            //텍스트 사이에 이미지 삽입의 경우
             newArray.splice(cursor.index, 1, {
               type: "text",
               content: textBeforeClick,
@@ -167,9 +159,7 @@ const Write = () => {
               content: event.target.result,
             });
           } else if (textBeforeClick.length === 0) {
-            //텍스트 맨 앞에 이미지 삽입의 경우
             if (cursor.index === 0) {
-              //편지 최상단
               newArray.unshift({ type: "image", content: event.target.result });
             } else {
               newArray.splice(cursor.index - 1, 0, {
@@ -178,7 +168,6 @@ const Write = () => {
               });
             }
           } else {
-            //텍스트 맨 뒤에 이미지 삽입의 경우
             newArray.splice(cursor.index + 1, 0, {
               type: "image",
               content: event.target.result,
@@ -196,11 +185,9 @@ const Write = () => {
     }
   };
 
-  //이미지 삭제
   const deleteImage = (index) => {
     if (window.confirm("이미지를 삭제할까요?")) {
       const newItems = state.contents;
-      //앞뒤 content가 둘 다 text인 경우 병합
       if (
         index !== 0 &&
         newItems[index - 1].type === "text" &&
@@ -219,7 +206,6 @@ const Write = () => {
     }
   };
 
-  //텍스트 1000자 제한
   const handleContentChange = (index, content) => {
     const newItems = [...state.contents];
     newItems[index].content = content;
@@ -241,7 +227,6 @@ const Write = () => {
     }
   };
 
-  //텍스트 좌, 우, 가운데 정렬
   const changeAlignType = () => {
     if (state.align_type === "left") {
       setState({
@@ -347,7 +332,6 @@ const Write = () => {
         </div>
       </div>
       <div className="write_bottom">
-        {/* <button className="btn_overview">타임캡슐 미리보기</button> */}
         <button className="btn_submit" onClick={handleSubmit}>
           <span>다했어요!</span>
         </button>

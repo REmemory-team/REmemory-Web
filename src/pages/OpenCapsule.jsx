@@ -1,5 +1,3 @@
-// 캡슐 확인 (오픈된 캡슐 확인, 오픈되지 않은 캡슐..)
-
 import "../styles/OpenCapsule.css";
 
 import { useEffect, useRef, useState } from "react";
@@ -49,7 +47,6 @@ const OpenCapsule = () => {
 
   const userNickname = sessionStorage.getItem("nickname");
   useEffect(() => {
-    console.log(location.state.open_date);
     if (status !== "OPENED") {
       const targetDate = new Date(location.state.open_date);
 
@@ -93,17 +90,13 @@ const OpenCapsule = () => {
         },
       })
       .then((response) => {
-        //롤링페이퍼
         if (response.data.result.rcapsules) {
           navigate("/capsule/open/rolling", { state: response.data.result });
         } else {
-          //글+사진
           const state = response.data.result.pcapsules;
           if (state.content_type === 1) {
             navigate("/capsule/open/text", { state });
-          }
-          //음성메세지
-          else {
+          } else {
             navigate("/capsule/open/voice", { state });
           }
         }
@@ -131,7 +124,6 @@ const OpenCapsule = () => {
   };
   return (
     <div className={["OpenCapsule", theme].join(" theme")}>
-      {/* {status !== "OPENED" && ( */}
       <div className="btn_top">
         <img
           className="icon_home"
@@ -148,14 +140,13 @@ const OpenCapsule = () => {
           onClick={menuHandler}
         />
       </div>
-      {/* )} */}
       {isLoaded && (
         <div className={["menu", openMenu].join(" ")}>
           <Menu menuHandler={menuHandler} />
         </div>
       )}
       <div className="container">
-        { !isPcapsule && (
+        {!isPcapsule && (
           <div className="numberOfLetters">
             <p>작성된 편지 : </p>
             <p className="counter">{tens}</p>

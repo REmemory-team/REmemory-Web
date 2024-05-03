@@ -8,13 +8,6 @@ import { ReactComponent as PersonsIcon } from "../assets/persons.svg";
 import React from "react";
 import { useState } from "react";
 
-// import DisplayAds from "../components/ads/DisplayAds";
-
-
-
-
-
-
 export default function Purpose() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -88,7 +81,6 @@ export default function Purpose() {
             next
           </button>
         </div>
-        {/* <DisplayAds /> */}
         <iframe
           src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
           width="320"
@@ -99,8 +91,10 @@ export default function Purpose() {
           browsingtopics
         ></iframe>
         <div>
-        <p style ={{fontSize:'10px',color:'#495057'}}>쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음</p>
-      </div>
+          <p style={{ fontSize: "10px", color: "#495057" }}>
+            쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-//편지 작성 완료 화면
 import "../styles/CompleteWriting.css";
 
 import React, { useState } from "react";
@@ -9,8 +8,6 @@ import icon_home from "../assets/icon_home.png";
 import icon_menu from "../assets/icon_menu.png";
 import img_btn from "../assets/CompleteWriting_btn.png";
 
-// import DisplayAds from "../components/ads/DisplayAds";
-
 const CompleteWriting = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -19,7 +16,7 @@ const CompleteWriting = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const userNickname = sessionStorage.getItem("nickname");
 
-  const theme = location.state?.theme || "1"; // 기본값을 1로 설정
+  const theme = location.state?.theme || "1";
 
   const themes = {
     1: "rememory",
@@ -81,7 +78,6 @@ const CompleteWriting = () => {
         <img alt="" src={img_btn} />
         <p>새로운 캡슐 만들러가기</p>
       </div>
-      {/* <DisplayAds /> */}
       <iframe
         src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
         width="320"

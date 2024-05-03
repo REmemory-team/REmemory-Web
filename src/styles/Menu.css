@@ -60,7 +60,7 @@
   font-weight: 400;
   font-size: 11px;
 }
-.Menu .logo{
+.Menu .logo {
   flex-wrap: 10%;
   height: fit-content;
   padding: 1.95rem;
@@ -68,9 +68,9 @@
   flex-direction: column;
   align-items: start;
 }
-.Menu .logo img.image{
+.Menu .logo img.image {
   padding: 1rem 0;
 }
-.Menu .logo img.text{
-  margin-left: -.3rem;
+.Menu .logo img.text {
+  margin-left: -0.3rem;
 }

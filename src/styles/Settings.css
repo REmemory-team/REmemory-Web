@@ -37,7 +37,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }
 .setting-page .section1 {
@@ -58,7 +58,7 @@
   font-size: 1.375rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 0.8125rem; /* 59.091% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }
 .setting-page .kakao {
@@ -118,7 +118,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   padding-left: 0.8rem;
 }
@@ -137,7 +137,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }
 .setting-page .nickname-input::placeholder {
@@ -147,7 +147,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
 }
 .setting-page .nickname-input:focus {
@@ -160,7 +160,7 @@
   font-size: 0.9375rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 86.667% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   text-decoration-line: underline;
   cursor: pointer;
@@ -193,7 +193,7 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   cursor: pointer;
 }
@@ -203,7 +203,7 @@
   font-size: 0.9375rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 0.8125rem; /* 86.667% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   text-decoration-line: underline;
   cursor: pointer;
@@ -218,7 +218,7 @@
   font-size: 0.9375rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 0.8125rem; /* 86.667% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   text-decoration: none;
 }
@@ -229,7 +229,7 @@
   font-size: 0.9375rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 0.8125rem; /* 86.667% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   text-decoration: none;
 }

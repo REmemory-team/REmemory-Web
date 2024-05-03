@@ -47,8 +47,6 @@
   margin-bottom: 1.5rem;
 }
 .received-voice-page .back-btn {
-  /* width: 1.64063rem;
-  height: 1.09375rem; */
   cursor: pointer;
 }
 .received-voice-page .home-btn {
@@ -154,15 +152,11 @@
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 0.8125rem; /* 72.222% */
+  line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   padding: 0.1rem 1.3rem;
   flex-shrink: 0;
 }
-/* .received-voice-page-theme3 .received-recipient,
-.received-voice-page-theme3 .received-sender {
-  color: #fff;
-} */
 .received-voice-page .received-sender {
   display: flex;
   justify-content: end;

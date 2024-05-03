@@ -1,5 +1,3 @@
-// 캡슐번호로 타임캡슐 확인
-
 import "../styles/CheckCapsuleByNumber.css";
 
 import { useEffect, useState } from "react";
@@ -8,13 +6,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 import React from "react";
 import axios from "axios";
 
-// import DisplayAds from "../components/ads/DisplayAds";
-
 export default function CheckCapsuleByNumber() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [capsuleNum, setCapsuleNum] = useState(""); // 캡슐 번호
-  const [password, setPassword] = useState(""); // 비밀번호
+  const [capsuleNum, setCapsuleNum] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     if (location.state && location.state.capsule_number) {
@@ -29,7 +25,6 @@ export default function CheckCapsuleByNumber() {
     setPassword(event.target.value);
   };
 
-  // 확인 버튼 누르면 실행되는 함수
   const confirmBtnHandler = () => {
     if (!capsuleNum) {
       alert("캡슐번호를 입력해주세요.");
@@ -112,7 +107,6 @@ export default function CheckCapsuleByNumber() {
       <button onClick={confirmBtnHandler} className="capsule-check-btn">
         확인
       </button>
-      {/* <DisplayAds /> */}
       <iframe
         src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
         width="320"

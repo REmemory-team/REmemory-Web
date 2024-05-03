@@ -10,7 +10,6 @@
     linear-gradient(180deg, #bed5f9 0%, #aa9acc 100%);
 }
 
-/*top buttons*/
 .CompleteWriting .btn_top {
   position: absolute;
   top: 0;
@@ -47,7 +46,6 @@
   animation: fade-out 0.5s forwards;
 }
 
-/*btn*/
 .CompleteWriting .btn {
   display: flex;
   width: 50%;
@@ -76,7 +74,6 @@
   margin-top: 0.55rem;
 }
 
-/*tema*/
 .CompleteWriting.theme2 {
   background: linear-gradient(
       180deg,

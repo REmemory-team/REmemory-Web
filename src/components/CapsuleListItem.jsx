@@ -1,5 +1,3 @@
-// 카카오 로그인 - 홈 화면 팝업창
-
 import "../styles/CapsuleListItem.css";
 
 import React from "react";

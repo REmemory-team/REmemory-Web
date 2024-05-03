@@ -1,5 +1,3 @@
-// 웹 처음 입장 시
-
 import "../styles/Login.css";
 
 import React, { useEffect } from "react";
@@ -10,8 +8,6 @@ import axios from "axios";
 import circle from "../assets/circle.png";
 import kakaoicon from "../assets/kakaoicon.png";
 import twinkle from "../assets/twinkle.png";
-
-// import DisplayAds from "../components/ads/DisplayAds";
 
 const Login = () => {
   const { Kakao } = window;
@@ -54,7 +50,6 @@ const Login = () => {
       if (response.status === 200 && response.data.isSuccess) {
         const { token, userId, nickname } = response.data.result;
 
-        // 세션 스토리지에 저장
         sessionStorage.setItem("token", token);
         sessionStorage.setItem("userId", userId);
         sessionStorage.setItem("nickname", nickname);
@@ -84,9 +79,6 @@ const Login = () => {
     navigate("/capsule/input-number");
   };
 
-  // const Login = () => {
-  //   navigate("/login/kakao/home");
-  // };
   return (
     <div className="login-page">
       <div className="logo-img">
@@ -102,7 +94,6 @@ const Login = () => {
       <div className="capsule-check-btn" onClick={capsuleCheck}>
         <span className="capsule-check-txt">캡슐번호로 타임캡슐 확인</span>
       </div>
-      {/* <DisplayAds /> */}
       <iframe
         src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
         width="320"
