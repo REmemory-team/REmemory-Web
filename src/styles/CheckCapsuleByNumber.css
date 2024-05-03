@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
-  position: relative;
+  /* position: relative; */
 }
 .check-capsule-page .check-capsule-message {
   color: #000;
@@ -108,7 +108,7 @@
   letter-spacing: 0.00413rem;
   margin-bottom: 15rem;
 }
-.check-capsule-page iframe {
+/* .check-capsule-page iframe {
   position: absolute;
   bottom: 2rem;
-}
+} */
