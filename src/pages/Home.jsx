@@ -86,13 +86,14 @@ export default function Home() {
 
   return (
     <div className="home">
-      <img
-        className="image_menu"
-        src={icon_menu}
-        alt="메뉴아이콘"
-        onClick={menuHandler}
-      />
-
+      <div>
+        <img
+          className="image_menu"
+          src={icon_menu}
+          alt="메뉴아이콘"
+          onClick={menuHandler}
+        />
+      </div>
       {isLoaded && (
         <div className={["menu", openMenu].join(" ")}>
           <Menu menuHandler={menuHandler} />
