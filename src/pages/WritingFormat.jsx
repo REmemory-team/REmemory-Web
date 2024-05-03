@@ -47,7 +47,7 @@ export default function WritingFormat() {
         .post(
           `${process.env.REACT_APP_API_BASE_URL}/pcapsule/create`,
           {
-            // userId: sessionStorage.getItem("userId"),
+            userId: sessionStorage.getItem("userId"),
             userId: 10,
             pcapsule_name: location.state.pcapsule_name,
             open_date: location.state.open_date,
