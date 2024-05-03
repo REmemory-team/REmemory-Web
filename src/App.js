@@ -34,7 +34,6 @@ function App() {
   TagManager.initialize(tagManagerArgs);
   return (
     <div className="App">
-      {/* <Router> */}
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route
@@ -85,7 +84,6 @@ function App() {
           element={<CompleteWriting />}
         ></Route>
       </Routes>
-      {/* </Router> */}
     </div>
   );
 }
