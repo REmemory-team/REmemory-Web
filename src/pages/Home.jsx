@@ -90,7 +90,7 @@ export default function Home() {
           className="image_menu"
           src={icon_menu}
           alt="메뉴아이콘"
-          onClick={handleInputNumber}
+          onClick={menuHandler}
         />
       </div>
       {isLoaded && (
