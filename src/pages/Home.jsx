@@ -85,7 +85,7 @@ export default function Home() {
 
   return (
     <div className="home">
-      <div>
+      <div className="top_menu">
         <img
           className="image_menu"
           src={icon_menu}
