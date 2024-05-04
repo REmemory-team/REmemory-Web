@@ -51,7 +51,7 @@ const Login = () => {
         console.log(response);
         const { token, userId, nickname } = response.data.result;
 
-        if (response.status.INACTIVE_ACCOUNT) {
+        if (response.data.result.status === 0) {
           const confirmed = window.confirm("계정을 활성화하시겠습니까?");
           if (confirmed) {
             axios
@@ -84,7 +84,7 @@ const Login = () => {
         navigate("/");
       }
     } catch (error) {
-      console.error("Failed to send authorization code to server:", error);
+      console.error(error);
       navigate("/");
     }
   };
