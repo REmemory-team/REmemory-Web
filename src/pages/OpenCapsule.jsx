@@ -56,26 +56,21 @@ const OpenCapsule = () => {
       const updateRemainingTime = () => {
         const currentDate = new Date();
         const timeDiff = targetDate.getTime() - currentDate.getTime();
-
-        // 9시간(32400000밀리초)을 더해서 시간 차이를 조정합니다.
-        const adjustedTimeDiff = timeDiff + 32400000;
-
-        if (adjustedTimeDiff <= 0) {
+        if (timeDiff <= 0) {
           clearInterval(interValId);
           setRemainingTime({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         } else {
-          const days = Math.floor(adjustedTimeDiff / (1000 * 60 * 60 * 24));
+          const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
           const hours = Math.floor(
-            (adjustedTimeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
           );
           const minutes = Math.floor(
-            (adjustedTimeDiff % (1000 * 60 * 60)) / (1000 * 60)
+            (timeDiff % (1000 * 60 * 60)) / (1000 * 60)
           );
-          const seconds = Math.floor((adjustedTimeDiff % (1000 * 60)) / 1000);
+          const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
           setRemainingTime({ days, hours, minutes, seconds });
         }
       };
-
       updateRemainingTime();
       const interValId = setInterval(updateRemainingTime, 1000);
 
@@ -186,7 +181,9 @@ const OpenCapsule = () => {
             {status === "OPENED" ? (
               <p onClick={checkCapsule}>확인하기</p>
             ) : (
-              `${remainingTime.days}일 ${remainingTime.hours}시간 ${remainingTime.minutes}분 ${remainingTime.seconds}초`
+              `${remainingTime.days}일 ${remainingTime.hours - 9}시간 ${
+                remainingTime.minutes
+              }분 ${remainingTime.seconds}초`
             )}
           </button>
         </div>

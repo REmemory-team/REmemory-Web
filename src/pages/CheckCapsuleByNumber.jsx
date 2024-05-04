@@ -42,6 +42,7 @@ export default function CheckCapsuleByNumber() {
         },
       })
       .then((response) => {
+        console.log(response);
         if (response.status === 200) {
           if (response.data.result.pcapsules) {
             navigate("/capsule/verify", {
@@ -65,7 +66,7 @@ export default function CheckCapsuleByNumber() {
                 open_date: response.data.result.rcapsules.open_date,
                 dear_name: response.data.result.rcapsules.dear_name,
                 theme: response.data.result.rcapsules.theme,
-                rcapsule_cnt: response.data.result.rcapsules.rcapsule_cnt,
+                rcapsule_cnt: response.data.result.rcapsules.count,
                 status: response.data.result.rcapsules.status,
               },
             });
