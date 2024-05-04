@@ -63,9 +63,6 @@ const OpenCapsule = () => {
 
       const updateRemainingTime = () => {
         const currentDate = new Date();
-        currentDate.setHours(0);
-        currentDate.setMinutes(0);
-        currentDate.setSeconds(0);
         console.log(currentDate);
         const timeDiff = targetDate.getTime() - currentDate.getTime();
         console.log(timeDiff);
