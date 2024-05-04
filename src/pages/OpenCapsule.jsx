@@ -52,12 +52,19 @@ const OpenCapsule = () => {
   useEffect(() => {
     if (status !== "OPENED") {
       const targetDate = new Date(location.state.open_date);
+      targetDate.setHours(0);
+      targetDate.setMinutes(0);
+      targetDate.setSeconds(0);
+
       console.log(targetDate);
 
       const updateRemainingTime = () => {
         const currentDate = new Date();
-        const timeDiff = targetDate.getTime() - currentDate.getTime();
+        currentDate.setHours(0);
+        currentDate.setMinutes(0);
+        currentDate.setSeconds(0);
         console.log(currentDate);
+        const timeDiff = targetDate.getTime() - currentDate.getTime();
         console.log(timeDiff);
         if (timeDiff <= 0) {
           clearInterval(interValId);
