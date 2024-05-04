@@ -82,7 +82,7 @@ function App() {
         <Route path="/capsule/settings/name-date" element={<Name />}></Route>
         <Route
           path="/capsule/write/Complete"
-          element={<CompleteWriting />}
+          element={<CompleteWriting2 />}
         ></Route>
       </Routes>
     </div>
