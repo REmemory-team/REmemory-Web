@@ -48,21 +48,17 @@ const Login = () => {
       );
 
       if (response.status === 200 && response.data.isSuccess) {
-        const { token, userId, nickname, status } = response.data.result;
+        const { token, userId, nickname } = response.data.result;
 
         sessionStorage.setItem("token", token);
         sessionStorage.setItem("userId", userId);
         sessionStorage.setItem("nickname", nickname);
-        sessionStorage.setItem("status", status);
+        // sessionStorage.setItem("status", status);
 
-        if (status === 0) {
-          alert("계정을 다시 활성화하시겠습니까?");
+        if (nickname) {
+          navigate("/login/kakao/home");
         } else {
-          if (nickname) {
-            navigate("/login/kakao/home");
-          } else {
-            navigate("/login/kakao/nickname");
-          }
+          navigate("/login/kakao/nickname");
         }
       } else {
         alert("로그인 또는 회원가입에 실패했습니다.");

@@ -91,6 +91,9 @@ export default function Settings() {
         )
         .then((response) => {
           if (response.data.isSuccess) {
+            sessionStorage.removeItem("token");
+            sessionStorage.removeItem("userId");
+            sessionStorage.removeItem("nickname");
             alert("탈퇴가 성공적으로 처리되었습니다.");
             navigate("/");
           }

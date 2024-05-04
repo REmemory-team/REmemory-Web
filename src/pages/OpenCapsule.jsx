@@ -52,6 +52,7 @@ const OpenCapsule = () => {
 
       const updateRemainingTime = () => {
         const currentDate = new Date();
+        currentDate.setHours(currentDate.getHours() - 9);
         const timeDiff = targetDate.getTime() - currentDate.getTime();
         if (timeDiff <= 0) {
           clearInterval(interValId);
@@ -120,7 +121,7 @@ const OpenCapsule = () => {
     document.execCommand("copy");
     e.target.focus();
 
-    alert("복사되었습니다");
+    alert("롤링페이퍼 링크가 복사되었습니다");
   };
   return (
     <div className={["OpenCapsule", theme].join(" theme")}>
