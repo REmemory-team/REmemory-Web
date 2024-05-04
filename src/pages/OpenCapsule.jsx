@@ -52,10 +52,13 @@ const OpenCapsule = () => {
   useEffect(() => {
     if (status !== "OPENED") {
       const targetDate = new Date(location.state.open_date);
+      console.log(targetDate);
 
       const updateRemainingTime = () => {
         const currentDate = new Date();
         const timeDiff = targetDate.getTime() - currentDate.getTime();
+        console.log(currentDate);
+        console.log(timeDiff);
         if (timeDiff <= 0) {
           clearInterval(interValId);
           setRemainingTime({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -181,9 +184,7 @@ const OpenCapsule = () => {
             {status === "OPENED" ? (
               <p onClick={checkCapsule}>확인하기</p>
             ) : (
-              `${remainingTime.days}일 ${remainingTime.hours - 9}시간 ${
-                remainingTime.minutes
-              }분 ${remainingTime.seconds}초`
+              `${remainingTime.days}일 ${remainingTime.hours}시간 ${remainingTime.minutes}분 ${remainingTime.seconds}초`
             )}
           </button>
         </div>
