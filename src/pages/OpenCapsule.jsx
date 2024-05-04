@@ -33,6 +33,8 @@ const OpenCapsule = () => {
   const isPcapsule = location.state && location.state.pcapsule_name;
   const { tens, units } = seperateDigits(location.state.rcapsule_cnt);
 
+  let interValId;
+
   function seperateDigits(number) {
     let tens, units;
     if (number === 0) {
@@ -82,7 +84,7 @@ const OpenCapsule = () => {
         }
       };
       updateRemainingTime();
-      const interValId = setInterval(updateRemainingTime, 1000);
+      interValId = setInterval(updateRemainingTime, 1000);
 
       return () => clearInterval(interValId);
     }
