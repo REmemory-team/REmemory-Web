@@ -54,6 +54,7 @@ const OpenCapsule = () => {
   useEffect(() => {
     if (status !== "OPENED") {
       const targetDate = new Date(location.state.open_date);
+      console.log(targetDate);
       targetDate.setHours(0);
       targetDate.setMinutes(0);
       targetDate.setSeconds(0);

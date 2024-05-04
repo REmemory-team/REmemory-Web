@@ -51,46 +51,38 @@ const Login = () => {
         console.log(response);
         const { token, userId, nickname } = response.data.result;
 
-        sessionStorage.setItem("token", token);
-        sessionStorage.setItem("userId", userId);
-        sessionStorage.setItem("nickname", nickname);
-
-        if (nickname) {
-          navigate("/login/kakao/home");
+        if (response.status.INACTIVE_ACCOUNT) {
+          const confirmed = window.confirm("계정을 활성화하시겠습니까?");
+          if (confirmed) {
+            axios
+              .patch(`${process.env.REACT_APP_API_BASE_URL}/user/activate`, {
+                headers: {
+                  authorization: `Bearer ${token}`,
+                },
+              })
+              .then((response) => {
+                console.log(response);
+                if (response.status === 200) {
+                  alert("계정이 활성화되었습니다!");
+                }
+              });
+          } else {
+          }
         } else {
-          navigate("/login/kakao/nickname");
+          sessionStorage.setItem("token", token);
+          sessionStorage.setItem("userId", userId);
+          sessionStorage.setItem("nickname", nickname);
+
+          if (nickname) {
+            navigate("/login/kakao/home");
+          } else {
+            navigate("/login/kakao/nickname");
+          }
         }
       } else {
         alert("로그인 또는 회원가입에 실패했습니다.");
         navigate("/");
       }
-
-      // if (response.status === 200 && response.data.isSuccess) {
-      //   console.log(response);
-      //   const { token, userId, nickname, status } = response.data.result;
-
-      //   if (status === 0) {
-      //     const confirmed = window.confirm("계정을 활성화하시겠습니까?");
-      //     if (confirmed) {
-      //       alert("계정이 활성화되었습니다!");
-      //     } else {
-      //     }
-      //   } else {
-      //     sessionStorage.setItem("token", token);
-      //     sessionStorage.setItem("userId", userId);
-      //     sessionStorage.setItem("nickname", nickname);
-      //     sessionStorage.setItem("status", status);
-
-      //     if (nickname) {
-      //       navigate("/login/kakao/home");
-      //     } else {
-      //       navigate("/login/kakao/nickname");
-      //     }
-      //   }
-      // } else {
-      //   alert("로그인 또는 회원가입에 실패했습니다.");
-      //   navigate("/");
-      // }
     } catch (error) {
       console.error("Failed to send authorization code to server:", error);
       navigate("/");
