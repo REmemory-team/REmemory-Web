@@ -30,7 +30,7 @@ const Login = () => {
       const isIOS = Boolean(navigator.userAgent.match(/iPhone|iPad|iPod/i));
 
       await Kakao.Auth.authorize({
-        redirectUri: "http://rememory.site",
+        redirectUri: "https://rememory.site",
         throughTalk: isAndroid ? false : isIOS ? false : true,
       });
     } catch (error) {
