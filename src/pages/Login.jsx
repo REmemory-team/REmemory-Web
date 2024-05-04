@@ -30,7 +30,7 @@ const Login = () => {
       const isIOS = Boolean(navigator.userAgent.match(/iPhone|iPad|iPod/i));
 
       await Kakao.Auth.authorize({
-        redirectUri: "http://rememory.site",
+        redirectUri: "https://rememory.site",
         throughTalk: isAndroid ? false : isIOS ? false : true,
       });
     } catch (error) {
@@ -48,16 +48,21 @@ const Login = () => {
       );
 
       if (response.status === 200 && response.data.isSuccess) {
-        const { token, userId, nickname } = response.data.result;
+        const { token, userId, nickname, status } = response.data.result;
 
         sessionStorage.setItem("token", token);
         sessionStorage.setItem("userId", userId);
         sessionStorage.setItem("nickname", nickname);
+        sessionStorage.setItem("status", status);
 
-        if (nickname) {
-          navigate("/login/kakao/home");
+        if (status === 0) {
+          alert("계정을 다시 활성화하시겠습니까?");
         } else {
-          navigate("/login/kakao/nickname");
+          if (nickname) {
+            navigate("/login/kakao/home");
+          } else {
+            navigate("/login/kakao/nickname");
+          }
         }
       } else {
         alert("로그인 또는 회원가입에 실패했습니다.");

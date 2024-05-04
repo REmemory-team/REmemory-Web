@@ -4,6 +4,8 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import CapsuleCodeAssignment from "./pages/CapsuleCodeAssignment.jsx";
 import CheckCapsuleByNumber from "./pages/CheckCapsuleByNumber";
+import CompleteWriting from "./pages/CompleteWriting.jsx";
+import CompleteWriting2 from "./pages/CompleteWriting2.jsx";
 import ConfirmBasicSetting from "./pages/ConfirmBasicSetting";
 import EnterURL from "./pages/EnterURL";
 import Home from "./pages/Home";
@@ -24,7 +26,6 @@ import Theme from "./pages/Theme.jsx";
 import URLnCodeAssignment from "./pages/URLnCodeAssignment.jsx";
 import Write from "./pages/Write";
 import WritingFormat from "./pages/WritingFormat";
-import CompleteWriting from "./pages/CompleteWriting.jsx";
 
 function App() {
   const tagManagerArgs = {

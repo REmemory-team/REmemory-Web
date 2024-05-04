@@ -78,20 +78,6 @@ const CompleteWriting = () => {
         <img alt="" src={img_btn} />
         <p>새로운 캡슐 만들러가기</p>
       </div>
-      <iframe
-        src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
-        width="320"
-        height="90"
-        frameborder="0"
-        scrolling="no"
-        referrerpolicy="unsafe-url"
-        browsingtopics
-      ></iframe>
-      <div>
-        <p style={{ fontSize: "10px", color: "#495057" }}>
-          쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음
-        </p>
-      </div>
     </div>
   );
 };
