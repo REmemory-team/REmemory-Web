@@ -88,6 +88,7 @@
   letter-spacing: 0.00413rem;
   margin-bottom: 1.5rem;
   padding-top: 0.5rem;
+  cursor: pointer;
 }
 .purpose__option:last-child {
   margin-bottom: 2.7rem;
@@ -143,4 +144,5 @@
   border: none;
   border-radius: 16px;
   margin-bottom: 2.5rem;
+  cursor: pointer;
 }
