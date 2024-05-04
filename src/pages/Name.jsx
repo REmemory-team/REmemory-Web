@@ -56,8 +56,13 @@ export default function Name() {
       inputDate.getMonth(),
       inputDate.getDate()
     );
+    const oneWeekLater = new Date(
+      currentWithoutTime.getTime() + 7 * 24 * 60 * 60 * 1000
+    );
 
-    return inputWithoutTime < currentWithoutTime;
+    return (
+      inputWithoutTime < currentWithoutTime || inputWithoutTime >= oneWeekLater
+    );
   };
 
   const isValidDate = (inputYear, inputMonth, inputDay) => {
@@ -117,9 +122,10 @@ export default function Name() {
     }
 
     if (isPastDate(year, month, day)) {
-      alert("캡슐 오픈 시기는 오늘 이후로 설정해주세요!");
+      alert("캡슐 오픈 시기는 오늘부터 7일 이내로 설정해주세요!");
       return;
     }
+
     navigate("/capsule/settings/confirm", {
       state: {
         theme: theme,
