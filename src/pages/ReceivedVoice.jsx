@@ -14,6 +14,7 @@ export default function ReceivedVoice() {
   const location = useLocation();
   const audioRef = useRef(null);
   const [play, setPlay] = useState(false);
+  const [audioEnded, setAudioEnded] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -30,10 +31,17 @@ export default function ReceivedVoice() {
       }
     };
 
+    const handleEnded = () => {
+      setPlay(false);
+      setAudioEnded(true);
+    };
+
     audio.addEventListener("timeupdate", updateProgressBar);
+    audio.addEventListener("ended", handleEnded);
 
     return () => {
       audio.removeEventListener("timeupdate", updateProgressBar);
+      audio.removeEventListener("ended", handleEnded);
     };
   }, []);
 
@@ -101,11 +109,15 @@ export default function ReceivedVoice() {
             <div className="play-btn" onClick={playBtnHandler}>
               <img
                 src={
-                  play
+                  audioEnded
+                    ? require(`../assets/play_btn${location.state.theme}.png`)
+                    : play
                     ? require(`../assets/pause_btn${location.state.theme}.png`)
                     : require(`../assets/play_btn${location.state.theme}.png`)
                 }
-                alt={play ? "정지 버튼" : "재생 버튼"}
+                alt={
+                  audioEnded ? "재생 버튼" : play ? "정지 버튼" : "재생 버튼"
+                }
               ></img>
             </div>
             <div className="bar">
