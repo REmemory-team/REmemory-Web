@@ -62,7 +62,9 @@ const Write = () => {
             `${process.env.REACT_APP_API_BASE_URL}/rcapsule/create/text_image`,
             data
           );
-          navigate("/capsule/write/Complete");
+          navigate("/capsule/write/Complete", {
+            state: { theme: location.state.theme },
+          });
         } else {
           await axios.post(
             `${process.env.REACT_APP_API_BASE_URL}/pcapsule/create/text_image`,

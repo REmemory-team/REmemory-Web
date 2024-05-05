@@ -156,7 +156,9 @@ export default function Record() {
               }
             )
             .then((response) => {
-              navigate("/capsule/write/Complete");
+              navigate("/capsule/write/Complete", {
+                state: { theme: location.state.theme },
+              });
             })
             .catch((error) => {
               console.error("오류:", error);

@@ -12,7 +12,11 @@ import { useState } from "react";
 export default function Complete() {
   const location = useLocation();
   const navigate = useNavigate();
-  const theme = location.state.theme;
+  // const theme = location.state.theme;
+  let theme = 1; // 기본 테마
+  if (location.state && location.state.theme) {
+    theme = location.state.theme;
+  }
   const userNickname = sessionStorage.getItem("nickname");
   const [openMenu, setOpenMenu] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
