@@ -55,11 +55,15 @@ const Login = () => {
           const confirmed = window.confirm("계정을 활성화하시겠습니까?");
           if (confirmed) {
             axios
-              .patch(`${process.env.REACT_APP_API_BASE_URL}/user/activate`, {
-                headers: {
-                  authorization: `Bearer ${token}`,
-                },
-              })
+              .patch(
+                `${process.env.REACT_APP_API_BASE_URL}/user/activate`,
+                { userId: userId },
+                {
+                  headers: {
+                    authorization: `Bearer ${token}`,
+                  },
+                }
+              )
               .then((response) => {
                 console.log(response);
                 if (response.status === 200) {
