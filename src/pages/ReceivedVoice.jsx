@@ -60,6 +60,11 @@ export default function ReceivedVoice() {
     const audio = audioRef.current;
     if (!audio) return;
 
+    if (audioEnded) {
+      audio.currentTime = 0;
+      setAudioEnded(false);
+    }
+
     if (play) {
       audio.pause();
     } else {
