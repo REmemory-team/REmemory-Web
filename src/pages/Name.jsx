@@ -122,7 +122,7 @@ export default function Name() {
     }
 
     if (isPastDate(year, month, day)) {
-      alert("캡슐 오픈 시기는 오늘부터 7일 이내로 설정해주세요!");
+      alert("캡슐 오픈 시기는 오늘부터 7일 이내로 설정해주세요!\n더욱 발전하여 설정기간을 늘릴 수 있도록 노력하겠습니다.\n응원해주세요!");
       return;
     }
 
