@@ -47,7 +47,7 @@ const Login = () => {
         `${process.env.REACT_APP_API_BASE_URL}/user/auth?code=${code}`
       );
 
-      if (response.status === 200 && response.data.isSuccess) {
+      if (response.status === 200) {
         console.log(response);
         const { token, userId, nickname } = response.data.result;
 
@@ -65,6 +65,9 @@ const Login = () => {
                 if (response.status === 200) {
                   alert("계정이 활성화되었습니다!");
                 }
+              })
+              .catch((error) => {
+                console.log(error);
               });
           } else {
           }

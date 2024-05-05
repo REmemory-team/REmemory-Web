@@ -19,6 +19,7 @@ export default function RollingpaperContents({
       )
       .then((response) => {
         if (response.status === 200) {
+          console.log(response);
           if (format === 1) {
             navigate("/capsule/open/text", {
               state: {
@@ -26,6 +27,7 @@ export default function RollingpaperContents({
                 theme: theme,
                 dear_name: recipient,
                 text_img_data: response.data.result.capsuledata.text_img_data,
+                align_type: response.data.result.capsuledata.align_type,
               },
             });
           } else if (format === 2) {

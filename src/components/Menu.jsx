@@ -9,8 +9,8 @@ import icon_profile from "../assets/icon_profile.png";
 import icon_setting from "../assets/icon_setting.png";
 import image_logo from "../assets/image_logo.png";
 import text_logo from "../assets/text_logo.png";
-import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Menu = ({ menuHandler }) => {
   const navigate = useNavigate();
@@ -41,6 +41,9 @@ const Menu = ({ menuHandler }) => {
 
   const goInstagram = () => {
     window.open("https://www.instagram.com/rememory_official", "_blank");
+  };
+  const goKakaoChat = () => {
+    window.open("http://pf.kakao.com/_xkjiFG/chat", "_blank");
   };
 
   const closeMenu = () => {
@@ -96,7 +99,7 @@ const Menu = ({ menuHandler }) => {
         <img className="line" alt="" src={boundary_line} />
         <div className="button_section">
           <img alt="" src={icon_chat} />
-          <button>질문/문의</button>
+          <button onClick={goKakaoChat}>질문/문의</button>
         </div>
         <div className="button_section">
           <img alt="" src={icon_instagram} />
