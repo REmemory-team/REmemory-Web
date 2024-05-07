@@ -37,6 +37,8 @@ const Write = () => {
     pos: null,
     index: null,
   });
+  
+  const maxSize = 5*1024*1024;
 
   useEffect(() => {
     setReceivedState(location.state);
@@ -118,7 +120,11 @@ const Write = () => {
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     const newArray = state.contents;
-    if (selectedFile) {
+    if(selectedFile.size > maxSize){
+      alert("파일 크기는 5MB 이하만 첨부 가능합니다.");
+      return;
+    }
+    else if (selectedFile) {
       const reader = new FileReader();
       if (
         cursor.pos === null ||
