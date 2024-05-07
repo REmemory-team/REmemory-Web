@@ -210,7 +210,7 @@ const OpenCapsule = () => {
             src={isPcapsule ? image_add : image_share}
           />
           <form>
-            <textarea ref={copyUrlRef} defaultValue={`/rolling/${capsuleNumber}`} />
+            <textarea ref={copyUrlRef} defaultValue={`rememory.site/rolling/${capsuleNumber}`} />
           </form>
           {!isPcapsule && <p>공유하기</p>}
         </div>
