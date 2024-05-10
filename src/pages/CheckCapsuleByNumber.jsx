@@ -3,6 +3,7 @@ import "../styles/CheckCapsuleByNumber.css";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import { ReactComponent as BackIcon } from "../assets/back_btn2.svg";
 import React from "react";
 import axios from "axios";
 
@@ -85,8 +86,15 @@ export default function CheckCapsuleByNumber() {
       });
   };
 
+  const backBtnHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="check-capsule-page">
+      <div className="check-capsule-top">
+        <BackIcon onClick={backBtnHandler} />
+      </div>
       <p className="check-capsule-message">캡슐번호로 타임캡슐 확인하기</p>
       <input
         type="text"

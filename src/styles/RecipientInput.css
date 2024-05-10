@@ -17,7 +17,7 @@
   line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   flex-shrink: 0;
-  margin-top: 10rem;
+  margin-top: 6rem;
   margin-bottom: 5rem;
 }
 .recipient-input-page .recipient-input-field {
@@ -81,4 +81,10 @@
   line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   flex-shrink: 0;
+}
+.recipient-input-page .recipient-input-top {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding: 25px;
 }

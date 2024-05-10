@@ -2,6 +2,7 @@ import "../styles/Purpose.css";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
+import { ReactComponent as BackIcon } from "../assets/back_btn.svg";
 import { ReactComponent as LineIcon } from "../assets/Line.svg";
 import { ReactComponent as PersonIcon } from "../assets/person.svg";
 import { ReactComponent as PersonsIcon } from "../assets/persons.svg";
@@ -27,8 +28,15 @@ export default function Purpose() {
     });
   };
 
+  const backBtnHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <div className={`purpose purpose__theme${theme}`}>
+      <div className="purpose-top">
+        <BackIcon onClick={backBtnHandler} />
+      </div>
       <div className="purpose__wrapper">
         <img
           src={require(`../assets/기본 캡슐이미지${theme}.png`)}

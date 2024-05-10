@@ -3,6 +3,7 @@ import "../styles/RecipientInput.css";
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import { ReactComponent as BackIcon } from "../assets/back_btn.svg";
 import axios from "axios";
 
 export default function RecipientInput() {
@@ -68,8 +69,15 @@ export default function RecipientInput() {
     }
   };
 
+  const backBtnHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="recipient-input-page">
+      <div className="recipient-input-top">
+        <BackIcon onClick={backBtnHandler} />
+      </div>
       <p className="recipient-input-message">
         타임캡슐을 받을 사람을 적어주세요!
       </p>

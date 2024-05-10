@@ -24,8 +24,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 26%;
-  padding-bottom: 10%;
+  padding-top: 10%;
+  padding-bottom: 5%;
 }
 .name__image {
   margin-bottom: 2rem;
@@ -178,4 +178,10 @@
   border-radius: 16px;
   margin-bottom: 2.5rem;
   cursor: pointer;
+}
+.name .name-top {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding: 25px;
 }

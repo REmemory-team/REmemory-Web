@@ -3,6 +3,7 @@ import "../styles/Name.css";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import { ReactComponent as BackIcon } from "../assets/back_btn.svg";
 import React from "react";
 
 export default function Name() {
@@ -122,7 +123,9 @@ export default function Name() {
     }
 
     if (isPastDate(year, month, day)) {
-      alert("캡슐 오픈 시기는 오늘부터 7일 이내로 설정해주세요!\n더욱 발전하여 설정기간을 늘릴 수 있도록 노력하겠습니다.\n응원해주세요!");
+      alert(
+        "캡슐 오픈 시기는 오늘부터 7일 이내로 설정해주세요!\n더욱 발전하여 설정기간을 늘릴 수 있도록 노력하겠습니다.\n응원해주세요!"
+      );
       return;
     }
 
@@ -138,8 +141,15 @@ export default function Name() {
     });
   };
 
+  const backBtnHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <div className={`name name__theme${theme}`}>
+      <div className="name-top">
+        <BackIcon onClick={backBtnHandler} />
+      </div>
       <div className="name__wrapper">
         <img
           src={require(`../assets/기본 캡슐이미지${theme}.png`)}

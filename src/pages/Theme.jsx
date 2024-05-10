@@ -1,5 +1,6 @@
 import "../styles/Theme.css";
 
+import { ReactComponent as BackIcon } from "../assets/back_btn.svg";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -19,8 +20,15 @@ export default function Theme() {
     navigate("/capsule/settings/purpose", { state: { theme: theme } });
   };
 
+  const backBtnHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="theme">
+      <div className="theme-top">
+        <BackIcon onClick={backBtnHandler} />
+      </div>
       <div className="theme__wrapper">
         <p className="theme__message">테마를 선택해주세요!</p>
         <div className="theme__options">

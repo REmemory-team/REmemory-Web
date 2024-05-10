@@ -3,6 +3,7 @@ import "../styles/WritingFormat.css";
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import { ReactComponent as BackIcon } from "../assets/back_btn.svg";
 import { ReactComponent as PencilIcon } from "../assets/pencil.svg";
 import axios from "axios";
 
@@ -91,8 +92,15 @@ export default function WritingFormat() {
     }
   };
 
+  const backBtnHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="format-select-page">
+      <div className="format-top">
+        <BackIcon onClick={backBtnHandler} />
+      </div>
       <div className="container">
         <div className="division-line1">
           <hr className="line1" />

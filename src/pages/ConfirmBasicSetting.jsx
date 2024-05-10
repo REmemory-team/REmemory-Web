@@ -2,6 +2,7 @@ import "../styles/ConfirmBasicSetting.css";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
+import { ReactComponent as BackIcon } from "../assets/back_btn.svg";
 import { ReactComponent as ClockIcon } from "../assets/clock.svg";
 import { ReactComponent as LetterIcon } from "../assets/letter.svg";
 import { ReactComponent as ThemeIcon } from "../assets/theme.svg";
@@ -37,10 +38,17 @@ export default function ConfirmBasicSetting() {
     }
   };
 
+  const backBtnHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <div
       className={`confirm-setting-page confirm-setting-page${userData.theme}`}
     >
+      <div className="confirm-setting-top">
+        <BackIcon onClick={backBtnHandler} />
+      </div>
       <p className="confirm-message">타임캡슐 설정을 확인하세요!</p>
       <div className="blur-container"></div>
       <div className="setting-info-container">

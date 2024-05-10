@@ -24,15 +24,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 26%;
-  padding-bottom: 10%;
+  padding-top: 10%;
+  padding-bottom: 5%;
 }
 .purpose__image {
   margin-bottom: 2rem;
 }
 .purpose__theme1 .purpose__image {
   width: 10.39869rem;
-  height: 8.93281rem;
+  height: 9.93281rem;
 }
 .purpose__theme2 .purpose__image {
   width: 6.5625rem;
@@ -145,4 +145,10 @@
   border-radius: 16px;
   margin-bottom: 2.5rem;
   cursor: pointer;
+}
+.purpose .purpose-top {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding: 25px;
 }

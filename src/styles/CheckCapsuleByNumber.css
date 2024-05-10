@@ -18,7 +18,7 @@
   line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   flex-shrink: 0;
-  margin-top: 9rem;
+  margin-top: 7rem;
   margin-bottom: 4.5rem;
 }
 .check-capsule-page .number-input-field {
@@ -106,4 +106,10 @@
   line-height: 0.8125rem;
   letter-spacing: 0.00413rem;
   margin-bottom: 15rem;
+}
+.check-capsule-page .check-capsule-top {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding: 25px;
 }

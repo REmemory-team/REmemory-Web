@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 30%;
-  padding-bottom: 10%;
+  padding-top: 15%;
+  padding-bottom: 5%;
 }
 .theme__message {
   color: #fff;
@@ -82,4 +82,10 @@
   border-radius: 16px;
   margin-bottom: 2rem;
   cursor: pointer;
+}
+.theme .theme-top {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  padding: 25px;
 }
