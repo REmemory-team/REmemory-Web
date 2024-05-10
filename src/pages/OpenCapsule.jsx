@@ -28,6 +28,7 @@ const OpenCapsule = () => {
     minutes: 0,
     seconds: 0,
   });
+  const capsuleNumber = location.state.capsule_number;
   const theme = location.state.theme;
   const status = location.state.status;
   const isPcapsule = location.state && location.state.pcapsule_name;
@@ -54,18 +55,13 @@ const OpenCapsule = () => {
   useEffect(() => {
     if (status !== "OPENED") {
       const targetDate = new Date(location.state.open_date);
-      console.log(targetDate);
       targetDate.setHours(0);
       targetDate.setMinutes(0);
       targetDate.setSeconds(0);
 
-      console.log(targetDate);
-
       const updateRemainingTime = () => {
         const currentDate = new Date();
-        console.log(currentDate);
         const timeDiff = targetDate.getTime() - currentDate.getTime();
-        console.log(timeDiff);
         if (timeDiff <= 0) {
           clearInterval(interValId);
           setRemainingTime({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -214,7 +210,7 @@ const OpenCapsule = () => {
             src={isPcapsule ? image_add : image_share}
           />
           <form>
-            <textarea ref={copyUrlRef} defaultValue={window.location.href} />
+            <textarea ref={copyUrlRef} defaultValue={`rememory.site/rolling/${capsuleNumber}`} />
           </form>
           {!isPcapsule && <p>공유하기</p>}
         </div>
