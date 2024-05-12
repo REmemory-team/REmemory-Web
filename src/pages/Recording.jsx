@@ -190,9 +190,15 @@ export default function Record() {
 
   return (
     <div className={`recording_page theme${nowTheme}`}>
-      <BackIcon onClick={backBtnHandler} />
+      <img
+        className="back"
+        src={BackIcon}
+        onClick={backBtnHandler}
+        alt="뒤로가기 버튼"
+      />
       <div className={`recording_box theme${nowTheme}`}>
         <div className="icon_container">
+          s
           <div className={`dear_capsule theme${nowTheme}`}>
             To. {dear_name}{" "}
           </div>
@@ -217,7 +223,6 @@ export default function Record() {
             <div className={`light theme${nowTheme}`}></div>
             <div className={`bold theme${nowTheme}`}></div>
           </div>
-
           <div className="add_file">
             <img
               className="file_icon"
