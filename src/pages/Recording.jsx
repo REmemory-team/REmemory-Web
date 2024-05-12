@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import fileIcon from "../assets/voice_file.png";
+import BackIcon from "../assets/back_btn.svg";
 
 export default function Record() {
   const [stream, setStream] = useState();
@@ -170,6 +171,10 @@ export default function Record() {
     }
   };
 
+  const backBtnHandler = () => {
+    navigate(-1);
+  };
+
   useEffect(() => {
     const bold = document.querySelector(".bold");
     if (playAudio) {
@@ -185,6 +190,7 @@ export default function Record() {
 
   return (
     <div className={`recording_page theme${nowTheme}`}>
+      <BackIcon onClick={backBtnHandler} />
       <div className={`recording_box theme${nowTheme}`}>
         <div className="icon_container">
           <div className={`dear_capsule theme${nowTheme}`}>
