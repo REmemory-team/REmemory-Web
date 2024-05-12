@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import fileIcon from "../assets/voice_file.png";
-import BackIcon from "../assets/back_btn.svg";
+import BackIcon from "../assets/back_btn2.svg";
 
 export default function Record() {
   const [stream, setStream] = useState();
@@ -198,7 +198,6 @@ export default function Record() {
       />
       <div className={`recording_box theme${nowTheme}`}>
         <div className="icon_container">
-          s
           <div className={`dear_capsule theme${nowTheme}`}>
             To. {dear_name}{" "}
           </div>
