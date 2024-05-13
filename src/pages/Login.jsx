@@ -3,6 +3,7 @@ import "../styles/Login.css";
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import MetaTag from "../components/seo/SEOMetaTag";
 import arrow from "../assets/arrow.png";
 import axios from "axios";
 import circle from "../assets/circle.png";
@@ -108,6 +109,12 @@ const Login = () => {
 
   return (
     <div className="login-page">
+      <MetaTag
+        title="RE:memory"
+        description="감정을 기억하고 선물하다, RE:memory 
+    감정을 기억하고 선물할 수 있는 온라인 롤링페이퍼, 편지, 타임캡슐 서비스"
+        keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
+      />
       <div className="logo-img">
         <img src={circle} alt="동그라미" className="circle" />
         <img src={arrow} alt="화살표" className="arrow" />

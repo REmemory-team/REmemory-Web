@@ -3,6 +3,7 @@ import "../styles/EnterURL.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+import MetaTag from "../components/seo/SEOMetaTag";
 import axios from "axios";
 
 export default function EnterURL() {
@@ -59,6 +60,12 @@ export default function EnterURL() {
 
   return (
     <div className="url-page">
+      <MetaTag
+        title="RE:memory"
+        description="감정을 기억하고 선물하다, RE:memory 
+    감정을 기억하고 선물할 수 있는 온라인 롤링페이퍼, 편지, 타임캡슐 서비스"
+        keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
+      />
       <p className="url-recipient-message">받는 사람!</p>
       <div className="url-recipient">To. {recipient}</div>
       <p className="url-sender-message">자신을 알려주세요!</p>

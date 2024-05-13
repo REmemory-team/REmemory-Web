@@ -2,16 +2,16 @@ import "../styles/Write.css";
 
 import React, { useEffect, useRef, useState } from "react";
 
+import MetaTag from "../components/seo/SEOMetaTag";
 import axios from "axios";
 import icon_alignCenter from "../assets/icon_alignCenter.png";
-import icon_alignLeft from "../assets/icon_alignLeft.png";
-import icon_alignRight from "../assets/icon_alignRight.png";
-import icon_camera from "../assets/icon_camera.png";
 import icon_alignCenter_white from "../assets/icon_alignCenter_white.png";
+import icon_alignLeft from "../assets/icon_alignLeft.png";
 import icon_alignLeft_white from "../assets/icon_alignLeft_white.png";
+import icon_alignRight from "../assets/icon_alignRight.png";
 import icon_alignRight_white from "../assets/icon_alignRight_white.png";
+import icon_camera from "../assets/icon_camera.png";
 import icon_camera_white from "../assets/icon_camera_white.png";
-
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router";
 
@@ -37,8 +37,8 @@ const Write = () => {
     pos: null,
     index: null,
   });
-  
-  const maxSize = 5*1024*1024;
+
+  const maxSize = 5 * 1024 * 1024;
 
   useEffect(() => {
     setReceivedState(location.state);
@@ -120,11 +120,10 @@ const Write = () => {
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     const newArray = state.contents;
-    if(selectedFile.size > maxSize){
+    if (selectedFile.size > maxSize) {
       alert("파일 크기는 5MB 이하만 첨부 가능합니다.");
       return;
-    }
-    else if (selectedFile) {
+    } else if (selectedFile) {
       const reader = new FileReader();
       if (
         cursor.pos === null ||
@@ -256,6 +255,12 @@ const Write = () => {
 
   return (
     <div className={["Write", receivedState.theme].join(" theme")}>
+      <MetaTag
+        title="RE:memory"
+        description="감정을 기억하고 선물하다, RE:memory 
+    감정을 기억하고 선물할 수 있는 온라인 롤링페이퍼, 편지, 타임캡슐 서비스"
+        keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
+      />
       <div className="write_center">
         <div className="to">
           <p>To. {receivedState.dear_name}</p>

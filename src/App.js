@@ -8,6 +8,7 @@ import CompleteWriting from "./pages/CompleteWriting.jsx";
 import CompleteWriting2 from "./pages/CompleteWriting2.jsx";
 import ConfirmBasicSetting from "./pages/ConfirmBasicSetting";
 import EnterURL from "./pages/EnterURL";
+import { Helmet } from "react-helmet-async";
 import Home from "./pages/Home";
 import Login from "./pages/Login.jsx";
 import Name from "./pages/Name.jsx";
@@ -35,6 +36,14 @@ function App() {
   TagManager.initialize(tagManagerArgs);
   return (
     <div className="App">
+      <Helmet>
+        <title>RE:memory</title>
+        <meta
+          name="description"
+          content="감정을 기억하고 선물하다, RE:memory 
+    감정을 기억하고 선물할 수 있는 온라인 롤링페이퍼, 편지, 타임캡슐 서비스"
+        />
+      </Helmet>
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route

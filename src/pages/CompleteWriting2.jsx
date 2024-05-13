@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import CheckIcon from "../assets/check_icon";
 import Menu from "../components/Menu";
+import MetaTag from "../components/seo/SEOMetaTag";
 import React from "react";
 import icon_home from "../assets/icon_home.png";
 import icon_menu from "../assets/icon_menu.png";
@@ -37,6 +38,12 @@ export default function Complete() {
 
   return (
     <div className={`complete complete-theme${theme}`}>
+      <MetaTag
+        title="RE:memory"
+        description="감정을 기억하고 선물하다, RE:memory 
+    감정을 기억하고 선물할 수 있는 온라인 롤링페이퍼, 편지, 타임캡슐 서비스"
+        keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
+      />
       <div className="complete__top">
         <img
           className="icon_home"

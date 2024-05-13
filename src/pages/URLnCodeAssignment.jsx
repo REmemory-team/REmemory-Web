@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Copyimg from "../assets/Copy.png";
+import MetaTag from "../components/seo/SEOMetaTag";
 import axios from "axios";
 
 const URLnCodeAssignment = () => {
@@ -58,6 +59,12 @@ const URLnCodeAssignment = () => {
 
   return (
     <div className="url-code-assignment">
+      <MetaTag
+        title="RE:memory"
+        description="감정을 기억하고 선물하다, RE:memory 
+    감정을 기억하고 선물할 수 있는 온라인 롤링페이퍼, 편지, 타임캡슐 서비스"
+        keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
+      />
       <p className="message">캡슐번호와 URL을 기억하세요!</p>
       <div className="code-box">
         <div className="code-container">

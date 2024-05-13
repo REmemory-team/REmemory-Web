@@ -2,6 +2,7 @@ import "../styles/Nickname.css";
 
 import React, { useState } from "react";
 
+import MetaTag from "../components/seo/SEOMetaTag";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -61,6 +62,12 @@ export default function Nickname() {
 
   return (
     <div className="nickname_page">
+      <MetaTag
+        title="RE:memory"
+        description="감정을 기억하고 선물하다, RE:memory 
+    감정을 기억하고 선물할 수 있는 온라인 롤링페이퍼, 편지, 타임캡슐 서비스"
+        keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
+      />
       <div className="label_box">
         <label htmlFor="nickname_input">사용할 닉네임을 입력해주세요!</label>
       </div>

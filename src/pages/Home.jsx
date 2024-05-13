@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import ListItem from "../components/CapsuleListItem.jsx";
 import Menu from "../components/Menu";
+import MetaTag from "../components/seo/SEOMetaTag";
 import axios from "axios";
 import capsuleImg1 from "../assets/capsule_list1.png";
 import capsuleImg2 from "../assets/capsule_list2.png";
@@ -85,6 +86,12 @@ export default function Home() {
 
   return (
     <div className="home">
+      <MetaTag
+        title="RE:memory"
+        description="감정을 기억하고 선물하다, RE:memory 
+    감정을 기억하고 선물할 수 있는 온라인 롤링페이퍼, 편지, 타임캡슐 서비스"
+        keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
+      />
       <div className="top_menu">
         <img
           className="image_menu"

@@ -3,9 +3,10 @@ import "../styles/Recording.css";
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import BackIcon from "../assets/back_btn2.svg";
+import MetaTag from "../components/seo/SEOMetaTag";
 import axios from "axios";
 import fileIcon from "../assets/voice_file.png";
-import BackIcon from "../assets/back_btn2.svg";
 
 export default function Record() {
   const [stream, setStream] = useState();
@@ -190,6 +191,12 @@ export default function Record() {
 
   return (
     <div className={`recording_page theme${nowTheme}`}>
+      <MetaTag
+        title="RE:memory"
+        description="감정을 기억하고 선물하다, RE:memory 
+    감정을 기억하고 선물할 수 있는 온라인 롤링페이퍼, 편지, 타임캡슐 서비스"
+        keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
+      />
       <img
         className="back"
         src={BackIcon}

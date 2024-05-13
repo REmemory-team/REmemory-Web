@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import Menu from "../components/Menu";
+import MetaTag from "../components/seo/SEOMetaTag";
 import icon_home from "../assets/icon_home.png";
 import icon_menu from "../assets/icon_menu.png";
 import img_btn from "../assets/CompleteWriting_btn.png";
@@ -43,6 +44,12 @@ const CompleteWriting = () => {
 
   return (
     <div className={`CompleteWriting`}>
+      <MetaTag
+        title="RE:memory"
+        description="감정을 기억하고 선물하다, RE:memory 
+    감정을 기억하고 선물할 수 있는 온라인 롤링페이퍼, 편지, 타임캡슐 서비스"
+        keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
+      />
       <div className="btn_top">
         <img
           className="icon_home"
