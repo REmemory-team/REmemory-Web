@@ -75,6 +75,20 @@ export default function Theme() {
           >
             스승의 날 테마
           </div>
+          <div
+            className={`theme__option ${theme === 6 ? "theme__selected" : ""}`}
+            onClick={() => handleSelection(6)}
+            style={{ backgroundColor: "#B0C5ED" }}
+          >
+            졸업 테마
+          </div>
+          <div
+            className={`theme__option ${theme === 7 ? "theme__selected" : ""}`}
+            onClick={() => handleSelection(7)}
+            style={{ backgroundColor: "#C3DBBF" }}
+          >
+            크리스마스 테마
+          </div>
         </div>
         <div className="theme__container">
           <button className="theme__btn" onClick={btnHandler}>

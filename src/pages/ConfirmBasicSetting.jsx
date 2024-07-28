@@ -95,6 +95,8 @@ export default function ConfirmBasicSetting() {
               {userData.theme === 3 && "사랑 테마"}
               {userData.theme === 4 && "어버이날 테마"}
               {userData.theme === 5 && "스승의 날 테마"}
+              {userData.theme === 6 && "졸업 테마"}
+              {userData.theme === 7 && "크리스마스 테마"}
             </span>
           </div>
         </div>

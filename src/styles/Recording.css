@@ -176,6 +176,17 @@
     ),
     #fff;
 }
+.recording_page.theme6 {
+  background: linear-gradient(180deg, #6a88c2 27.78%, #c1c6f3 100%), #fff;
+}
+.recording_page.theme7 {
+  background: linear-gradient(
+      180deg,
+      #f3a0a0 0.01%,
+      rgba(113, 155, 112, 0.2) 94.18%
+    ),
+    #fff;
+}
 
 .recording_page .recording_box.theme1 {
   background: rgba(223, 230, 255, 0.7);
@@ -190,6 +201,13 @@
   background: rgba(255, 255, 255, 0.9);
 }
 .recording_page .recording_box.theme5 {
+  background: rgba(255, 255, 255, 0.9);
+}
+.recording_page .recording_box.theme6 {
+  background: rgba(36, 60, 122, 0.7);
+  color: #fff;
+}
+.recording_page .recording_box.theme7 {
   background: rgba(255, 255, 255, 0.9);
 }
 
@@ -210,6 +228,14 @@
   background: rgba(116, 162, 177, 0.8);
   color: #fff;
 }
+.recording_page .record_submit_button.theme6 {
+  background: #516bb2;
+  color: #fff;
+}
+.recording_page .record_submit_button.theme7 {
+  background: rgba(82, 125, 84, 0.8);
+  color: #fff;
+}
 
 .recording_page .light.theme1 {
   background: #d4c0ff;
@@ -226,6 +252,12 @@
 .recording_page .light.theme5 {
   background: #bed9e2;
 }
+.recording_page .light.theme6 {
+  background: #c0ceff;
+}
+.recording_page .light.theme7 {
+  background: #eaa6a3;
+}
 
 .recording_page .bold.theme1 {
   background: #beace6;
@@ -241,4 +273,10 @@
 }
 .recording_page .bold.theme5 {
   background: #9bbcc7;
+}
+.recording_page .bold.theme6 {
+  background: #9ca6d6;
+}
+.recording_page .bold.theme7 {
+  background: #e88d89;
 }

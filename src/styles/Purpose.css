@@ -18,6 +18,12 @@
 .purpose__theme5 {
   background: #a5c8d3;
 }
+.purpose__theme6 {
+  background: #5a68a3;
+}
+.purpose__theme7 {
+  background: #9cb58b;
+}
 .purpose__wrapper {
   width: 100%;
   height: 100%;
@@ -49,6 +55,14 @@
 .purpose__theme5 .purpose__image {
   width: 6.125rem;
   height: 9.625rem;
+}
+.purpose__theme6 .purpose__image {
+  width: 6.0625rem;
+  height: 8.9375rem;
+}
+.purpose__theme7 .purpose__image {
+  width: 6.125rem;
+  height: 10.625rem;
 }
 .purpose__message {
   color: #fff;
@@ -107,6 +121,12 @@
 }
 .purpose__icon5 {
   fill: #445b63;
+}
+.purpose__icon6 {
+  fill: #566398;
+}
+.purpose__icon7 {
+  fill: #4d5f42;
 }
 .purpose__icons {
   display: flex;

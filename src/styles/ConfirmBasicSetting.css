@@ -23,6 +23,12 @@
 .confirm-setting-page5 {
   background: #a5c8d3;
 }
+.confirm-setting-page6 {
+  background: #5a68a3;
+}
+.confirm-setting-page7 {
+  background: #9cb58b;
+}
 .confirm-setting-page .confirm-message {
   color: #fff;
   text-align: center;
@@ -155,6 +161,12 @@
 }
 .confirm-setting-page .theme-icon5 {
   fill: #445b63;
+}
+.confirm-setting-page .theme-icon6 {
+  fill: #566398;
+}
+.confirm-setting-page .theme-icon7 {
+  fill: #4d5f42;
 }
 .confirm-setting-page .theme-icon-clock {
   width: 4.375rem;

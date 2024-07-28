@@ -18,6 +18,12 @@
 .name__theme5 {
   background: #a5c8d3;
 }
+.name__theme6 {
+  background: #5a68a3;
+}
+.name__theme7 {
+  background: #9cb58b;
+}
 .name__wrapper {
   width: 100%;
   height: 100%;
@@ -49,6 +55,14 @@
 .name__theme5 .name__image {
   width: 6.125rem;
   height: 9.625rem;
+}
+.name__theme6 .name__image {
+  width: 6.0625rem;
+  height: 8.9375rem;
+}
+.name__theme7 .name__image {
+  width: 6.125rem;
+  height: 10.625rem;
 }
 .name__message1,
 .name__message2 {
