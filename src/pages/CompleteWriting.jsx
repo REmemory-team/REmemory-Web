@@ -22,11 +22,11 @@ const CompleteWriting = () => {
   const themes = {
     1: "rememory",
     2: "birthday",
-    3: "graduration",
-    4: "love",
-    5: "christmas",
-    6: "parents",
-    7: "teacher",
+    3: "love",
+    4: "parents",
+    5: "teacher",
+    6: "graduration",
+    7: "christmas",
   };
 
   import(`../styles/theme/${themes[theme]}.css`);

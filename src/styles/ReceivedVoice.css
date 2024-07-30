@@ -38,6 +38,17 @@
     ),
     #fff;
 }
+.received-voice-page-theme6 {
+  background: linear-gradient(180deg, #6a88c2 27.78%, #c1c6f3 100%), #fff;
+}
+.received-voice-page-theme7 {
+  background: linear-gradient(
+      180deg,
+      #f3a0a0 0.01%,
+      rgba(113, 155, 112, 0.2) 94.18%
+    ),
+    #fff;
+}
 .received-voice-page .top-menu {
   width: 100%;
   display: flex;
@@ -77,12 +88,21 @@
 .received-voice-page-theme5 .voice-contents-box {
   background-color: rgba(255, 255, 255, 0.9);
 }
+.received-voice-page-theme6 .voice-contents-box {
+  background-color: rgba(36, 60, 122, 0.7);
+}
+.received-voice-page-theme7 .voice-contents-box {
+  background-color: rgba(255, 255, 255, 0.9);
+}
 .received-voice-page .voice-contents {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 4.3rem;
   margin-bottom: 5.5rem;
+}
+.received-voice-page-theme6 .voice-contents-box {
+  color: #fff;
 }
 .received-voice-page .record-image {
   margin-bottom: 1.4rem;
@@ -121,6 +141,12 @@
 .received-voice-page-theme5 .base-bar {
   background: #bed9e2;
 }
+.received-voice-page-theme6 .base-bar {
+  background: #c0ceff;
+}
+.received-voice-page-theme7 .base-bar {
+  background: #eaa6a3;
+}
 .received-voice-page .main-bar {
   width: 0rem;
   height: 1.5625rem;
@@ -144,6 +170,12 @@
 }
 .received-voice-page-theme5 .main-bar {
   background: #9bbcc7;
+}
+.received-voice-page-theme6 .main-bar {
+  background: #9ca6d6;
+}
+.received-voice-page-theme7 .main-bar {
+  background: #e88d89;
 }
 .received-voice-page .received-recipient,
 .received-voice-page .received-sender {

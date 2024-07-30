@@ -68,10 +68,12 @@ export default function Complete() {
       <div className="complete__message">
         <div style={{ marginBottom: "1rem" }}>
           {theme === 1 && <CheckIcon color="white" />}
-          {theme === 4 && <CheckIcon color="white" />}
-          {theme === 5 && <CheckIcon color="white" />}
           {theme === 2 && <CheckIcon color="#5F3619" />}
           {theme === 3 && <CheckIcon color="#7D5871" />}
+          {theme === 4 && <CheckIcon color="white" />}
+          {theme === 5 && <CheckIcon color="white" />}
+          {theme === 6 && <CheckIcon color="white" />}
+          {theme === 7 && <CheckIcon color="white" />}
         </div>
         <span className={`complete__message-theme${theme}`}>
           편지 작성 완료!

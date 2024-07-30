@@ -84,30 +84,30 @@
 }
 
 .CompleteWriting.theme3 {
-  background: linear-gradient(180deg, rgba(96, 87, 115, 0) 0%, #6a88c2 60.42%),
-    #fff;
-}
-
-.CompleteWriting.theme4 {
   background: linear-gradient(180deg, rgba(255, 163, 233, 0) 0%, #b474a5 100%),
     #fff;
 }
 
+.CompleteWriting.theme4 {
+  background: linear-gradient(180deg, #efeae7 17.17%, #b09888 81.67%), #fff;
+}
+
 .CompleteWriting.theme5 {
+  background: linear-gradient(180deg, rgba(165, 200, 211, 0.2) 0%, #a5c8d3 95%),
+    #fff;
+}
+
+.CompleteWriting.theme6 {
+  background: linear-gradient(180deg, rgba(96, 87, 115, 0) 0%, #6a88c2 60.42%),
+    #fff;
+}
+
+.CompleteWriting.theme7 {
   background: linear-gradient(
       180deg,
       #e7aaa6 18.92%,
       rgba(115, 163, 98, 0.6) 91.15%
     ),
-    #fff;
-}
-
-.CompleteWriting.theme6 {
-  background: linear-gradient(180deg, #efeae7 17.17%, #b09888 81.67%), #fff;
-}
-
-.CompleteWriting.theme7 {
-  background: linear-gradient(180deg, rgba(165, 200, 211, 0.2) 0%, #a5c8d3 95%),
     #fff;
 }
 
