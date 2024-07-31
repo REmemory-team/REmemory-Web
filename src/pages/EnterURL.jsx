@@ -4,11 +4,13 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import MetaTag from "../components/seo/SEOMetaTag";
+import img_capsule from "../assets/capsule1.png";
 import axios from "axios";
 
 export default function EnterURL() {
   const { rcapsule_number } = useParams();
   const navigate = useNavigate();
+  const [title, setTitle] = useState("");
   const [recipient, setRecipient] = useState("");
   const [theme, setTheme] = useState("");
   const [sender, setSender] = useState("");
@@ -22,6 +24,7 @@ export default function EnterURL() {
       )
       .then((response) => {
         if (response.status === 200) {
+          console.log(response.data.result.data);
           setRecipient(response.data.result.data.dear_name);
           setTheme(response.data.result.data.theme);
         }
@@ -32,7 +35,7 @@ export default function EnterURL() {
         } else if (error.response.status === 403) {
           alert("유효하지 않은 타임캡슐입니다.");
         } else {
-          alert("오류가 발생했습니다.");
+          // alert("오류가 발생했습니다.");
         }
       });
   }, []);
@@ -66,7 +69,11 @@ export default function EnterURL() {
     감정을 기억하고 선물할 수 있는 온라인 롤링페이퍼, 편지, 타임캡슐 서비스"
         keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
       />
-      <p className="url-recipient-message">받는 사람!</p>
+      <div className="url-header">
+        <img alt="capsule" src={img_capsule} />
+        <div className="url-title">리메모리 캡슐</div>
+      </div>
+      <p className="url-recipient-message">받는 사람</p>
       <div className="url-recipient">To. {recipient}</div>
       <p className="url-sender-message">자신을 알려주세요!</p>
       <div className="sender-input-field">

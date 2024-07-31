@@ -7,6 +7,24 @@
   align-items: center;
   flex-shrink: 0;
 }
+.url-page .url-header {
+  width: 100%;
+  margin-top: 3.5rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.url-page .url-header img {
+  width: 3.25rem;
+  margin-left: 2rem;
+}
+.url-page .url-header .url-title {
+  background-color: rgba(0, 0, 0, 0.15);
+  color: white;
+  border: 1px solid white;
+  border-radius: 1.25rem;
+  padding: 0.5rem 1rem;
+}
 .url-page .url-recipient-message,
 .url-page .url-sender-message {
   color: #000;
@@ -20,7 +38,7 @@
   flex-shrink: 0;
 }
 .url-page .url-recipient-message {
-  margin-top: 6.5rem;
+  margin-top: 2rem;
 }
 .url-page .url-recipient {
   width: 18.75rem;
