@@ -1,14 +1,38 @@
-require("babel-register")({
-  presets: ["es2015", "react"],
-});
+const { SitemapStream, streamToPromise } = require("sitemap");
+const { createWriteStream } = require("fs");
+const path = require("path");
 
-const router = require("./sitemapRoutes").default;
-const Sitemap = require("react-router-sitemap").default;
+// Define your routes
+const routes = [
+  { url: "/", changefreq: "daily", priority: 0.9 },
+  { url: "/about", changefreq: "monthly", priority: 0.8 },
+  // Add more routes as needed
+];
 
-function generateSitemap() {
-  return new Sitemap(router)
-    .build("https://rememory.site")
-    .save("./public/sitemap.xml");
+async function generateSitemap() {
+  const sitemapStream = new SitemapStream({
+    hostname: "https://rememory.site",
+  });
+  const writeStream = createWriteStream(
+    path.resolve(__dirname, "../public/sitemap.xml")
+  );
+
+  sitemapStream.pipe(writeStream);
+
+  routes.forEach((route) => {
+    sitemapStream.write(route);
+  });
+
+  sitemapStream.end();
+
+  // Wait for the stream to finish
+  await streamToPromise(sitemapStream);
 }
 
-generateSitemap();
+generateSitemap()
+  .then(() => {
+    console.log("Sitemap generated successfully.");
+  })
+  .catch((error) => {
+    console.error("Error generating sitemap:", error);
+  });
