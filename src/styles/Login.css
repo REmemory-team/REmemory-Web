@@ -107,3 +107,39 @@
   letter-spacing: 0.004124999978898258em;
   cursor: pointer;
 }
+
+.login-page .business-info {
+  height: 10.9375rem; /* 175px -> 10.9375rem */
+  background: #807794;
+  padding: 2.03125rem 1.8125rem; /* 32.5px 29px -> 2.03125rem 1.8125rem */
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: "Baloo 2", sans-serif;
+  color: #333;
+  width: 100%;
+  box-shadow: 0 -0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* 0 -2px 5px -> 0 -0.125rem 0.3125rem */
+  margin-top: 2rem;
+}
+
+.login-page .business-info span {
+  display: block;
+  margin-bottom: 0.03125rem; /* 0.5px -> 0.03125rem */
+  font-family: "Pretendard", sans-serif;
+  font-size: 0.75rem; /* 12px -> 0.75rem */
+  font-weight: 400;
+  line-height: 1.05rem; /* 16.8px -> 1.05rem */
+  text-align: left;
+
+  color: rgba(198, 202, 212, 1);
+}
+
+.login-page .business-info .rememory {
+  font-family: "Baloo 2", cursive;
+  font-size: 1rem; /* 16px -> 1rem */
+  font-weight: 400;
+  line-height: 0.8125rem; /* 13px -> 0.8125rem */
+  letter-spacing: 0.004125rem; /* 0.066px -> 0.004125rem */
+  margin-bottom: 0.5rem;
+  color: rgba(247, 247, 247, 1);
+}

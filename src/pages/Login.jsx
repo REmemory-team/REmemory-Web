@@ -142,6 +142,16 @@ const Login = () => {
           쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음
         </p>
       </div>
+      <div class="business-info">
+        <span class="rememory">RE:memory</span>
+        <span>상호 | 청춘노트</span>
+        <span>대표 | 백재윤</span>
+        <span>메일 | wodbs7893@gmail.com</span>
+        <span>사업자 등록번호 | 763-12-02698</span>
+        <span>
+          주소 | 충청남도 천안시 서북구 시청로 73, 312-701 (우편번호 : 31163)
+        </span>
+      </div>
     </div>
   );
 };
