@@ -3,7 +3,7 @@
 .login-page {
   min-height: 100vh;
   height: 100%;
-  background: linear-gradient(180deg, rgba(96, 87, 115, 0) 1.41%, #aa9acc 59.9%),
+  background: linear-gradient(180deg, rgba(96, 87, 115, 0) 1.41%, #aa9acc 50%),
     linear-gradient(0deg, #ffffff, #ffffff);
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0.85rem;
+  margin-top: 1.8rem;
   margin-bottom: 4.5rem;
   position: relative;
   padding-top: 0.5rem;
@@ -87,8 +87,8 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin-bottom: 1.4em;
-  margin-top: 0.4em;
+  margin-bottom: 1.6em;
+  margin-top: 1em;
 }
 .login-page .kakao-icon {
   width: 1.3125em;
