@@ -160,9 +160,21 @@ export default function Settings() {
       </div>
       <hr />
       <div className="footer">
-        <a href="">개인정보처리방침</a>
+        <a
+          href="https://inwhite.notion.site/RE-memory-3840ad5e297b4639bfd1875e4b2a2cac"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          개인정보처리방침
+        </a>
         <span> | </span>
-        <a href="">이용약관</a>
+        <a
+          href="https://inwhite.notion.site/RE-memory-22c641e798ef496496ef4f072d270f41"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          이용약관
+        </a>
       </div>
     </div>
   );
