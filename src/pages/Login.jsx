@@ -49,7 +49,6 @@ const Login = () => {
       );
 
       if (response.status === 200) {
-        console.log(response);
         const { token, userId, nickname } = response.data.result;
 
         if (response.data.result.status === 0) {
@@ -66,7 +65,6 @@ const Login = () => {
                 }
               )
               .then((response) => {
-                console.log(response);
                 if (response.status === 200) {
                   alert("계정이 활성화되었습니다!");
                 }

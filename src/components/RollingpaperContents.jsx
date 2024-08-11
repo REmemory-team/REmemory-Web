@@ -19,7 +19,6 @@ export default function RollingpaperContents({
       )
       .then((response) => {
         if (response.status === 200) {
-          console.log(response);
           if (format === 1) {
             navigate("/capsule/open/text", {
               state: {

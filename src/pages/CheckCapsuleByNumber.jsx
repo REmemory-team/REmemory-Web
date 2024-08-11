@@ -44,7 +44,6 @@ export default function CheckCapsuleByNumber() {
         },
       })
       .then((response) => {
-        console.log(response);
         if (response.status === 200) {
           if (response.data.result.pcapsules) {
             navigate("/capsule/verify", {
