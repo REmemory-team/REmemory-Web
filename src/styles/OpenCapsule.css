@@ -82,7 +82,7 @@
   width: 21rem;
   height: 14rem;
   flex-shrink: 0;
-  background-image: url("../assets/image_openedCapsule.png");
+  background-image: url("../assets/capsules/capsule_opened_default.png");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -92,7 +92,7 @@
   height: 15rem;
   flex-shrink: 0;
   position: absolute;
-  background-image: url("../assets/image_unopenedCapsule.png");
+  background-image: url("../assets/capsules/capsule_default.png");
   background-size: 87%;
   background-position: center;
   background-repeat: no-repeat;
@@ -158,7 +158,7 @@
   position: absolute;
   width: 2.3125rem;
   height: 2.3125rem;
-  background-image: url("../assets/image_ellipse.png");
+  background-image: url("../assets/ellipses/ellipse_default.png");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -181,7 +181,7 @@
 .OpenCapsule .ellipses_false .ellipse {
   width: 2.5625rem;
   height: 2.5625rem;
-  background-image: url("../assets/image_ellipse.png");
+  background-image: url("../assets/ellipses/ellipse_default.png");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -332,71 +332,71 @@
 }
 
 .OpenCapsule.theme2 .img_isOpened_true {
-  background-image: url("../assets/image_openedCapsule_theme2.png");
+  background-image: url("../assets/capsules/capsule_opened_birthday.png");
 }
 .OpenCapsule.theme3 .img_isOpened_true {
-  background-image: url("../assets/image_openedCapsule_theme3.png");
+  background-image: url("../assets/capsules/capsule_opened_love.png");
 }
 .OpenCapsule.theme4 .img_isOpened_true {
-  background-image: url("../assets/image_openedCapsule_theme4.png");
+  background-image: url("../assets/capsules/capsule_opened_parents.png");
 }
 .OpenCapsule.theme5 .img_isOpened_true {
-  background-image: url("../assets/image_openedCapsule_theme5.png");
+  background-image: url("../assets/capsules/capsule_opened_teachers.png");
 }
 .OpenCapsule.theme6 .img_isOpened_true {
-  background-image: url("../assets/image_openedCapsule_theme6.png");
+  background-image: url("../assets/capsules/capsule_opened_graduation.png");
 }
 .OpenCapsule.theme7 .img_isOpened_true {
-  background-image: url("../assets/image_openedCapsule_theme7.png");
+  background-image: url("../assets/capsules/capsule_opened_christmas.png");
 }
 
 .OpenCapsule.theme2 .img_isOpened_false {
-  background-image: url("../assets/image_unopenedCapsule_theme2.png");
+  background-image: url("../assets/capsules/capsule_birthday.png");
 }
 .OpenCapsule.theme3 .img_isOpened_false {
-  background-image: url("../assets/image_unopenedCapsule_theme3.png");
+  background-image: url("../assets/capsules/capsule_love.png");
 }
 .OpenCapsule.theme4 .img_isOpened_false {
-  background-image: url("../assets/image_unopenedCapsule_theme4.png");
+  background-image: url("../assets/capsules/capsule_parents.png");
 }
 .OpenCapsule.theme5 .img_isOpened_false {
-  background-image: url("../assets/image_unopenedCapsule_theme5.png");
+  background-image: url("../assets/capsules/capsule_teachers.png");
 }
 .OpenCapsule.theme6 .img_isOpened_false {
-  background-image: url("../assets/image_unopenedCapsule_theme6.png");
+  background-image: url("../assets/capsules/capsule_graduation.png");
 }
 .OpenCapsule.theme7 .img_isOpened_false {
-  background-image: url("../assets/image_unopenedCapsule_theme7.png");
+  background-image: url("../assets/capsules/capsule_christmas.png");
 }
 
 .OpenCapsule.theme2 .ellipses_false .ellipse {
-  background-image: url("../assets/image_ellipse_theme2_1.png");
+  background-image: url("../assets/ellipses/ellipse_birthday2.png");
   background-size: 75%;
 }
 .OpenCapsule.theme2 .ellipses_false .ellipse.type2 {
   background-size: 45%;
 }
 .OpenCapsule.theme2 .ellipses_false .ellipse.type3 {
-  background-image: url("../assets/image_ellipse_theme2.png");
+  background-image: url("../assets/ellipses/ellipse_birthday.png");
   background-size: 50%;
   top: -0.2rem;
 }
 .OpenCapsule.theme3 .ellipses_false .ellipse {
-  background-image: url("../assets/image_ellipse_theme4.png");
+  background-image: url("../assets/ellipses/ellipse_love.png");
   background-size: 50%;
 }
 
 .OpenCapsule.theme4 .ellipses_false .ellipse.type3,
 .OpenCapsule.theme5 .ellipses_false .ellipse.type3 {
-  background-image: url("../assets/image_ellipse_theme67.png");
+  background-image: url("../assets/ellipses/ellipse_birthday_parents_teacher.png");
   background-size: 60%;
 }
 .OpenCapsule.theme6 .ellipses_false .ellipse.type3 {
-  background-image: url("../assets/image_ellipse_theme3.png");
+  background-image: url("../assets/ellipses/ellipse_graduation.png");
   background-size: 60%;
 }
 .OpenCapsule.theme7 .ellipses_false .ellipse {
-  background-image: url("../assets/image_ellipse_theme5_1.png");
+  background-image: url("../assets/ellipses/ellipse_christmas2.png");
   background-size: 60%;
 }
 .OpenCapsule.theme7 .ellipses_false .ellipse.type1 {
@@ -406,5 +406,5 @@
   left: 17.25rem;
 }
 .OpenCapsule.theme7 .ellipses_false .ellipse.type3 {
-  background-image: url("../assets/image_ellipse_theme5.png");
+  background-image: url("../assets/ellipses/ellipse_christmas.png");
 }

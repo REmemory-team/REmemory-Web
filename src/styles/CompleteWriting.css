@@ -140,13 +140,13 @@
 }
 
 .CompleteWriting .img_isOpened_true {
-  background-image: url("../assets/image_openedCapsule.png");
+  background-image: url("../assets/capsules/capsule_opened_default.png");
 }
 
 .CompleteWriting .img_isOpened_false {
-  background-image: url("../assets/image_unopenedCapsule.png");
+  background-image: url("../assets/capsules/capsule_default.png");
 }
 
 .CompleteWriting .ellipses_false .ellipse {
-  background-image: url("../assets/image_ellipse.png");
+  background-image: url("../assets/ellipses/ellipse_default.png");
 }

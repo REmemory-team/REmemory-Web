@@ -7,6 +7,7 @@ import Menu from "../components/Menu";
 import MetaTag from "../components/seo/SEOMetaTag";
 import icon_home from "../assets/icon_home.png";
 import icon_menu from "../assets/icon_menu.png";
+import img_chat from "../assets/chat.png";
 import img_btn from "../assets/CompleteWriting_btn.png";
 
 const CompleteWriting = () => {
@@ -25,7 +26,7 @@ const CompleteWriting = () => {
     3: "love",
     4: "parents",
     5: "teacher",
-    6: "graduration",
+    6: "graduation",
     7: "christmas",
   };
 
@@ -74,7 +75,7 @@ const CompleteWriting = () => {
 
       <div className="img_check" alt=""></div>
       <p className="text_Complete">편지 작성 완료!</p>
-      <div className="img_capsule" alt="" />
+      <div className="img_capsule" alt="" src={img_chat} />
 
       <div className="chat">
         <div alt="" />

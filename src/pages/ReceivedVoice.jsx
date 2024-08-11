@@ -16,8 +16,18 @@ export default function ReceivedVoice() {
   const audioRef = useRef(null);
   const [play, setPlay] = useState(false);
   const [audioEnded, setAudioEnded] = useState(false);
+  const [themename, setThemename] = useState("");
 
   useEffect(() => {
+    const theme = location.state.theme;
+    if (theme === 1) setThemename("default");
+    else if (theme === 2) setThemename("birthday");
+    else if (theme === 3) setThemename("love");
+    else if (theme === 4) setThemename("parents");
+    else if (theme === 5) setThemename("teachers");
+    else if (theme === 6) setThemename("graduation");
+    else if (theme === 7) setThemename("christmas");
+
     const audio = audioRef.current;
     if (!audio) return;
 
@@ -114,7 +124,7 @@ export default function ReceivedVoice() {
           <audio ref={audioRef} src={location.state.voice_data.voice_url} />
           <div className="record-image">
             <img
-              src={require(`../assets/Recording_icon${location.state.theme}.png`)}
+              src={require(`../assets/recordingIcons/record_${themename}.png`)}
               alt="녹음 아이콘"
             ></img>
           </div>
@@ -123,10 +133,10 @@ export default function ReceivedVoice() {
               <img
                 src={
                   audioEnded
-                    ? require(`../assets/play_btn${location.state.theme}.png`)
+                    ? require(`../assets/playIcons/play_${themename}.png`)
                     : play
-                    ? require(`../assets/pause_btn${location.state.theme}.png`)
-                    : require(`../assets/play_btn${location.state.theme}.png`)
+                    ? require(`../assets/pauseIcons/pause_${themename}.png`)
+                    : require(`../assets/playIcons/play_${themename}.png`)
                 }
                 alt={
                   audioEnded ? "재생 버튼" : play ? "정지 버튼" : "재생 버튼"

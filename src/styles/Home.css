@@ -55,7 +55,7 @@
 .home .capsule_image {
   width: 17rem;
   height: 17rem;
-  background: url("../assets/main_capsule.png") center no-repeat;
+  background: url("../assets/capsules/main_capsule.png") center no-repeat;
   background-size: cover;
 }
 .home .image_box span {

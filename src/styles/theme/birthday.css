@@ -18,7 +18,7 @@
   width: 43px;
   height: 43px;
   top: 153px;
-  background-image: url("../../assets/birthday/check.png");
+  background-image: url("../../assets/checkIcons/check_birthday.png");
 }
 
 .CompleteWriting .text_Complete {
@@ -38,7 +38,7 @@
   width: 146px;
   height: 210px;
   margin-bottom: 3rem;
-  background-image: url("../../assets/birthday/capsule.png");
+  background-image: url("../../assets/capsules/capsule_birthday.png");
 }
 
 .CompleteWriting .chat {
@@ -46,16 +46,13 @@
   width: 50%;
   align-items: center;
   justify-content: center;
-
   position: absolute;
   width: 260px;
   height: 48.34px;
   top: 577px;
   left: 67px;
   gap: 0px;
-  opacity: 0px;
-
-  background-image: url("../../assets/birthday/chat.png");
+  opacity: 0.9;
 }
 
 .CompleteWriting .chat p {

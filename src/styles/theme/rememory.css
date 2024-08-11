@@ -14,7 +14,7 @@
   width: 43px;
   height: 43px;
   top: 153px;
-  background-image: url("../../assets/rememory/check.png");
+  background-image: url("../../assets/checkIcons/check_white.png");
 }
 
 .CompleteWriting .text_Complete {
@@ -34,7 +34,7 @@
   width: 235px;
   height: 240px;
   margin-bottom: 3rem;
-  background-image: url("../../assets/rememory/capsule.png");
+  background-image: url("../../assets/capsules/capsule_default.png");
   background-repeat: no-repeat;
 }
 
@@ -50,9 +50,7 @@
   top: 577px;
   left: 67px;
   gap: 0px;
-  opacity: 0px;
-
-  background-image: url("../../assets/rememory/chat.png");
+  opacity: 0.9;
 }
 
 .CompleteWriting .chat p {

@@ -188,6 +188,17 @@ export default function Record() {
       });
     }
   }, [playAudio]);
+  const [themename, setThemename] = useState("");
+
+  useEffect(() => {
+    if (nowTheme === 1) setThemename("default");
+    else if (nowTheme === 2) setThemename("birthday");
+    else if (nowTheme === 3) setThemename("love");
+    else if (nowTheme === 4) setThemename("parents");
+    else if (nowTheme === 5) setThemename("teachers");
+    else if (nowTheme === 6) setThemename("graduation");
+    else if (nowTheme === 7) setThemename("christmas");
+  }, [nowTheme]);
 
   return (
     <div className={`recording_page theme${nowTheme}`}>
@@ -210,7 +221,7 @@ export default function Record() {
           </div>
           <div className="mike" onClick={onRec ? onRecAudio : offRecAudio}>
             <img
-              src={require(`../assets/Recording_icon${nowTheme}.png`)}
+              src={require(`../assets/recordingIcons/record_${themename}.png`)}
               alt="마이크 아이콘"
               className={onRec ? "mic_icon" : "mic_icon moving"}
             />
@@ -218,8 +229,8 @@ export default function Record() {
           <img
             src={
               audioState
-                ? require(`../assets/pause_btn${nowTheme}.png`)
-                : require(`../assets/play_btn${nowTheme}.png`)
+                ? require(`../assets/pauseIcons/pause_${themename}.png`)
+                : require(`../assets/playIcons/play_${themename}.png`)
             }
             alt={audioState ? "정지 버튼" : "재생 버튼"}
             id="play_button"

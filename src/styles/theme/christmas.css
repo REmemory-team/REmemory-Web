@@ -18,7 +18,7 @@
   width: 43px;
   height: 43px;
   top: 153px;
-  background-image: url("../../assets/christmas/check.png");
+  background-image: url("../../assets/checkIcons/check_white.png");
 }
 
 .CompleteWriting .text_Complete {
@@ -43,7 +43,7 @@
   opacity: 0px;
 
   margin-bottom: 3rem;
-  background-image: url("../../assets/christmas/capsule.png");
+  background-image: url("../../assets/capsules/capsule_christmas.png");
 }
 
 .CompleteWriting .chat {
@@ -56,10 +56,8 @@
   top: 577px;
   left: 67px;
   gap: 0px;
-  opacity: 0px;
+  opacity: 0.9;
   position: absolute;
-
-  background-image: url("../../assets/christmas/chat.png");
 }
 
 .CompleteWriting .chat p {

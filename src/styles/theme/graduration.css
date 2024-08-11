@@ -18,7 +18,7 @@
   width: 43px;
   height: 43px;
   top: 153px;
-  background-image: url("../../assets/graduration/check.png");
+  background-image: url("../../assets/checkIcons/check_white.png");
 }
 
 .CompleteWriting .text_Complete {
@@ -42,7 +42,7 @@
   gap: 0px;
   opacity: 0px;
   margin-bottom: 3rem;
-  background-image: url("../../assets/graduration/capsule.png");
+  background-image: url("../../assets/capsules/capsule_graduation.png");
 }
 
 .CompleteWriting .chat {
@@ -57,9 +57,7 @@
   top: 577px;
   left: 67px;
   gap: 0px;
-  opacity: 0px;
-
-  background-image: url("../../assets/graduration/chat.png");
+  opacity: 0.9;
 }
 
 .CompleteWriting .chat p {

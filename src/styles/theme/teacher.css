@@ -18,7 +18,7 @@
   width: 43px;
   height: 43px;
   top: 153px;
-  background-image: url("../../assets/teacher/check.png");
+  background-image: url("../../assets/checkIcons/check_white.png");
 }
 .CompleteWriting .text_Complete {
   color: white;
@@ -38,7 +38,7 @@
   height: 225px;
 
   margin-bottom: 5rem;
-  background-image: url("../../assets/teacher/capsule.png");
+  background-image: url("../../assets/capsules/capsule_teachers.png");
   background-repeat: no-repeat;
 }
 
@@ -54,8 +54,7 @@
   top: 577px;
   left: 67px;
   gap: 0px;
-  opacity: 0px;
-  background-image: url("../../assets/teacher/chat.png");
+  opacity: 0.9;
 }
 
 .CompleteWriting .chat p {

@@ -20,7 +20,7 @@ const rollingContentsTest = {
         },
         {
           body: null,
-          image_url: "../assets/Recording_icon.png",
+          image_url: "../assets/recordingIcons/record_default.png",
         },
         {
           body: "이 사진 기억나?",

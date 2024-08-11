@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import MetaTag from "../components/seo/SEOMetaTag";
-import img_capsule from "../assets/capsule1.png";
+import img_capsule from "../assets/capsules/capsule_default.png";
 import axios from "axios";
 
 export default function EnterURL() {

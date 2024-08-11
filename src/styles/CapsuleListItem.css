@@ -31,3 +31,6 @@
   justify-content: center;
   flex-shrink: 0;
 }
+.capsule_list .list_image img {
+  height: 3.25rem;
+}

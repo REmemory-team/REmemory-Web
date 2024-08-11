@@ -33,6 +33,17 @@ export default function Purpose() {
     navigate(-1);
   };
 
+  const [themename, setThemename] = useState("");
+  useEffect(() => {
+    if (theme === 1) setThemename("default");
+    else if (theme === 2) setThemename("birthday");
+    else if (theme === 3) setThemename("love");
+    else if (theme === 4) setThemename("parents");
+    else if (theme === 5) setThemename("teachers");
+    else if (theme === 6) setThemename("graduation");
+    else if (theme === 7) setThemename("christmas");
+  }, [theme]);
+
   return (
     <div className={`purpose purpose__theme${theme}`}>
       <MetaTag
@@ -46,7 +57,7 @@ export default function Purpose() {
       </div>
       <div className="purpose__wrapper">
         <img
-          src={require(`../assets/기본 캡슐이미지${theme}.png`)}
+          src={require(`../assets/capsules/capsule_${themename}.png`)}
           alt="캡슐 이미지"
           className="purpose__image"
         ></img>
