@@ -54,7 +54,7 @@ export default function ConfirmBasicSetting() {
         keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
       />
       <div className="confirm-setting-top">
-        <BackIcon onClick={backBtnHandler} />
+        <BackIcon onClick={backBtnHandler} style={{ cursor: "pointer" }} />
       </div>
       <p className="confirm-message">타임캡슐 설정을 확인하세요!</p>
       <div className="blur-container"></div>

@@ -106,7 +106,7 @@ export default function WritingFormat() {
         keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
       />
       <div className="format-top">
-        <BackIcon onClick={backBtnHandler} />
+        <BackIcon onClick={backBtnHandler} style={{ cursor: "pointer" }} />
       </div>
       <div className="container">
         <div className="division-line1">

@@ -35,7 +35,7 @@ export default function Theme() {
       />
 
       <div className="theme-top">
-        <BackIcon onClick={backBtnHandler} />
+        <BackIcon onClick={backBtnHandler} style={{ cursor: "pointer" }} />
       </div>
       <div className="theme__wrapper">
         <p className="theme__message">테마를 선택해주세요!</p>
@@ -43,7 +43,7 @@ export default function Theme() {
           <div
             className={`theme__option ${theme === 1 ? "theme__selected" : ""}`}
             onClick={() => handleSelection(1)}
-            style={{ backgroundColor: "var(--theme-default)" }}
+            style={{ backgroundColor: "#D5C1FF" }}
           >
             RE:memory 테마
           </div>
@@ -78,14 +78,14 @@ export default function Theme() {
           <div
             className={`theme__option ${theme === 6 ? "theme__selected" : ""}`}
             onClick={() => handleSelection(6)}
-            style={{ backgroundColor: "var(--theme-graduate)" }}
+            style={{ backgroundColor: "#B0C5ED" }}
           >
             졸업 테마
           </div>
           <div
             className={`theme__option ${theme === 7 ? "theme__selected" : ""}`}
             onClick={() => handleSelection(7)}
-            style={{ backgroundColor: "var(--theme-christmas-gradation)" }}
+            style={{ backgroundColor: "#C3DBBF" }}
           >
             크리스마스 테마
           </div>

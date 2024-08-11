@@ -12,10 +12,10 @@
   background: var(--theme-default);
 }
 .confirm-setting-page2 {
-  background: var(--theme-birthday);
+  background: var(--theme-birthday-strong);
 }
 .confirm-setting-page3 {
-  background: var(--theme-love);
+  background: var(--theme-love-strong);
 }
 .confirm-setting-page4 {
   background: var(--theme-parents);
@@ -24,10 +24,10 @@
   background: var(--theme-teachers);
 }
 .confirm-setting-page6 {
-  background: var(--theme-graduate);
+  background: var(--theme-graduate-strong);
 }
 .confirm-setting-page7 {
-  background: var(--theme-christmas-gradation);
+  background: var(--theme-christmas-strong);
 }
 .confirm-setting-page .confirm-message {
   color: #fff;

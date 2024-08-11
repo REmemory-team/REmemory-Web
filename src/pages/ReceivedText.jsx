@@ -39,8 +39,16 @@ export default function ReceivedText() {
         keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
       />
       <div className="top-menu">
-        <BackIconToUse className="back-btn" onClick={backBtnHandler} />
-        <HomeIconToUse className="home-btn" onClick={homeBtnHandler} />
+        <BackIconToUse
+          className="back-btn"
+          onClick={backBtnHandler}
+          style={{ cursor: "pointer" }}
+        />
+        <HomeIconToUse
+          className="home-btn"
+          onClick={homeBtnHandler}
+          style={{ cursor: "pointer" }}
+        />
       </div>
       <div className="text-contents-box">
         <p className="received-recipient">To. {location.state.dear_name}</p>

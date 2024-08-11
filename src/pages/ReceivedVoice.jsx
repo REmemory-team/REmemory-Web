@@ -16,7 +16,7 @@ export default function ReceivedVoice() {
   const audioRef = useRef(null);
   const [play, setPlay] = useState(false);
   const [audioEnded, setAudioEnded] = useState(false);
-  const [themename, setThemename] = useState("");
+  const [themename, setThemename] = useState("default");
 
   useEffect(() => {
     const theme = location.state.theme;
@@ -115,8 +115,16 @@ export default function ReceivedVoice() {
       />
 
       <div className="top-menu">
-        <BackIconToUse className="back-btn" onClick={backBtnHandler} />
-        <HomeIconToUse className="home-btn" onClick={homeBtnHandler} />
+        <BackIconToUse
+          className="back-btn"
+          onClick={backBtnHandler}
+          style={{ cursor: "pointer" }}
+        />
+        <HomeIconToUse
+          className="home-btn"
+          onClick={homeBtnHandler}
+          style={{ cursor: "pointer" }}
+        />
       </div>
       <div className="voice-contents-box">
         <p className="received-recipient">To. {location.state.dear_name}</p>

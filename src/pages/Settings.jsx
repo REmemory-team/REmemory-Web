@@ -116,8 +116,16 @@ export default function Settings() {
       />
 
       <div className="top-menu">
-        <BackIcon className="back-btn" onClick={backBtnHandler} />
-        <HomeIcon className="home-btn" onClick={homeBtnHandler} />
+        <BackIcon
+          className="back-btn"
+          onClick={backBtnHandler}
+          style={{ cursor: "pointer" }}
+        />
+        <HomeIcon
+          className="home-btn"
+          onClick={homeBtnHandler}
+          style={{ cursor: "pointer" }}
+        />
       </div>
       <p className="settings">계정 설정</p>
       <div className="section1">

@@ -7,8 +7,7 @@ import { ReactComponent as LineIcon } from "../assets/Line.svg";
 import MetaTag from "../components/seo/SEOMetaTag";
 import { ReactComponent as PersonIcon } from "../assets/person.svg";
 import { ReactComponent as PersonsIcon } from "../assets/persons.svg";
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Purpose() {
   const navigate = useNavigate();
@@ -33,7 +32,7 @@ export default function Purpose() {
     navigate(-1);
   };
 
-  const [themename, setThemename] = useState("");
+  const [themename, setThemename] = useState("default");
   useEffect(() => {
     if (theme === 1) setThemename("default");
     else if (theme === 2) setThemename("birthday");
@@ -53,7 +52,7 @@ export default function Purpose() {
         keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
       />
       <div className="purpose-top">
-        <BackIcon onClick={backBtnHandler} />
+        <BackIcon onClick={backBtnHandler} style={{ cursor: "pointer" }} />
       </div>
       <div className="purpose__wrapper">
         <img

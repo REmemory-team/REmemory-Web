@@ -99,7 +99,7 @@ export default function CheckCapsuleByNumber() {
         keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
       />
       <div className="check-capsule-top">
-        <BackIcon onClick={backBtnHandler} />
+        <BackIcon onClick={backBtnHandler} style={{ cursor: "pointer" }} />
       </div>
       <p className="check-capsule-message">캡슐번호로 타임캡슐 확인하기</p>
       <input

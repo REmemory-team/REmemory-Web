@@ -188,7 +188,7 @@ export default function Record() {
       });
     }
   }, [playAudio]);
-  const [themename, setThemename] = useState("");
+  const [themename, setThemename] = useState("default");
 
   useEffect(() => {
     if (nowTheme === 1) setThemename("default");

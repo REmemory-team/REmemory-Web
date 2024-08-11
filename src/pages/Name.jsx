@@ -146,7 +146,7 @@ export default function Name() {
     navigate(-1);
   };
 
-  const [themename, setThemename] = useState("");
+  const [themename, setThemename] = useState("default");
   useEffect(() => {
     if (theme === 1) setThemename("default");
     else if (theme === 2) setThemename("birthday");
@@ -166,7 +166,7 @@ export default function Name() {
         keywords="RE:memory, 감정을 기억하고 선물하다, 온라인 롤링페이퍼, 온라인 편지, 온라인 타임캡슐, 롤링페이퍼, 편지, 타임캡슐"
       />
       <div className="name-top">
-        <BackIcon onClick={backBtnHandler} />
+        <BackIcon onClick={backBtnHandler} style={{ cursor: "pointer" }} />
       </div>
       <div className="name__wrapper">
         <img
