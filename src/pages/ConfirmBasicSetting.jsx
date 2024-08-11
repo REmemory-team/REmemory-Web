@@ -110,7 +110,7 @@ export default function ConfirmBasicSetting() {
         height="90"
         frameborder="0"
         scrolling="no"
-        referrerpolicy="unsafe-url"
+        referrerPolicy="unsafe-url"
         browsingtopics
       ></iframe>
       <div>

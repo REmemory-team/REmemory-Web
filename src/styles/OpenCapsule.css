@@ -4,7 +4,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, rgba(96, 87, 115, 0) 0%, #aa9acc 60.42%),
+  background: linear-gradient(
+      180deg,
+      rgba(96, 87, 115, 0) 0%,
+      var(--theme-default) 60.42%
+    ),
     #fff;
   min-height: 100vh;
   overflow: hidden;
@@ -32,7 +36,7 @@
   position: absolute;
   right: 0;
   height: 100vh;
-  background-color: #5e4e80;
+  background-color: var(--primary);
   z-index: 1;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -49,7 +53,6 @@
   align-items: center;
   justify-content: center;
   color: #534287;
-  font-family: "Pretendard";
   font-weight: 500;
   font-size: 1.25rem;
   padding-bottom: 2rem;
@@ -119,7 +122,6 @@
   color: #fff;
   text-align: center;
   text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
-  font-family: "Pretendard";
   font-size: 2.5rem;
   font-style: normal;
   font-weight: 700;
@@ -134,7 +136,6 @@
   flex-shrink: 0;
   color: #fff;
   text-align: center;
-  font-family: "Pretendard";
   font-size: 1rem;
   font-style: normal;
   font-weight: 300;
@@ -272,18 +273,34 @@
     #fff;
 }
 .OpenCapsule.theme3 {
-  background: linear-gradient(180deg, rgba(255, 163, 233, 0) 0%, #b474a5 100%),
+  background: linear-gradient(
+      180deg,
+      var(--theme-love--default) 0%,
+      var(--theme-love) 100%
+    ),
     #fff;
 }
 .OpenCapsule.theme4 {
-  background: linear-gradient(180deg, #efeae7 17.17%, #b09888 81.67%), #fff;
+  background: linear-gradient(
+      180deg,
+      var(--theme-parents-gradation) 17.17%,
+      var(--theme-parents) 81.67%
+    ),
+    #fff;
 }
 .OpenCapsule.theme5 {
-  background: linear-gradient(180deg, rgba(165, 200, 211, 0.2) 0%, #a5c8d3 95%),
+  background: linear-gradient(
+      180deg,
+      var(--theme-teachers-gradation) 0%,
+      var(--theme-teachers) 95%
+    ),
     #fff;
 }
 .OpenCapsule.theme6 {
-  background: linear-gradient(180deg, rgba(96, 87, 115, 0) 0%, #6a88c2 60.42%),
+  background: linear-gradient(
+      180deg,
+      var(--theme-graduate-gradation) 0% var(--theme-graduate) 60.42%
+    ),
     #fff;
 }
 .OpenCapsule.theme7 {

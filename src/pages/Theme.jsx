@@ -43,49 +43,49 @@ export default function Theme() {
           <div
             className={`theme__option ${theme === 1 ? "theme__selected" : ""}`}
             onClick={() => handleSelection(1)}
-            style={{ backgroundColor: "#D5C1FF" }}
+            style={{ backgroundColor: "var(--theme-default)" }}
           >
             RE:memory 테마
           </div>
           <div
             className={`theme__option ${theme === 2 ? "theme__selected" : ""}`}
             onClick={() => handleSelection(2)}
-            style={{ backgroundColor: "#FFF9C1" }}
+            style={{ backgroundColor: "var(--theme-birthday)" }}
           >
             생일 테마
           </div>
           <div
             className={`theme__option ${theme === 3 ? "theme__selected" : ""}`}
             onClick={() => handleSelection(3)}
-            style={{ backgroundColor: "#F9D8F0" }}
+            style={{ backgroundColor: "var(--theme-love)" }}
           >
             사랑 테마
           </div>
           <div
             className={`theme__option ${theme === 4 ? "theme__selected" : ""}`}
             onClick={() => handleSelection(4)}
-            style={{ backgroundColor: "#E0CABE" }}
+            style={{ backgroundColor: "var(--theme-parents)" }}
           >
             어버이날 테마
           </div>
           <div
             className={`theme__option ${theme === 5 ? "theme__selected" : ""}`}
             onClick={() => handleSelection(5)}
-            style={{ backgroundColor: "#A5C8D3" }}
+            style={{ backgroundColor: "var(--theme-teachers)" }}
           >
             스승의 날 테마
           </div>
           <div
             className={`theme__option ${theme === 6 ? "theme__selected" : ""}`}
             onClick={() => handleSelection(6)}
-            style={{ backgroundColor: "#B0C5ED" }}
+            style={{ backgroundColor: "var(--theme-graduate)" }}
           >
             졸업 테마
           </div>
           <div
             className={`theme__option ${theme === 7 ? "theme__selected" : ""}`}
             onClick={() => handleSelection(7)}
-            style={{ backgroundColor: "#C3DBBF" }}
+            style={{ backgroundColor: "var(--theme-christmas-gradation)" }}
           >
             크리스마스 테마
           </div>
@@ -101,7 +101,7 @@ export default function Theme() {
           height="90"
           frameborder="0"
           scrolling="no"
-          referrerpolicy="unsafe-url"
+          referrerPolicy="unsafe-url"
           browsingtopics
         ></iframe>
         <div>

@@ -1,7 +1,12 @@
 .recipient-input-page {
   min-height: 100vh;
   height: 100%;
-  background: linear-gradient(0deg, #aa9acc 0%, #aa9acc 100%), #fff;
+  background: linear-gradient(
+      0deg,
+      var(--theme-default) 0%,
+      var(--theme-default) 100%
+    ),
+    #fff;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -10,7 +15,6 @@
 .recipient-input-page .recipient-input-message {
   color: #000;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -35,7 +39,6 @@
 .recipient-input-page .prefix-to {
   color: #000;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
@@ -47,7 +50,6 @@
 .recipient-input-page .recipient {
   color: #000;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
@@ -74,7 +76,6 @@
   border-radius: 95px;
   color: #000;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;

@@ -1,5 +1,9 @@
 .Write {
-  background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
+  background: linear-gradient(
+      180deg,
+      var(--theme-default-gradation) 0%,
+      var(--theme-default) 100%
+    ),
     linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 0%,
@@ -29,7 +33,6 @@
   justify-content: center;
   flex-shrink: 0;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
@@ -53,7 +56,6 @@
   align-items: baseline;
   font-size: 1.125rem;
   margin-bottom: 1rem;
-  font-family: "Pretendard";
   font-weight: 600;
 }
 .Write .write_center .to p {
@@ -67,7 +69,6 @@
   border: none;
   background-color: transparent;
   border-bottom: 2px solid black;
-  font-family: "Pretendard";
   font-weight: 600;
   font-size: 1rem;
 }
@@ -97,7 +98,6 @@
   height: fit-content;
   resize: none;
   background-color: transparent;
-  font-family: "Pretendard";
   font-size: 14px;
   text-align: start;
   padding: 0;
@@ -125,7 +125,6 @@
   cursor: pointer;
   outline: none;
   border: none;
-  font-family: "Pretendard";
   font-weight: 400;
   font-size: 1.1125rem;
   background-color: #c1ddff;
@@ -141,63 +140,87 @@
 }
 
 .Write.theme2 {
-  background: linear-gradient(180deg, #fbf3c1 0%, rgba(251, 243, 193, 0) 100%),
+  background: linear-gradient(
+      180deg,
+      var(--theme-birthday) 0%,
+      var(--theme-birthday-gradation) 100%
+    ),
     #fff;
 }
 .Write.theme3 {
-  background: linear-gradient(180deg, rgba(255, 237, 251, 0) 0%, #fee1f7 100%),
+  background: linear-gradient(
+      180deg,
+      var(--theme-love-gradation) 0% var(--theme-love) 100%
+    ),
     #fff;
 }
 .Write.theme4 {
-  background: linear-gradient(180deg, #cdb8ac 0%, rgba(205, 184, 172, 0.2) 100%),
+  background: linear-gradient(
+      180deg,
+      var(--theme-parents) 0%,
+      var(--theme-parents-gradation) 100%
+    ),
     #fff;
 }
 .Write.theme5 {
   background: linear-gradient(
       180deg,
-      #a5c8d3 0%,
-      #a5c8d3 0.01%,
-      rgba(165, 200, 211, 0.2) 100%
+      var(--theme-teachers) 0%,
+      var(--theme-teachers) 0.01%,
+      var(--theme-teachers-gradation) 100%
     ),
     #fff;
 }
 .Write.theme6 {
-  background: linear-gradient(180deg, #6a88c2 22.4%, #c1c6f3 100%),
+  background: linear-gradient(
+      180deg,
+      var(--theme-graduate) 22.4%,
+      var(--theme-graduate-gradation) 100%
+    ),
     linear-gradient(180deg, #9aa5cc 0%, rgba(154, 165, 204, 0) 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #aa9acc 46.53%), #fff;
-}
-.Write.theme7 {
-  background: linear-gradient(180deg, #f3a0a0 0%, rgba(113, 155, 112, 0.2) 100%),
-    #fff;
-}
-
-/* .Write.theme2 {
-  background: linear-gradient(180deg, #fbf3c1 0%, rgba(251, 243, 193, 0) 100%),
-    #fff;
-}
-.Write.theme3 {
-  background: linear-gradient(180deg, #6a88c2 22.4%, #c1c6f3 100%),
-    linear-gradient(180deg, #9aa5cc 0%, rgba(154, 165, 204, 0) 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #aa9acc 46.53%), #fff;
-}
-.Write.theme4 {
-  background: linear-gradient(180deg, rgba(255, 237, 251, 0) 0%, #fee1f7 100%),
-    #fff;
-}
-.Write.theme5 {
-  background: linear-gradient(180deg, #f3a0a0 0%, rgba(113, 155, 112, 0.2) 100%),
-    #fff;
-}
-.Write.theme6 {
-  background: linear-gradient(180deg, #cdb8ac 0%, rgba(205, 184, 172, 0.2) 100%),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      var(--theme-default) 46.53%
+    ),
     #fff;
 }
 .Write.theme7 {
   background: linear-gradient(
       180deg,
-      #a5c8d3 0%,
-      #a5c8d3 0.01%,
-      rgba(165, 200, 211, 0.2) 100%
+      var(--theme-christmas) 0%,
+      var(--theme-christmas-gradation) 100%
+    ),
+    #fff;
+}
+
+/* .Write.theme2 {
+  background: linear-gradient(180deg, var(--theme-birthdaty) 0%, rgba(251, 243, 193, 0) 100%),
+    #fff;
+}
+.Write.theme3 {
+  background: linear-gradient(180deg, var(--theme-graduate) 22.4%, var(--theme-graduate-gradation) 100%),
+    linear-gradient(180deg, #9aa5cc 0%, rgba(154, 165, 204, 0) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,  var(--theme-default) 46.53%), #fff;
+}
+.Write.theme4 {
+  background: linear-gradient(180deg, rgba(255, 237, 251, 0) 0%, var(--theme-love) 100%),
+    #fff;
+}
+.Write.theme5 {
+  background: linear-gradient(180deg, var(--theme-christmas) 0%,var(--theme-christmas-gradation) 100%),
+    #fff;
+}
+.Write.theme6 {
+  background: linear-gradient(180deg, var(--theme-parents) 0%, var(--theme-parents-gradation) 100%),
+    #fff;
+}
+.Write.theme7 {
+  background: linear-gradient(
+      180deg,
+      var(--theme-teachers) 0%,
+      var(--theme-teachers) 0.01%,
+      var(--theme-teachers-gradation) 100%
     ),
     #fff;
 } */

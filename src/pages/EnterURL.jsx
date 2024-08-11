@@ -24,7 +24,7 @@ export default function EnterURL() {
       )
       .then((response) => {
         if (response.status === 200) {
-          console.log(response.data.result.data);
+          setTitle = response.data.result.data.rcapsule_name;
           setRecipient(response.data.result.data.dear_name);
           setTheme(response.data.result.data.theme);
         }
@@ -71,7 +71,7 @@ export default function EnterURL() {
       />
       <div className="url-header">
         <img alt="capsule" src={img_capsule} />
-        <div className="url-title">리메모리 캡슐</div>
+        <div className="url-title">{title}</div>
       </div>
       <p className="url-recipient-message">받는 사람</p>
       <div className="url-recipient">To. {recipient}</div>

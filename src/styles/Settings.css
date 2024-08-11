@@ -1,7 +1,11 @@
 .setting-page {
   min-height: 100vh;
   height: 100%;
-  background: linear-gradient(180deg, #bbcbf1 0%, #aa9acc 100%),
+  background: linear-gradient(
+      180deg,
+      var(--theme-default-gradation) 0%,
+      var(--theme-default) 100%
+    ),
     linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 0%,
@@ -33,7 +37,6 @@
 }
 .setting-page .settings {
   color: #000;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 600;
@@ -54,7 +57,6 @@
 }
 .setting-page .user-name {
   color: #000;
-  font-family: Pretendard;
   font-size: 1.375rem;
   font-style: normal;
   font-weight: 600;
@@ -77,7 +79,6 @@
 }
 .setting-page .kakao-login {
   color: #000;
-  font-family: Pretendard;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
@@ -86,7 +87,6 @@
 }
 .setting-page .kakao-login span {
   color: #000;
-  font-family: Pretendard;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 700;
@@ -114,7 +114,6 @@
 }
 .setting-page .nickname {
   color: #000;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -133,7 +132,6 @@
   text-align: center;
   color: #000;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -143,7 +141,6 @@
 .setting-page .nickname-input::placeholder {
   color: #9a9a9a;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -156,7 +153,6 @@
 .setting-page .change-btn {
   color: rgba(0, 0, 0, 0.6);
   text-align: center;
-  font-family: Pretendard;
   font-size: 0.9375rem;
   font-style: normal;
   font-weight: 500;
@@ -189,7 +185,6 @@
 }
 .setting-page .logout-title {
   color: #000;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -199,7 +194,6 @@
 }
 .setting-page .withdrawal {
   color: rgba(0, 0, 0, 0.6);
-  font-family: Pretendard;
   font-size: 0.9375rem;
   font-style: normal;
   font-weight: 400;
@@ -214,7 +208,6 @@
 .setting-page .footer a {
   color: rgba(0, 0, 0, 0.6);
   text-align: center;
-  font-family: Pretendard;
   font-size: 0.9375rem;
   font-style: normal;
   font-weight: 400;
@@ -225,7 +218,6 @@
 .setting-page .footer span {
   color: rgba(0, 0, 0, 0.6);
   text-align: center;
-  font-family: Pretendard;
   font-size: 0.9375rem;
   font-style: normal;
   font-weight: 400;

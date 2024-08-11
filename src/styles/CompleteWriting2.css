@@ -7,40 +7,61 @@
   padding-bottom: 1rem;
 }
 .complete-theme1 {
-  background: linear-gradient(180deg, #bed5f9 0%, #aa9acc 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #aa9acc 45.83%);
+  background: linear-gradient(
+      180deg,
+      var(--theme-default-gradation) 0%,
+      var(--theme-default) 100%
+    ),
+    linear-gradient(
+      180deg,
+      var(--theme-default-gradation) 0%,
+      var(--theme-default) 45.83%
+    );
 }
 .complete-theme2 {
-  background: linear-gradient(180deg, #fbf3c1 0%, rgba(251, 243, 193, 0) 100%),
+  background: linear-gradient(
+      180deg,
+      var(--theme-birthday) 0%,
+      var(--theme-birthday-gradation) 100%
+    ),
     #fff;
 }
 .complete-theme3 {
-  background: linear-gradient(180deg, rgba(255, 237, 251, 0) 0%, #fee1f7 100%),
+  background: linear-gradient(
+      180deg,
+      rgba(255, 237, 251, 0) 0%,
+      var(--theme-love) 100%
+    ),
     #fff;
 }
 .complete-theme4 {
   background: linear-gradient(
       180deg,
-      #cdb8ac 0.01%,
-      rgba(205, 184, 172, 0.2) 94.18%
+      var(--theme-parents) 0.01%,
+      var(--theme-parents-gradation) 94.18%
     ),
     #fff;
 }
 .complete-theme5 {
   background: linear-gradient(
       180deg,
-      #a5c8d3 0.01%,
-      rgba(165, 200, 211, 0.2) 94.18%
+      var(--theme-teachers) 0.01%,
+      var(--theme-teachers-gradation) 94.18%
     ),
     #fff;
 }
 .complete-theme6 {
-  background: linear-gradient(180deg, #6a88c2 27.78%, #c1c6f3 100%), #fff;
+  background: linear-gradient(
+      180deg,
+      var(--theme-graduate) 27.78%,
+      var(--theme-graduate-gradation) 100%
+    ),
+    #fff;
 }
 .complete-theme7 {
   background: linear-gradient(
       180deg,
-      #f3a0a0 0.01%,
+      var(--theme-christmas) 0.01%,
       rgba(113, 155, 112, 0.2) 94.18%
     ),
     #fff;
@@ -58,7 +79,7 @@
   position: absolute;
   right: 0;
   height: 100%;
-  background-color: #5e4e80;
+  background-color: var(--primary);
   z-index: 1;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -76,7 +97,6 @@
 }
 .complete .complete__message span {
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.5625rem;
   font-style: normal;
   font-weight: 600;
@@ -142,7 +162,6 @@
   left: 3.2rem;
   color: #000;
   text-align: center;
-  font-family: Pretendard;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 500;
@@ -154,7 +173,6 @@
   height: 4.3125rem;
   color: #000;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 600;

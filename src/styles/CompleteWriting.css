@@ -6,8 +6,16 @@
   justify-content: center;
   min-height: 100vh;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #aa9acc 45.83%),
-    linear-gradient(180deg, #bed5f9 0%, #aa9acc 100%);
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      var(--theme-default) 45.83%
+    ),
+    linear-gradient(
+      180deg,
+      var(--theme-default-gradation) 0%,
+      var(--theme-default) 100%
+    );
 }
 
 .CompleteWriting .btn_top {
@@ -35,7 +43,7 @@
   position: absolute;
   right: 0;
   height: 100vh;
-  background-color: #5e4e80;
+  background-color: var(--primary);
   z-index: 1;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -65,7 +73,6 @@
   position: absolute;
   font-size: 1.25rem;
   text-align: center;
-  font-family: "Pretendard";
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 0.8125rem;
@@ -77,42 +84,59 @@
   background: linear-gradient(
       180deg,
       rgba(244, 229, 145, 0.3) 0%,
-      #ecd862 48.61%,
+      var(--theme-birthday) 48.61%,
       rgba(244, 163, 145, 0.85) 85.07%
     ),
     #fff;
 }
 
 .CompleteWriting.theme3 {
-  background: linear-gradient(180deg, rgba(255, 163, 233, 0) 0%, #b474a5 100%),
+  background: linear-gradient(
+      180deg,
+      var(--theme-love-gradation) 0%,
+      var(--theme-love) 100%
+    ),
     #fff;
 }
 
 .CompleteWriting.theme4 {
-  background: linear-gradient(180deg, #efeae7 17.17%, #b09888 81.67%), #fff;
+  background: linear-gradient(
+      180deg,
+      var(--theme-parents-gradation) 17.17%,
+      var(--theme-parents) 81.67%
+    ),
+    #fff;
 }
 
 .CompleteWriting.theme5 {
-  background: linear-gradient(180deg, rgba(165, 200, 211, 0.2) 0%, #a5c8d3 95%),
+  background: linear-gradient(
+      180deg,
+      var(--theme-teachers-gradation) 0%,
+      var(--theme-teachers) 95%
+    ),
     #fff;
 }
 
 .CompleteWriting.theme6 {
-  background: linear-gradient(180deg, rgba(96, 87, 115, 0) 0%, #6a88c2 60.42%),
+  background: linear-gradient(
+      180deg,
+      var(--theme-graduate-gradation) 0%,
+      var(--theme-graduate) 60.42%
+    ),
     #fff;
 }
 
 .CompleteWriting.theme7 {
   background: linear-gradient(
       180deg,
-      #e7aaa6 18.92%,
-      rgba(115, 163, 98, 0.6) 91.15%
+      var(--theme-christmas) 18.92%,
+      var(--theme-christmas-gradation) 91.15%
     ),
     #fff;
 }
 
 .CompleteWriting .numberOfLetters {
-  color: #e7a495;
+  color: var(--theme-christmas);
 }
 
 .CompleteWriting .img_isOpened_true {

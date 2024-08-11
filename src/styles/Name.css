@@ -4,25 +4,25 @@
   width: 100%;
 }
 .name__theme1 {
-  background: #aa9acc;
+  background: var(--theme-default);
 }
 .name__theme2 {
-  background: #f6d075;
+  background: var(--theme-birthday-strong);
 }
 .name__theme3 {
-  background: #e1a3c7;
+  background: var(--theme-love-strong);
 }
 .name__theme4 {
-  background: #cdb8ac;
+  background: var(--theme-parents);
 }
 .name__theme5 {
-  background: #a5c8d3;
+  background: var(--theme-teachers);
 }
 .name__theme6 {
-  background: #5a68a3;
+  background: var(--theme-graduate-strong);
 }
 .name__theme7 {
-  background: #9cb58b;
+  background: var(--theme-christmas-strong);
 }
 .name__wrapper {
   width: 100%;
@@ -68,7 +68,6 @@
 .name__message2 {
   color: #fff;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
@@ -88,7 +87,6 @@
   border: none;
   color: #000;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -100,7 +98,6 @@
 .name__name::placeholder {
   color: #9a9a9a;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -126,7 +123,6 @@
 .name__date--input {
   color: #000;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
@@ -142,7 +138,6 @@
 .name__date--input::placeholder {
   color: #9a9a9a;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -159,7 +154,6 @@
 .name__date--mark {
   color: #000;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
@@ -182,7 +176,6 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #000;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;

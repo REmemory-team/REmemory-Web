@@ -6,7 +6,11 @@
   justify-content: center;
   min-height: 100vh;
   overflow: hidden;
-  background: linear-gradient(180deg, #fbf3c1 0%, rgba(251, 243, 193, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--theme-birthday) 0%,
+    var(--theme-birthday-gradation) 100%
+  );
 }
 
 .CompleteWriting .img_check {
@@ -19,7 +23,6 @@
 
 .CompleteWriting .text_Complete {
   color: rgba(95, 54, 25, 1);
-  font-family: "Pretendard";
   font-weight: 600;
   letter-spacing: 0.00264rem;
   text-align: center;
@@ -57,7 +60,6 @@
 
 .CompleteWriting .chat p {
   position: absolute;
-  font-family: Pretendard;
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.004125rem;

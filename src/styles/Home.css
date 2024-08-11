@@ -1,5 +1,4 @@
 .home {
-  font-family: Pretendard;
   font-style: normal;
   color: #000;
   min-height: 100vh;
@@ -8,7 +7,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, rgba(96, 87, 115, 0) 1.41%, #aa9acc 59.9%),
+  background: linear-gradient(
+      180deg,
+      rgba(96, 87, 115, 0) 1.41%,
+      var(--theme-default) 59.9%
+    ),
     #fff;
   position: relative;
   overflow: hidden;
@@ -31,7 +34,7 @@
   position: absolute;
   right: 0;
   height: 100%;
-  background-color: #5e4e80;
+  background-color: var(--primary);
   z-index: 1;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -87,7 +90,6 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #fff;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.4375rem;
   font-weight: 700;
   line-height: 0.8125rem;
@@ -106,7 +108,6 @@
   flex-shrink: 0;
   color: #fff;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 700;

@@ -8,8 +8,8 @@
   overflow: hidden;
   background: linear-gradient(
     179.98deg,
-    #f3a0a0 0.01%,
-    rgba(63, 146, 61, 0.2) 94.18%
+    var(--theme-christmas) 0.01%,
+    var(--theme-christmas-gradation) 94.18%
   );
 }
 
@@ -23,7 +23,6 @@
 
 .CompleteWriting .text_Complete {
   color: rgba(255, 255, 255, 1);
-  font-family: "Pretendard";
   font-weight: 600;
   letter-spacing: 0.00264rem;
   text-align: center;
@@ -65,7 +64,6 @@
 
 .CompleteWriting .chat p {
   position: absolute;
-  font-family: Pretendard;
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.004125rem;

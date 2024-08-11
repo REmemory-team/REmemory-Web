@@ -4,25 +4,25 @@
   width: 100%;
 }
 .purpose__theme1 {
-  background: #aa9acc;
+  background: var(--theme-default);
 }
 .purpose__theme2 {
-  background: #f6d075;
+  background: var(--theme-birthday-strong);
 }
 .purpose__theme3 {
-  background: #e1a3c7;
+  background: var(--theme-love-strong);
 }
 .purpose__theme4 {
-  background: #cdb8ac;
+  background: var(--theme-parents);
 }
 .purpose__theme5 {
-  background: #a5c8d3;
+  background: var(--theme-teachers);
 }
 .purpose__theme6 {
-  background: #5a68a3;
+  background: var(--theme-graduate-strong);
 }
 .purpose__theme7 {
-  background: #9cb58b;
+  background: var(--theme-christmas-strong);
 }
 .purpose__wrapper {
   width: 100%;
@@ -67,7 +67,6 @@
 .purpose__message {
   color: #fff;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
@@ -94,7 +93,6 @@
   align-items: center;
   color: #000;
   text-align: center;
-  font-family: Pretendard;
   font-size: 0.9375rem;
   font-style: normal;
   font-weight: 400;
@@ -155,7 +153,6 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #000;
   text-align: center;
-  font-family: Pretendard;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
