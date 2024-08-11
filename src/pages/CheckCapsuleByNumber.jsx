@@ -127,10 +127,10 @@ export default function CheckCapsuleByNumber() {
         src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
         width="320"
         height="90"
-        frameborder="0"
+        frameBorder="0"
         scrolling="no"
         referrerPolicy="unsafe-url"
-        browsingtopics
+        browsingtopics="true"
       ></iframe>
       <div>
         <p style={{ fontSize: "10px", color: "#495057" }}>

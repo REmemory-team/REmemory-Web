@@ -132,18 +132,18 @@ const Login = () => {
         src="https://ads-partners.coupang.com/widgets.html?id=775712&template=carousel&trackingCode=AF7731510&subId=&width=320&height=90&tsource="
         width="320"
         height="90"
-        frameborder="0"
+        frameBorder="0"
         scrolling="no"
         referrerPolicy="unsafe-url"
-        browsingtopics
+        browsingtopics="true"
       ></iframe>
       <div>
         <p style={{ fontSize: "10px", color: "#495057" }}>
           쿠팡 파트너스 활동을 통해 일정액의 수수료를 제공받을 수 있음
         </p>
       </div>
-      <div class="business-info">
-        <span class="rememory">RE:memory</span>
+      <div className="business-info">
+        <span className="rememory">RE:memory</span>
         <span>상호 | 청춘노트</span>
         <span>대표 | 백재윤</span>
         <span>메일 | wodbs7893@gmail.com</span>
