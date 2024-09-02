@@ -299,7 +299,8 @@
 .OpenCapsule.theme6 {
   background: linear-gradient(
       180deg,
-      var(--theme-graduate-gradation) 0% var(--theme-graduate) 60.42%
+      var(--theme-graduate-gradation) 0%,
+      var(--theme-graduate) 60.42%
     ),
     #fff;
 }
