@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Re:memory
+2024.02 - 2025.01 (UMC 5th Final Project)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+### 서비스 소개
 
-### `npm start`
+![데모데이 표지.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/2cd7a4e0-9c18-42d9-beca-81286e73b123/b2d7da46-7b58-4e78-b7da-2670b09afc8b/%E1%84%83%E1%85%A6%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5_%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 💭 서비스 이름 & 유래
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> **"RE"는 "다시" 또는 "응답"**의 의미를 가지며, **"memory"는 "기억, 추억"**을 의미합니다. 
+따라서 **"RE:memory"**는 과거의 기억을 다시 한번 떠올리며 그 추억에 응답하는 것을 의미합니다.
+> 
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔮 RE:memory는 이러한 배경 속에서 탄생했어요!
 
-### `npm run build`
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2cd7a4e0-9c18-42d9-beca-81286e73b123/e72adfbe-b750-4a48-8482-d8509896098f/Untitled.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 💡 그래서 우리가 제공하는 서비스는요!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2cd7a4e0-9c18-42d9-beca-81286e73b123/1f280f2d-69d5-4982-ada1-67c8c815643c/Untitled.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+### 💬 어떻게 가능하냐고요?
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2cd7a4e0-9c18-42d9-beca-81286e73b123/90ee164a-740a-4125-a8df-097ace6c70ff/Untitled.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### ✨ 구체적인 서비스 이용 순서는 이렇습니다!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2cd7a4e0-9c18-42d9-beca-81286e73b123/33356f77-3dd6-4c75-8c83-51336be69a88/Untitled.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2cd7a4e0-9c18-42d9-beca-81286e73b123/0df4f510-4852-4720-8695-16033e96e293/Untitled.png)
 
-## Learn More
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2cd7a4e0-9c18-42d9-beca-81286e73b123/096c272e-2bc4-4a0c-a574-018f59113cd8/Untitled.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2cd7a4e0-9c18-42d9-beca-81286e73b123/07b7057d-6084-410f-98ca-2b8adc7c43de/Untitled.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2cd7a4e0-9c18-42d9-beca-81286e73b123/f6f51c3d-2f6f-4c4a-9e12-8aec8c2c4e6b/Untitled.png)
 
-### Code Splitting
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2cd7a4e0-9c18-42d9-beca-81286e73b123/46260dad-bd8b-4b0f-ae3f-8bf29b36e4ba/Untitled.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+### 💫 서비스 이용 Flow를 한눈에 보세요!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/2cd7a4e0-9c18-42d9-beca-81286e73b123/4e213cc9-ed78-4813-9d21-07023745ca63/Untitled.png)
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 💟 RE:memory 디자인 시스템 & 개발 Github
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![리메모리 디자인 시스템.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/2cd7a4e0-9c18-42d9-beca-81286e73b123/b73e177c-e009-4147-a301-32e251ea9ef9/%E1%84%85%E1%85%B5%E1%84%86%E1%85%A6%E1%84%86%E1%85%A9%E1%84%85%E1%85%B5_%E1%84%83%E1%85%B5%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7.png)
